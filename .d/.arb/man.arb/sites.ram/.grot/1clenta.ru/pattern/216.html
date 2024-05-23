@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Программное добавление элементов управляемых форм</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="В управляемом приложении, как и в обычном, предусмотрена возможность программного создания элементов формы. В обычных формах доступно программное добавление только элементов формы. В отличии от обычных форм, в управляемых формах можно программно создавать элементы и реквизиты формы."/>
+	<meta name="keywords" content="программно,добавить,создать,элемент,полеввода,надпись,реквизит,декорация,управляемая,форма,1с"/>
+	<link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon"/>
+	<link href="../css/architecture.css%3Fdate=1478936687.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/style.css%3Fdate=1492946724.css" rel="stylesheet" type="text/css"/>
+	<script src="../js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="../index.html"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Программное добавление элементов управляемых форм</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="../image/category.png"/> <a class="valign" href="../index%3FCategoryId=2.html"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="../image/clock.png"/> <font size="2" class="valign">26.04.2018 11:57</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="../image/eye.png"/> <font size="2" class="valign">24607</font></font>
+					<meta itemprop="headline" content="Программное добавление элементов управляемых форм" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody">В управляемом приложении, как и в обычном, предусмотрена возможность программного создания элементов формы. <br/>В обычных формах доступно программное добавление только элементов формы. В отличии от обычных форм, в управляемых формах можно программно создавать элементы и реквизиты формы. В основном элементы и реквизиты формы задаются статически в конфигураторе, но иногда требуется динамическое создание. В языке программирования для решения данной задачи существуют специальные методы и свойства. <br/><br/><h3>Добавление поля ввода управляемой формы</h3><br/>В данном примере, реализован механизм программного добавления поля ввода управляемой формы. Перед добавление элемента формы необходимо создать реквизит формы для хранения данных. Если реквизит уже существует, то его ненужно создавать программно.<br/><br/><pre><font color="blue"><font color="brown">&amp;НаСервере</font><br/><font color="red">Процедура</font> ПриСозданииНаСервере<font color="red">(</font>Отказ<font color="red">,</font> СтандартнаяОбработка<font color="red">)</font><br/>	<br/>	<font color="green">//Добавление реквизита<br/></font>	<br/>	МассивРеквизитов <font color="red">=</font> <font color="red">Новый</font> Массив<font color="red">;</font>	<br/>	ОписаниеТипа <font color="red">=</font> <font color="red">Новый</font> ОписаниеТипов<font color="red">(</font><font color="black">&quot;Строка&quot;</font><font color="red">)</font><font color="red">;</font><br/>	Реквизит1 <font color="red">=</font> <font color="red">Новый</font> РеквизитФормы<font color="red">(</font><font color="black">&quot;Реквизит1&quot;</font><font color="red">,</font> ОписаниеТипа<font color="red">)</font><font color="red">;</font><br/>	МассивРеквизитов<font color="red">.</font>Добавить<font color="red">(</font>Реквизит1<font color="red">)</font><font color="red">;</font> <br/>	ИзменитьРеквизиты<font color="red">(</font>МассивРеквизитов<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Добавление поля ввода<br/></font>	<br/>	Элемент1 <font color="red">=</font> ЭтаФорма<font color="red">.</font>Элементы<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Реквизит1&quot;</font><font color="red">,</font> Тип<font color="red">(</font><font color="black">&quot;ПолеФормы&quot;</font><font color="red">)</font><font color="red">,</font> ЭтаФорма<font color="red">)</font><font color="red">;</font><br/>	Элемент1<font color="red">.</font>Вид <font color="red">=</font> ВидПоляФормы<font color="red">.</font>ПолеВвода<font color="red">;</font><br/>	Элемент1<font color="red">.</font>ПутьКДанным <font color="red">=</font> <font color="black">&quot;Реквизит1&quot;</font><font color="red">;</font><br/><br/><font color="red">КонецПроцедуры </font></font></pre><br/><br/><h3>Добавление кнопки управляемой формы</h3><br/>Для программного создания кнопки нужно будет создать команду, в которой необходимо в свойстве &quot;Действие&quot; задать имя процедуры обработчика команды.<br/><br/><pre><font color="blue"><font color="brown">&amp;НаСервере</font><br/><font color="red">Процедура</font> ПриСозданииНаСервере<font color="red">(</font>Отказ<font color="red">,</font> СтандартнаяОбработка<font color="red">)</font><br/>		<br/>	Команда1 <font color="red">=</font> ЭтаФорма<font color="red">.</font>Команды<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Команда1&quot;</font><font color="red">)</font><font color="red">;</font><br/>	Команда1<font color="red">.</font>Действие <font color="red">=</font> <font color="black">&quot;ИмяПроцедуры&quot;</font><font color="red">;</font><br/>	Команда1<font color="red">.</font>Заголовок <font color="red">=</font> <font color="black">&quot;Команда 1&quot;</font><font color="red">;</font><br/>	<br/>	Элемент1 <font color="red">=</font> ЭтаФорма<font color="red">.</font>Элементы<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Кнопка1&quot;</font><font color="red">,</font> Тип<font color="red">(</font><font color="black">&quot;КнопкаФормы&quot;</font><font color="red">)</font><font color="red">,</font> ЭтаФорма<font color="red">)</font><font color="red">;</font><br/>	Элемент1<font color="red">.</font>Вид <font color="red">=</font> ВидКнопкиФормы<font color="red">.</font>ОбычнаяКнопка<font color="red">;</font><br/>	Элемент1<font color="red">.</font>ИмяКоманды <font color="red">=</font> <font color="black">&quot;Команда1&quot;</font><font color="red">;</font><br/><br/><font color="red">КонецПроцедуры<br/></font><font color="brown"><br/>&amp;НаКлиенте</font><br/><font color="red">Процедура</font> ИмяПроцедуры<font color="red">(</font><font color="red">)</font><br/>	Сообщить<font color="red">(</font><font color="black">&quot;Нажата кнопка Команда 1&quot;</font><font color="red">)</font><font color="red">;</font>	<br/><font color="red">КонецПроцедуры </font></font></pre><br/><br/><h3>Добавление надписи (декорации) управляемой формы</h3><br/><pre><font color="blue"><font color="brown">&amp;НаСервере</font><br/><font color="red">Процедура</font> ПриСозданииНаСервере<font color="red">(</font>Отказ<font color="red">,</font> СтандартнаяОбработка<font color="red">)</font><br/>		<br/>	Элемент1 <font color="red">=</font> ЭтаФорма<font color="red">.</font>Элементы<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Декорация1&quot;</font><font color="red">,</font> Тип<font color="red">(</font><font color="black">&quot;ДекорацияФормы&quot;</font><font color="red">)</font><font color="red">,</font> ЭтаФорма<font color="red">)</font><font color="red">;</font><br/>	Элемент1<font color="red">.</font>Заголовок <font color="red">=</font> <font color="black">&quot;Текст надписи&quot;</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры </font></font></pre></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="../account/restore.html">Восстановить пароль</a></li>
+					<li><a href="../account/login.html">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../about.html">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="../feedback.html">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../agreement.html">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../news.html">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="http://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="http://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

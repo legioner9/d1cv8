@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Сериализация и десериализация  JSON</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="lt;b gt;JSON (JavaScript Object Notation) lt;/b gt; - это универсальный текстовый формат представления данных, который используется для обмена данными между приложениями. Для работы с данным форматом во многих популярных языках программирования доступны специальные объекты, функции."/>
+	<meta name="keywords" content="сериализация,десериализация ,JSON,1с"/>
+	<link rel="icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link href="https://1clenta.ru/css/architecture.css?date=1478936687" rel="stylesheet" type="text/css"/>
+	<link href="https://1clenta.ru/css/style.css?date=1492946724" rel="stylesheet" type="text/css"/>
+	<script src="https://1clenta.ru/js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="https://1clenta.ru/"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Сериализация и десериализация  JSON</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="https://1clenta.ru/image/category.png"/> <a class="valign" href="https://1clenta.ru/index?CategoryId=2"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="https://1clenta.ru/image/clock.png"/> <font size="2" class="valign">04.02.2017 14:34</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="https://1clenta.ru/image/eye.png"/> <font size="2" class="valign">56701</font></font>
+					<meta itemprop="headline" content="Сериализация и десериализация  JSON" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody"><b>JSON (JavaScript Object Notation)</b> - это универсальный текстовый формат представления данных, который используется для обмена данными между приложениями. Для работы с данным форматом во многих популярных языках программирования доступны специальные объекты, функции. Если преобразовать объект в данный формат, то текст будет понятным для чтения человеком. Данный текст можно просмотреть в любом текстовом редакторе.<br/><br/>Сериализация JSON может быть использована вместо функций <b>&quot;ЗначениеВСтрокуВнутр()&quot;</b> и <b>&quot;ЗначениеИзСтрокиВнутр()&quot;</b>.<br/><br/>Преимуществом данного формата является лаконичность представления данных. Данные представленные в JSON, в отличии от XML, занимают меньший объем. Сериализация и десериализация выполняется быстрее чем с XML.<br/><br/><h3>Вариант 1</h3><br/>Начиная с версии <b>1С:Предприятие 8.3.7.1759</b>, объект <b>СериализаторXDTO</b> поддерживает сериализацию и десериализацию JSON. Это означает, что любой объект 1С:Предприятия (объект конфигурации или объект встроенного языка) можно автоматически сериализовать и десериализовать.<br/><br/><pre><font color="blue"><font color="red">Процедура</font> ЗаписьJSON<font color="red">(</font><font color="red">)</font><br/>	<br/>	ЗаписьJSON <font color="red">=</font> <font color="red">Новый</font> ЗаписьJSON<font color="red">;</font><br/>	<font color="green">//Или в строку<br/></font>	ЗаписьJSON<font color="red">.</font>УстановитьСтроку<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<font color="green">//Или в файл<br/></font>	ЗаписьJSON<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C:&#092;test.txt&quot;</font><font color="red">)</font><font color="red">;</font><br/>	 <br/>	Номенклатура <font color="red">=</font> Справочники<font color="red">.</font>Номенклатура<font color="red">.</font>НайтиПоКоду<font color="red">(</font><font color="black">&quot;00000000001&quot;</font><font color="red">)</font><font color="red">.</font>ПолучитьОбъект<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	СериализаторXDTO<font color="red">.</font>ЗаписатьJSON<font color="red">(</font>ЗаписьJSON<font color="red">,</font> Номенклатура<font color="red">,</font> НазначениеТипаXML<font color="red">.</font>Явное<font color="red">)</font><font color="red">;</font><br/>	<br/>	СериализованнаяСтрока <font color="red">=</font> ЗаписьJSON<font color="red">.</font>Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры<br/></font><br/><br/><font color="red">Процедура</font> ЧтениеJSON<font color="red">(</font><font color="red">)</font><br/>	<br/>	ЧтениеJSON <font color="red">=</font> <font color="red">Новый</font> ЧтениеJSON<font color="red">;</font><br/>	<font color="green">//Или из строки<br/></font>	ЧтениеJSON<font color="red">.</font>УстановитьСтроку<font color="red">(</font><font color="black">&quot;&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<font color="green">//Или из файла	<br/></font>	ЧтениеJSON<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C:&#092;test.txt&quot;</font><font color="red">)</font><font color="red">;</font><br/>		<br/>	Номенклатура <font color="red">=</font> СериализаторXDTO<font color="red">.</font>ПрочитатьJSON<font color="red">(</font>ЧтениеJSON<font color="red">)</font><font color="red">;</font>	<br/>	<br/>	ЧтениеJSON<font color="red">.</font>Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>		<br/><font color="red">КонецПроцедуры </font></font></pre><br/><br/><h3>Вариант 2</h3><br/><b>ЗаписатьJSON()</b> - это метод глобального контекста, который позволяет сериализовать значения следующих типов: Строка, Число, Булево, Дата, Массив, ФиксированныйМассив, Структура, ФиксированнаяСтруктура, Соответствие, ФиксированноеСоответствие. С помощью метода глобального контекста <b>ПрочитатьJSON()</b>, можно десериализовать значения этих же типов.<br/><br/><pre><font color="blue"><font color="red">Процедура</font> ЗаписьJSON<font color="red">(</font><font color="red">)</font><br/>	<br/>	ЗаписьJSON <font color="red">=</font> <font color="red">Новый</font> ЗаписьJSON<font color="red">;</font><br/>	<font color="green">//Или в строку<br/></font>	ЗаписьJSON<font color="red">.</font>УстановитьСтроку<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<font color="green">//Или в файл<br/></font>	ЗаписьJSON<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C:&#092;test.txt&quot;</font><font color="red">)</font><font color="red">;</font><br/>	 <br/>	<font color="green">//Запись структуры<br/></font>	Структура <font color="red">=</font> <font color="red">Новый</font> Структура<font color="red">;</font> <br/>	Структура<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Поле1&quot;</font><font color="red">,</font> <font color="black">&quot;Значение1&quot;</font><font color="red">)</font><font color="red">;</font> 	<br/>	Структура<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Поле2&quot;</font><font color="red">,</font> <font color="black">&quot;Значение2&quot;</font><font color="red">)</font><font color="red">;</font><br/>	Структура<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Поле3&quot;</font><font color="red">,</font> <font color="black">&quot;Значение3&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ЗаписатьJSON<font color="red">(</font>ЗаписьJSON<font color="red">,</font> Структура<font color="red">)</font><font color="red">;</font><br/>		<br/>	СериализованнаяСтрока <font color="red">=</font> ЗаписьJSON<font color="red">.</font>Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры<br/></font><br/><br/><font color="red">Процедура</font> ЧтениеJSON<font color="red">(</font><font color="red">)</font><br/>	<br/>	ЧтениеJSON <font color="red">=</font> <font color="red">Новый</font> ЧтениеJSON<font color="red">;</font><br/>	<font color="green">//Или из строки<br/></font>	ЧтениеJSON<font color="red">.</font>УстановитьСтроку<font color="red">(</font><font color="black">&quot;&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<font color="green">//Или из файла	<br/></font>	ЧтениеJSON<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C:&#092;test.txt&quot;</font><font color="red">)</font><font color="red">;</font><br/>		<br/>	Структура <font color="red">=</font> ПрочитатьJSON<font color="red">(</font>ЧтениеJSON<font color="red">)</font><font color="red">;</font>	<br/>	<br/>	ЧтениеJSON<font color="red">.</font>Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>		<br/><font color="red">КонецПроцедуры </font></font></pre><br/><br/><h3>Вариант 3</h3><br/>Данный вариант сериализации и десериализации выполняется полностью в ручном режиме, без использования специальных объектов сериализации встроенного языка. Чтение и запись сериализованных данных выполняется с помощью объектов <b>ЗаписьJSON</b>, <b>ЧтениеJSON</b>. Эти объекты не считывают файл целиком, а считывают поэлементно, поэтому расходуют меньше памяти компьютера.<br/><br/><pre><font color="blue"><font color="red">Процедура</font> ЗаписьJSON<font color="red">(</font><font color="red">)</font><br/>	 <br/>	ЗаписьJSON <font color="red">=</font> <font color="red">Новый</font> ЗаписьJSON<font color="red">;</font><br/>	<font color="green">//Или в строку<br/></font>	ЗаписьJSON<font color="red">.</font>УстановитьСтроку<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<font color="green">//Или в файл<br/></font>	ЗаписьJSON<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C:&#092;test.txt&quot;</font><font color="red">)</font><font color="red">;</font><br/>				<br/>	ЗаписьJSON<font color="red">.</font>ЗаписатьНачалоМассива<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>		<br/>			ЗаписьJSON<font color="red">.</font>ЗаписатьЗначение<font color="red">(</font><font color="black">&quot;Значение1&quot;</font><font color="red">)</font><font color="red">;</font><br/>			ЗаписьJSON<font color="red">.</font>ЗаписатьЗначение<font color="red">(</font><font color="black">&quot;Значение2&quot;</font><font color="red">)</font><font color="red">;</font><br/>			ЗаписьJSON<font color="red">.</font>ЗаписатьЗначение<font color="red">(</font><font color="black">&quot;Значение3&quot;</font><font color="red">)</font><font color="red">;</font><br/>			<br/>			ЗаписьJSON<font color="red">.</font>ЗаписатьНачалоОбъекта<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>			<br/>				ЗаписьJSON<font color="red">.</font>ЗаписатьИмяСвойства<font color="red">(</font><font color="black">&quot;Свойство1&quot;</font><font color="red">)</font><font color="red">;</font><br/>				ЗаписьJSON<font color="red">.</font>ЗаписатьЗначение<font color="red">(</font><font color="black">&quot;Значение1&quot;</font><font color="red">)</font><font color="red">;</font><br/>				ЗаписьJSON<font color="red">.</font>ЗаписатьИмяСвойства<font color="red">(</font><font color="black">&quot;Свойство2&quot;</font><font color="red">)</font><font color="red">;</font><br/>				ЗаписьJSON<font color="red">.</font>ЗаписатьЗначение<font color="red">(</font><font color="black">&quot;Значение2&quot;</font><font color="red">)</font><font color="red">;</font><br/>					<br/>			ЗаписьJSON<font color="red">.</font>ЗаписатьКонецОбъекта<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>			<br/>		ЗаписьJSON<font color="red">.</font>ЗаписатьКонецМассива<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>				<br/>	СериализованнаяСтрока <font color="red">=</font> ЗаписьJSON<font color="red">.</font>Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры<br/></font><br/><br/><font color="red">Процедура</font> ЧтениеJSON<font color="red">(</font><font color="red">)</font><br/>	<br/>	ЧтениеJSON <font color="red">=</font> <font color="red">Новый</font> ЧтениеJSON<font color="red">;</font><br/>	<font color="green">//Или из строки<br/></font>	ЧтениеJSON<font color="red">.</font>УстановитьСтроку<font color="red">(</font><font color="black">&quot;&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<font color="green">//Или из файла	<br/></font>	ЧтениеJSON<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C:&#092;test.txt&quot;</font><font color="red">)</font><font color="red">;</font><br/>		<br/>	<font color="red">Пока</font> ЧтениеJSON<font color="red">.</font>Прочитать<font color="red">(</font><font color="red">)</font> <font color="red">Цикл</font><br/>	<br/>		<font color="red">Если</font> ЧтениеJSON<font color="red">.</font>ТипТекущегоЗначения <font color="red">=</font> ТипЗначенияJSON<font color="red">.</font>НачалоМассива <font color="red">Тогда</font><br/>		<br/>			<font color="red">Пока</font> ЧтениеJSON<font color="red">.</font>Прочитать<font color="red">(</font><font color="red">)</font> <font color="red">Цикл</font><br/>				<br/>				<font color="red">Если</font> ЧтениеJSON<font color="red">.</font>ТипТекущегоЗначения <font color="red">=</font> ТипЗначенияJSON<font color="red">.</font>Строка <font color="red">Тогда</font>	<br/>					Сообщить<font color="red">(</font><font color="black">&quot;Значение: &quot;</font> <font color="red">+</font> ЧтениеJSON<font color="red">.</font>ТекущееЗначение<font color="red">)</font><font color="red">;</font>	<br/>					<br/>				<font color="red">ИначеЕсли</font> ЧтениеJSON<font color="red">.</font>ТипТекущегоЗначения <font color="red">=</font> ТипЗначенияJSON<font color="red">.</font>НачалоОбъекта <font color="red">Тогда</font><br/>					<br/>					<font color="red">Пока</font> ЧтениеJSON<font color="red">.</font>Прочитать<font color="red">(</font><font color="red">)</font> <font color="red">Цикл</font>	<br/>						<br/>						<font color="red">Если</font> ЧтениеJSON<font color="red">.</font>ТипТекущегоЗначения <font color="red">=</font> ТипЗначенияJSON<font color="red">.</font>ИмяСвойства <font color="red">Тогда</font><br/>							Сообщить<font color="red">(</font><font color="black">&quot;Свойство: &quot;</font> <font color="red">+</font> ЧтениеJSON<font color="red">.</font>ТекущееЗначение<font color="red">)</font><font color="red">;</font>	<br/>							<br/>						<font color="red">ИначеЕсли</font> ЧтениеJSON<font color="red">.</font>ТипТекущегоЗначения <font color="red">=</font> ТипЗначенияJSON<font color="red">.</font>Строка <font color="red">Тогда</font><br/>							Сообщить<font color="red">(</font><font color="black">&quot;Значение: &quot;</font> <font color="red">+</font> ЧтениеJSON<font color="red">.</font>ТекущееЗначение<font color="red">)</font><font color="red">;</font><br/>							<br/>						<font color="red">КонецЕсли;</font><br/>						<br/>					<font color="red">КонецЦикла;</font><br/>					<br/>				<font color="red">КонецЕсли;</font><br/>				<br/>			<font color="red">КонецЦикла;</font><br/>			<br/>		<font color="red">КонецЕсли;</font><br/>		<br/>	<font color="red">КонецЦикла;</font><br/>	<br/>	ЧтениеJSON<font color="red">.</font>Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры </font></font></pre></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="https://1clenta.ru/account/restore">Восстановить пароль</a></li>
+					<li><a href="https://1clenta.ru/account/login">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/about">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/feedback">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/agreement">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/news">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

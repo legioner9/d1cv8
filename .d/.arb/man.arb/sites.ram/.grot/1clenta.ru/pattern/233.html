@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Программное добавление, удаление пользователей 1С</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="Доступ пользователей к информационной базе 1С, осуществляется при помощи авторизации. Для каждого работника создается объект пользователь, под которым осуществляется вход и работа в системе. Поэтому, для того чтобы работник мог войти в базу, ему необходимо знать логин и пароль."/>
+	<meta name="keywords" content="программно,добавить,удалить,редактировать,пользователь,1c"/>
+	<link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon"/>
+	<link href="../css/architecture.css%3Fdate=1478936687.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/style.css%3Fdate=1492946724.css" rel="stylesheet" type="text/css"/>
+	<script src="../js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="../index.html"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Программное добавление, удаление пользователей 1С</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="../image/category.png"/> <a class="valign" href="../index%3FCategoryId=2.html"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="../image/clock.png"/> <font size="2" class="valign">06.09.2018 08:28</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="../image/eye.png"/> <font size="2" class="valign">17848</font></font>
+					<meta itemprop="headline" content="Программное добавление, удаление пользователей 1С" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody">Доступ пользователей к информационной базе 1С, осуществляется при помощи авторизации. Для каждого работника создается объект пользователь, под которым осуществляется вход и работа в системе. Поэтому, для того чтобы работник мог войти в базу, ему необходимо знать логин и пароль. Редактирование логина, пароля и другой информации о пользователе доступно в 1С конфигураторе, а в типовых конфигурациях можно настраивать и в 1С предприятии. Таким образом, <a href="232.html">добавление, удаление, редактирование и настройка пользователей</a> осуществляется через интерфейс программы 1С. Все эти действия могут быть выполнены программно, с помощью средств встроенного языка 1С. <br/><br/><h3>Программный доступ к пользователям</h3><br/>Во встроенном языке программирования, предусмотрены специальные объекты для добавления, редактирования и удаления пользователей системы. Работа с пользователями осуществляется через свойство глобального контекста <b>ПользователиИнформационнойБазы</b>.<br/><br/><pre><font color="blue"><font color="red">Процедура</font> ДобавитьПользователяИБ<font color="red">(</font><font color="red">)</font><br/>					<br/>	Пользователь <font color="red">=</font> ПользователиИнформационнойБазы<font color="red">.</font>СоздатьПользователя<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	Пользователь<font color="red">.</font>Имя <font color="red">=</font> <font color="black">&quot;Администратор&quot;</font><font color="red">;</font><br/>	Пользователь<font color="red">.</font>Пароль <font color="red">=</font> <font color="black">&quot;12345&quot;</font><font color="red">;</font><br/>	Пользователь<font color="red">.</font>ПоказыватьВСпискеВыбора <font color="red">=</font> <font color="red">Истина;</font><br/>	Пользователь<font color="red">.</font>Роли<font color="red">.</font>Добавить<font color="red">(</font>Метаданные<font color="red">.</font>Роли<font color="red">.</font>АдминистраторСистемы<font color="red">)</font><font color="red">;</font><br/>	Пользователь<font color="red">.</font>ОсновнойИнтерфейс <font color="red">=</font> Метаданные<font color="red">.</font>Интерфейсы<font color="red">.</font>Общий<font color="red">;</font><br/>	Пользователь<font color="red">.</font>Записать<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры<br/></font><br/><br/><font color="red">Процедура</font> УдалитьПользователяИБ<font color="red">(</font><font color="red">)</font><br/>					<br/>	Пользователь <font color="red">=</font> ПользователиИнформационнойБазы<font color="red">.</font>НайтиПоИмени<font color="red">(</font><font color="black">&quot;Администратор&quot;</font><font color="red">)</font><font color="red">;</font><br/>	Пользователь<font color="red">.</font>Удалить<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	Пользователь <font color="red">=</font> ПользователиИнформационнойБазы<font color="red">.</font>ТекущийПользователь<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	Пользователь<font color="red">.</font>Удалить<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры<br/></font><br/><br/><font color="red">Процедура</font> ВывестиПользователейИБ<font color="red">(</font><font color="red">)</font><br/>					<br/>	Список <font color="red">=</font> ПользователиИнформационнойБазы<font color="red">.</font>ПолучитьПользователей<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="red">Для</font> <font color="red">каждого</font> Пользователь <font color="red">Из</font> Список <font color="red">Цикл</font><br/>		Сообщить<font color="red">(</font>Пользователь<font color="red">)</font><font color="red">;</font><br/>	<font color="red">КонецЦикла;</font> <br/>	<br/><font color="red">КонецПроцедуры </font></font></pre></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="../account/restore.html">Восстановить пароль</a></li>
+					<li><a href="../account/login.html">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../about.html">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="../feedback.html">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../agreement.html">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../news.html">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="http://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="http://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

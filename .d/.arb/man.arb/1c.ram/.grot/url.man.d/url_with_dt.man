@@ -1,0 +1,12 @@
+
+
+#with .dt
+https://1cv8.net/Configurations/1C/retail/3_0_1_193/
+https://1cv8.net/Configurations/1C/ARAutomation20/2_5_8_295/
+https://1cv8.net/Configurations/1C/hrm/3_1_23_20/
+https://1cv8.net/Configurations/1C/hrmbase/3_1_23_20/
+https://1cv8.net/Configurations/1C/retailbase/3_0_1_193/
+https://1cv8.net/Configurations/1C/smallbusiness/3_0_1_193/
+https://1cv8.net/Configurations/1C/smallbusinessbase/3_0_4_128/
+https://1cv8.net/Configurations/1C/StateAccounting/2_0_95_29/
+https://1cv8.net/Configurations/1C/statehrm/3_1_28_64/

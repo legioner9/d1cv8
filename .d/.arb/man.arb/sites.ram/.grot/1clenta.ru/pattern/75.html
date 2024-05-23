@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Записать, прочитать XML файл из DomDocument</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="В 1С можно распарсить XML файл с помощью COM объекта  quot;Msxml2.DOMDocument quot;. В зависимости от установленного программного обеспечения, доступны различные версии  quot;Дом документа quot;. Подробно, свойства и методы различных версий DOMDocument описаны в MSDN."/>
+	<meta name="keywords" content="прочитать,записать,создать,XML,файл,DomDocument,Msxml2.DOMDocument"/>
+	<link rel="icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link href="https://1clenta.ru/css/architecture.css?date=1478936687" rel="stylesheet" type="text/css"/>
+	<link href="https://1clenta.ru/css/style.css?date=1492946724" rel="stylesheet" type="text/css"/>
+	<script src="https://1clenta.ru/js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="https://1clenta.ru/"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Записать, прочитать XML файл из DomDocument</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="https://1clenta.ru/image/category.png"/> <a class="valign" href="https://1clenta.ru/index?CategoryId=2"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="https://1clenta.ru/image/clock.png"/> <font size="2" class="valign">27.08.2016 11:08</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="https://1clenta.ru/image/eye.png"/> <font size="2" class="valign">14511</font></font>
+					<meta itemprop="headline" content="Записать, прочитать XML файл из DomDocument" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody">В 1С можно распарсить XML файл с помощью COM объекта &quot;Msxml2.DOMDocument&quot;. В зависимости от установленного программного обеспечения, доступны различные версии &quot;Дом документа&quot;. Подробно, свойства и методы различных версий DOMDocument описаны в MSDN.<br/><br/><b>Версии DomDocument</b><br/>Msxml2.DOMDocument.3.0<br/>Msxml2.DOMDocument.4.0<br/>Msxml2.DOMDocument.5.0<br/>Msxml2.DOMDocument.6.0<br/><br/>Для того чтобы создать или парсить xml, существуют примеры написанные с использованием встроенных объектов (ЗаписьXML, ЧтениеXML) языка программирования 1С. При сложной структуре xml, объём программного кода в таких примерах может быть очень большим. При использовании &quot;Msxml2.DOMDocument&quot; программный код можно сделать более компактным и получить более гибкий механизм обращения к узлам XML документа.<br/><br/>Технология DOMDocument предоставляет удобные методы для работы с данными в виде XML. В данном объекте, структура данных представлена в виде дерева узлов. Все узлы, являются подчиненными к корневому. Благодаря DOMDocument можно перебирать, создавать, удалять, копировать узлы и выполнять многие другие действия. <br/><br/><h3>Создать, записать XML файл</h3><br/><pre><font color="blue"><font color="red">Функция</font> СоздатьXML<font color="red">(</font><font color="red">)</font><br/>	<br/>	<font color="red">Попытка</font><br/>		DomDocument <font color="red">=</font> <font color="red">Новый</font> COMОбъект<font color="red">(</font><font color="black">&quot;MSXML2.DOMDocument.6.0&quot;</font><font color="red">)</font><font color="red">;</font> <br/>	<font color="red">Исключение</font><br/>		Сообщить<font color="red">(</font><font color="black">&quot;Ошибка: объект MSXML2.DOMDocument не создан&quot;</font><font color="red">)</font><font color="red">;</font><br/>		<font color="red">Возврат </font><font color="red">Ложь;</font><br/>	<font color="red">КонецПопытки;</font><br/>		<br/>	<font color="green">//Записать объявление XML	<br/></font>	XML <font color="red">=</font> DomDocument<font color="red">.</font>createProcessingInstruction<font color="red">(</font><font color="black">&quot;xml&quot;</font><font color="red">,</font> <font color="black">&quot;version=&quot;</font><font color="black">&quot;1.0&quot;</font><font color="black">&quot; encoding=&quot;</font><font color="black">&quot;UTF-8&quot;</font><font color="black">&quot;&quot;</font><font color="red">)</font><font color="red">;</font>  	<br/>	DomDocument<font color="red">.</font>insertBefore<font color="red">(</font>XML<font color="red">,</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Создать корневой узел	<br/></font>	ElementRootTag <font color="red">=</font> DomDocument<font color="red">.</font>createElement<font color="red">(</font><font color="black">&quot;RootTag&quot;</font><font color="red">)</font><font color="red">;</font>	<br/>	<br/>	<font color="green">//Создать подчиненный узел<br/></font>	ElementTag <font color="red">=</font> DomDocument<font color="red">.</font>createElement<font color="red">(</font><font color="black">&quot;Tag&quot;</font><font color="red">)</font><font color="red">;</font>	<br/>	ElementTag<font color="red">.</font>setAttribute<font color="red">(</font><font color="black">&quot;ИмяАтрибута&quot;</font><font color="red">,</font><font color="black">&quot;ЗначениеАтрибута&quot;</font><font color="red">)</font><font color="red">;</font>	<br/>	ElementText <font color="red">=</font> DomDocument<font color="red">.</font>createTextNode<font color="red">(</font><font color="black">&quot;Текст&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ElementTag<font color="red">.</font>appendChild<font color="red">(</font>ElementText<font color="red">)</font><font color="red">;</font><br/>	CDATA <font color="red">=</font> DomDocument<font color="red">.</font>createCDATASection<font color="red">(</font><font color="black">&quot;Значение&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ElementTag<font color="red">.</font>appendChild<font color="red">(</font>CDATA<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Записать узлы<br/></font>	ElementRootTag<font color="red">.</font>appendChild<font color="red">(</font>ElementTag<font color="red">)</font><font color="red">;</font><br/>	DomDocument<font color="red">.</font>appendChild<font color="red">(</font>ElementRootTag<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Записать файл<br/></font>	DomDocument<font color="red">.</font>Save<font color="red">(</font><font color="black">&quot;C:&#092;Test.xml&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Сформированный XML текст<br/></font>	XMLТекст <font color="red">=</font> DomDocument<font color="red">.</font>xml<font color="red">;</font><br/>		<br/><font color="red">КонецФункции </font></font></pre><br/><br/><h3>Прочитать XML файл</h3><br/><pre><font color="blue"><font color="red">Функция</font> СчитатьXML<font color="red">(</font><font color="red">)</font><br/>	<br/>	<font color="red">Попытка</font><br/>		DomDocument <font color="red">=</font> <font color="red">Новый</font> COMОбъект<font color="red">(</font><font color="black">&quot;MSXML2.DOMDocument.6.0&quot;</font><font color="red">)</font><font color="red">;</font> <br/>	<font color="red">Исключение</font><br/>		Сообщить<font color="red">(</font><font color="black">&quot;Ошибка: объект MSXML2.DOMDocument не создан&quot;</font><font color="red">)</font><font color="red">;</font><br/>		<font color="red">Возврат </font><font color="red">Ложь;</font><br/>	<font color="red">КонецПопытки;</font><br/>	<br/>	<font color="green">//Загрузить XML из строки	<br/></font>	DomDocument<font color="red">.</font>loadXML<font color="red">(</font><font color="black">&quot;&lt;?xml version=&quot;</font><font color="black">&quot;1.0&quot;</font><font color="black">&quot; encoding=&quot;</font><font color="black">&quot;UTF-8&quot;</font><font color="black">&quot;?&gt;<br/>						|&lt;RootTag&gt;<br/>						|&lt;Tag Имя=&quot;</font><font color="black">&quot;Значение&quot;</font><font color="black">&quot;&gt;Текст[CDATA[Значение]]&lt;/Tag&gt;<br/>						|&lt;/RootTag&gt;&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Загрузить файл XML	<br/></font>	DomDocument<font color="red">.</font>load<font color="red">(</font><font color="black">&quot;C:&#092;Test.xml&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="red">Если</font> DomDocument<font color="red">.</font>parseError<font color="red">.</font>errorCode <font color="red">&lt;</font><font color="red">&gt;</font> 0 <font color="red">Тогда</font><br/>		Сообщить<font color="red">(</font><font color="black">&quot;Ошибка: XML файл не валидный&quot;</font><font color="red">)</font><font color="red">;</font>	<br/>		<font color="red">Возврат </font><font color="red">Ложь;</font><br/>	<font color="red">КонецЕсли;</font><br/>	<br/>	<font color="green">//Выбрать узлы<br/></font>	Nodes <font color="red">=</font> DomDocument<font color="red">.</font>SelectNodes<font color="red">(</font><font color="black">&quot;Tag&quot;</font><font color="red">)</font><font color="red">;</font><br/>		<br/>	<font color="red">Для</font> Индекс <font color="red">=</font> 0 <font color="red">По</font> Nodes<font color="red">.</font>Length <font color="red">-</font> 1 <font color="red">Цикл</font><br/>		ЗначениеАтрибута <font color="red">=</font> Nodes<font color="red">.</font>Item<font color="red">(</font>Индекс<font color="red">)</font><font color="red">.</font>getAttribute<font color="red">(</font><font color="black">&quot;ИмяАтрибута&quot;</font><font color="red">)</font><font color="red">;</font><br/>		Tag <font color="red">=</font> Nodes<font color="red">.</font>Item<font color="red">(</font>Индекс<font color="red">)</font><font color="red">;</font><br/>	<font color="red">КонецЦикла;</font>	<br/>  <br/><font color="red">КонецФункции </font></font></pre><br/><br/><b>Похожие статьи:</b><br/><a href="http://1clenta.ru/pattern/76">ЗаписьXML, ЧтениеXML в 1С:Предприятии</a><br/><a href="http://1clenta.ru/pattern/77">Запись, чтение XML из ДокументDOM</a></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="https://1clenta.ru/account/restore">Восстановить пароль</a></li>
+					<li><a href="https://1clenta.ru/account/login">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/about">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/feedback">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/agreement">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/news">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

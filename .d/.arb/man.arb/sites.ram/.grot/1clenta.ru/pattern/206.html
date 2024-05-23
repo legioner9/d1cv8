@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Открытие формы настроек при запуске печатной формы в управляемом приложении</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="При запуске печатной формы из 1С Предприятия может потребоваться интерактивный выбор каких либо настроек для продолжения печати. Для решения этой задачи необходимо в печатную форму внедрить механизм вывода формы настроек, на которой будут расположены определенные настройки."/>
+	<meta name="keywords" content="открыть,форму,настройки,запуск,печатная,форма,управляемое,приложение,1с"/>
+	<link rel="icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link href="https://1clenta.ru/css/architecture.css?date=1478936687" rel="stylesheet" type="text/css"/>
+	<link href="https://1clenta.ru/css/style.css?date=1492946724" rel="stylesheet" type="text/css"/>
+	<script src="https://1clenta.ru/js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="https://1clenta.ru/"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Открытие формы настроек при запуске печатной формы в управляемом приложении</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="https://1clenta.ru/image/category.png"/> <a class="valign" href="https://1clenta.ru/index?CategoryId=2"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="https://1clenta.ru/image/clock.png"/> <font size="2" class="valign">10.04.2018 07:51</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="https://1clenta.ru/image/eye.png"/> <font size="2" class="valign">41026</font></font>
+					<meta itemprop="headline" content="Открытие формы настроек при запуске печатной формы в управляемом приложении" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody">При запуске печатной формы из 1С Предприятия может потребоваться интерактивный выбор каких либо настроек для продолжения печати. Для решения этой задачи необходимо в печатную форму внедрить механизм вывода формы настроек, на которой будут расположены определенные настройки. В типовых конфигурациях, в управляемом приложении печатные формы программируются и подключаются по другому, чем в обычном приложении.<br/><br/>Внешняя печатная форма в управляемом приложении - это обработка, которая содержит в модуле обработки или в основной форме экспортную функцию <b>Печать()</b> и в модуле обработки экспортную функцию <b>СведенияОВнешнейОбработке()</b>. Базовый пример того как <a href="6.html">сделать внешнюю печатную форму для управляемого приложения</a>. В базовую печатную форму необходимо внести ряд изменений, для того чтобы перед формированием выводилась дополнительная форма настроек.<br/><br/><h3>Обработка для внешней печатной формы</h3><br/>Обработка содержит две формы: ФормаТестов, ФормаНастроек.<br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Обработка печатной формы" title="Обработка печатной формы" src="../image/206/print&#32;form&#32;settings&#32;1.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/206/print form settings 1.png" />
+						</span><br/><br/>В функции <b>СведенияОВнешнейОбработке()</b> для свойства &quot;Использование&quot; нужно установить значение <b>&quot;ВызовКлиентскогоМетода&quot;</b>. Это означает, что при запуске печатной формы из 1С Предприятия, будет автоматически запускаться экспортная функция <b>Печать()</b> ИЗ ОСНОВНОЙ ФОРМЫ ОБРАБОТКИ, при этом форма не открывается.<br/><br/><pre><font color="blue"><font color="red">Функция</font> СведенияОВнешнейОбработке<font color="red">(</font><font color="red">)</font> <font color="red">Экспорт</font><br/>	<br/>	ПараметрыРегистрации <font color="red">=</font> <font color="red">Новый</font> Структура<font color="red">;</font><br/>	ПараметрыРегистрации<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Вид&quot;</font><font color="red">,</font> <font color="black">&quot;ПечатнаяФорма&quot;</font><font color="red">)</font><font color="red">;</font> 	<br/>	МассивНазначений <font color="red">=</font> <font color="red">Новый</font> Массив<font color="red">;</font><br/>	МассивНазначений<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Документ.РеализацияТоваровУслуг&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ПараметрыРегистрации<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Назначение&quot;</font><font color="red">,</font> МассивНазначений<font color="red">)</font><font color="red">;</font><br/>	ПараметрыРегистрации<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Наименование&quot;</font><font color="red">,</font> <font color="black">&quot;Наименование&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ПараметрыРегистрации<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Версия&quot;</font><font color="red">,</font> <font color="black">&quot;1.0&quot;</font><font color="red">)</font><font color="red">;</font>	<br/>	ПараметрыРегистрации<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;БезопасныйРежим&quot;</font><font color="red">,</font> <font color="red">Ложь)</font><font color="red">;</font><br/>	ПараметрыРегистрации<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Информация&quot;</font><font color="red">,</font> <font color="black">&quot;Дополнительная печатная форма&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Команды<br/></font>	ТаблицаКоманд <font color="red">=</font> <font color="red">Новый</font> ТаблицаЗначений<font color="red">;</font><br/>	ТаблицаКоманд<font color="red">.</font>Колонки<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Представление&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ТаблицаКоманд<font color="red">.</font>Колонки<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Идентификатор&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ТаблицаКоманд<font color="red">.</font>Колонки<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Использование&quot;</font><font color="red">)</font><font color="red">;</font> <br/>	ТаблицаКоманд<font color="red">.</font>Колонки<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;ПоказыватьОповещение&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ТаблицаКоманд<font color="red">.</font>Колонки<font color="red">.</font>Добавить<font color="red">(</font><font color="black">&quot;Модификатор&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	НоваяКоманда <font color="red">=</font> ТаблицаКоманд<font color="red">.</font>Добавить<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	НоваяКоманда<font color="red">.</font>Представление <font color="red">=</font> <font color="black">&quot;Товарная накладная&quot;</font><font color="red">;</font><br/>	НоваяКоманда<font color="red">.</font>Идентификатор <font color="red">=</font> <font color="black">&quot;Товарная накладная&quot;</font><font color="red">;</font> <br/>	НоваяКоманда<font color="red">.</font>Использование <font color="red">=</font> <font color="black">&quot;ВызовКлиентскогоМетода&quot;</font><font color="red">;</font><br/>	НоваяКоманда<font color="red">.</font>ПоказыватьОповещение <font color="red">=</font> <font color="red">Истина;</font><br/>	НоваяКоманда<font color="red">.</font>Модификатор <font color="red">=</font> <font color="black">&quot;ПечатьMXL&quot;</font><font color="red">;</font><br/><br/>	ПараметрыРегистрации<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Команды&quot;</font><font color="red">,</font> ТаблицаКоманд<font color="red">)</font><font color="red">;</font><br/><br/>	<font color="red">Возврат </font>ПараметрыРегистрации<font color="red">;</font><br/>	<br/><font color="red">КонецФункции </font></font></pre><br/><br/><h3>Форма тестов</h3><br/>Так как в свойствах команды было указано &quot;ВызовКлиентскогоМетода&quot;, то экспортная функция Печать(), должна быть расположена в модуле основной формы обработки (в данном случае ФормаТестов), сама форма открыта не будет. Но для отладки, печатная форма будет запускаться через главное меню <b>Файл-&gt;Открыть</b>. Поэтому предусмотрим на форме тестов команду для вызова экспортной функции Печать().<br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Форма тестов печатной формы" title="Форма тестов печатной формы" src="../image/206/print&#32;form&#32;settings&#32;2.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/206/print form settings 2.png" />
+						</span><br/><br/><pre><font color="blue"><font color="green">//Для тестирования<br/></font><font color="brown">&amp;НаКлиенте</font><br/><font color="red">Процедура</font> КомандаПечать<font color="red">(</font>Команда<font color="red">)</font><br/>	<br/>	<font color="red">Если</font> <font color="red">НЕ</font> ЗначениеЗаполнено<font color="red">(</font>Документ<font color="red">)</font> <font color="red">Тогда</font><br/>		Сообщить<font color="red">(</font><font color="black">&quot;Не указан документ&quot;</font><font color="red">)</font><font color="red">;</font><br/>		<font color="red">Возврат;</font><br/>	<font color="red">КонецЕсли;</font><br/>	<br/>	МассивОбъектов <font color="red">=</font> <font color="red">Новый</font> Массив<font color="red">;</font><br/>	МассивОбъектов<font color="red">.</font>Добавить<font color="red">(</font>Документ<font color="red">)</font><font color="red">;</font><br/>	<br/>	ИдентификаторКоманды <font color="red">=</font> <font color="black">&quot;Товарная накладная&quot;</font><font color="red">;</font>	<br/>		<br/>	Печать<font color="red">(</font>ИдентификаторКоманды<font color="red">,</font> МассивОбъектов<font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры<br/></font><br/><br/><font color="green">//Для вызова механизмом печатных форм<br/></font><font color="brown">&amp;НаКлиенте</font><br/><font color="red">Процедура</font> Печать<font color="red">(</font>ИдентификаторКоманды<font color="red">,</font> МассивОбъектов<font color="red">)</font> <font color="red">Экспорт</font><br/>		<br/>	СтрПраметры <font color="red">=</font> <font color="red">Новый</font> Структура<font color="red">;</font><br/>	СтрПраметры<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;ИдентификаторКоманды&quot;</font><font color="red">,</font> ИдентификаторКоманды<font color="red">)</font><font color="red">;</font><br/>	СтрПраметры<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;МассивОбъектов&quot;</font><font color="red">,</font> МассивОбъектов<font color="red">)</font><font color="red">;</font><br/>	<br/>	ОткрытьФорму<font color="red">(</font><font color="black">&quot;ВнешняяОбработка.ВнешняяОбработка1.Форма.ФормаНастроек&quot;</font><font color="red">,</font> СтрПраметры<font color="red">)</font><font color="red">;</font><br/>		<br/><font color="red">КонецПроцедуры </font></font></pre><br/><br/><h3>Форма настроек</h3><br/>На форме настроек расположим несколько полей ввода. Зададим обработчик действия для кнопки &quot;ПродолжитьПечать&quot;.<br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Форма настроек печатной формы" title="Форма настроек печатной формы" src="../image/206/print&#32;form&#32;settings&#32;3.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/206/print form settings 3.png" />
+						</span><br/><br/>Еще нужно добавить 2 параметра формы: ИдентификаторКоманды, МассивОбъектов, которые передаются при открытии формы. Эти параметры должны быть с признаком <b>Ключевой параметр</b>. <br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Параметры формы настроек печатной формы" title="Параметры формы настроек печатной формы" src="../image/206/print&#32;form&#32;settings&#32;4.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/206/print form settings 4.png" />
+						</span><br/><br/><pre><font color="blue"><font color="brown">&amp;НаКлиенте</font><br/><font color="red">Процедура</font> ПродолжитьПечать<font color="red">(</font>Команда<font color="red">)</font><br/>	<br/>	СтрПечать <font color="red">=</font> ПродолжитьПечатьНаСервере<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	УправлениеПечатьюКлиент<font color="red">.</font>ПечатьДокументов<font color="red">(</font>СтрПечать<font color="red">.</font>КоллекцияПечатныхФорм<font color="red">,</font> СтрПечать<font color="red">.</font>ОбъектыПечати<font color="red">)</font><font color="red">;</font><br/>	Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>		<br/><font color="red">КонецПроцедуры<br/></font><font color="brown"><br/><br/>&amp;НаСервере</font><br/><font color="red">Функция</font> ПродолжитьПечатьНаСервере<font color="red">(</font><font color="red">)</font><br/>	<br/>	СтрНастройки <font color="red">=</font> <font color="red">Новый</font> Структура<font color="red">;</font><br/>	СтрНастройки<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Реквизит1&quot;</font><font color="red">,</font> Реквизит1<font color="red">)</font><font color="red">;</font><br/>	СтрНастройки<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Реквизит2&quot;</font><font color="red">,</font> Реквизит2<font color="red">)</font><font color="red">;</font><br/>  	СтрНастройки<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;Реквизит3&quot;</font><font color="red">,</font> Реквизит3<font color="red">)</font><font color="red">;</font>	<br/>	<br/>	КоллекцияПечатныхФорм <font color="red">=</font> УправлениеПечатью<font color="red">.</font>ПодготовитьКоллекциюПечатныхФорм<font color="red">(</font>Параметры<font color="red">.</font>ИдентификаторКоманды<font color="red">)</font><font color="red">;</font><br/>	ОбъектыПечати <font color="red">=</font> <font color="red">Новый</font> СписокЗначений<font color="red">;</font><br/>	<br/>	ОбработкаОбъект <font color="red">=</font> РеквизитФормыВЗначение<font color="red">(</font><font color="black">&quot;Объект&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ОбработкаОбъект<font color="red">.</font>гДопДанные <font color="red">=</font> СтрНастройки<font color="red">;</font><br/>	ОбработкаОбъект<font color="red">.</font>Печать<font color="red">(</font>Параметры<font color="red">.</font>МассивОбъектов<font color="red">,</font> КоллекцияПечатныхФорм<font color="red">,</font> ОбъектыПечати<font color="red">)</font><font color="red">;</font><br/>	<br/>	СтрПечать <font color="red">=</font> <font color="red">Новый</font> Структура<font color="red">;</font>	<br/>	СтрПечать<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;КоллекцияПечатныхФорм&quot;</font><font color="red">,</font> ОбщегоНазначения<font color="red">.</font>ТаблицаЗначенийВМассив<font color="red">(</font>КоллекцияПечатныхФорм<font color="red">)</font><font color="red">)</font><font color="red">;</font><br/>	СтрПечать<font color="red">.</font>Вставить<font color="red">(</font><font color="black">&quot;ОбъектыПечати&quot;</font><font color="red">,</font> ОбъектыПечати<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="red">Возврат </font>СтрПечать<font color="red">;</font><br/>	<br/><font color="red">КонецФункции </font></font></pre><br/><br/>В модуле объекта обработки, разместим экспортную функцию печать, которая занимается формированием табличного документа.<br/><br/><pre><font color="blue"><font color="red">Перем</font> гДопДанные Экспорт<font color="red">;</font><br/><br/><font color="red">Процедура</font> Печать<font color="red">(</font>МассивОбъектов<font color="red">,</font> КоллекцияПечатныхФорм<font color="red">,</font> ОбъектыПечати<font color="red">)</font> <font color="red">Экспорт</font><br/><br/>	<font color="red">Если</font> УправлениеПечатью<font color="red">.</font>НужноПечататьМакет<font color="red">(</font>КоллекцияПечатныхФорм<font color="red">,</font> <font color="black">&quot;Товарная накладная&quot;</font><font color="red">)</font> <font color="red">Тогда</font>	<br/>	<br/>		ТабДокумент <font color="red">=</font> <font color="red">Новый</font> ТабличныйДокумент<font color="red">;</font>	<br/>		<br/>		<font color="red">Для</font> <font color="red">каждого</font> ДокументСсылка <font color="red">Из</font> МассивОбъектов <font color="red">Цикл</font><br/>		<br/>			<font color="green">//Начало области, для параметра ОбъектыПечати.<br/></font>			<font color="green">//ОбъектыПечати используется для связи документа с его областью печати,<br/></font>			<font color="green">//когда в табличный документ выводится 2 и более документов<br/></font>			НомерСтрокиНачало <font color="red">=</font> ТабДокумент<font color="red">.</font>ВысотаТаблицы <font color="red">+</font> 1<font color="red">;</font><br/>			<br/>			<font color="green">//Заполнение ТабДокумента<br/></font>			<font color="green">//...<br/></font>			<font color="green">//...<br/></font>			<font color="green">//...<br/></font>			<br/>			<font color="green">//Заполнение параметра ОбъектыПечати<br/></font>			УправлениеПечатью<font color="red">.</font>ЗадатьОбластьПечатиДокумента<font color="red">(</font>ТабДокумент<font color="red">,</font><br/>															НомерСтрокиНачало<font color="red">,</font><br/>															ОбъектыПечати<font color="red">,</font><br/>															ДокументСсылка<font color="red">)</font><font color="red">;</font><br/>			<br/>		<font color="red">КонецЦикла;</font><br/>		<br/>		УправлениеПечатью<font color="red">.</font>ВывестиТабличныйДокументВКоллекцию<font color="red">(</font>КоллекцияПечатныхФорм<font color="red">,</font> <br/>															<font color="black">&quot;Товарная накладная&quot;</font><font color="red">,</font><br/>															<font color="black">&quot;Товарная накладная&quot;</font><font color="red">,</font><br/>															ТабДокумент<font color="red">)</font><font color="red">;</font>	<br/>	<font color="red">КонецЕсли;</font>		<br/>														<br/><font color="red">КонецПроцедуры </font></font></pre></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (2)</b></p><table class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center" class="fixed"><tr><td width="100%" height="10px"></td></tr>
+						<tr>
+						<td valign="top" id="1">
+							<span class="commentarticle">
+							<a href="206.html#Text" onclick="addnumber('Text','1')">1. </a>
+							Владислав&nbsp;&nbsp;<small>13.09.2018 11:14</small>&nbsp;&nbsp;</span>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" height="30px" style="padding-left:30px;" class="viewcomment">{ВнешняяОбработка.ВнешняяОбработка1.Форма.ФормаНастроек.Форма<a href="206.html#17">(17)</a>}: Поле объекта не обнаружено (ИдентификаторКоманды)<br />	КоллекцияПечатныхФорм = УправлениеПечатью.ПодготовитьКоллекциюПечатныхФорм(Параметры.ИдентификаторКоманды);<br /><br />Подскажите, в чем ошибка?</td>
+					</tr>
+					<tr><td width="100%" height="25px"></td></tr><tr><td width="100%" height="10px"></td></tr>
+						<tr>
+						<td valign="top" id="2">
+							<span class="commentarticle">
+							<a href="206.html#Text" onclick="addnumber('Text','2')">2. </a>
+							Admin&nbsp;&nbsp;<small>04.10.2018 10:20</small>&nbsp;&nbsp;</span>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" height="30px" style="padding-left:30px;" class="viewcomment">Возможно в форме настроек не добавлен параметр <b>ИдентификаторКоманды</b> типа &quot;строка&quot; с признаком <b>Ключевой параметр</b>.</td>
+					</tr>
+					<tr><td width="100%" height="25px"></td></tr></table></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="https://1clenta.ru/account/restore">Восстановить пароль</a></li>
+					<li><a href="https://1clenta.ru/account/login">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/about">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/feedback">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/agreement">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/news">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

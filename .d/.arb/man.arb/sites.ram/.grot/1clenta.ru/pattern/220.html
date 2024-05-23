@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Обработка ЗагрузкаДанныхИзТабличногоДокумента.epf, из файлов с расширением (*.mxl, *.xls, *.txt, *.dbf) (обычное приложение)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="При работе с типовыми конфигурациями бывает необходимо загрузить данные из файла. В обычном приложении для решения данной задачи есть специальная обработка  lt;b gt; quot;ЗагрузкаДанныхИзТабличногоДокумента.epf quot; lt;/b gt;. Она позволяет автоматизировать процесс загрузки данных из файла."/>
+	<meta name="keywords" content="загрузка,данные,файл,mxl,xls,txt,dbf,ЗагрузкаДанныхИзТабличногоДокумента,обычное,приложение,1с"/>
+	<link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon"/>
+	<link href="../css/architecture.css%3Fdate=1478936687.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/style.css%3Fdate=1492946724.css" rel="stylesheet" type="text/css"/>
+	<script src="../js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="../index.html"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Обработка ЗагрузкаДанныхИзТабличногоДокумента.epf, из файлов с расширением (*.mxl, *.xls, *.txt, *.dbf) (обычное приложение)</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="../image/category.png"/> <a class="valign" href="../index%3FCategoryId=3.html"><font itemprop="articleSection" size="2" class="valign">О системе 1С</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="../image/clock.png"/> <font size="2" class="valign">14.05.2018 08:47</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="../image/eye.png"/> <font size="2" class="valign">8889</font></font>
+					<meta itemprop="headline" content="Обработка ЗагрузкаДанныхИзТабличногоДокумента.epf, из файлов с расширением (*.mxl, *.xls, *.txt, *.dbf) (обычное приложение)" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody">При работе с типовыми конфигурациями бывает необходимо загрузить данные из файла. В обычном приложении для решения данной задачи есть специальная обработка <b>&quot;ЗагрузкаДанныхИзТабличногоДокумента.epf&quot;</b>. Она позволяет автоматизировать процесс загрузки данных из файла. Для управляемого приложения так же существует специальная <a href="218.html">Обработка ЗагрузкаДанныхИзФайла.epf, из файлов с расширением (*.xlsx, *.xls, *.ods, *.csv, *.mxl) (управляемое приложение)</a>. <br/><br/><h3>Загрузка данных из файла Excel в справочник &quot;Причины списания ОС&quot;</h3><br/>В информационной базе &quot;Бухгалтерия предприятия 2.0&quot; есть справочник &quot;Причины списания ОС&quot;. Есть excel файл, который содержит список причин списания основных средств. Данные из excel файла необходимо загрузить в этот справочник. Обработка <b>ЗагрузкаДанныхИзТабличногоДокумента.epf</b> поставляется на дисках ИТС. Она открывается через главное меню: <b>Файл-&gt;Открыть</b>.<br/><br/>После открытия обработки, на форме доступен ряд настроек. В настройке <b>&quot;Режим загрузки&quot;</b> устанавливается тип заполняемого объекта: <i>Загрузка в справочник, Загрузка в табличную часть, Загрузка в регистр сведений</i>. В данном примере выбрана &quot;Загрузка в справочник&quot; и вид справочника &quot;Причины списания ОС&quot;.<br/><br/>Новые элементы справочника будут создаваться из таблицы на вкладке <b>&quot;Табличный документ&quot;</b>. Колонки таблицы соответствуют реквизитам указанным на вкладке <b>&quot;Настройка&quot;</b>, строки - это добавляемые элементы. Поэтому сначала необходимо заполнить таблицу данными из файла. Загружать можно файлы с расширениями: *.mxl, *.xls, *.txt, *.dbf. В этом примере данные загружаются из excel файла с расширением (*.xls). По номерам колонок, происходит сопоставление данных файла и таблицы.<br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Вкладка настройки" title="Вкладка настройки" src="../image/220/uploading&#32;data&#32;1.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/220/uploading data 1.png" />
+						</span><br/><br/>На вкладке &quot;Настройка&quot; можно задать опции загрузки данных из вкладки &quot;Табличный документ&quot;.<br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Вкладка табличный документ" title="" src="../image/220/uploading&#32;data&#32;2.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/220/uploading data 2.png" />
+						</span><br/><br/>После указания всех настроек, данные из файла загружаются в табличный документ.<br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Обработка ЗагрузкаДанныхИзТабличногоДокумента" title="Обработка ЗагрузкаДанныхИзТабличногоДокумента" src="../image/220/uploading&#32;data&#32;3.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/220/uploading data 3.png" />
+						</span><br/><br/>Данные, помещенные в таблицу, можно подредактировать. После чего, нажав на кнопку &quot;Загрузить&quot;, в справочнике &quot;Причины списания ОС&quot; будут созданы элементы.</p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="../account/restore.html">Восстановить пароль</a></li>
+					<li><a href="../account/login.html">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../about.html">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="../feedback.html">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../agreement.html">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="../news.html">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="http://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="http://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Контент */
+.content
+{
+	width:100%;
+	min-width:980px;
+	width:expression(document.body.clientWidth > 980 ? "100%" : "980px");
+	max-width:100%;
+	position:relative; 
+	min-height:100%;
+	height:auto !important;
+	height:100%;
+	margin:auto;
+	background:none no-repeat;
+}
+
+/*Средняя часть*/
+.body
+{
+	width:100%;
+	height:auto;
+	position:relative;
+	left:0px;
+	top:0px;
+	margin:0;
+	background: none no-repeat;
+}
+
+/* Футер */
+.footer
+{
+	width:100%;
+	min-width:980px;
+	width:expression(document.body.clientWidth > 980 ? "100%" : "980px");
+	max-width:100%;
+	position:relative;
+	overflow:hidden;
+	margin:-75px auto auto auto;
+	height:75px;
+}
+
+/*Пустая часть */
+.empty
+{
+	width:100%;
+	height:75px;
+	position:relative;
+	overflow:hidden;
+	left:0px;
+	top:0px;
+	background: none no-repeat;
+}

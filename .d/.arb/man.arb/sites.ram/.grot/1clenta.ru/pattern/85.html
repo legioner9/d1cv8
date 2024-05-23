@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>XDTO - выгрузка загрузка данных</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="lt;b gt;XDTO-пакет lt;/b gt; - это объект метаданных, который хранит схему данных. Аббревиатура расшифровывается как XML Data Transfer Objects. Схему данных можно описать в xml файле, а затем подгрузить в созданный XDTO-пакет. Для программной работы с пакетами-xdto предназначен объект глобального контекста ФабрикаXDTO."/>
+	<meta name="keywords" content="XDTO,ФабрикаXDTO,СхемаXML,XDTO-пакет,выгрузка,загрузка"/>
+	<link rel="icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link href="https://1clenta.ru/css/architecture.css?date=1478936687" rel="stylesheet" type="text/css"/>
+	<link href="https://1clenta.ru/css/style.css?date=1492946724" rel="stylesheet" type="text/css"/>
+	<script src="https://1clenta.ru/js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="https://1clenta.ru/"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">XDTO - выгрузка загрузка данных</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="https://1clenta.ru/image/category.png"/> <a class="valign" href="https://1clenta.ru/index?CategoryId=2"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="https://1clenta.ru/image/clock.png"/> <font size="2" class="valign">25.10.2016 10:19</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="https://1clenta.ru/image/eye.png"/> <font size="2" class="valign">33594</font></font>
+					<meta itemprop="headline" content="XDTO - выгрузка загрузка данных" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody"><b>XDTO-пакет</b> - это объект метаданных, который хранит схему данных. Аббревиатура расшифровывается как XML Data Transfer Objects. Схему данных можно описать в xml файле, а затем подгрузить в созданный XDTO-пакет. Для программной работы с пакетами-xdto предназначен объект глобального контекста ФабрикаXDTO.<br/><br/><h3>Текст схемы</h3><br/>&lt;xs:schema xmlns:tns=&quot;Выгрузка&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; targetNamespace=&quot;Выгрузка&quot; attributeFormDefault=&quot;unqualified&quot; elementFormDefault=&quot;qualified&quot;&gt;<br/>&lt;xs:complexType name=&quot;Список&quot;&gt;<br/>&lt;xs:sequence&gt;<br/>&lt;xs:element name=&quot;Номенклатура&quot; type=&quot;tns:Номенклатура&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;<br/>&lt;/xs:sequence&gt;<br/>&lt;/xs:complexType&gt;<br/>&lt;xs:complexType name=&quot;Номенклатура&quot;&gt;<br/>&lt;xs:sequence&gt;<br/>&lt;xs:element name=&quot;ГУИД&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;<br/>&lt;xs:element name=&quot;Наименование&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;<br/>&lt;xs:element name=&quot;Код&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;<br/>&lt;/xs:sequence&gt;<br/>&lt;/xs:complexType&gt;<br/>&lt;/xs:schema&gt;<br/><br/><h3>ФабрикаXDTO с использованием XDTO-пакетов</h3><br/>ФабрикаXDTO содержит xml-схемы всех XDTO-пакетов, которые есть в конфигурации, и обладает набором методов для работы с данными. Для того чтобы схема стала доступна в объекте ФабрикаXDTO, её необходимо добавить в дереве метаданных в ветку с названием &quot;XDTO-пакеты&quot;. Добавить можно двумя способами, либо загрузить из файла с расширением (*.xsd), либо добавить вручную узлы пакета. <br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Импорт схемы XML" title="Импорт схемы XML" src="../image/85/XDTO-package&#32;1.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/85/XDTO-package 1.png" />
+						</span><br/><br/><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+							<img alt="Редактор схемы XML" title="Редактор схемы XML" src="../image/85/XDTO-package&#32;2.png"/>
+							<meta itemprop="url" content="http://1clenta.ru/image/85/XDTO-package 2.png" />
+						</span><br/><br/><b>Выгрузка данных в XML файл</b><br/><br/>Если схема хранится в метаданных <b>Общие-&gt;XDTO-пакеты</b>, то обращение к ней возможно только на сервере.<br/><pre><font color="blue"><font color="brown">&amp;НаСервере</font><br/><font color="red">Процедура</font> ВыгрузитьДанные<font color="red">(</font><font color="red">)</font><br/><br/>	<font color="green">//Создание ОбъектаXDTO с типом Список<br/></font>	ТипЗначенияXDTO <font color="red">=</font> ФабрикаXDTO<font color="red">.</font>Тип<font color="red">(</font><font color="black">&quot;Выгрузка&quot;</font><font color="red">,</font> <font color="black">&quot;Список&quot;</font><font color="red">)</font><font color="red">;</font> <br/>	СписокXDTO <font color="red">=</font> ФабрикаXDTO<font color="red">.</font>Создать<font color="red">(</font>ТипЗначенияXDTO<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Создание ОбъектаXDTO с типом Номенклатура<br/></font>	ТипЗначенияXDTO <font color="red">=</font> ФабрикаXDTO<font color="red">.</font>Тип<font color="red">(</font><font color="black">&quot;Выгрузка&quot;</font><font color="red">,</font> <font color="black">&quot;Номенклатура&quot;</font><font color="red">)</font><font color="red">;</font> <br/>	НоменклатураXDTO <font color="red">=</font> ФабрикаXDTO<font color="red">.</font>Создать<font color="red">(</font>ТипЗначенияXDTO<font color="red">)</font><font color="red">;</font><br/>	<br/>	НоменклатураXDTO<font color="red">.</font>ГУИД <font color="red">=</font> <font color="black">&quot;00000000-0000-0000-0000-000000000000&quot;</font><font color="red">;</font><br/>	НоменклатураXDTO<font color="red">.</font>Наименование <font color="red">=</font> <font color="black">&quot;Корзинка&quot;</font><font color="red">;</font><br/>	НоменклатураXDTO<font color="red">.</font>Код <font color="red">=</font> <font color="black">&quot;00000001&quot;</font><font color="red">;</font><br/>		<br/>	СписокXDTO<font color="red">.</font>Номенклатура<font color="red">.</font>Добавить<font color="red">(</font>НоменклатураXDTO<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Запись в XML файл<br/></font>	ЗаписьXML <font color="red">=</font> <font color="red">Новый</font> ЗаписьXML<font color="red">;</font><br/>	ПараметрыЗаписиXML <font color="red">=</font> <font color="red">Новый</font> ПараметрыЗаписиXML<font color="red">(</font><font color="black">&quot;UTF-8&quot;</font><font color="red">,</font> <font color="black">&quot;1.0&quot;</font><font color="red">,</font> <font color="red">Ложь)</font><font color="red">;</font><br/>	ЗаписьXML<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C://Выгрузка.xml&quot;</font><font color="red">,</font> ПараметрыЗаписиXML<font color="red">)</font><font color="red">;</font><br/>	ЗаписьXML<font color="red">.</font>ЗаписатьОбъявлениеXML<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	ФабрикаXDTO<font color="red">.</font>ЗаписатьXML<font color="red">(</font>ЗаписьXML<font color="red">,</font> СписокXDTO<font color="red">)</font><font color="red">;</font><br/>	ЗаписьXML<font color="red">.</font>Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/><br/><font color="red">КонецПроцедуры </font></font></pre><br/><br/><b>Загрузка данных из XML файла</b><br/><br/><pre><font color="blue"><font color="red">Процедура</font> ЗагрузитьДанные<font color="red">(</font><font color="red">)</font><br/><br/>	ЧтениеXML <font color="red">=</font> <font color="red">Новый</font> ЧтениеXML<font color="red">;</font><br/>	ЧтениеXML<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C://Выгрузка.xml&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ТипЗначенияXDTO <font color="red">=</font> ФабрикаXDTO<font color="red">.</font>Тип<font color="red">(</font><font color="black">&quot;Выгрузка&quot;</font><font color="red">,</font> <font color="black">&quot;Список&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ОбъектXDTO <font color="red">=</font> ФабрикаXDTO<font color="red">.</font>ПрочитатьXML<font color="red">(</font>ЧтениеXML<font color="red">,</font> ТипЗначенияXDTO<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="red">Для</font> <font color="red">каждого</font> ЗначениеXDTO <font color="red">Из</font> ОбъектXDTO<font color="red">.</font>Номенклатура <font color="red">Цикл</font><br/>		Сообщить<font color="red">(</font>ЗначениеXDTO<font color="red">.</font>ГУИД<font color="red">)</font><font color="red">;</font><br/>		Сообщить<font color="red">(</font>ЗначениеXDTO<font color="red">.</font>Наименование<font color="red">)</font><font color="red">;</font><br/>		Сообщить<font color="red">(</font>ЗначениеXDTO<font color="red">.</font>Код<font color="red">)</font><font color="red">;</font><br/>	<font color="red">КонецЦикла;</font> <br/><br/><font color="red">КонецПроцедуры </font></font></pre><br/><br/><h3>ФабрикаXDTO с использованием схемы из файла</h3><br/>Создать объект ФабрикаXDTO на основании файла схемы. Для этого существует глобальный метод СоздатьФабрикуXDTO(&lt;Путь&gt;, &lt;Пакеты&gt;). Если работа с ФабрикойXDTO происходит во внешней обработке, то схему можно хранить в макете с типом &quot;Текстовый документ&quot;. Но для создания объекта ФабрикиXDTO все равно необходимо чтобы схема лежала во внешнем файле. Для этого можно создать временный файл и поместить в него содержимое макета.<br/><br/><b>Выгрузка данных в XML файл</b><br/><br/><pre><font color="blue"><font color="red">Процедура</font> ВыгрузитьДанные<font color="red">(</font><font color="red">)</font><br/><br/>	ФайлСхемы <font color="red">=</font> <font color="red">Новый</font> Файл<font color="red">(</font>КаталогВременныхФайлов<font color="red">(</font><font color="red">)</font> <font color="red">+</font> <font color="black">&quot;Scheme.xsd&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<font color="red">Если</font> ФайлСхемы<font color="red">.</font>Существует<font color="red">(</font><font color="red">)</font> <font color="red">Тогда</font><br/>		УдалитьФайлы<font color="red">(</font>ФайлСхемы<font color="red">.</font>ПолноеИмя<font color="red">)</font><font color="red">;</font><br/>	<font color="red">КонецЕсли;</font><br/>	<br/>	Макет <font color="red">=</font> Получитьмакет<font color="red">(</font><font color="black">&quot;ТекстовыйДокумент&quot;</font><font color="red">)</font><font color="red">;</font><br/>	Макет<font color="red">.</font>Записать<font color="red">(</font>ФайлСхемы<font color="red">.</font>ПолноеИмя<font color="red">)</font><font color="red">;</font><br/><br/>	НоваяФабрикаXDTO <font color="red">=</font> СоздатьФабрикуXDTO<font color="red">(</font>ФайлСхемы<font color="red">.</font>ПолноеИмя<font color="red">)</font><font color="red">;</font>	<br/>	<br/>	<font color="green">//Создание ОбъектаXDTO с типом Список<br/></font>	ТипЗначенияXDTO <font color="red">=</font> НоваяФабрикаXDTO<font color="red">.</font>Тип<font color="red">(</font><font color="black">&quot;Выгрузка&quot;</font><font color="red">,</font> <font color="black">&quot;Список&quot;</font><font color="red">)</font><font color="red">;</font> <br/>	СписокXDTO <font color="red">=</font> НоваяФабрикаXDTO<font color="red">.</font>Создать<font color="red">(</font>ТипЗначенияXDTO<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Создание ОбъектаXDTO с типом Номенклатура<br/></font>	ТипЗначенияXDTO <font color="red">=</font> НоваяФабрикаXDTO<font color="red">.</font>Тип<font color="red">(</font><font color="black">&quot;Выгрузка&quot;</font><font color="red">,</font> <font color="black">&quot;Номенклатура&quot;</font><font color="red">)</font><font color="red">;</font> <br/>	НоменклатураXDTO <font color="red">=</font> НоваяФабрикаXDTO<font color="red">.</font>Создать<font color="red">(</font>ТипЗначенияXDTO<font color="red">)</font><font color="red">;</font><br/>	<br/>	НоменклатураXDTO<font color="red">.</font>ГУИД <font color="red">=</font> <font color="black">&quot;00000000-0000-0000-0000-000000000000&quot;</font><font color="red">;</font><br/>	НоменклатураXDTO<font color="red">.</font>Наименование <font color="red">=</font> <font color="black">&quot;Корзинка&quot;</font><font color="red">;</font><br/>	НоменклатураXDTO<font color="red">.</font>Код <font color="red">=</font> <font color="black">&quot;00000001&quot;</font><font color="red">;</font><br/>		<br/>	СписокXDTO<font color="red">.</font>Номенклатура<font color="red">.</font>Добавить<font color="red">(</font>НоменклатураXDTO<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//Запись в XML файл<br/></font>	ЗаписьXML <font color="red">=</font> <font color="red">Новый</font> ЗаписьXML<font color="red">;</font><br/>	ПараметрыЗаписиXML <font color="red">=</font> <font color="red">Новый</font> ПараметрыЗаписиXML<font color="red">(</font><font color="black">&quot;UTF-8&quot;</font><font color="red">,</font> <font color="black">&quot;1.0&quot;</font><font color="red">,</font> <font color="red">Ложь)</font><font color="red">;</font><br/>	ЗаписьXML<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C://Выгрузка.xml&quot;</font><font color="red">,</font> ПараметрыЗаписиXML<font color="red">)</font><font color="red">;</font><br/>	ЗаписьXML<font color="red">.</font>ЗаписатьОбъявлениеXML<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	НоваяФабрикаXDTO<font color="red">.</font>ЗаписатьXML<font color="red">(</font>ЗаписьXML<font color="red">,</font> СписокXDTO<font color="red">)</font><font color="red">;</font><br/>	ЗаписьXML<font color="red">.</font>Закрыть<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/><br/><font color="red">КонецПроцедуры </font></font></pre><br/><br/><b>Загрузка данных из XML файла</b><br/><br/><pre><font color="blue"><font color="red">Процедура</font> ЗагрузитьДанные<font color="red">(</font><font color="red">)</font><br/><br/>	ФайлСхемы <font color="red">=</font> <font color="red">Новый</font> Файл<font color="red">(</font>КаталогВременныхФайлов<font color="red">(</font><font color="red">)</font> <font color="red">+</font> <font color="black">&quot;Scheme.xsd&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<font color="red">Если</font> ФайлСхемы<font color="red">.</font>Существует<font color="red">(</font><font color="red">)</font> <font color="red">Тогда</font><br/>		УдалитьФайлы<font color="red">(</font>ФайлСхемы<font color="red">.</font>ПолноеИмя<font color="red">)</font><font color="red">;</font><br/>	<font color="red">КонецЕсли;</font><br/>	<br/>	Макет <font color="red">=</font> Получитьмакет<font color="red">(</font><font color="black">&quot;ТекстовыйДокумент&quot;</font><font color="red">)</font><font color="red">;</font><br/>	Макет<font color="red">.</font>Записать<font color="red">(</font>ФайлСхемы<font color="red">.</font>ПолноеИмя<font color="red">)</font><font color="red">;</font><br/>	<br/>	НоваяФабрикаXDTO <font color="red">=</font> СоздатьФабрикуXDTO<font color="red">(</font>ФайлСхемы<font color="red">.</font>ПолноеИмя<font color="red">)</font><font color="red">;</font> <br/>	<br/>	ЧтениеXML <font color="red">=</font> <font color="red">Новый</font> ЧтениеXML<font color="red">;</font><br/>	ЧтениеXML<font color="red">.</font>ОткрытьФайл<font color="red">(</font><font color="black">&quot;C://Выгрузка.xml&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ТипЗначенияXDTO <font color="red">=</font> НоваяФабрикаXDTO<font color="red">.</font>Тип<font color="red">(</font><font color="black">&quot;Выгрузка&quot;</font><font color="red">,</font> <font color="black">&quot;Список&quot;</font><font color="red">)</font><font color="red">;</font><br/>	ОбъектXDTO <font color="red">=</font> НоваяФабрикаXDTO<font color="red">.</font>ПрочитатьXML<font color="red">(</font>ЧтениеXML<font color="red">,</font> ТипЗначенияXDTO<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="red">Для</font> <font color="red">каждого</font> ЗначениеXDTO <font color="red">Из</font> ОбъектXDTO<font color="red">.</font>Номенклатура <font color="red">Цикл</font><br/>		Сообщить<font color="red">(</font>ЗначениеXDTO<font color="red">.</font>ГУИД<font color="red">)</font><font color="red">;</font><br/>		Сообщить<font color="red">(</font>ЗначениеXDTO<font color="red">.</font>Наименование<font color="red">)</font><font color="red">;</font><br/>		Сообщить<font color="red">(</font>ЗначениеXDTO<font color="red">.</font>Код<font color="red">)</font><font color="red">;</font><br/>	<font color="red">КонецЦикла;</font> <br/><br/><font color="red">КонецПроцедуры </font></font></pre></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="https://1clenta.ru/account/restore">Восстановить пароль</a></li>
+					<li><a href="https://1clenta.ru/account/login">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/about">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/feedback">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/agreement">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/news">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

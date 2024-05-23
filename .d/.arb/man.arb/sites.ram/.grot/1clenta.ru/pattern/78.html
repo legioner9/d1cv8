@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>CDO - отправка почты  в 1С</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="lt;b gt;CDO (Collaboration Data Objects) lt;/b gt; - это набор библиотек. Данный набор содержит различные библиотеки в том числе и для отправки почты. В 1С COM-объект  quot;CDO.Message quot; позволяет отправлять почту. В системе 1С существуют разные способы для отправки электронной почты."/>
+	<meta name="keywords" content="cdo,отправить,письмо,почту,CDO.Message,1с"/>
+	<link rel="icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link href="https://1clenta.ru/css/architecture.css?date=1478936687" rel="stylesheet" type="text/css"/>
+	<link href="https://1clenta.ru/css/style.css?date=1492946724" rel="stylesheet" type="text/css"/>
+	<script src="https://1clenta.ru/js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="https://1clenta.ru/"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">CDO - отправка почты  в 1С</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="https://1clenta.ru/image/category.png"/> <a class="valign" href="https://1clenta.ru/index?CategoryId=2"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="https://1clenta.ru/image/clock.png"/> <font size="2" class="valign">02.09.2016 09:41</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="https://1clenta.ru/image/eye.png"/> <font size="2" class="valign">10680</font></font>
+					<meta itemprop="headline" content="CDO - отправка почты  в 1С" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody"><b>CDO (Collaboration Data Objects)</b> - это набор библиотек. Данный набор содержит различные библиотеки в том числе и для отправки почты. В 1С COM-объект &quot;CDO.Message&quot; позволяет отправлять почту.<br/><br/>В системе 1С существуют разные способы для отправки электронной почты. Во востроенном языке программирования 1С, существуют специальные встроенные объекты для работы с электронной почтой. Благодаря объектам (ИнтернетПочтовыйПрофиль, ИнтернетПочтовоеСообщение, ИнтернетПочта) возможно получение и отправление почтовых сообщений. Для отправки письма с использованием &quot;CDO.Message&quot; потребуется заполнить <a href="http://1clenta.ru/pattern/17">настройки сервера</a>.<br/><br/><h3>Отправить письмо</h3><br/><pre><font color="blue"><font color="red">Функция</font> ОтправитьПисьмо<font color="red">(</font><font color="red">)</font><br/>	<br/>	ИмяФайла <font color="red">=</font> <font color="black">&quot;C:Test.xml&quot;</font><font color="red">;</font>	<br/>	Сервер <font color="red">=</font> <font color="black">&quot;smtp.mail.ru&quot;</font><font color="red">;</font><br/>	Порт <font color="red">=</font> <font color="black">&quot;465&quot;</font><font color="red">;</font><br/>	Получатель <font color="red">=</font> <font color="black">&quot;@&quot;</font><font color="red">;</font><br/>	Отправитель <font color="red">=</font> <font color="black">&quot;@&quot;</font><font color="red">;</font><br/>	Пароль <font color="red">=</font> <font color="black">&quot;&quot;</font><font color="red">;</font>	<br/>		<br/>	<font color="red">Попытка</font><br/>		CDO <font color="red">=</font> <font color="red">Новый</font> COMОбъект<font color="red">(</font><font color="black">&quot;CDO.Message&quot;</font><font color="red">)</font><font color="red">;</font>  <br/>	<font color="red">Исключение</font><br/>		Сообщить<font color="red">(</font><font color="black">&quot;Ошибка: объект CDO.Message не создан&quot;</font><font color="red">)</font><font color="red">;</font><br/>		<font color="red">Возврат </font><font color="red">Ложь;</font><br/>	<font color="red">КонецПопытки;</font><br/>		<br/>	CDO<font color="red">.</font>From <font color="red">=</font> Отправитель<font color="red">;</font><br/>	CDO<font color="red">.</font>To <font color="red">=</font> Получатель<font color="red">;</font><br/>	CDO<font color="red">.</font>Subject <font color="red">=</font> <font color="black">&quot;ТемаПисьма&quot;</font><font color="red">;</font><br/>	CDO<font color="red">.</font>textbody <font color="red">=</font> <font color="black">&quot;Текстовое письмо&quot;</font><font color="red">;</font><br/>	CDO<font color="red">.</font>BodyPart<font color="red">.</font>Charset <font color="red">=</font> <font color="black">&quot;windows-1251&quot;</font><font color="red">;</font><br/>	CDO<font color="red">.</font>HTMLBody <font color="red">=</font> <font color="black">&quot;HTML-письмо&quot;</font><font color="red">;</font> <br/>	CDO<font color="red">.</font>HTMLBodyPart<font color="red">.</font>Charset <font color="red">=</font> <font color="black">&quot;windows-1251&quot;</font><font color="red">;</font><br/>	CDO<font color="red">.</font>AddAttachment<font color="red">(</font>ИмяФайла<font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="green">//По умолчанию 1-использовать каталог Pickup<br/></font>	Item <font color="red">=</font> <font color="black">&quot;http://schemas.microsoft.com/cdo/configuration/sendusing&quot;</font><font color="red">;</font><br/>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Item<font color="red">(</font>Item<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> 2<font color="red">;</font><br/>	<br/>	<font color="green">//Адрес SMTP сервера<br/></font>	Item <font color="red">=</font> <font color="black">&quot;http://schemas.microsoft.com/cdo/configuration/smtpserver&quot;</font><font color="red">;</font><br/>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Item<font color="red">(</font>Item<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> Сервер<font color="red">;</font><br/>	<br/>	<font color="green">//0-без утентификации<br/></font>	<font color="green">//1-базовая аутентификация<br/></font>	<font color="green">//2-аутентификация NTLM 	<br/></font>	Item <font color="red">=</font> <font color="black">&quot;http://schemas.microsoft.com/cdo/configuration/smtpauthenticate&quot;</font><font color="red">;</font><br/>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Item<font color="red">(</font>Item<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> 1<font color="red">;</font><br/>	<br/>	<font color="green">//Использовать SSL<br/></font>	Item <font color="red">=</font> <font color="black">&quot;http://schemas.microsoft.com/cdo/configuration/smtpusessl&quot;</font><font color="red">;</font>	<br/>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Item<font color="red">(</font>Item<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> 1<font color="red">;</font><br/>	<br/>	<font color="green">//Имя пользователя SMTP сервера<br/></font>	Item <font color="red">=</font> <font color="black">&quot;http://schemas.microsoft.com/cdo/configuration/sendusername&quot;</font><font color="red">;</font>	<br/>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Item<font color="red">(</font>Item<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> Отправитель<font color="red">;</font><br/>	<br/>	<font color="green">//Пароль пользователя SMTP сервера<br/></font>	Item <font color="red">=</font> <font color="black">&quot;http://schemas.microsoft.com/cdo/configuration/sendpassword&quot;</font><font color="red">;</font>	<br/>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Item<font color="red">(</font>Item<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> Пароль<font color="red">;</font><br/>	<br/>	<font color="green">//Порт сервера<br/></font>	Item <font color="red">=</font> <font color="black">&quot;http://schemas.microsoft.com/cdo/configuration/smtpserverport&quot;</font><font color="red">;</font>	<br/>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Item<font color="red">(</font>Item<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> Порт<font color="red">;</font><br/>	<br/>	<font color="green">//Таймаут<br/></font>	Item <font color="red">=</font> <font color="black">&quot;http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout&quot;</font><font color="red">;</font><br/>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Item<font color="red">(</font>Item<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> 60<font color="red">;</font>	<br/>	<br/>	<font color="green">//Обновление настроек	<br/></font>	CDO<font color="red">.</font>Configuration<font color="red">.</font>Fields<font color="red">.</font>Update<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	<font color="red">Попытка</font><br/> 		CDO<font color="red">.</font>Send<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<font color="red">Исключение</font><br/>		Сообщить<font color="red">(</font>ОписаниеОшибки<font color="red">(</font><font color="red">)</font><font color="red">)</font><font color="red">;</font><br/>	<font color="red">КонецПопытки;</font><br/>		<br/><font color="red">КонецФункции </font></font></pre><br/><br/><b>Похожие статьи:</b><br/><a href="http://1clenta.ru/pattern/16">1С почта (отправить и получить письма)</a></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="https://1clenta.ru/account/restore">Восстановить пароль</a></li>
+					<li><a href="https://1clenta.ru/account/login">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/about">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/feedback">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/agreement">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/news">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

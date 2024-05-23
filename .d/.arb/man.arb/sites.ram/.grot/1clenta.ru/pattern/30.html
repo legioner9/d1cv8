@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Форматирование даты, числа, булевого значения на языке программирования 1С</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="Для форматирования даты, числа, булевого значения во встроенном языке 1С есть функция  lt;b gt;Формат() lt;/b gt;. Функция форматирует в соответствии с параметрами форматной строки.   lt;h3 gt;Параметры функции Формат() lt;/h3 gt;  lt;1ccode gt;//ДАТА //Дата цифрами Дата = Формат( #039;20010401 #039;,  quot;ДЛФ=Д quot;); //Дата =  quot;01."/>
+	<meta name="keywords" content="формат,функция,дата,число,булево,1с"/>
+	<link rel="icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link href="https://1clenta.ru/css/architecture.css?date=1478936687" rel="stylesheet" type="text/css"/>
+	<link href="https://1clenta.ru/css/style.css?date=1492946724" rel="stylesheet" type="text/css"/>
+	<script src="https://1clenta.ru/js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="https://1clenta.ru/"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Форматирование даты, числа, булевого значения на языке программирования 1С</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="https://1clenta.ru/image/category.png"/> <a class="valign" href="https://1clenta.ru/index?CategoryId=2"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="https://1clenta.ru/image/clock.png"/> <font size="2" class="valign">20.05.2016 11:52</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="https://1clenta.ru/image/eye.png"/> <font size="2" class="valign">11956</font></font>
+					<meta itemprop="headline" content="Форматирование даты, числа, булевого значения на языке программирования 1С" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody">Для форматирования даты, числа, булевого значения во встроенном языке 1С есть функция <b>Формат()</b>. Функция форматирует в соответствии с параметрами форматной строки.  <br/><br/><h3>Параметры функции Формат()</h3><br/><pre><font color="blue"><font color="green">//ДАТА<br/></font><br/><font color="green">//Дата цифрами <br/></font>Дата <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДЛФ=Д&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Дата = &quot;01.04.2001&quot;<br/></font><br/><font color="green">//Длинная дата (месяц прописью) <br/></font>Дата <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДЛФ=ДД&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Дата = &quot;1 апреля 2001 г.&quot;<br/></font><br/><font color="green">//Полное время<br/></font>Дата <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДЛФ=В&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Дата = &quot;14:06:06&quot;<br/></font><br/><font color="green">//Дата время<br/></font>Дата <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДЛФ=ДВ&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Дата = &quot;01.04.2001 0:00:00&quot;<br/></font><br/><font color="green">//Строка, представляющая пустую дату <br/></font>Дата <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;00010101000000&#039;</font><font color="red">,</font> <font color="black">&quot;ДП=&quot;</font><font color="black">&quot;пустая дата&quot;</font><font color="black">&quot;&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Дата = &quot;пустая дата&quot;	<br/></font><br/><br/><br/><font color="green">//ДЕНЬ<br/></font><br/><font color="green">//День месяца (цифрами) без лидирующего нуля <br/></font>День <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=д&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//День = &quot;1&quot;<br/></font><br/><font color="green">//День месяца (цифрами) с лидирующим нулем	<br/></font>День <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=дд&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//День = &quot;01&quot;<br/></font><br/><font color="green">//Сокращённое название дня недели  <br/></font>День <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=ддд&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//День = &quot;Вс&quot;<br/></font><br/><font color="green">//Полное название дня недели <br/></font>День <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=дддд&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//День = &quot;воскресение&quot;<br/></font><br/><br/><br/><font color="green">//МЕСЯЦ<br/></font><br/><font color="green">//Номер месяца без лидирующего нуля <br/></font>Месяц <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=М&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Месяц = &quot;5&quot;<br/></font><br/><font color="green">//Номер месяца с лидирующим нулем <br/></font>Месяц <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=MM&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Месяц = &quot;05&quot;<br/></font><br/><font color="green">//Сокращённое название месяца <br/></font>Месяц <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=MMM&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Месяц = &quot;апр.&quot;<br/></font><br/><font color="green">//Полное название месяца <br/></font>Месяц <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=MMMM&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Месяц = &quot;Апрель&quot;<br/></font><br/><br/><br/><font color="green">//ГОД<br/></font><br/><font color="green">//Номер квартала в году<br/></font>Квартал <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=к&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Квартал = &quot;2&quot;<br/></font><br/><font color="green">//Номер года без века и лидирующего нуля<br/></font>Год <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=г&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Год = &quot;1&quot;<br/></font><br/><font color="green">//Номер года без века с лидирующим нулем <br/></font>Год <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=гг&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Год = &quot;01&quot;<br/></font><br/><font color="green">//Номер года с веком <br/></font>Год <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=гггг&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Год = &quot;2001&quot;<br/></font><br/><br/><br/><font color="green">//ЧАС<br/></font><br/><font color="green">//Час в 12 часовом варианте без лидирующих нулей<br/></font>Час <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=ч&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Час = &quot;2&quot;<br/></font><br/><font color="green">//Час в 12 часовом варианте с лидирующим нулем<br/></font>Час <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=чч&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Час = &quot;02&quot;<br/></font><br/><font color="green">//Час в 24 часовом варианте без лидирующих нулей<br/></font>Час <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=Ч&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Час = &quot;14&quot;<br/></font><br/><font color="green">//Час в 24 часовом варианте с лидирующим нулем<br/></font>Час <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=ЧЧ&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Час = &quot;14&quot;<br/></font><br/><br/><br/><font color="green">//МИНУТА<br/></font><br/><font color="green">//Минута без лидирующего нуля<br/></font>Минута <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=м&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Минута = &quot;6&quot;<br/></font><br/><font color="green">//Минута с лидирующим нулем<br/></font>Минута <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=мм&quot;</font><font color="red">)</font><font color="red">;</font><br/><br/><br/><br/><font color="green">//СЕКУНДА<br/></font><br/><font color="green">//Секунда без лидирующего нуля<br/></font>Секунда <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=с&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Секунда = &quot;6&quot;<br/></font><br/><font color="green">//Секунда с лидирующим нулем<br/></font>Секунда <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401140606&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=сс&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Секунда = &quot;06&quot;<br/></font><br/><font color="green">//Первая или вторая половина дня AM/PM <br/></font>ПоловинаДня <font color="red">=</font> Формат<font color="red">(</font><font color="black">&#039;20010401&#039;</font><font color="red">,</font> <font color="black">&quot;ДФ=вв&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//ПоловинаДня = &quot;AM&quot;<br/></font><br/><br/><br/><font color="green">//ЧИСЛО<br/></font><br/><font color="green">//Ограничение на общее число разрядов<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font>2<font color="red">.</font>12<font color="red">,</font> <font color="black">&quot;ЧЦ=1&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;2&quot;<br/></font><br/><font color="green">//Ограничение на число разрядов в дробной части<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font>2<font color="red">.</font>12<font color="red">,</font> <font color="black">&quot;ЧДЦ=1&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;2,1&quot;<br/></font><br/><font color="green">//Сдвиг разрядов: положительный - деление, отрицательный - умножение<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font>2<font color="red">,</font> <font color="black">&quot;ЧС=10&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;0,0000000002&quot;<br/></font><br/><font color="green">//Символ-разделитель целой и дробной части<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font>2<font color="red">.</font>12<font color="red">,</font> <font color="black">&quot;ЧРД=*&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;2*12&quot;<br/></font><br/><font color="green">//Символ-разделитель групп целой части числа<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font>2000000<font color="red">,</font> <font color="black">&quot;ЧРГ=*&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;2*000*000&quot;<br/></font><br/><font color="green">//Представление ноля <br/></font>Число <font color="red">=</font> Формат<font color="red">(</font>0<font color="red">,</font> <font color="black">&quot;ЧН=&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;0&quot;<br/></font><br/><font color="green">//Нужно ли выводить лидирующие нули<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font>25<font color="red">,</font> <font color="black">&quot;ЧВН=;ЧЦ=3&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;025&quot;<br/></font><br/><font color="green">//Порядок группировки разрядов числа<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font>200000000<font color="red">,</font> <font color="black">&quot;ЧГ=2,3&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;2 000 000 00&quot;<br/></font><br/><br/><br/><font color="green">//ОТРИЦАТЕЛЬНОЕ ЧИСЛО<br/></font><br/><font color="green">//Представление отрицательных чисел <br/></font>Число <font color="red">=</font> Формат<font color="red">(</font><font color="red">-</font>1<font color="red">,</font> <font color="black">&quot;ЧО=0&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;(1)&quot;<br/></font><br/><font color="green">//Представление отрицательных чисел <br/></font>Число <font color="red">=</font> Формат<font color="red">(</font><font color="red">-</font>1<font color="red">,</font> <font color="black">&quot;ЧО=1&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;-1&quot;<br/></font><br/><font color="green">//Представление отрицательных чисел <br/></font>Число <font color="red">=</font> Формат<font color="red">(</font><font color="red">-</font>1<font color="red">,</font> <font color="black">&quot;ЧО=2&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;- 1&quot;<br/></font><br/><font color="green">//Представление отрицательных чисел<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font><font color="red">-</font>1<font color="red">,</font> <font color="black">&quot;ЧО=3&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;1-&quot;<br/></font><br/><font color="green">//Представление отрицательных чисел<br/></font>Число <font color="red">=</font> Формат<font color="red">(</font><font color="red">-</font>1<font color="red">,</font> <font color="black">&quot;ЧО=4&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Число = &quot;1 -&quot;<br/></font><br/><br/><br/><font color="green">//БУЛЕВО<br/></font><br/><font color="green">//Строка, представляющая логическое значение Ложь <br/></font>Булево <font color="red">=</font> Формат<font color="red">(</font>Ложь<font color="red">,</font> <font color="black">&quot;БЛ=Нет&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Булево = &quot;Нет&quot;<br/></font><br/><font color="green">//Строка, представляющая логическое значение Истина	<br/></font>Булево <font color="red">=</font> Формат<font color="red">(</font>Истина<font color="red">,</font> <font color="black">&quot;БИ=Да&quot;</font><font color="red">)</font><font color="red">;</font><br/><font color="green">//Булево = &quot;Да&quot; </font></font></pre></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="https://1clenta.ru/account/restore">Восстановить пароль</a></li>
+					<li><a href="https://1clenta.ru/account/login">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/about">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/feedback">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/agreement">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/news">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

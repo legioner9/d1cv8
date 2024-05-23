@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Компонент склонения ФИО (Native API)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="В системе 1С есть возможность подключать внешние компоненты. Компонент  quot;Склонение ФИО quot; предназначен для склонения фамилии, имени и отчества на русском языке. Данный компонент может склонять только строки из трёх слов. Многие типовые конфигурации содержат данный компонент в общих макетах и функции в общих модулях для работы с ним."/>
+	<meta name="keywords" content="компонент,склонение,ФИО,1с"/>
+	<link rel="icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link href="https://1clenta.ru/css/architecture.css?date=1478936687" rel="stylesheet" type="text/css"/>
+	<link href="https://1clenta.ru/css/style.css?date=1492946724" rel="stylesheet" type="text/css"/>
+	<script src="https://1clenta.ru/js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="https://1clenta.ru/"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Компонент склонения ФИО (Native API)</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="https://1clenta.ru/image/category.png"/> <a class="valign" href="https://1clenta.ru/index?CategoryId=2"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="https://1clenta.ru/image/clock.png"/> <font size="2" class="valign">27.06.2016 16:21</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="https://1clenta.ru/image/eye.png"/> <font size="2" class="valign">10749</font></font>
+					<meta itemprop="headline" content="Компонент склонения ФИО (Native API)" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody">В системе 1С есть возможность подключать внешние компоненты. Компонент &quot;Склонение ФИО&quot; предназначен для склонения фамилии, имени и отчества на русском языке. Данный компонент может склонять только строки из трёх слов. Многие типовые конфигурации содержат данный компонент в общих макетах и функции в общих модулях для работы с ним. Если в конфигурации присутствует данный механизм, то при создании внешних отчетов или обработок можно воспользоваться готовыми функциями склонения ФИО. <br/><br/>Например в типовой конфигурации &quot;Зарплата и кадры бюджетного учреждения 1.0&quot;, компонента склонения хранится в общем макете &quot;КомпонентаСклоненияФИО&quot;. Функция Просклонять() расположена в общем модуле &quot;УниверсальныеМеханизмы&quot;.<br/><br/><h3>Скачать компоненту Склонение ФИО</h3><br/>Компонента поставляется на дисках ИТС в папке 1CITSEXEAPPEXTCOMP. Если ИТС-диска нет, то свежую версию компоненты склонения ФИО можно скачать с сайта ИТС <noindex><a href="https://1clenta.ru/redirect?href=aHR0cDovL2l0cy4xYy5ydS9kYi9maWxlcy8xQ0lUUy9FWEUvQVBQRVhUQ09NUC9BUFBFWFRDT01QLnppcA==" rel="nofollow" target="_blank">скачать appextcomp.zip</a></noindex>. <br/><br/><h3>Компонента Склонение ФИО</h3><br/>Объект компоненты содержит метод Просклонять (Decline). Данная функция на вход принимает три параметра: ФИО, Падеж, Пол. Возвращает строку содержащую результат склонения ФИО.<br/><br/><b>Параметр ФИО</b><br/>Обязательный параметр, тип Строка. Содержит фамилию имя отчество в именительном падеже единственного числа. Фамилия имя отчество должны быть разделены пробелами.<br/><br/><b>Параметр Падеж</b><br/>Обязательный параметр, тип Число. Номер падежа в котором необходимо просклонять ФИО.<br/><br/><ul>
+<li>1 - Именительный</li>
+<li>2 - Родительный</li>
+<li>3 - Дательный</li>
+<li>4 - Винительный</li>
+<li>5 - Творительный</li>
+<li>6 - Предложный</li>
+</ul><br/><br/><b>Параметр Пол</b> <br/>Необязательный параметр, тип Число. Рекомендуется указывать режим авто. При неправильном указании пола результат склонения будет не верным.<br/><ul>
+<li>0 - авто</li>
+<li>1 - мужской</li>
+<li>2 - женский</li>
+</ul><br/>После скачивания, архив appextcomp.zip необходимо распаковать. В папке APPEXTCOMP будет лежать архив с компонентой NameDecl.zip.<br/><b>В макет с типом двоичные данные помещается архив NameDecl.zip</b><br/><br/><pre><font color="blue"><font color="red">Функция</font> ПросклонятьФИО<font color="red">(</font>ФИО<font color="red">,</font> Падеж<font color="red">)</font><br/>	<br/>	<font color="green">//Компонента в макете обработки	<br/></font>	Адрес <font color="red">=</font> <font color="black">&quot;Обработка.Обработка1.Макет.КомпонентаСклоненияФИО&quot;</font><font color="red">;</font> <br/>	<br/>	<font color="green">//ИЛИ<br/></font>	<br/>	<font color="green">//Компонента в общем макете	<br/></font>	Адрес <font color="red">=</font> <font color="black">&quot;ОбщийМакет.Макет&quot;</font><font color="red">;</font><br/>	<br/>	<font color="green">//ИЛИ<br/></font>	<br/>	<font color="green">//Для внешней обработки, макет обязательно должен быть помещен во временное хранилище <br/></font>	Макет <font color="red">=</font> ПолучитьМакет<font color="red">(</font><font color="black">&quot;Макет&quot;</font><font color="red">)</font><font color="red">;</font><br/>	Адрес <font color="red">=</font> ПоместитьВоВременноеХранилище<font color="red">(</font>Макет<font color="red">,</font> <font color="red">Новый</font> УникальныйИдентификатор<font color="red">)</font><font color="red">;</font><br/>		<br/>	<font color="red">Попытка</font><br/>		ПодключитьВнешнююКомпоненту<font color="red">(</font>Адрес<font color="red">,</font> <font color="black">&quot;NameDecl&quot;</font><font color="red">,</font> ТипВнешнейКомпоненты<font color="red">.</font>Native<font color="red">)</font><font color="red">;</font> <br/>		Объект <font color="red">=</font> Новый<font color="red">(</font><font color="black">&quot;AddIn.NameDecl.CNameDecl&quot;</font><font color="red">)</font><font color="red">;</font><br/>	<font color="red">Исключение</font><br/>		Сообщить<font color="red">(</font><font color="black">&quot;Не удалось подключить внешнюю компоненту: &quot;</font> <font color="red">+</font> ОписаниеОшибки<font color="red">(</font><font color="red">)</font><font color="red">)</font><font color="red">;</font> <br/>	<font color="red">КонецПопытки;</font><br/>	   <br/>	<font color="red">Возврат </font>Объект<font color="red">.</font>Просклонять<font color="red">(</font>ФИО<font color="red">,</font> Падеж<font color="red">)</font><font color="red">;</font><br/><br/><font color="red">КонецФункции </font></font></pre><br/><b>Примечание:</b><br/>Чтобы использовать данную компоненту в &quot;Обычном приложении&quot; нужно чтобы в свойстве конфигурации<br/>&quot;Режим использования синхронных вызовов расширений и внешних компонент&quot; стояло &quot;Использовать&quot;.<br/>Иначе будет появляется ошибка: <i>Использование синхронных методов на клиенте запрещено!</i></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (2)</b></p><table class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center" class="fixed"><tr><td width="100%" height="10px"></td></tr>
+						<tr>
+						<td valign="top" id="1">
+							<span class="commentarticle">
+							<a href="50.html#Text" onclick="addnumber('Text','1')">1. </a>
+							kassbar&nbsp;&nbsp;<small>05.02.2017 17:38</small>&nbsp;&nbsp;</span>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" height="30px" style="padding-left:30px;" class="viewcomment">не работает<br />{ВнешняяОбработка.Договор.Форма.Форма.Форма<a href="50.html#283">(283)</a>}: Поле объекта недоступно для записи (ФИО)<br />	Возврат Объект.Просклонять(ФИО, Падеж);</td>
+					</tr>
+					<tr><td width="100%" height="25px"></td></tr><tr><td width="100%" height="10px"></td></tr>
+						<tr>
+						<td valign="top" id="2">
+							<span class="commentarticle">
+							<a href="50.html#Text" onclick="addnumber('Text','2')">2. </a>
+							Admin&nbsp;&nbsp;<small>08.02.2017 12:25</small>&nbsp;&nbsp;</span>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" height="30px" style="padding-left:30px;" class="viewcomment">Написал в примечании почему может возникать такая ошибка.<br />В типовых конфигурациях свойство &quot;Режим использования синхронных вызовов расширений и внешних компонент&quot; по умолчанию включено.</td>
+					</tr>
+					<tr><td width="100%" height="25px"></td></tr></table></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="https://1clenta.ru/account/restore">Восстановить пароль</a></li>
+					<li><a href="https://1clenta.ru/account/login">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/about">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/feedback">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/agreement">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/news">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

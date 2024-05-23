@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Прочитать записать Excel файл через COM объект</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="Для работы с Excel файлами в системе 1C существуют определенные технологии. Организовать взаимодействие системы 1C с внешней программой MS Excel можно через COM-объект  quot;Excel.Application quot;. Также есть возможность наладить взаимодействие с Excel из 1C используя технологию ADO."/>
+	<meta name="keywords" content="Excel,COM,Excel.Application,прочитать,записать"/>
+	<link rel="icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://1clenta.ru/image/favicon.ico" type="image/x-icon"/>
+	<link href="https://1clenta.ru/css/architecture.css?date=1478936687" rel="stylesheet" type="text/css"/>
+	<link href="https://1clenta.ru/css/style.css?date=1492946724" rel="stylesheet" type="text/css"/>
+	<script src="https://1clenta.ru/js/HtmlEditor.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="body">		
+			<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFDB58">
+				<tr>
+					<td width="200px" height="50px" style="padding-left:10px;">
+						<a href="https://1clenta.ru/"><img alt="1CLenta.ru" title="1CLenta.ru" src="../image/logo.png"/></a>
+					</td>
+					<td align="center" style="padding:10px;"> 
+					</td>
+					<td width="200px">&nbsp;</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width="50px"></td>
+					<td valign="top" style="padding:10px;">
+															<table itemscope itemtype="http://schema.org/Article" class="tablefixed" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+				<tr>
+					<td width="100%" class="viewarticle">
+					<h1 itemprop="name">Прочитать записать Excel файл через COM объект</h1>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" height="30px" >
+					<img class="valign" src="https://1clenta.ru/image/category.png"/> <a class="valign" href="https://1clenta.ru/index?CategoryId=2"><font itemprop="articleSection" size="2" class="valign">Программирование системы</font></a>
+					&nbsp;&nbsp;&nbsp;
+					<img class="valign" src="https://1clenta.ru/image/clock.png"/> <font size="2" class="valign">21.04.2016 09:07</font>
+					&nbsp;&nbsp;&nbsp;
+					<img style="vertical-align:middle;" src="https://1clenta.ru/image/eye.png"/> <font size="2" class="valign">19111</font></font>
+					<meta itemprop="headline" content="Прочитать записать Excel файл через COM объект" />
+					<meta itemprop="datePublished" content="2024-05-22" />
+					<meta itemprop="dateModified" content="2024-05-22" />
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" class="viewarticle">
+						<p itemprop="articleBody">Для работы с Excel файлами в системе 1C существуют определенные технологии. Организовать взаимодействие системы 1C с внешней программой MS Excel можно через COM-объект &quot;Excel.Application&quot;. Также есть возможность наладить взаимодействие с Excel из 1C используя технологию ADO. <br/><br/>Данный пример демонстрирует работу с использованием &quot;Excel.Application&quot;. Для работоспособности данного примера на компьютере обязательно должно быть установлено программное обеспечение MS Excel.<br/><h3>Прочитать из существующего Excel Файла</h3><br/><pre><font color="blue"><font color="red">Процедура</font> ПрочитатьСуществующийExcelФайл<font color="red">(</font>ПутьКФайлу<font color="red">)</font><br/>	<br/>	<font color="red">Попытка</font><br/>		Excel <font color="red">=</font> <font color="red">Новый</font> COMОбъект<font color="red">(</font><font color="black">&quot;Excel.Application&quot;</font><font color="red">)</font><font color="red">;</font><br/>		Excel<font color="red">.</font>DisplayAlerts <font color="red">=</font> 0<font color="red">;</font><br/>		Excel<font color="red">.</font>Visible <font color="red">=</font> 0<font color="red">;</font><br/>	<font color="red">Исключение</font><br/>   		Сообщить<font color="red">(</font>ОписаниеОшибки<font color="red">(</font><font color="red">)</font> <font color="red">+</font> <font color="black">&quot; Программа Exсel не установлена&quot;</font><font color="red">)</font><font color="red">;</font> <br/>   		<font color="red">Возврат;</font><br/>	<font color="red">КонецПопытки;</font> <br/>				<br/>	Книга <font color="red">=</font> Excel<font color="red">.</font>Workbooks<font color="red">.</font>Open<font color="red">(</font>ПутьКФайлу<font color="red">)</font><font color="red">;</font>	<br/>	КоличествоЛистов <font color="red">=</font> Книга<font color="red">.</font>Sheets<font color="red">.</font>Count<font color="red">;</font><br/>	<br/>	<font color="green">//Перебор листов<br/></font>	<font color="red">Для</font> НомерЛиста <font color="red">=</font> 1 <font color="red">По</font> КоличествоЛистов <font color="red">Цикл</font><br/>	<br/>		Лист <font color="red">=</font> Книга<font color="red">.</font>Sheets<font color="red">(</font>НомерЛиста<font color="red">)</font><font color="red">;</font><br/>		КоличествоСтрок <font color="red">=</font> Лист<font color="red">.</font>Cells<font color="red">(</font>1<font color="red">,</font> 1<font color="red">)</font><font color="red">.</font>SpecialCells<font color="red">(</font>11<font color="red">)</font><font color="red">.</font>Row<font color="red">;</font><br/>		КоличествоКолонок <font color="red">=</font> Лист<font color="red">.</font>Cells<font color="red">(</font>1<font color="red">,</font> 1<font color="red">)</font><font color="red">.</font>SpecialCells<font color="red">(</font>11<font color="red">)</font><font color="red">.</font>Column<font color="red">;</font><br/><br/>		<font color="green">//Перебор строк<br/></font>		<font color="red">Для</font> НомерСтроки <font color="red">=</font> 1 <font color="red">По</font> КоличествоСтрок <font color="red">Цикл</font><br/>			<br/>			<font color="green">//Перебор колонок<br/></font>			<font color="red">Для</font> НомерКолонки <font color="red">=</font> 1 <font color="red">По</font> КоличествоКолонок <font color="red">Цикл</font>	<br/>				ЗначениеЯчейки <font color="red">=</font> Лист<font color="red">.</font>Cells<font color="red">(</font>НомерСтроки<font color="red">,</font> НомерКолонки<font color="red">)</font><font color="red">.</font>Value<font color="red">;</font><br/>				<font color="green">//Выполнение действий с полученным значением<br/></font>				<font color="green">//...<br/></font>				<font color="green">//...<br/></font>			<font color="red">КонецЦикла;</font><br/><br/>		<font color="red">КонецЦикла;</font><br/>		<br/>	<font color="red">КонецЦикла;</font><br/>		<br/>	Excel<font color="red">.</font>Workbooks<font color="red">.</font>Close<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	Excel<font color="red">.</font>Application<font color="red">.</font>Quit<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры </font></font></pre><br/><h3>Записать в существующий Excel Файл</h3><br/><pre><font color="blue"><font color="red">Процедура</font> ЗаписатьСуществующийExcellФайл<font color="red">(</font>ПутьКФайлу<font color="red">)</font><br/>	<br/>	<font color="red">Попытка</font><br/>		Excel <font color="red">=</font> <font color="red">Новый</font> COMОбъект<font color="red">(</font><font color="black">&quot;Excel.Application&quot;</font><font color="red">)</font><font color="red">;</font><br/>		Excel<font color="red">.</font>DisplayAlerts <font color="red">=</font> 0<font color="red">;</font><br/>		Excel<font color="red">.</font>Visible <font color="red">=</font> 0<font color="red">;</font><br/>	<font color="red">Исключение</font><br/>   		Сообщить<font color="red">(</font>ОписаниеОшибки<font color="red">(</font><font color="red">)</font> <font color="red">+</font> <font color="black">&quot; Программа Exсel не установлена&quot;</font><font color="red">)</font><font color="red">;</font> <br/>   		<font color="red">Возврат;</font><br/>	<font color="red">КонецПопытки;</font> <br/>				<br/>	Книга <font color="red">=</font> Excel<font color="red">.</font>Workbooks<font color="red">.</font>Open<font color="red">(</font>ПутьКФайлу<font color="red">)</font><font color="red">;</font>	<br/>		<br/>	Лист <font color="red">=</font> Книга<font color="red">.</font>Sheets<font color="red">(</font>1<font color="red">)</font><font color="red">;</font><br/>	<font color="green">//Установить значение в ячейку	<br/></font>	Лист<font color="red">.</font>Cells<font color="red">(</font>1<font color="red">,</font> 1<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> <font color="black">&quot;Тестовое значение&quot;</font><font color="red">;</font><br/>	Книга<font color="red">.</font>Save<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/>	Excel<font color="red">.</font>Workbooks<font color="red">.</font>Close<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	Excel<font color="red">.</font>Application<font color="red">.</font>Quit<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры </font></font></pre><br/><h3>Создать новый Excel Файл</h3><br/><pre><font color="blue"><font color="red">Процедура</font> СоздатьНовыйExcellФайл<font color="red">(</font>ПутьКФайлу<font color="red">)</font><br/>	<br/>	<font color="red">Попытка</font><br/>		Excel <font color="red">=</font> <font color="red">Новый</font> COMОбъект<font color="red">(</font><font color="black">&quot;Excel.Application&quot;</font><font color="red">)</font><font color="red">;</font><br/>		Excel<font color="red">.</font>DisplayAlerts <font color="red">=</font> 0<font color="red">;</font><br/>		Excel<font color="red">.</font>Visible <font color="red">=</font> 0<font color="red">;</font><br/>	<font color="red">Исключение</font><br/>   		Сообщить<font color="red">(</font>ОписаниеОшибки<font color="red">(</font><font color="red">)</font> <font color="red">+</font> <font color="black">&quot; Программа Exсel не установлена&quot;</font><font color="red">)</font><font color="red">;</font> <br/>   		<font color="red">Возврат;</font><br/>	<font color="red">КонецПопытки;</font> <br/>				<br/>	<font color="green">//Автоматически будут созданы три листа	<br/></font>	Книга <font color="red">=</font> Excel<font color="red">.</font>WorkBooks<font color="red">.</font>Add<font color="red">(</font><font color="red">)</font><font color="red">;</font>	<br/>	<font color="green">//Получить первый лист<br/></font>	Лист <font color="red">=</font> Книга<font color="red">.</font>Sheets<font color="red">(</font>1<font color="red">)</font><font color="red">;</font><br/>	<font color="green">//Установить значение в ячейку<br/></font>	Лист<font color="red">.</font>Cells<font color="red">(</font>1<font color="red">,</font> 1<font color="red">)</font><font color="red">.</font>Value <font color="red">=</font> <font color="black">&quot;Тестовое значение&quot;</font><font color="red">;</font><br/>	<br/>	<font color="red">Попытка</font><br/>		Книга<font color="red">.</font>SaveAs<font color="red">(</font>ПутьКФайлу<font color="red">)</font><font color="red">;</font> <br/>	<font color="red">Исключение</font><br/>		Сообщить<font color="red">(</font>ОписаниеОшибки<font color="red">(</font><font color="red">)</font> <font color="red">+</font> <font color="black">&quot; не удалось сохранить файл&quot;</font><font color="red">)</font><font color="red">;</font> <br/>	<font color="red">КонецПопытки;</font><br/>	<br/>	Excel<font color="red">.</font>Workbooks<font color="red">.</font>Close<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	Excel<font color="red">.</font>Application<font color="red">.</font>Quit<font color="red">(</font><font color="red">)</font><font color="red">;</font><br/>	<br/><font color="red">КонецПроцедуры </font></font></pre></p>
+					</td>
+				</tr>
+			</table><p><b>Комментарии (0)</b></p>																				<br/><br/>
+					</td>
+					<td width="200px" valign="top" style="padding:10px;">
+					<ul class="menu"> 
+					<!--<li><a class="menuitem" href="/account/add">Регистрация</a></li>-->
+					<li><a class="menuitem" href="https://1clenta.ru/account/restore">Восстановить пароль</a></li>
+					<li><a href="https://1clenta.ru/account/login">Вход</a>
+					</ul>					</td>
+				</tr>
+				<tr><td colspan="3" height="50px">&nbsp;</td></tr>
+			</table>
+		</div>
+		<div class="empty"></div>
+	</div>
+	<div class="footer">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFDB58" width="100%" height="75px">
+			<tr>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/about">О сайте</a></td>
+				<td width="120px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/feedback">Обратная связь</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/agreement">Правила</a></td>
+				<td width="80px" align="center" valign="middle">
+				<a class="linc" href="https://1clenta.ru/news">Новости 1С</a></td>
+				<td >&nbsp;</td>
+				<td width="500px" style="padding-left:10px;" class="linc" align="center">
+					Copyright &copy; 2024<br />
+					Цитирование материалов (тексты, изображения, программный код) допускается 
+					только с размещением активной ссылки на сайт 1CLenta.ru 
+				</td>
+				<td >&nbsp;</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t12.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet-->
+				&nbsp;
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=37413630&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/37413630/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:37413630,lang:'ru'});return false}catch(e){}" /></a>
+				<!-- /Yandex.Metrika informer -->
+
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function() {
+							try {
+								w.yaCounter37413630 = new Ya.Metrika({
+									id:37413630,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true
+								});
+							} catch(e) { }
+						});
+
+						var n = d.getElementsByTagName("script")[0],
+							s = d.createElement("script"),
+							f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="https://mc.yandex.ru/watch/37413630" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				</noindex>
+				</td>
+				<td width="100px" align="center" valign="middle">
+				<noindex>
+				<!-- Rating@Mail.ru counter -->
+				<script type="text/javascript">
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "2801451", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+				  if (d.getElementById(id)) return;
+				  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+				  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+				  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+				  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+				})(document, window, "topmailru-code");
+				</script><noscript><div style="position:absolute;left:-10000px;">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+				</div></noscript>
+				<!-- //Rating@Mail.ru counter -->
+
+				<!-- Rating@Mail.ru logo -->
+				<a href="http://top.mail.ru/jump?from=2801451">
+				<img src="https://top-fwz1.mail.ru/counter?id=2801451;t=479;l=1" 
+				style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+				<!-- //Rating@Mail.ru logo -->
+				</noindex>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

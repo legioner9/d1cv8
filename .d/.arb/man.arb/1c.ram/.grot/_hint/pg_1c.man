@@ -1,0 +1,15 @@
+Если наш продукт единственный Postgres на вашей машине и вы хотите
+сразу получить готовую к употреблению базу: 
+
+
+apt-get install postgrespro-1c-16
+
+Если у вас уже установлен другой Postgres и вы хотите чтобы он
+продолжал работать параллельно (в том числе и для апгрейда с более
+старой major-версии):
+
+
+apt-get install postgrespro-1c-16-contrib
+/opt/pgpro/1c-16/bin/pg-setup initdb
+/opt/pgpro/1c-16/bin/pg-setup service enable
+/opt/pgpro/1c-16/bin/pg-setup service start

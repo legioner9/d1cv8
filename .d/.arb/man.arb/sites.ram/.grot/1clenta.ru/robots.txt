@@ -1,0 +1,15 @@
+User-agent: Mediapartners-Google
+User-agent: *
+Disallow: /.htaccess
+Disallow: /log/trace.txt
+Disallow: /service/Captcha.php
+Disallow: /redirect
+
+User-agent: Yandex
+Disallow: /.htaccess
+Disallow: /log/trace.txt
+Disallow: /service/Captcha.php
+Disallow: /redirect
+
+Sitemap: http://1clenta.ru/sitemap.xml
+Host: 1clenta.ru
