@@ -8,4 +8,10 @@
 {13,1,1},
 {4,"_$Session$_.Start",2},
 {4,"_$InfoBase$_.ConfigUpdate",3},
-{4,"_$Session$_.Finish",4}
+{4,"_$Session$_.Finish",4},
+{4,"_$InfoBase$_.DBConfigUpdateStart",5},
+{4,"_$InfoBase$_.PredefinedDataUpdate",6},
+{5,66a3f537-f373-4dbf-932f-b48bbaa62699,"",1},
+{4,"_$InfoBase$_.DBConfigUpdate",7},
+{4,"_$Access$_.Access",8},
+{3,"1CV8C",2}
