@@ -35,4 +35,6 @@
 {5,1232d865-9048-4307-abbc-cf409339df75,"Справочник.Магазины",5},
 {4,"_$Data$_.Post",18},
 {4,"_$Data$_.Unpost",19},
-{4,"_$Transaction$_.Rollback",20}
+{4,"_$Transaction$_.Rollback",20},
+{3,"1CV8",4},
+{4,"_$InfoBase$_.DBConfigUpdateError",21}
