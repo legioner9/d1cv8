@@ -37,4 +37,5 @@
 {4,"_$Data$_.Unpost",19},
 {4,"_$Transaction$_.Rollback",20},
 {3,"1CV8",4},
-{4,"_$InfoBase$_.DBConfigUpdateError",21}
+{4,"_$InfoBase$_.DBConfigUpdateError",21},
+{4,"_$PerformError$_",22}
