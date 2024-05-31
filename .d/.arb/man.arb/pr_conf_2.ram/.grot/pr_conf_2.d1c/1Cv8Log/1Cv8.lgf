@@ -1,0 +1,21 @@
+﻿1CV8LOG(ver 2.0)
+a7bb5a3b-e914-4a36-9516-cc09dfd4cee7
+
+{1,071523a4-516f-4fce-ba4b-0d11ab7a1893,"",1},
+{2,"host-91",1},
+{3,"Designer",1},
+{4,"_$Session$_.Authentication",1},
+{13,1,1},
+{4,"_$Session$_.Start",2},
+{3,"1CV8C",2},
+{4,"_$Session$_.Finish",3},
+{3,"1CV8",3},
+{4,"_$InfoBase$_.ConfigUpdate",4},
+{4,"_$InfoBase$_.DumpStart",5},
+{4,"_$InfoBase$_.DumpFinish",6},
+{4,"_$InfoBase$_.DBConfigUpdateStart",7},
+{4,"_$InfoBase$_.PredefinedDataUpdate",8},
+{5,b9b34592-ecaa-4115-a3dc-45a9dc709444,"",1},
+{5,e8ff2620-2a06-488f-9122-ea724b29b3bc,"",2},
+{4,"_$InfoBase$_.DBConfigUpdate",9},
+{4,"_$Access$_.Access",10}
