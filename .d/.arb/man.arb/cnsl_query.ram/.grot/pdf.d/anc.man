@@ -1,0 +1,5 @@
+## [Infostart Toolkit: Инструменты разработчика 1С 8.3 на управляемых формах](https://infostart.ru/marketplace/toolkit/)
+
+## [Консоль системы компоновки данных (управляемое приложение)](https://its.1c.ru/db/metod8dev/content/3401/hdoc)
+
+## [bsl_console](https://github.com/salexdv/bsl_console/releases)
