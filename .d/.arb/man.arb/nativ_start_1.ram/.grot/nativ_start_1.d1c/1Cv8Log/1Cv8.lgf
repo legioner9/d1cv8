@@ -14,4 +14,9 @@
 {3,"1CV8C",2},
 {4,"_$Session$_.Finish",7},
 {4,"_$InfoBase$_.DumpStart",8},
-{4,"_$InfoBase$_.DumpFinish",9}
+{4,"_$InfoBase$_.DumpFinish",9},
+{4,"_$Transaction$_.Begin",10},
+{4,"_$Data$_.New",11},
+{5,ec95f9ae-1868-47ea-bb5d-634398f49148,"Документ.Документ1",1},
+{4,"_$Data$_.Post",12},
+{4,"_$Transaction$_.Commit",13}
