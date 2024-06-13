@@ -19,4 +19,5 @@
 {4,"_$Data$_.New",11},
 {5,ec95f9ae-1868-47ea-bb5d-634398f49148,"Документ.Документ1",1},
 {4,"_$Data$_.Post",12},
-{4,"_$Transaction$_.Commit",13}
+{4,"_$Transaction$_.Commit",13},
+{3,"BackgroundJob",3}
