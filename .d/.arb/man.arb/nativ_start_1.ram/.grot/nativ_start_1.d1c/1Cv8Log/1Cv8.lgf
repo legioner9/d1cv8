@@ -20,4 +20,8 @@
 {5,ec95f9ae-1868-47ea-bb5d-634398f49148,"Документ.Документ1",1},
 {4,"_$Data$_.Post",12},
 {4,"_$Transaction$_.Commit",13},
-{3,"BackgroundJob",3}
+{3,"BackgroundJob",3},
+{3,"1CV8",4},
+{4,"_$Data$_.Update",14},
+{4,"_$InfoBase$_.PredefinedDataUpdate",15},
+{5,c365b532-7e2d-42c2-ad3d-d08635a289ea,"",2}
