@@ -18,4 +18,11 @@
 {5,78f56235-b8b9-4fc0-bacd-1f3e4dbed58e,"",1},
 {5,a28fb87a-5557-4af9-99c3-27805b4f6ce5,"",2},
 {4,"_$InfoBase$_.DumpStart",9},
-{4,"_$InfoBase$_.DumpFinish",10}
+{4,"_$InfoBase$_.DumpFinish",10},
+{4,"_$Transaction$_.Begin",11},
+{4,"_$Data$_.New",12},
+{5,a28fb87a-5557-4af9-99c3-27805b4f6ce5,"Справочник.СпрМестаХранения",2},
+{4,"_$Transaction$_.Commit",13},
+{4,"_$Data$_.Update",14},
+{4,"_$Data$_.Delete",15},
+{5,78f56235-b8b9-4fc0-bacd-1f3e4dbed58e,"Справочник.СпрПродукты",1}
