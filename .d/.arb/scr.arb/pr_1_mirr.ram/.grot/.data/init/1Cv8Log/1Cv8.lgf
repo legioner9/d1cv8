@@ -34,4 +34,6 @@
 {4,"_$Data$_.Unpost",17},
 {4,"_$Transaction$_.Rollback",18},
 {5,11247b24-43ec-4864-a886-f91c55472b86,"РегистрНакопления.РегНакПродукты",6},
-{4,"_$PerformError$_",19}
+{4,"_$PerformError$_",19},
+{4,"_$InfoBase$_.RestoreStart",20},
+{4,"_$InfoBase$_.RestoreFinish",21}
