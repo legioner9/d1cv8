@@ -37,4 +37,5 @@
 {4,"_$PerformError$_",19},
 {4,"_$InfoBase$_.RestoreStart",20},
 {4,"_$InfoBase$_.RestoreFinish",21},
-{5,b31f6bdf-8c1f-4dc2-bf02-df7251036da2,"Документ.ДокПотреб",7}
+{5,b31f6bdf-8c1f-4dc2-bf02-df7251036da2,"Документ.ДокПотреб",7},
+{4,"_$InfoBase$_.DBConfigUpdateError",22}
