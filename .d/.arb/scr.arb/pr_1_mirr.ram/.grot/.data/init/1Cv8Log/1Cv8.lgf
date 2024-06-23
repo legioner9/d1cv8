@@ -38,4 +38,5 @@
 {4,"_$InfoBase$_.RestoreStart",20},
 {4,"_$InfoBase$_.RestoreFinish",21},
 {5,b31f6bdf-8c1f-4dc2-bf02-df7251036da2,"Документ.ДокПотреб",7},
-{4,"_$InfoBase$_.DBConfigUpdateError",22}
+{4,"_$InfoBase$_.DBConfigUpdateError",22},
+{5,f1670c4d-38b6-4d47-a0d1-d82effc18d1d,"РегистрНакопления.РегОборМагЗатраты",8}
