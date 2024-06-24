@@ -1,0 +1,6 @@
+## ttt query
+
+```sdbl
+// {[ttt]}
+ttt.sdbl
+```

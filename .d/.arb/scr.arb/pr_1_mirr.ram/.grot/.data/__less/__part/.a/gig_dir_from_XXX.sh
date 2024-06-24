@@ -4,7 +4,7 @@ path_file=${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_1_mirr.ram/.grot/.data/__less/__
 # path_file=${REPO_PATH}/PATH_TO_THAT_FILE_FROM_REPO
 
 path_dir=$(dirname ${path_file})
-name_dir_with_XXX="YYY_XXX"
+name_dir_with_XXX="XXX.a"
 analog="ANALOG"
 
 if ! _is_yes "cr $1 like ${analog} in ${path_dir}"; then
@@ -17,3 +17,12 @@ if [[ -z "$1" ]]; then
 fi
 
 _sd2d XXX $1 ${path_dir}/${name_dir_with_XXX}
+
+cd ${path_dir} || {
+    _st_exit "NOT_DIR : ${path_dir}"
+    return 1
+}
+
+# _f2f insert.file '{\[reciver\]}' res
+eval "_f2f $path_dir/$1.a/.sdbl/$1.sdbl '{\[$1\]}' $path_dir/$1.a/$1.man"
+

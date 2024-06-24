@@ -1,3 +1,5 @@
 ## XXX query
 
-![query](.sdbl/XXX.sdbl)
+```sdbl
+// {[XXX]}
+```
