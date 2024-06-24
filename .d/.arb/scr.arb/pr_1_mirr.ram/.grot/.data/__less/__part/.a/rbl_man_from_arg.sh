@@ -42,5 +42,11 @@ _is_yes "rebuild $path_dir/$1.a/$1.man" && {
     # _f2f insert.file '{\[reciver\]}' res
     # _f2f insert.file '{\[reciver\]}' res
 
-    eval "_f2f $path_dir/$1.a/.sdbl/$1.sdbl '{\[$1\]}' $path_dir/$1.a/$1.man"
+    eval "_f2f $path_dir/$1.a/.sdbl/$1.sdbl '{\[$1.sdbl\]}' $path_dir/$1.a/$1.man"
+    eval "_f2f $path_dir/$1.a/.bsl/$1.bsl '{\[$1.bsl\]}' $path_dir/$1.a/$1.man"
+    eval "_f2f $path_dir/$1.a/.man/$1.man '{\[$1.man\]}' $path_dir/$1.a/$1.man"
+    # eval "_f2f $path_dir/$1.a/.sdbl/$1.sdbl '{\[$1.sdbl\]}' $path_dir/$1.a/$1.man"
+
+    echo -e "${HLIGHT}--- pdf2jpg_stl0 $path_dir/$1.a/.pic/$1.pdf ---${NORMAL}" #start files
+    pdf2jpg_stl0 $path_dir/$1.a/.pic/$1.pdf
 }

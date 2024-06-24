@@ -1,8 +1,15 @@
 ## XXX query
 
-```sdbl
-// {[XXX]}
+{[XXX.man]}
+
+```bsl
+// {[XXX.bsl]}
 
 ```
 
-![XXX.pdf](.pic/XXX.pdf)
+```sdbl
+// {[XXX.sdbl]}
+
+```
+
+![XXX.jpg](.pic/XXX.jpg)

@@ -1,8 +1,17 @@
 ## ttt query
 
-```sdbl
-// {[ttt]}
+{[ttt.man]}
+
+
+```bsl
+// {[ttt.bsl]}
+
 
 ```
 
-![ttt.pdf](.pic/ttt.pdf)
+```sdbl
+// {[ttt.sdbl]}
+
+```
+
+![ttt.jpg](.pic/ttt.jpg)
