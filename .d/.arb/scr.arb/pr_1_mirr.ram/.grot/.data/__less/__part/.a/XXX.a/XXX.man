@@ -1,5 +1,0 @@
-## XXX query
-
-```sdbl
-// {[XXX]}
-```

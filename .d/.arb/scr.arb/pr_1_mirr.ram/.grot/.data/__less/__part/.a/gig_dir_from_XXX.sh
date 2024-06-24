@@ -16,13 +16,19 @@ if [[ -z "$1" ]]; then
     return 1
 fi
 
-_sd2d XXX $1 ${path_dir}/${name_dir_with_XXX}
-
-cd ${path_dir} || {
-    _st_exit "NOT_DIR : ${path_dir}"
+_sd2d XXX $1 ${path_dir}/${name_dir_with_XXX} || {
+    # hint="\$1: \$2: "
+    _st_exit "in fs= file:// , line=${LINENO}, ${FNN}() : : EXEC_FAIL : '_sd2d XXX $1 ${path_dir}/${name_dir_with_XXX}' : ${hint} : return 1"
     return 1
+
 }
 
-# _f2f insert.file '{\[reciver\]}' res
-eval "_f2f $path_dir/$1.a/.sdbl/$1.sdbl '{\[$1\]}' $path_dir/$1.a/$1.man"
+# cd ${path_dir} || {
+#     _st_exit "NOT_DIR : ${path_dir}"
+#     return 1
+# }
 
+# _f2f insert.file '{\[reciver\]}' res
+# _is_yes "rebuild $path_dir/$1.a/$1.man" && {
+#     eval "_f2f $path_dir/$1.a/.sdbl/$1.sdbl '{\[$1\]}' $path_dir/$1.a/$1.man.tml"
+# }
