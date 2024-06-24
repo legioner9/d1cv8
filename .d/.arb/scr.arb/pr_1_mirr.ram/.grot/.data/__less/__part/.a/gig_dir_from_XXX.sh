@@ -7,6 +7,24 @@ path_dir=$(dirname ${path_file})
 name_dir_with_XXX="XXX.a"
 analog="ANALOG"
 
+name_dir_curr=$(_s2se XXX $1 $name_dir_with_XXX)
+
+echo -e "${GREEN}\$name_dir_curr = $name_dir_curr${NORMAL}" #print variable
+
+path_dir_cur=${path_dir}/${name_dir_curr}
+
+echo -e "${GREEN}\$path_dir_cur = $path_dir_cur${NORMAL}" #print variable
+
+[ -d ${path_dir_cur} ] && {
+    if _is_yes "DIR_EXIST : path_dir_cur ${path_dir_cur} : DO? remove that?"; then
+        rm -r ${path_dir_cur}
+    else
+        _st_info "return 0"
+        return 0
+    fi
+}
+
+# read
 if ! _is_yes "cr $1 like ${analog} in ${path_dir}"; then
     return 0
 fi
