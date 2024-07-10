@@ -1,0 +1,28 @@
+
+CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_1_mirr.ram/.grot/.data/010_less/003_part_v2/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_1_mirr.ram/.grot/.data/010_less/003_part_v2/.md/readcntx.man
+
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_1_mirr.ram/.grot/.data/010_less/002_part_v2/.md
+
+FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
+
+DATE: 10072024165948
+
+DATX: 1720605588
+
+
+file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_1_mirr.ram/.grot/.data/010_less/003_part_v2/.md/_cntt/001.d/readme.txt.man
+
+[readme.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_1_mirr.ram/.grot/.data/010_less/003_part_v2/.md/_cntt/001.d/readme.txt.man)
+
+
+
+## 
+
+###
+###
+###
+
+
+
+
+
