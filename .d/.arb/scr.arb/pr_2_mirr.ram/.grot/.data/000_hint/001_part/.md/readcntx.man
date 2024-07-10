@@ -1,0 +1,87 @@
+
+<!--
+CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/readcntx.man
+
+PPWD: /home/st/tmp
+
+FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
+
+DATE: 11072024005617
+
+DATX: 1720634177
+-->
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/001.start.d/before2far.txt.man -->
+
+[before2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/001.start.d/before2far.txt.man)
+
+
+
+# start before2far
+
+## Общие заметки и важные замечания 
+
+### Настройка интерфейса клиентского приложения
+###
+###
+
+# end before2far
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/002.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/002.d/001.txt.man)
+
+
+
+# Настройка интерфейса клиентского приложения
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/002.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/002.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/002.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/002.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/002.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/002.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/003.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/003.d/001.txt.man)
+
+
+
+# Создание и настройка справочника
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/003.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/003.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
+
+[review_this2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/099.end.d/review_this2far.txt.man)
+
+
+
+# start review_this2far
+
+## 
+
+###
+###
+###
+
+# end review_this2far
+
+
+
