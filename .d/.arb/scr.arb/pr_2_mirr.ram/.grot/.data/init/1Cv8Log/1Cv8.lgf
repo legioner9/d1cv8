@@ -16,4 +16,6 @@
 {4,"_$InfoBase$_.PredefinedDataUpdate",8},
 {5,f0fc717d-06b8-4087-9e41-25305816f36d,"",1},
 {5,9cf27e70-7193-47d7-8282-28976b510773,"",2},
-{3,"BackgroundJob",3}
+{3,"BackgroundJob",3},
+{4,"_$InfoBase$_.DumpStart",9},
+{4,"_$InfoBase$_.DumpFinish",10}
