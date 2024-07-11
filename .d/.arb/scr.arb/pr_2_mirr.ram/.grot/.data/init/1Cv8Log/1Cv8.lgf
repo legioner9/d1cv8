@@ -18,4 +18,10 @@
 {5,9cf27e70-7193-47d7-8282-28976b510773,"",2},
 {3,"BackgroundJob",3},
 {4,"_$InfoBase$_.DumpStart",9},
-{4,"_$InfoBase$_.DumpFinish",10}
+{4,"_$InfoBase$_.DumpFinish",10},
+{4,"_$Transaction$_.Begin",11},
+{4,"_$Data$_.New",12},
+{5,9cf27e70-7193-47d7-8282-28976b510773,"Справочник.СпрМестаХранения",2},
+{4,"_$Transaction$_.Commit",13},
+{4,"_$Data$_.Update",14},
+{5,f0fc717d-06b8-4087-9e41-25305816f36d,"Справочник.СпрПродукты",1}
