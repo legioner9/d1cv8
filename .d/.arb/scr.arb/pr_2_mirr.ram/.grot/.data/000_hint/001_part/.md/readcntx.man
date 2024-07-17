@@ -10,9 +10,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 16072024202153
+DATE: 17072024100520
 
-DATX: 1721136113
+DATX: 1721185520
 -->
 
 
@@ -194,6 +194,43 @@ DATX: 1721136113
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/009.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/009.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/001.txt.man)
+
+
+
+# Создание и настройка документа
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/005.pic.jpg)
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
