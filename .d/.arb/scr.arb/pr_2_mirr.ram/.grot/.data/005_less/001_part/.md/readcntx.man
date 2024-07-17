@@ -1,0 +1,107 @@
+
+[[_TOC_]]
+
+End Contents Menu
+
+<!--
+CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/readcntx.man
+
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md
+
+FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
+
+DATE: 17072024211919
+
+DATX: 1721225959
+-->
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/001.start.d/before2far.txt.man -->
+
+[before2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/001.start.d/before2far.txt.man)
+
+
+
+# start before2far
+
+## Проведение документов 1С и движения по регистрам
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/001.txt.man)
+
+
+
+# Поработаем с регистрами 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/004.txt.man -->
+
+[004.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/004.txt.man)
+
+
+
+# Сгенерировано движение конструктором
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/005.code.bsl -->
+
+[005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/002.d/005.code.bsl)
+
+
+```bsl
+
+
+
+Процедура ОбработкаПроведения(Отказ, Режим)
+	//{{__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+	// Данный фрагмент построен конструктором.
+	// При повторном использовании конструктора, внесенные вручную изменения будут утеряны!!!
+
+	// регистр РегОстаткиПродуктов Приход
+	Движения.РегОстаткиПродуктов.Записывать = Истина;
+	Для Каждого ТекСтрокаТабчДокПокупкаПродукты Из ТабчДокПокупкаПродукты Цикл
+		Движение = Движения.РегОстаткиПродуктов.Добавить();
+		Движение.ВидДвижения = ВидДвиженияНакопления.Приход;
+		Движение.Период = Дата;
+		Движение.РесРегОстаткиПродуктовПродукт = ТекСтрокаТабчДокПокупкаПродукты.РекТабчДокПокупкаПродуктыПродукт;
+		Движение.РесРегОстаткиПродуктовКоличество = ТекСтрокаТабчДокПокупкаПродукты.РекТабчДокПокупкаПродуктыКоличество;
+	КонецЦикла;
+
+	//}}__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+КонецПроцедуры
+
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
+
+[review_this2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/005_less/001_part/.md/_cntt/099.end.d/review_this2far.txt.man)
+
+
+
+# start review_this2far
+
+
+
+
