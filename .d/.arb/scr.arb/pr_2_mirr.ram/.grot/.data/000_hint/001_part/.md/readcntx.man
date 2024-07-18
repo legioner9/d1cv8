@@ -10,9 +10,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 18072024153021
+DATE: 18072024181559
 
-DATX: 1721291421
+DATX: 1721301359
 -->
 
 
@@ -751,6 +751,7 @@ DATX: 1721291421
 
 ```bsl
 
+
 Процедура ОбработкаПроведения(Отказ, Режим)
 	//{{__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
 	// Данный фрагмент построен конструктором.
@@ -765,12 +766,13 @@ DATX: 1721291421
 		Движение.РесРегОстаткиПродуктовПродукт = ТекСтрокаТабчДокПокупкаПродукты.РекТабчДокПокупкаПродуктыПродукт;
 		Движение.РесРегОстаткиПродуктовКоличество = ТекСтрокаТабчДокПокупкаПродукты.РекТабчДокПокупкаПродуктыКоличество;
 	КонецЦикла;    
-	//}}__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ    
+	//}}__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ   
 
-    // !! Отказ в проведении по количеству записей в табличной части
+	  // !! Отказ в проведении по количеству записей в табличной части 
 	
-	Если ТабчДокПокупкаПродукты.Количество() = 0 Тогда 
-		Отказ = Истина;
+	Если ТабчДокПокупкаПродукты.Количество() = 0 Тогда          
+		Сообщить("В документе табличная часть продукты нет ни одной строки. Запрет в Процедура ОбработкаПроведения");
+		Отказ = Истина;	
 	КонецЕсли;   
 	 
 КонецПроцедуры
@@ -785,6 +787,39 @@ DATX: 1721291421
 
 
 ##### pathto.txt.f
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/001.txt.man)
+
+
+
+### Модуль документ - Проведение - группировка в запросе по продукту перед движением 
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/002.txt.man -->
+
+[002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/002.txt.man)
+
+
+
+#### Постановка задачи - устранить повторы по продукту в рег ост прод
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/rpn.d/pathto.txt.f -->
+
+[pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/rpn.d/pathto.txt.f)
+
+
+
+###### pathto.txt.f
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
