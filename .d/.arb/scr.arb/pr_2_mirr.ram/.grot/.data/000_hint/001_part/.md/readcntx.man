@@ -10,9 +10,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 18072024181559
+DATE: 18072024224611
 
-DATX: 1721301359
+DATX: 1721317571
 -->
 
 
@@ -813,6 +813,56 @@ DATX: 1721301359
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/003.pic.jpg)
 
 
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/005.code.bsl -->
+
+[005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/005.code.bsl)
+
+
+```bsl
+
+// !! Этот код ДО решения задачи
+
+Процедура ОбработкаПроведения(Отказ, Режим)
+	//{{__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+	// Данный фрагмент построен конструктором.
+	// При повторном использовании конструктора, внесенные вручную изменения будут утеряны!!!
+
+	// регистр РегОстаткиПродуктов Приход
+	Движения.РегОстаткиПродуктов.Записывать = Истина;
+	Для Каждого ТекСтрокаТабчДокПокупкаПродукты Из ТабчДокПокупкаПродукты Цикл
+		Движение = Движения.РегОстаткиПродуктов.Добавить();
+		Движение.ВидДвижения = ВидДвиженияНакопления.Приход;
+		Движение.Период = Дата;
+		Движение.РесРегОстаткиПродуктовПродукт = ТекСтрокаТабчДокПокупкаПродукты.РекТабчДокПокупкаПродуктыПродукт;
+		Движение.РесРегОстаткиПродуктовКоличество = ТекСтрокаТабчДокПокупкаПродукты.РекТабчДокПокупкаПродуктыКоличество;
+	КонецЦикла;    
+	//}}__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ    
+	
+	Если ТабчДокПокупкаПродукты.Количество() = 0 Тогда          
+		Сообщить("В документе табличная часть продукты нет ни одной строки. Запрет в Процедура ОбработкаПроведения");
+		Отказ = Истина;	
+	КонецЕсли;     
+	 
+КонецПроцедуры
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/006.txt.man -->
+
+[006.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/006.txt.man)
+
+
+
+#### https://youtu.be/rgMWJOou8ak?list=PLfnvyWr5sdi2tJO4Fb5YLMMSluMKZsq_4&t=684
+
+
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/rpn.d/pathto.txt.f -->
 
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/rpn.d/pathto.txt.f)
@@ -820,6 +870,15 @@ DATX: 1721301359
 
 
 ###### pathto.txt.f
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/013.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/013.d/001.txt.man)
+
+
+
+# Консоль запросов
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
