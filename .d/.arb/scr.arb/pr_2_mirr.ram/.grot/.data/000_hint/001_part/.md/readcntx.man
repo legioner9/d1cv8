@@ -10,9 +10,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 23072024110351
+DATE: 23072024160031
 
-DATX: 1721707431
+DATX: 1721725231
 -->
 
 
@@ -490,6 +490,20 @@ DATX: 1721707431
 ## Регистр - Настройка
 
 
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/003.d/002.d/000.lcu.f -->
+
+[000.lcu.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/003.d/002.d/000.lcu.f)
+
+
+
+RNDX: d7ebc391f0394e7585d3f065e4e4b60c
+
+MAIN: 
+
+TAGS: 
+
+
+
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/003.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/003.d/002.d/001.txt.man)
@@ -674,6 +688,17 @@ DATX: 1721707431
 
 
 ## Регистр - Регистр накопления
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/000.lcu.f -->
+
+[000.lcu.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/000.lcu.f)
+
+
+
+RNDX: fc2ff751c6f547ecaa8d483ab30d0a6e
+MAIN: 
+TAGS: 
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/001.txt.man -->
