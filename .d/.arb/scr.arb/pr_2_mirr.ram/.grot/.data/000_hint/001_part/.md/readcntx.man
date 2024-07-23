@@ -10,9 +10,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 23072024160031
+DATE: 23072024175504
 
-DATX: 1721725231
+DATX: 1721732104
 -->
 
 
@@ -709,6 +709,44 @@ TAGS:
 
 ### Регистр - Регистр накопления - Виртуальные таблицы
 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/002.txt.man -->
+
+[002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/002.txt.man)
+
+
+
+#### Пример запроса к вирт таблицы
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/003.code.sdbl -->
+
+[003.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/003.code.sdbl)
+
+
+```sdbl
+
+ВЫБРАТЬ
+	НазвРегНакопленияОбороты.ИзмНазвРегНакопления КАК ИзмНазвРегНакопления,
+	НазвРегНакопленияОбороты.РесНазвРегНакопления КАК РесНазвРегНакопления
+ИЗ
+	// РегистрНакопления.НазвРегНакопления -> ВиртТаб {Обороты}
+	РегистрНакопления.НазвРегНакопления.Обороты КАК НазвРегНакопленияОбороты
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/004.txt.man -->
+
+[004.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/004.txt.man)
+
+
+
+#### Состав вирт таблиц рег накопления 
+- в режиме Обороты
+    - Обороты
+    - Остатки
+    - ОстаткиИОбороты
+- в режиме Остатки
+    - Остатки
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/010.d/004.d/002.d/rpn.d/pathto.txt.f -->
 
@@ -1462,6 +1500,15 @@ TAGS:
 ## Примеры запросов - для нативных запросов (вручную - без конструктора)
 
 - [запрос с группировкой и ссылкой](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/033.code.bsl )
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/098.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/098.d/001.txt.man)
+
+
+
+# Unsort
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
