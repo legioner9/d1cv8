@@ -1,6 +1,9 @@
 
 [[__TOC_]]
 
+<a name="top"></a>
+<a class="top-link hide" href="#top">↑</a>
+
 <!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
 
 - [start before2far](#start-before2far)
@@ -62,6 +65,8 @@
 	- [Отчет - Примеры](#отчет---примеры)
 		- [Отчет - Примеры - Пример 1](#отчет---примеры---пример-1)
 			- [Отчет - Примеры - Пример 1 - Запрос из вирт таб](#отчет---примеры---пример-1---запрос-из-вирт-таб)
+- [Запрос](#запрос)
+	- [Запрос - Параметр запроса](#запрос---параметр-запроса)
 - [Unsort](#unsort)
 - [start review\_this2far](#start-review_this2far)
 
@@ -76,9 +81,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 24072024162436
+DATE: 24072024172307
 
-DATX: 1721813076
+DATX: 1721816587
 -->
 
 
@@ -1622,7 +1627,7 @@ TAGS:
 ### Отчет - Примеры - Пример 1
 
 - сделаем прямой запрос (предпр прод ост) из вирт таб регистра
-- составим отчет на предыдущем запросе
+- составим отчет в СКД на предыдущем запросе
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/001.txt.man -->
 
@@ -1640,19 +1645,78 @@ TAGS:
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/002.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/003.code.bsl -->
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/003.code.sdbl -->
 
-[003.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/003.code.bsl)
+[003.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/003.code.sdbl)
 
 
-```bsl
+```sdbl
 
 ВЫБРАТЬ
 	РегОстаткиПродуктовОстатки.ИзмРегОстаткиПродуктовПродукт КАК РекЗапросПродукт,
 	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовКоличествоОстаток КАК РекЗапросКоличествоОстаток,
 	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовСуммаОстаток КАК РекЗапросСуммаОстаток
 ИЗ
-	РегистрНакопления.РегОстаткиПродуктов.Остатки КАК РегОстаткиПродуктовОстатки
+	РегистрНакопления.РегОстаткиПродуктов.Остатки(, ) КАК РегОстаткиПродуктовОстатки
+
+// РегистрНакопления.РегОстаткиПродуктов.Остатки(, ) - параметр запроса
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/005.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/006.pic.jpg -->
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/006.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/017.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/017.d/001.txt.man)
+
+
+
+# Запрос
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/017.d/002.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/017.d/002.d/001.txt.man)
+
+
+
+## Запрос - Параметр запроса
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/017.d/002.d/002.code.sdbl -->
+
+[002.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/017.d/002.d/002.code.sdbl)
+
+
+```sdbl
+
+ВЫБРАТЬ
+	РегОстаткиПродуктовОстатки.ИзмРегОстаткиПродуктовПродукт КАК РекЗапросПродукт,
+	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовКоличествоОстаток КАК РекЗапросКоличествоОстаток,
+	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовСуммаОстаток КАК РекЗапросСуммаОстаток
+ИЗ
+	РегистрНакопления.РегОстаткиПродуктов.Остатки(, ) КАК РегОстаткиПродуктовОстатки
+
+// РегистрНакопления.РегОстаткиПродуктов.Остатки(, ) - параметр запроса
 
 ```
 
@@ -1676,4 +1740,6 @@ TAGS:
 
 
 
+<a href="#top" style="color:steelblue;" >Back to top</a> 
 
+<!-- <a class="top-link hide" href="#top">↑</a> -->
