@@ -3,7 +3,7 @@
 
 <!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
 
-- [start before2far n](#start-before2far-n)
+- [start before2far](#start-before2far)
 	- [Общие заметки и важные замечания](#общие-заметки-и-важные-замечания)
 - [Клиентское приложение](#клиентское-приложение)
 	- [Клиентское приложение - Интерфейс](#клиентское-приложение---интерфейс)
@@ -76,9 +76,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 24072024140914
+DATE: 24072024162436
 
-DATX: 1721804954
+DATX: 1721813076
 -->
 
 
@@ -88,9 +88,9 @@ DATX: 1721804954
 
 
 
-# start before2far n
+# start before2far
 
-## Общие заметки и важные замечания
+## Общие заметки и важные замечания 
 
 - Настройка интерфейса клиентского приложения
 - Создание и настройка справочника 
@@ -196,7 +196,7 @@ DATX: 1721804954
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/004.d/001.txt.man -->
 
-[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/004.d/001.txt@ext:huntertran.auto-markdown-toc.man)
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/004.d/001.txt.man)
 
 
 
@@ -428,7 +428,7 @@ DATX: 1721804954
 
 
 
-# Ссылочный тип
+# Ссылочный тип 
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/008.d/002.d/001.txt.man -->
@@ -825,7 +825,7 @@ TAGS:
 
 
 
-#### Состав вирт таблиц рег накопления
+#### Состав вирт таблиц рег накопления 
 - в режиме Обороты
     - Обороты
     - Остатки
@@ -949,7 +949,7 @@ TAGS:
 
 
 
-## Модуль документ - Проведение
+## Модуль документ - Проведение 
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/002.d/001.txt.man -->
@@ -1022,7 +1022,7 @@ TAGS:
 
 
 
-### Модуль документ - Проведение - группировка в запросе по продукту перед движением
+### Модуль документ - Проведение - группировка в запросе по продукту перед движением 
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/002.txt.man -->
@@ -1632,6 +1632,29 @@ TAGS:
 
 #### Отчет - Примеры - Пример 1 - Запрос из вирт таб
 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/003.code.bsl -->
+
+[003.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/003.code.bsl)
+
+
+```bsl
+
+ВЫБРАТЬ
+	РегОстаткиПродуктовОстатки.ИзмРегОстаткиПродуктовПродукт КАК РекЗапросПродукт,
+	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовКоличествоОстаток КАК РекЗапросКоличествоОстаток,
+	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовСуммаОстаток КАК РекЗапросСуммаОстаток
+ИЗ
+	РегистрНакопления.РегОстаткиПродуктов.Остатки КАК РегОстаткиПродуктовОстатки
+
+```
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/098.d/001.txt.man -->
 
