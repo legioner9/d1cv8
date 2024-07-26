@@ -70,6 +70,8 @@
 					- [pathto.txt.f](#pathtotxtf-5)
 - [Запрос](#запрос)
 	- [Запрос - Параметр запроса](#запрос---параметр-запроса)
+- [Glossary](#glossary)
+	- [Glossary - Проведение условное](#glossary---проведение-условное)
 - [Unsort](#unsort)
 - [start review\_this2far](#start-review_this2far)
 
@@ -84,9 +86,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 24072024211949
+DATE: 26072024154422
 
-DATX: 1721830789
+DATX: 1721983462
 -->
 
 
@@ -2005,6 +2007,27 @@ TAGS:
 // РегистрНакопления.РегОстаткиПродуктов.Остатки(, ) - параметр запроса
 
 ```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/097.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/097.d/001.txt.man)
+
+
+
+# Glossary 
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/097.d/002.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/097.d/002.d/001.txt.man)
+
+
+
+## Glossary - Проведение условное
+
+В Процедуре проведение используется общий контекст Предприятия - 
+вноешние зависимости - НЕ только контекст Модуля
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/098.d/001.txt.man -->
 
