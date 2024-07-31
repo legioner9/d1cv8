@@ -21,6 +21,8 @@
 	- [Документ - Описание](#документ---описание)
 	- [Документ - Настройка](#документ---настройка)
 	- [Документ - Доступ к строкам табличной части](#документ---доступ-к-строкам-табличной-части)
+	- [Документ - Реквизиты](#документ---реквизиты)
+	- [Документ - Оперативное проведение](#документ---оперативное-проведение)
 - [Нумератор](#нумератор)
 	- [Нумератор - Описание](#нумератор---описание)
 - [Последовательность](#последовательность)
@@ -57,6 +59,7 @@
 			- [Постановка задачи - устранить повторы по продукту в рег ост прод](#постановка-задачи---устранить-повторы-по-продукту-в-рег-ост-прод)
 			- [https://youtu.be/rgMWJOou8ak?list=PLfnvyWr5sdi2tJO4Fb5YLMMSluMKZsq\_4\&t=684](#httpsyoutubergmwjoou8aklistplfnvywr5sdi2tjo4fb5ylmmslumkzsq_4t684)
 					- [pathto.txt.f](#pathtotxtf-3)
+		- [Модуль документ - Проведение - Конструктор движений](#модуль-документ---проведение---конструктор-движений)
 - [Консоль запросов](#консоль-запросов)
 - [Внутренние заметки в данной документации](#внутренние-заметки-в-данной-документации)
 	- [Примеры запросов - для нативных запросов (вручную - без конструктора)](#примеры-запросов---для-нативных-запросов-вручную---без-конструктора)
@@ -86,9 +89,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 31072024155531
+DATE: 31072024183649
 
-DATX: 1722416131
+DATX: 1722425809
 -->
 
 
@@ -380,6 +383,38 @@ DATX: 1722416131
 
 
 [Расширенный пример](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/007_less/001_part/.md/_cntt/003.d/002.code.bsl)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/005.d/005.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/005.d/005.d/001.txt.man)
+
+
+
+## Документ - Реквизиты
+
+Названия данных документа встречающиеся 1 раз и только в шапке документа
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/005.d/006.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/005.d/006.d/001.txt.man)
+
+
+
+## Документ - Оперативное проведение
+
+В реальной работе обычно запрещаем - на экзамене пользуемся
+
+Это :
+- учет при котором проводимый документ самый поздний по времени
+- использует данные остатков на текущую дату - без передачи параметров
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/005.d/006.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/005.d/006.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/005.d/006.d/002.pic.jpg)
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/006.d/001.txt.man -->
@@ -1568,6 +1603,15 @@ TAGS:
 
 ###### pathto.txt.f
 
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/004.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/004.d/001.txt.man)
+
+
+
+### Модуль документ - Проведение - Конструктор движений
+
+
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/013.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/013.d/001.txt.man)
@@ -2026,7 +2070,7 @@ TAGS:
 ## Glossary - Проведение условное
 
 В Процедуре проведение используется общий контекст Предприятия - 
-вноешние зависимости - НЕ только контекст Модуля
+внешние зависимости - НЕ только контекст Модуля
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/098.d/001.txt.man -->
