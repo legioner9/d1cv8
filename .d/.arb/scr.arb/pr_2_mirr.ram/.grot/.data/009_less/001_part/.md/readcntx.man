@@ -12,6 +12,7 @@
 	- [Посмотрим что нам дадут вирт таблицы регистров](#посмотрим-что-нам-дадут-вирт-таблицы-регистров)
 	- [Ограничим по времени выборки - на дату](#ограничим-по-времени-выборки---на-дату)
 	- [Теперь ограничим выдачу по строкам - только как в документе потреблния](#теперь-ограничим-выдачу-по-строкам---только-как-в-документе-потреблния)
+	- [Используем полученный запрос](#используем-полученный-запрос)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -25,9 +26,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 02082024161211
+DATE: 02082024171749
 
-DATX: 1722589931
+DATX: 1722593869
 -->
 
 
@@ -222,6 +223,62 @@ DATX: 1722589931
 
 
 ## Теперь ограничим выдачу по строкам - только как в документе потреблния
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/019.pic.jpg -->
+
+[019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/019.pic.jpg)
+
+![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/019.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/020.pic.jpg -->
+
+[020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/020.pic.jpg)
+
+![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/020.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/021.pic.jpg -->
+
+[021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/021.pic.jpg)
+
+![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/021.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/022.code.sdbl -->
+
+[022.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/022.code.sdbl)
+
+
+```sdbl
+
+// Запрос из вирт таб {РегистрНакопления.РегОстаткиПродуктов.Остатки} with {ПарамДатаЗапроса} and {ИзмРегОстаткиПродуктовПродукт}
+
+ВЫБРАТЬ
+	РегОстаткиПродуктовОстатки.ИзмРегОстаткиПродуктовПродукт КАК ИзмРегОстаткиПродуктовПродукт,
+	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовКоличествоОстаток КАК РесРегОстаткиПродуктовКоличествоОстаток,
+	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовСуммаОстаток КАК РесРегОстаткиПродуктовСуммаОстаток
+ИЗ
+	РегистрНакопления.РегОстаткиПродуктов.Остатки(&ПарамДатаЗапроса,     ИзмРегОстаткиПродуктовПродукт = &ПарамПродукт) КАК РегОстаткиПродуктовОстатки
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/023.pic.jpg -->
+
+[023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/023.pic.jpg)
+
+![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/023.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/024.txt.man -->
+
+[024.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/024.txt.man)
+
+
+
+## Используем полученный запрос 
+
+[query with 2 param file.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/022.code.sdbl)
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
