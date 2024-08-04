@@ -14,6 +14,13 @@
 	- [Теперь ограничим выдачу по строкам - только как в документе потреблния](#теперь-ограничим-выдачу-по-строкам---только-как-в-документе-потреблния)
 	- [Используем полученный запрос](#используем-полученный-запрос)
 - [Проблема копеек](#проблема-копеек)
+	- [Проблема копеек - Последовательное списание](#проблема-копеек---последовательное-списание)
+	- [Проблема копеек - Одновременное списание](#проблема-копеек---одновременное-списание)
+		- [Проблема копеек - Одновременное списание - в одной записи](#проблема-копеек---одновременное-списание---в-одной-записи)
+		- [Проблема копеек - Одновременное списание - в нескольких записях](#проблема-копеек---одновременное-списание---в-нескольких-записях)
+- [Проблема копеек - Причина возникновения исходя из кода](#проблема-копеек---причина-возникновения-исходя-из-кода)
+- [Проблема копеек - Попытка решения](#проблема-копеек---попытка-решения)
+					- [pathto.txt.f](#pathtotxtf)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -27,9 +34,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 02082024232014
+DATE: 04082024144652
 
-DATX: 1722615614
+DATX: 1722757612
 -->
 
 
@@ -537,6 +544,225 @@ DATX: 1722615614
 
 # Проблема копеек
 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/001.u.txt.man -->
+
+[001.u.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/001.u.txt.man)
+
+
+
+## Проблема копеек - Последовательное списание
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/005.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/006.pic.jpg -->
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/006.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/007.pic.jpg -->
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/007.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/008.txt.man -->
+
+[008.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/008.txt.man)
+
+
+
+## Проблема копеек - Одновременное списание 
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/009.txt.man -->
+
+[009.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/009.txt.man)
+
+
+
+### Проблема копеек - Одновременное списание - в одной записи
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/010.pic.jpg -->
+
+[010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/010.pic.jpg)
+
+![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/010.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/011.pic.jpg -->
+
+[011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/011.pic.jpg)
+
+![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/011.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/012.pic.jpg -->
+
+[012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/012.pic.jpg)
+
+![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/012.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/013.txt.man -->
+
+[013.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/013.txt.man)
+
+
+
+### Проблема копеек - Одновременное списание - в нескольких записях
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/014.pic.jpg -->
+
+[014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/014.pic.jpg)
+
+![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/014.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/015.pic.jpg -->
+
+[015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/015.pic.jpg)
+
+![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/015.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/016.pic.jpg -->
+
+[016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/016.pic.jpg)
+
+![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/016.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/017.txt.man -->
+
+[017.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/017.txt.man)
+
+
+
+# Проблема копеек - Причина возникновения исходя из кода
+
+- Средняя цена берется из вирт таб РегОстаткиПродуктов.Остатки 
+- Движния РегОстаткиПродуктов формируется на старом РегОстаткиПродуктов.Остатки 
+- срдняя цена постоянная поскольку пока мы внутри процедуры Записи Делаются Но РегОстаткиПродуктов пока СТАРЫЙ и берется &ПарамДатаЗапроса=МоментВремени() а это время перед началом документа
+
+# Проблема копеек - Попытка решения 
+
+- &ПарамДатаЗапроса=МоментВремениЗАПРОСА() - каждый раз персчитывать 
+- документ списания нужно группировать по продукту - что бы избежать множественности строк в регистре
+- если списывается все количество то остаток обнулять - а не считать 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/018.code.bsl -->
+
+[018.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/018.code.bsl)
+
+
+```bsl
+
+// ПАРАМЕТРЫ Уже правильные
+// ПарамДатаЗапроса = МоментВремени
+// ПарамПродукт = ТекСтрокаТабчДокПотреблениеПродукты.РекТабчДокПотреблениеПродуктыПродукт    
+// С правильным учетом Движения со средней ценой
+
+
+Процедура ОбработкаПроведения(Отказ, Режим) 
+	
+	//{{__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+	// Данный фрагмент построен конструктором.
+	// При повторном использовании конструктора, внесенные вручную изменения будут утеряны!!!
+
+	// регистр РегОстаткиПродуктов Расход
+	Движения.РегОстаткиПродуктов.Записывать = Истина;
+	Для Каждого ТекСтрокаТабчДокПотреблениеПродукты Из ТабчДокПотреблениеПродукты Цикл   
+		
+	//////////// вставка запроса
+	//{{КОНСТРУКТОР_ЗАПРОСА_С_ОБРАБОТКОЙ_РЕЗУЛЬТАТА
+	// Данный фрагмент построен конструктором.
+	// При повторном использовании конструктора, внесенные вручную изменения будут утеряны!!!         
+	
+	// обнуляем среднюю цену
+	СредняяЦена = 0; 
+	
+	Запрос = Новый Запрос;
+	Запрос.Текст = 
+		"ВЫБРАТЬ
+		|	РегОстаткиПродуктовОстатки.ИзмРегОстаткиПродуктовПродукт КАК РекЗапрПродукт,
+		|	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовКоличествоОстаток КАК РекЗапрКоличествоОстаток,
+		|	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовСуммаОстаток КАК РекЗапрСуммаОстаток
+		|ИЗ
+		|	РегистрНакопления.РегОстаткиПродуктов.Остатки(&ПарамДатаЗапроса, ИзмРегОстаткиПродуктовПродукт = &ПарамПродукт) КАК РегОстаткиПродуктовОстатки";
+	
+	Запрос.УстановитьПараметр("ПарамДатаЗапроса", МоментВремени());
+	Запрос.УстановитьПараметр("ПарамПродукт", ТекСтрокаТабчДокПотреблениеПродукты.РекТабчДокПотреблениеПродуктыПродукт);
+	
+	РезультатЗапроса = Запрос.Выполнить();
+	
+	ВыборкаДетальныеЗаписи = РезультатЗапроса.Выбрать();
+	
+	Пока ВыборкаДетальныеЗаписи.Следующий() Цикл      
+		// получаем среднюю цену только если количество НЕ НОЛЬ (а сумма тогда зависшая)     
+		Если ВыборкаДетальныеЗаписи.РекЗапрКоличествоОстаток > 0 Тогда 
+			СредняяЦена = ВыборкаДетальныеЗаписи.РекЗапрСуммаОстаток / ВыборкаДетальныеЗаписи.РекЗапрКоличествоОстаток;    
+		КонецЕсли;
+		Сообщить(СредняяЦена);
+		// Вставить обработку выборки ВыборкаДетальныеЗаписи
+	КонецЦикла;
+	
+	//}}КОНСТРУКТОР_ЗАПРОСА_С_ОБРАБОТКОЙ_РЕЗУЛЬТАТА
+		
+		Движение = Движения.РегОстаткиПродуктов.Добавить();
+		Движение.ВидДвижения = ВидДвиженияНакопления.Расход;
+		Движение.Период = Дата;
+		Движение.ИзмРегОстаткиПродуктовПродукт = ТекСтрокаТабчДокПотреблениеПродукты.РекТабчДокПотреблениеПродуктыПродукт;
+		Движение.РесРегОстаткиПродуктовКоличество = ТекСтрокаТабчДокПотреблениеПродукты.РекТабчДокПотреблениеПродуктыКоличество;    
+		// используем среднюю цену
+		Движение.РесРегОстаткиПродуктовСумма = ТекСтрокаТабчДокПотреблениеПродукты.РекТабчДокПотреблениеПродуктыКоличество * СредняяЦена;
+	КонецЦикла;
+
+	//}}__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+КонецПроцедуры
+
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/rpn.d/pathto.txt.f -->
+
+[pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d/rpn.d/pathto.txt.f)
+
+
+
+###### pathto.txt.f
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
