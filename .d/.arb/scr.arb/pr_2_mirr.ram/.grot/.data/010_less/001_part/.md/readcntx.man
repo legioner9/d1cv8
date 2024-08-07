@@ -6,6 +6,11 @@
 
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
+- [start before2far](#start-before2far)
+- [Комбинированный запрос - Пример 1 (Один ввместо двух \[один из которых в цикле\])](#комбинированный-запрос---пример-1-один-ввместо-двух-один-из-которых-в-цикле)
+          - [pathto.txt.f](#pathtotxtf)
+- [start review\_this2far](#start-review_this2far)
+
 <!-- /TOC -->
 
 End Contents Menu
@@ -13,13 +18,13 @@ End Contents Menu
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/readcntx.man
 
-PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 04082024221601
+DATE: 07082024123238
 
-DATX: 1722784561
+DATX: 1723008758
 -->
 
 
@@ -38,7 +43,24 @@ DATX: 1722784561
 
 
 
-#
+# Комбинированный запрос - Пример 1 (Один ввместо двух [один из которых в цикле])
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/003.requ_1.pdf.pdf -->
+
+[003.requ_1.pdf.pdf](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/003.requ_1.pdf.pdf)
+
+
+<iframe data=" " type="application/pdf"></iframe>
+
+xfun::embed_file("homework.pdf")
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/rpn.d/pathto.txt.f -->
+
+[pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/rpn.d/pathto.txt.f)
+
+
+
+###### pathto.txt.f
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
