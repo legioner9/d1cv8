@@ -6,11 +6,6 @@
 
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
-- [start before2far](#start-before2far)
-- [Комбинированный запрос - Пример 1 (Один ввместо двух \[один из которых в цикле\])](#комбинированный-запрос---пример-1-один-ввместо-двух-один-из-которых-в-цикле)
-          - [pathto.txt.f](#pathtotxtf)
-- [start review\_this2far](#start-review_this2far)
-
 <!-- /TOC -->
 
 End Contents Menu
@@ -22,9 +17,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/01
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 07082024123238
+DATE: 07082024203205
 
-DATX: 1723008758
+DATX: 1723037525
 -->
 
 
@@ -45,14 +40,95 @@ DATX: 1723008758
 
 # Комбинированный запрос - Пример 1 (Один ввместо двух [один из которых в цикле])
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/003.requ_1.pdf.pdf -->
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/002.txt.man -->
 
-[003.requ_1.pdf.pdf](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/003.requ_1.pdf.pdf)
+[002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/002.txt.man)
 
 
-<iframe data=" " type="application/pdf"></iframe>
 
-xfun::embed_file("homework.pdf")
+## Комбинированный запрос - Пример 1 (Один ввместо двух [один из которых в цикле]) - Запрос_1
+
+- группирует док потребление по продукту
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/003.code.sdbl -->
+
+[003.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/003.code.sdbl)
+
+
+```sdbl
+
+ВЫБРАТЬ
+	ДокПотреблениеТабчДокПотреблениеПродукты.РекТабчДокПотреблениеПродуктыПродукт КАК РекТабчДокПотреблениеПродуктыПродукт,
+	СУММА(ДокПотреблениеТабчДокПотреблениеПродукты.РекТабчДокПотреблениеПродуктыКоличество) КАК РекТабчДокПотреблениеПродуктыКоличество
+ИЗ
+	Документ.ДокПотребление.ТабчДокПотреблениеПродукты КАК ДокПотреблениеТабчДокПотреблениеПродукты
+ГДЕ
+	ДокПотреблениеТабчДокПотреблениеПродукты.Ссылка = &Ссылка
+
+СГРУППИРОВАТЬ ПО
+	ДокПотреблениеТабчДокПотреблениеПродукты.РекТабчДокПотреблениеПродуктыПродукт
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/005.txt.man -->
+
+[005.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/005.txt.man)
+
+
+
+## Комбинированный запрос - Пример 1 (Один ввместо двух [один из которых в цикле]) - Запрос_2
+
+- Отображающая выборка РегистрНакопления.РегОстаткиПродуктов.Остатки (по всем продуктам НЕ по одному нужна будет)
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/006.code.sdbl -->
+
+[006.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/006.code.sdbl)
+
+
+```sdbl
+
+ВЫБРАТЬ
+	РегОстаткиПродуктовОстатки.ИзмРегОстаткиПродуктовПродукт КАК РекЗапрПродукт,
+	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовКоличествоОстаток КАК РекЗапрКоличествоОстаток,
+	РегОстаткиПродуктовОстатки.РесРегОстаткиПродуктовСуммаОстаток КАК РекЗапрСуммаОстаток
+ИЗ
+	// РегистрНакопления.РегОстаткиПродуктов.Остатки(&ПарамДатаЗапроса, ИзмРегОстаткиПродуктовПродукт = &ПарамПродукт) КАК РегОстаткиПродуктовОстатки
+    // БЕЗ параметра Продукт - по всем продуктам
+	РегистрНакопления.РегОстаткиПродуктов.Остатки(&ПарамДатаЗапроса, ) КАК РегОстаткиПродуктовОстатки
+
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/007.pic.jpg -->
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/007.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/008.txt.man -->
+
+[008.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/008.txt.man)
+
+
+
+## Комбинированный запрос - Пример 1 (Один ввместо двух [один из которых в цикле]) - Проектируемый ответ на комбинированный запрос
+
+- Отображающая выборка РегистрНакопления.РегОстаткиПродуктов.Остатки (по всем продуктам НЕ по одному нужна будет)
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/009.pic.jpg -->
+
+[009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/009.pic.jpg)
+
+![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/009.pic.jpg)
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/rpn.d/pathto.txt.f -->
 
