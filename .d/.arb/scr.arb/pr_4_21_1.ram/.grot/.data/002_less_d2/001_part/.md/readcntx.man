@@ -6,10 +6,6 @@
 
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
-- [start before2far](#start-before2far)
-- [](#)
-- [start review\_this2far](#start-review_this2far)
-
 <!-- /TOC -->
 
 End Contents Menu
@@ -17,13 +13,13 @@ End Contents Menu
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/readcntx.man
 
-PPWD: /home/st
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 15082024184137
+DATE: 15082024193900
 
-DATX: 1723722097
+DATX: 1723725540
 -->
 
 
@@ -42,7 +38,72 @@ DATX: 1723722097
 
 
 
-#
+# D2 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/001.txt.man)
+
+
+
+## D2 - создание Константы (НаименованиеОрганизации)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/002.r.txt.man -->
+
+[002.r.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/002.r.txt.man)
+
+
+
+## D2 - ^C-^V (Копия с типом данных)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/004.txt.man -->
+
+[004.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/004.txt.man)
+
+
+
+## D2 - создание Справочника (Номенклатура)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/005.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/006.txt.man -->
+
+[006.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/006.txt.man)
+
+
+
+### D2 - создание Справочника - Признак Иерархии
+
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/007.pic.jpg -->
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/002.d/007.pic.jpg)
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
