@@ -144,7 +144,7 @@ DATX: 1723738442
 
 
 
-# D2 
+# D2
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/002_less_d2/001_part/.md/_cntt/002.d/rpn.d/pathto.txt.f -->
 
