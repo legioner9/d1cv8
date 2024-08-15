@@ -1,0 +1,5 @@
+## Внутренние заметки в данной документации - Пример_1 скрытого запроса
+
+- Копировать из 10 урока : 
+- [Пример_1 скрытого запроса .man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/059.b.txt.man)
+- [Пример_1 скрытого запроса .bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/060.final.code.bsl)

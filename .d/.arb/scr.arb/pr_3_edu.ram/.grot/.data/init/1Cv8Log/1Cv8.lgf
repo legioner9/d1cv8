@@ -1,5 +1,5 @@
 ﻿1CV8LOG(ver 2.0)
-328b8cb7-7dcf-48e6-8080-67e721dfbd60
+e460a1b5-234a-481e-8385-90b433ad9baa
 
 {1,071523a4-516f-4fce-ba4b-0d11ab7a1893,"",1},
 {2,"rideslump",1},
@@ -10,4 +10,9 @@
 {3,"1CV8C",2},
 {4,"_$Session$_.Finish",3},
 {3,"1CV8",3},
-{4,"_$InfoBase$_.ConfigUpdate",4}
+{4,"_$InfoBase$_.ConfigUpdate",4},
+{4,"_$InfoBase$_.RestoreStart",5},
+{4,"_$InfoBase$_.RestoreFinish",6},
+{3,"BackgroundJob",4},
+{4,"_$InfoBase$_.DBConfigUpdateStart",7},
+{4,"_$InfoBase$_.DBConfigUpdate",8}
