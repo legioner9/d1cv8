@@ -17,13 +17,13 @@ End Contents Menu
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/readcntx.man
 
-PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 20082024182624
+DATE: 20082024211848
 
-DATX: 1724153184
+DATX: 1724163528
 -->
 
 
@@ -36,6 +36,13 @@ DATX: 1724153184
 # start before2far
 
 
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt/002.d/001.pic.jpg -->
+
+[001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+![001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt/002.d/002.txt.man -->
 
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt/002.d/002.txt.man)
@@ -43,6 +50,57 @@ DATX: 1724153184
 
 
 # D6
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt/002.d/003.code.bsl -->
+
+[003.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt/002.d/003.code.bsl)
+
+
+```bsl
+
+// Работа с BSL
+
+Для Сч=2 по 4 Цикл
+	Сообщить(Сч);	
+КонецЦикла;	
+
+Кор = 1;  
+Пока (Кор + 1)*(Кор + 1) < 30000   Цикл	
+	Кор = Кор + 1;	
+	Если Кор = 10 Тогда 
+		Прервать;
+	КонецЕсли;    
+	Продолжить;
+КонецЦикла; 
+
+Сообщить(Кор);
+
+ДвухзначноеЧисло = 20;
+Степень = 4;
+Рез = 1;    
+
+// Если Инд > Степень nj jib,rb yt ,eltn 
+	Для Инд = 1 по Степень Цикл  
+		Рез = Рез * ДвухзначноеЧисло;	
+	КонецЦикла;
+
+
+Сообщить(Рез); 
+Сообщить(Pow(ДвухзначноеЧисло, Степень));
+
+Если Рез > 10000 Тогда 	
+	Сообщить("Превышает 10000");	
+КонецЕсли;
+
+
+	
+
+	
+	
+
+
+
+```
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/006_less_d6/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
