@@ -7,7 +7,10 @@
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
 - [start before2far](#start-before2far)
-- [DN](#dn)
+- [D5](#d5)
+  - [D5 - ФДЗ: Создаем регистр накопления для учета данных о количестве и сумме закупок (ресурсы) в разрезе номенклатуры и поставщиков (измерения)](#d5---фдз-создаем-регистр-накопления-для-учета-данных-о-количестве-и-сумме-закупок-ресурсы-в-разрезе-номенклатуры-и-поставщиков-измерения)
+  - [D5 - ФДЗ: Создаем независимый регистр для учета цен номенклатур](#d5---фдз-создаем-независимый-регистр-для-учета-цен-номенклатур)
+  - [D5 - ФДЗ: Создайте 2 подсистемы: Продажи и Закупки.](#d5---фдз-создайте-2-подсистемы-продажи-и-закупки)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -21,9 +24,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 19082024193712
+DATE: 20082024172920
 
-DATX: 1724071032
+DATX: 1724149760
 -->
 
 
@@ -49,7 +52,153 @@ DATX: 1724071032
 
 
 
-# DN
+# D5
+
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/001.txt.man)
+
+
+
+## D5 - ФДЗ: Создаем регистр накопления для учета данных о количестве и сумме закупок (ресурсы) в разрезе номенклатуры и поставщиков (измерения)
+
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/006.pic.jpg -->
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/007.pic.jpg -->
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/008.pic.jpg -->
+
+[008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/009.pic.jpg -->
+
+[009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/009.pic.jpg)
+
+![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/009.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/010.pic.jpg -->
+
+[010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/010.pic.jpg)
+
+![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/010.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/011.pic.jpg -->
+
+[011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/011.pic.jpg)
+
+![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/011.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/012.pic.jpg -->
+
+[012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/012.pic.jpg)
+
+![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/003.d/012.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/001.txt.man)
+
+
+
+## D5 - ФДЗ: Создаем независимый регистр для учета цен номенклатур
+
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/005.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/006.pic.jpg -->
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/004.d/006.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/005.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/002.d/005.d/001.txt.man)
+
+
+
+## D5 - ФДЗ: Создайте 2 подсистемы: Продажи и Закупки. 
+- Классифицируйте  объекты  по  этим  подсистемам.  
+- При  этом  справочники  «Номенклатура» и «Контрагенты» должны относиться к обеим подсистемам. 
+
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/005_less_d5/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
