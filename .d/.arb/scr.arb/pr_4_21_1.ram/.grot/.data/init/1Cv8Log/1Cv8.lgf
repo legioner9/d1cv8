@@ -35,4 +35,5 @@
 {4,"_$Data$_.Post",17},
 {5,d6416f02-cd3e-4e3f-84be-847be70e4195,"Документ.РеализацияТоваров",7},
 {5,2ded2ab6-c19d-4b53-addb-79577bc00a10,"РегистрСведений.ЦеныНоменклатуры",8},
-{4,"_$Transaction$_.Rollback",18}
+{4,"_$Transaction$_.Rollback",18},
+{4,"_$PerformError$_",19}
