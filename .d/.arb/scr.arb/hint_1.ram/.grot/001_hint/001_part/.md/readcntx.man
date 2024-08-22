@@ -141,6 +141,8 @@
 		- [Unsort - Скрытый запрос - Пример\_1](#unsort---скрытый-запрос---пример_1)
 					- [pathto.txt.f](#pathtotxtf-17)
 	- [Unsort - Использование булевых реквизитов](#unsort---использование-булевых-реквизитов)
+	- [Unsort - Объект Элементы (all\_in\_this) для объекта Форма](#unsort---объект-элементы-all_in_this-для-объекта-форма)
+	- [Unsort - Ручное сопоставление процедуры и обработчика (если копипаст)](#unsort---ручное-сопоставление-процедуры-и-обработчика-если-копипаст)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
@@ -157,9 +159,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 22082024134519
+DATE: 22082024225745
 
-DATX: 1724309119
+DATX: 1724342265
 -->
 
 
@@ -5443,7 +5445,30 @@ TAGS:
 
 ## Unsort - Использование булевых реквизитов
 
-- see REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/004.d
+- see [examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/004.d/001.txt.man)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/004.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/004.d/001.txt.man)
+
+
+
+## Unsort - Объект Элементы (all_in_this) для объекта Форма
+
+- [examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/005.pic.jpg)
+- see ![examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/005.pic.jpg)
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/005.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/005.d/001.txt.man)
+
+
+
+## Unsort - Ручное сопоставление процедуры и обработчика (если копипаст)
+
+- [examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
+- see ![examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man -->

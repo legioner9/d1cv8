@@ -8,8 +8,10 @@
 
 - [start before2far](#start-before2far)
 - [D9](#d9)
-  - [D9 - ФДЗ: Необходимо самостоятельно поработать с типом данных Массив](#d9---фдз-необходимо-самостоятельно-поработать-с-типом-данных-массив)
-  - [D9 - ФДЗ: В формах документов обеспечьте автоматический расчет](#d9---фдз-в-формах-документов-обеспечьте-автоматический-расчет)
+	- [D9 - ФДЗ: Необходимо самостоятельно поработать с типом данных Массив](#d9---фдз-необходимо-самостоятельно-поработать-с-типом-данных-массив)
+	- [D9 - ФДЗ: В формах документов обеспечьте автоматический расчет](#d9---фдз-в-формах-документов-обеспечьте-автоматический-расчет)
+	- [D9 - ФДЗ: Также учтите ситуацию изменения суммы](#d9---фдз-также-учтите-ситуацию-изменения-суммы)
+	- [D9 - ФДЗ: то же самое сделаем для документа Реализация товаров](#d9---фдз-то-же-самое-сделаем-для-документа-реализация-товаров)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -23,9 +25,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 22082024184333
+DATE: 22082024230435
 
-DATX: 1724327013
+DATX: 1724342675
 -->
 
 
@@ -64,9 +66,9 @@ DATX: 1724327013
 
 - Массив – это упорядоченная коллекция 
 объектов любых типов данных. 
-- В модуле управляемого приложения создайте объект тип данных «Массив» - для этого используйте 
+- В модуле управляемого приложения создайте объект тип данных Массив - для этого используйте 
 конструктор Новый. Например, МассивЧисел = Новый Массив. 
-- Добавьте в массив два числа, для этого используйте метод «Добавить». Например, 
+- Добавьте в массив два числа, для этого используйте метод Добавить. Например, 
 МассивЧисел.Добавить(999). 
 
 
@@ -84,9 +86,9 @@ DATX: 1724327013
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/005.code.bsl -->
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/004.code.bsl -->
 
-[005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/005.code.bsl)
+[004.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/004.code.bsl)
 
 
 ```bsl
@@ -114,7 +116,202 @@ DATX: 1724327013
 
 - В формах документов обеспечьте автоматический расчет суммы в табличной части, как произведение цены 
 и количества. 
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/005.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/006.pic.jpg -->
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/006.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/006.r.pic.jpg -->
+
+[006.r.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/006.r.pic.jpg)
+
+![006.r.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/006.r.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/007.code.bsl -->
+
+[007.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/007.code.bsl)
+
+
+```bsl
+
+// При графы количество товара
+
+&НаКлиенте
+Процедура ТоварыКоличествоПриИзменении(Элемент)
+	// Вставить содержимое обработчика.
+	ТекущиеДанные_ = Элементы.Товары.ТекущиеДанные;
+	ТекущиеДанные_.Сумма = ТекущиеДанные_.Количество * ТекущиеДанные_.Цена; 
+КонецПроцедуры
+ 
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/008.r.pic.jpg -->
+
+[008.r.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/008.r.pic.jpg)
+
+![008.r.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/008.r.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/009.code.bsl -->
+
+[009.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/009.code.bsl)
+
+
+```bsl
+
+// При изменении графы Количество товара
+
+&НаКлиенте
+Процедура ТоварыКоличествоПриИзменении(Элемент)
+	// Вставить содержимое обработчика.
+	ТекущиеДанные_ = Элементы.Товары.ТекущиеДанные;
+	ТекущиеДанные_.Сумма = ТекущиеДанные_.Количество * ТекущиеДанные_.Цена; 
+КонецПроцедуры
+
+// При изменении графы Цена товара
+
+&НаКлиенте
+Процедура ТоварыЦенаПриИзменении(Элемент)
+	// Вставить содержимое обработчика. 
+	ТекущиеДанные_ = Элементы.Товары.ТекущиеДанные;
+	ТекущиеДанные_.Сумма = ТекущиеДанные_.Количество * ТекущиеДанные_.Цена; 
+КонецПроцедуры
+
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/001.txt.man)
+
+
+
+## D9 - ФДЗ: Также учтите ситуацию изменения суммы
+
 - Также учтите ситуацию изменения суммы – в этом случае нужно пересчитать цену.  
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/003.r.pic.jpg -->
+
+[003.r.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/003.r.pic.jpg)
+
+![003.r.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/003.r.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/005.code.bsl -->
+
+[005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/005.d/005.code.bsl)
+
+
+```bsl
+
+// При изменении графы Сумма товара
+
+Процедура ТоварыСуммаПриИзменении(Элемент)
+	// Вставить содержимое обработчика.
+	ТекущиеДанные_ = Элементы.Товары.ТекущиеДанные; 
+	Если ТекущиеДанные_.Количество = 0 Тогда  
+		ТекущиеДанные_.Цена = 0;     
+	Иначе 
+		ТекущиеДанные_.Цена = ТекущиеДанные_.Сумма / ТекущиеДанные_.Количество;   
+	КонецЕсли;
+КонецПроцедуры
+
+
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/001.txt.man)
+
+
+
+## D9 - ФДЗ: то же самое сделаем для документа Реализация товаров
+
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
