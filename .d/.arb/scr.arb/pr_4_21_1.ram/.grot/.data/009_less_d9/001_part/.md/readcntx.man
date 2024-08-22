@@ -7,7 +7,9 @@
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
 - [start before2far](#start-before2far)
-- [DN](#dn)
+- [D9](#d9)
+  - [D9 - ФДЗ: Необходимо самостоятельно поработать с типом данных Массив](#d9---фдз-необходимо-самостоятельно-поработать-с-типом-данных-массив)
+  - [D9 - ФДЗ: В формах документов обеспечьте автоматический расчет](#d9---фдз-в-формах-документов-обеспечьте-автоматический-расчет)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -21,9 +23,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 22082024135042
+DATE: 22082024184333
 
-DATX: 1724309442
+DATX: 1724327013
 -->
 
 
@@ -49,7 +51,71 @@ DATX: 1724309442
 
 
 
-# DN
+# D9
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/001.txt.man)
+
+
+
+## D9 - ФДЗ: Необходимо самостоятельно поработать с типом данных Массив
+
+- Массив – это упорядоченная коллекция 
+объектов любых типов данных. 
+- В модуле управляемого приложения создайте объект тип данных «Массив» - для этого используйте 
+конструктор Новый. Например, МассивЧисел = Новый Массив. 
+- Добавьте в массив два числа, для этого используйте метод «Добавить». Например, 
+МассивЧисел.Добавить(999). 
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/005.code.bsl -->
+
+[005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/003.d/005.code.bsl)
+
+
+```bsl
+
+// Поработаем с массивами
+
+МассивЧисел = Новый Массив;
+
+МассивЧисел.Добавить(888);
+МассивЧисел.Добавить(999);
+
+Для Каждого айтем из МассивЧисел Цикл 
+	Сообщить(айтем);	
+КонецЦикла;	
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/001.txt.man)
+
+
+
+## D9 - ФДЗ: В формах документов обеспечьте автоматический расчет
+
+- В формах документов обеспечьте автоматический расчет суммы в табличной части, как произведение цены 
+и количества. 
+- Также учтите ситуацию изменения суммы – в этом случае нужно пересчитать цену.  
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
