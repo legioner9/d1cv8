@@ -8,6 +8,9 @@
 
 - [start before2far](#start-before2far)
 - [D8](#d8)
+  - [D8 - ФДЗ: При записи документа Реализация товаров сохраните общую сумму документа в реквизит Сумма](#d8---фдз-при-записи-документа-реализация-товаров-сохраните-общую-сумму-документа-в-реквизит-сумма)
+          - [pathto.txt.f](#pathtotxtf)
+  - [D8 - ФДЗ: Также необходимо выполнить проверку, что в документе Реализация товаров выбран контрагент, у которого указан флаг Клиент](#d8---фдз-также-необходимо-выполнить-проверку-что-в-документе-реализация-товаров-выбран-контрагент-у-которого-указан-флаг-клиент)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -21,9 +24,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 21082024170957
+DATE: 22082024120548
 
-DATX: 1724234997
+DATX: 1724303148
 -->
 
 
@@ -50,6 +53,103 @@ DATX: 1724234997
 
 
 # D8
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/001.txt.man)
+
+
+
+## D8 - ФДЗ: При записи документа Реализация товаров сохраните общую сумму документа в реквизит Сумма 
+документа
+
+<!-- - При записи документа «Реализация товаров» сохраните общую сумму документа в реквизит «Сумма 
+документа».  -->
+<!-- - Также необходимо выполнить проверку, что в документе «Реализация товаров» выбран контрагент, у 
+которого указан флаг «Клиент». 
+- Подсказка 1. Для проверки корректности заполнения реквизитов используйте событие 
+ОбработкаПроверкиЗаполнения. 
+- Подсказка 2. Чтобы получить значение реквизита обращайтесь через «точку». Например, 
+Сообщить(Контрагент.ЭтоКлиент). -->
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/006.pic.jpg -->
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/007.pic.jpg -->
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/008.pic.jpg -->
+
+[008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/009.pic.jpg -->
+
+[009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/009.pic.jpg)
+
+![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/009.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/rpn.d/pathto.txt.f -->
+
+[pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/003.d/rpn.d/pathto.txt.f)
+
+
+
+###### pathto.txt.f
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/004.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/004.d/001.txt.man)
+
+
+
+## D8 - ФДЗ: Также необходимо выполнить проверку, что в документе Реализация товаров выбран контрагент, у которого указан флаг Клиент
+
+- Подсказка 1. Для проверки корректности заполнения реквизитов используйте событие 
+ОбработкаПроверкиЗаполнения. 
+- Подсказка 2. Чтобы получить значение реквизита обращайтесь через «точку». Например, 
+Сообщить(Контрагент.ЭтоКлиент).
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 

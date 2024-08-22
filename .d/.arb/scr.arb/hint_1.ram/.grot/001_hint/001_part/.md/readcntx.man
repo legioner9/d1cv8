@@ -140,6 +140,7 @@
 	- [Unsort - Скрытый запрос](#unsort---скрытый-запрос)
 		- [Unsort - Скрытый запрос - Пример\_1](#unsort---скрытый-запрос---пример_1)
 					- [pathto.txt.f](#pathtotxtf-17)
+	- [Unsort - Использование булевых реквизитов](#unsort---использование-булевых-реквизитов)
 - [start review\_this2far](#start-review_this2far)
 - [Example DOC](#example-doc)
 	- [Example DOC - Level 2](#example-doc---level-2)
@@ -155,9 +156,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 18082024225207
+DATE: 22082024130328
 
-DATX: 1723996327
+DATX: 1724306608
 -->
 
 
@@ -5432,6 +5433,17 @@ TAGS:
 
 
 ###### pathto.txt.f
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/098.d/003.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/098.d/003.d/001.txt.man)
+
+
+
+## Unsort - Использование булевых реквизитов
+
+- see REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/004.d
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
