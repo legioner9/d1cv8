@@ -143,6 +143,8 @@
 	- [Unsort - Использование булевых реквизитов](#unsort---использование-булевых-реквизитов)
 	- [Unsort - Объект Элементы (all\_in\_this) для объекта Форма](#unsort---объект-элементы-all_in_this-для-объекта-форма)
 	- [Unsort - Ручное сопоставление процедуры и обработчика (если копипаст)](#unsort---ручное-сопоставление-процедуры-и-обработчика-если-копипаст)
+	- [Unsort - Ссылка (разименование) на верхний уровень лучше, чем объект верхнего уровня](#unsort---ссылка-разименование-на-верхний-уровень-лучше-чем-объект-верхнего-уровня)
+	- [Unsort - БАГ(контрооль звездочки) - Не все изменения сохраняются - Созд+уд щбъект -\> Сохранит все](#unsort---багконтрооль-звездочки---не-все-изменения-сохраняются---создуд-щбъект---сохранит-все)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
@@ -159,9 +161,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 22082024225745
+DATE: 23082024193533
 
-DATX: 1724342265
+DATX: 1724416533
 -->
 
 
@@ -5470,6 +5472,31 @@ TAGS:
 - [examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
 - see ![examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/006.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/006.d/001.txt.man)
+
+
+
+## Unsort - Ссылка (разименование) на верхний уровень лучше, чем объект верхнего уровня
+
+- [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+- ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/007.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/007.d/001.txt.man)
+
+
+
+## Unsort - БАГ(контрооль звездочки) - Не все изменения сохраняются - Созд+уд щбъект -> Сохранит все
+
+- [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
+
+- ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man -->
 

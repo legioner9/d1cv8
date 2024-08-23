@@ -8,7 +8,8 @@
 
 - [start before2far](#start-before2far)
 - [D10](#d10)
-  - [D10 - ФДЗ: Создайте отчет Закупки товаров.](#d10---фдз-создайте-отчет-закупки-товаров)
+	- [D10 - ФДЗ: Создайте отчет Закупки товаров.](#d10---фдз-создайте-отчет-закупки-товаров)
+					- [pathto.txt.f](#pathtotxtf)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -22,9 +23,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/01
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 23082024123216
+DATE: 23082024193738
 
-DATX: 1724391136
+DATX: 1724416658
 -->
 
 
@@ -63,8 +64,219 @@ DATX: 1724391136
 - Создайте отчет Закупки товаров. 
 - Отчет должен выводить информацию о количестве и сумме закупки в разрезе номенклатуры и 
 ответственного за закупку. 
-<!-- - Пользователь должен иметь возможность задавать период формирования отчета.  -->
+- Пользователь должен иметь возможность задавать период формирования отчета. 
 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/005.pic.jpg -->
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/006.pic.jpg -->
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/007.pic.jpg -->
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/008.pic.jpg -->
+
+[008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/009.pic.jpg -->
+
+[009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/009.pic.jpg)
+
+![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/009.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/010.pic.jpg -->
+
+[010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/010.pic.jpg)
+
+![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/010.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/011.pic.jpg -->
+
+[011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/011.pic.jpg)
+
+![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/011.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/012.pic.jpg -->
+
+[012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/012.pic.jpg)
+
+![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/012.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/013.pic.jpg -->
+
+[013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/013.pic.jpg)
+
+![013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/013.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/014.code.skd -->
+
+[014.code.skd](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/014.code.skd)
+
+
+```skd
+
+// язык скд
+
+// Приведение периода к концу дня 
+КонецПериода(&ОкончаниеПериода, "День")
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/014.pic.jpg -->
+
+[014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/014.pic.jpg)
+
+![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/014.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/015.pic.jpg -->
+
+[015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/015.pic.jpg)
+
+![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/015.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/016.pic.jpg -->
+
+[016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/016.pic.jpg)
+
+![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/016.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/017.pic.jpg -->
+
+[017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/017.pic.jpg)
+
+![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/017.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/018.pic.jpg -->
+
+[018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/018.pic.jpg)
+
+![018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/018.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/019.pic.jpg -->
+
+[019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/019.pic.jpg)
+
+![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/019.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/020.pic.jpg -->
+
+[020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/020.pic.jpg)
+
+![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/020.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/021.pic.jpg -->
+
+[021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
+
+![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/022.pic.jpg -->
+
+[022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/022.pic.jpg)
+
+![022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/022.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/023.pic.jpg -->
+
+[023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/024.pic.jpg -->
+
+[024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/024.pic.jpg)
+
+![024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/024.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg -->
+
+[025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
+
+![025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/026.code.sdbl -->
+
+[026.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/026.code.sdbl)
+
+
+```sdbl
+
+// 
+
+ВЫБРАТЬ
+	ПоступлениеТоваровТовары.Номенклатура КАК Номенклатура,
+	ПоступлениеТоваровТовары.Количество КАК Количество,
+	ПоступлениеТоваровТовары.Сумма КАК Сумма,
+	ПоступлениеТоваровТовары.Ссылка.Ответственный КАК Ответственный
+ИЗ
+	Документ.ПоступлениеТоваров.Товары КАК ПоступлениеТоваровТовары
+ГДЕ
+	ПоступлениеТоваровТовары.Ссылка.Дата МЕЖДУ &НачалоПериода И &ОкончаниеПериода
+
+```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/rpn.d/pathto.txt.f -->
+
+[pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/rpn.d/pathto.txt.f)
+
+
+
+###### pathto.txt.f
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
