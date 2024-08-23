@@ -7,7 +7,8 @@
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
 - [start before2far](#start-before2far)
-- [DN](#dn)
+- [D10](#d10)
+  - [D10 - ФДЗ: Создайте отчет Закупки товаров.](#d10---фдз-создайте-отчет-закупки-товаров)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -17,13 +18,13 @@ End Contents Menu
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/readcntx.man
 
-PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 22082024232927
+DATE: 23082024123216
 
-DATX: 1724344167
+DATX: 1724391136
 -->
 
 
@@ -36,13 +37,34 @@ DATX: 1724344167
 # start before2far
 
 
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/001.pic.jpg -->
+
+[001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+![001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/002.txt.man -->
 
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/002.txt.man)
 
 
 
-# DN
+# D10
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/001.txt.man)
+
+
+
+## D10 - ФДЗ: Создайте отчет Закупки товаров. 
+
+- Создайте отчет Закупки товаров. 
+- Отчет должен выводить информацию о количестве и сумме закупки в разрезе номенклатуры и 
+ответственного за закупку. 
+<!-- - Пользователь должен иметь возможность задавать период формирования отчета.  -->
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
