@@ -38,4 +38,5 @@
 {4,"_$Transaction$_.Rollback",18},
 {4,"_$PerformError$_",19},
 {5,565a9e48-98c1-4e0f-b7e6-ba772fa6de20,"РегистрНакопления.ОстаткиТоваров",9},
-{4,"_$Data$_.Delete",20}
+{4,"_$Data$_.Delete",20},
+{4,"_$Data$_.Unpost",21}
