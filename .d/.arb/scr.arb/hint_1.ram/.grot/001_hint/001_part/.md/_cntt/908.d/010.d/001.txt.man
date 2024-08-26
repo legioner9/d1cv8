@@ -1,0 +1,5 @@
+## Unsort - ВыборкаДетальныеЗаписи = РезультатЗапроса.Выбрать(); брать поля из текста запроса
+
+- [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+- ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
