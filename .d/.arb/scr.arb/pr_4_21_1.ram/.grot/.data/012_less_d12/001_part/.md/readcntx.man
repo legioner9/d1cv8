@@ -8,7 +8,7 @@
 
 - [start before2far](#start-before2far)
 - [D12](#d12)
-  - [D12 - ФДЗ: Обеспечьте контроль остатков для оперативно проводимых документов Реализация товаров](#d12---фдз-обеспечьте-контроль-остатков-для-оперативно-проводимых-документов-реализация-товаров)
+	- [D12 - ФДЗ: Обеспечьте контроль остатков для оперативно проводимых документов Реализация товаров](#d12---фдз-обеспечьте-контроль-остатков-для-оперативно-проводимых-документов-реализация-товаров)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -18,7 +18,7 @@ End Contents Menu
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/readcntx.man
 
-PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/                .md
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
