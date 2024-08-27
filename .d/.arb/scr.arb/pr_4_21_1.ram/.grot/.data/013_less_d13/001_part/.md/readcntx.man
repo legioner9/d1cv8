@@ -7,7 +7,7 @@
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
 - [start before2far](#start-before2far)
-- [DN](#dn)
+- [D13](#d13)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -17,13 +17,13 @@ End Contents Menu
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md/readcntx.man
 
-PPWD: /home/st/REPOBARE/_repo/d1cv8
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 27082024162357
+DATE: 27082024164812
 
-DATX: 1724750637
+DATX: 1724752092
 -->
 
 
@@ -36,13 +36,20 @@ DATX: 1724750637
 # start before2far
 
 
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md/_cntt/002.d/001.pic.jpg -->
+
+[001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+![001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md/_cntt/002.d/002.txt.man -->
 
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md/_cntt/002.d/002.txt.man)
 
 
 
-# DN
+# D13
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/013_less_d13/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 
