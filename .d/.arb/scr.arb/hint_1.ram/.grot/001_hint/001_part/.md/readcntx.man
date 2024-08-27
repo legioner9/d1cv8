@@ -144,11 +144,18 @@
 	- [Unsort - Объект Элементы (all\_in\_this) для объекта Форма](#unsort---объект-элементы-all_in_this-для-объекта-форма)
 	- [Unsort - Ручное сопоставление процедуры и обработчика (если копипаст)](#unsort---ручное-сопоставление-процедуры-и-обработчика-если-копипаст)
 	- [Unsort - Ссылка (разименование) на верхний уровень лучше, чем объект верхнего уровня](#unsort---ссылка-разименование-на-верхний-уровень-лучше-чем-объект-верхнего-уровня)
-	- [Unsort - БАГ(контрооль звездочки) - Не все изменения сохраняются - Созд+уд щбъект -\> Сохранит все](#unsort---багконтрооль-звездочки---не-все-изменения-сохраняются---создуд-щбъект---сохранит-все)
+	- [Unsort - БАГ(контрооль звездочки) - Не все изменения сохраняются - Созд+уд Объект -\> Сохранит все](#unsort---багконтрооль-звездочки---не-все-изменения-сохраняются---создуд-объект---сохранит-все)
+	- [Unsort - +Секунда в Регистре Остатки](#unsort---секунда-в-регистре-остатки)
+	- [Unsort - Записать() против Записывать = Истина](#unsort---записать-против-записывать--истина)
+	- [Unsort - ВыборкаДетальныеЗаписи = РезультатЗапроса.Выбрать(); брать поля из текста запроса](#unsort---выборкадетальныезаписи--результатзапросавыбрать-брать-поля-из-текста-запроса)
+	- [Unsort - Подсветка идентичных идентификаторов в коде](#unsort---подсветка-идентичных-идентификаторов-в-коде)
+	- [Unsort - Включить видимость реестра в интерфейсе](#unsort---включить-видимость-реестра-в-интерфейсе)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
 	- [Example DOC - Level 2](#example-doc---level-2)
+- [Example Flow](#example-flow)
+	- [Example Flow -](#example-flow--)
 
 <!-- /TOC -->
 
@@ -161,9 +168,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 23082024193533
+DATE: 27082024142617
 
-DATX: 1724416533
+DATX: 1724743577
 -->
 
 
@@ -5492,11 +5499,87 @@ TAGS:
 
 
 
-## Unsort - БАГ(контрооль звездочки) - Не все изменения сохраняются - Созд+уд щбъект -> Сохранит все
+## Unsort - БАГ(контрооль звездочки) - Не все изменения сохраняются - Созд+уд Объект -> Сохранит все
 
 - [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
 
 - ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/008.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/008.d/001.txt.man)
+
+
+
+## Unsort - +Секунда в Регистре Остатки
+
+
+- [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/011_less_d11/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
+
+- ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/011_less_d11/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/009.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/009.d/001.txt.man)
+
+
+
+## Unsort - Записать() против Записывать = Истина
+
+- [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/_cntt/002.d/003.d/003.code.bsl)
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/010.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/010.d/001.txt.man)
+
+
+
+## Unsort - ВыборкаДетальныеЗаписи = РезультатЗапроса.Выбрать(); брать поля из текста запроса
+
+- [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+- ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/001.txt.man)
+
+
+
+## Unsort - Подсветка идентичных идентификаторов в коде
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/001.txt.man)
+
+
+
+## Unsort - Включить видимость реестра в интерфейсе
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/003.pic.jpg)
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man -->
 
@@ -5634,6 +5717,30 @@ TAGS:
 		ПО ДокПокупкаТабчДокПокупкаПродукты.Ссылка = ДокПокупка.Ссылка
 
 ```
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/911.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/911.d/001.txt.man)
+
+
+
+# Example Flow
+
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/911.d/002.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/911.d/002.d/001.txt.man)
+
+
+
+## Example Flow - 
+
+- [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/001.txt.man)
+
+
+
+
 
 
 
