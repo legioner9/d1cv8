@@ -9,7 +9,8 @@ Start Contents Menu
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
 - [start before2far](#start-before2far)
-- [DN](#dn)
+- [D14](#d14)
+  - [D14 - ФДЗ: Создайте план счетов 'Бух. учет' определите в нем счета](#d14---фдз-создайте-план-счетов-бух-учет-определите-в-нем-счета)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -19,13 +20,13 @@ End Contents Menu
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/readcntx.man
 
-PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 28082024225827
+DATE: 02092024110438
 
-DATX: 1724860707
+DATX: 1725249878
 -->
 
 
@@ -38,13 +39,56 @@ DATX: 1724860707
 # start before2far
 
 
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/001.pic.jpg -->
+
+[001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+![001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/002.txt.man -->
 
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/002.txt.man)
 
 
 
-# DN
+# D14
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/001.txt.man)
+
+
+
+## D14 - ФДЗ: Создайте план счетов 'Бух. учет' определите в нем счета
+
+Создайте план счетов 'Бух. учет' определите в нем счета, необходимые для отражения операций: 
+- Поступление товаров 
+- Отгрузка товаров 
+- Оплата клиента и оплата поставщику 
+Создайте регистр бухгалтерии для отражения проводок по бухгалтерскому учету. 
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/002.pic.jpg -->
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/002.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/004.pic.jpg -->
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/002.d/004.d/004.pic.jpg)
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/014_less_d14/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
 

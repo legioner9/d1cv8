@@ -136,6 +136,10 @@ Start Contents Menu
 - [Форма Документа](#форма-документа)
 	- [Форма Документа - Пример\_1](#форма-документа---пример_1)
 					- [pathto.txt.f](#pathtotxtf-16)
+- [Бух учет](#бух-учет)
+	- [Бух учет - счета](#бух-учет---счета)
+		- [Бух учет - счета - по номерам](#бух-учет---счета---по-номерам)
+			- [Бух учет - счета - по номерам - 41 (Товары)](#бух-учет---счета---по-номерам---41-товары)
 - [Glossary](#glossary)
 	- [Glossary - Проведение условное](#glossary---проведение-условное)
 - [Unsort](#unsort)
@@ -175,9 +179,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 28082024225153
+DATE: 02092024110329
 
-DATX: 1724860313
+DATX: 1725249809
 -->
 
 
@@ -2648,7 +2652,7 @@ TAGS:
 ![027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/027.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/000_hint/001_part/.md/_cntt/014.d/005.d/002.d/028.code.bsl -->
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/028.code.bsl -->
 
 [028.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/028.code.bsl)
 
@@ -5396,6 +5400,47 @@ TAGS:
 
 
 ###### pathto.txt.f
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/001.txt.man)
+
+
+
+# Бух учет
+
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/001.txt.man)
+
+
+
+## Бух учет - счета
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/001.txt.man)
+
+
+
+### Бух учет - счета - по номерам
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/002.41.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/002.41.d/001.txt.man)
+
+
+
+#### Бух учет - счета - по номерам - 41 (Товары)
+
+- Ативный || Пассивный || АктивноПассивный
+- Кредит : 
+- Дебет : 
+
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/907.d/001.txt.man -->
 
