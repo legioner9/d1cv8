@@ -179,9 +179,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 02092024110329
+DATE: 02092024132226
 
-DATX: 1725249809
+DATX: 1725258146
 -->
 
 
@@ -5429,9 +5429,9 @@ TAGS:
 ### Бух учет - счета - по номерам
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/002.41.d/001.txt.man -->
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/41.00.d/001.txt.man -->
 
-[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/002.41.d/001.txt.man)
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/41.00.d/001.txt.man)
 
 
 
