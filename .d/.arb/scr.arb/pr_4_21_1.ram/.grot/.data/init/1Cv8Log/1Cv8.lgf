@@ -39,4 +39,7 @@
 {4,"_$PerformError$_",19},
 {5,565a9e48-98c1-4e0f-b7e6-ba772fa6de20,"РегистрНакопления.ОстаткиТоваров",9},
 {4,"_$Data$_.Delete",20},
-{4,"_$Data$_.Unpost",21}
+{4,"_$Data$_.Unpost",21},
+{5,6fd4a9ea-5078-4cc8-a033-cd33520f12da,"",10},
+{4,"_$Data$_.PredefinedDataInitialization",22},
+{5,6fd4a9ea-5078-4cc8-a033-cd33520f12da,"ПланСчетов.БухУчет",10}

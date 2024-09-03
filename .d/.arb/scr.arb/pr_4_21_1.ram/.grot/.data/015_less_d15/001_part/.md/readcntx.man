@@ -1,0 +1,66 @@
+
+<!-- [[__TOC_]] -->
+
+<a name=top></a>
+<a class=top-link hide href=#top>↑</a>
+
+Start Contents Menu
+
+<!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
+
+- [start before2far](#start-before2far)
+- [DN](#dn)
+- [start review\_this2far](#start-review_this2far)
+
+<!-- /TOC -->
+
+End Contents Menu
+
+<!--
+CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/readcntx.man
+
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md
+
+FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
+
+DATE: 03092024142807
+
+DATX: 1725348487
+-->
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/001.start.d/before2far.txt.man -->
+
+[before2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/001.start.d/before2far.txt.man)
+
+
+
+# start before2far
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/002.d/001.pic.jpg -->
+
+[001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+![001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/002.d/002.txt.man -->
+
+[002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/002.d/002.txt.man)
+
+
+
+# DN
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
+
+[review_this2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/015_less_d15/001_part/.md/_cntt/099.end.d/review_this2far.txt.man)
+
+
+
+# start review_this2far
+
+
+
+
