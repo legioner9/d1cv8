@@ -140,7 +140,6 @@ Start Contents Menu
 	- [Бух учет - счета](#бух-учет---счета)
 		- [Бух учет - счета - по номерам](#бух-учет---счета---по-номерам)
 - [](#)
-			- [Бух учет - счета - по номерам - 41 (Товары)](#бух-учет---счета---по-номерам---41-товары)
 - [Glossary](#glossary)
 	- [Glossary - Проведение условное](#glossary---проведение-условное)
 - [Unsort](#unsort)
@@ -160,6 +159,8 @@ Start Contents Menu
 	- [Unsort - Структура кода ЗаписатьДвижениеПоРегистру](#unsort---структура-кода-записатьдвижениепорегистру)
 	- [Unsort - Реквизит регистра это произвольная справочная информация о текущем движении - он не участвует в автогруппировках вирт таб](#unsort---реквизит-регистра-это-произвольная-справочная-информация-о-текущем-движении---он-не-участвует-в-автогруппировках-вирт-таб)
 	- [Unsort - Если регистр полное зеркало документа то он РегистрДокумента (Регистр\_Док\<НазваниеДок\>)](#unsort---если-регистр-полное-зеркало-документа-то-он-регистрдокумента-регистр_докназваниедок)
+	- [Unsort - Сумма документа - итог по колонке таб часть](#unsort---сумма-документа---итог-по-колонке-таб-часть)
+	- [Unsort - Реквизиты док видны в модуле по названию](#unsort---реквизиты-док-видны-в-модуле-по-названию)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
@@ -180,9 +181,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 02092024215219
+DATE: 03092024191427
 
-DATX: 1725288739
+DATX: 1725365667
 -->
 
 
@@ -5664,8 +5665,8 @@ TAGS:
         	- Выручка
         - 90.02
         	- Себестоимость продаж
-        - 90.03
-        	- Налог на добавленную стоимость
+        - 90.0 
+        	- Налог на добавленную стоимость 
         - 90.04
         	- Акцизы
         - 90.09
@@ -5698,19 +5699,6 @@ TAGS:
         	- Разница между суммой, подлежащей взысканию с виновных лиц, и балансовой стоимостью по недостачам ценностей
 - 99	А-П
 	- Прибыли и убытки	Счета бухгалтерского учета с субсчетами и описанием
-
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/41.00.d/001.txt.man -->
-
-[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/41.00.d/001.txt.man)
-
-
-
-#### Бух учет - счета - по номерам - 41 (Товары)
-
-- Ативный || Пассивный || АктивноПассивный
-- Кредит : 
-- Дебет : 
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/907.d/001.txt.man -->
@@ -5961,6 +5949,37 @@ TAGS:
 
 
 ## Unsort - Если регистр полное зеркало документа то он РегистрДокумента (Регистр_Док\<НазваниеДок>)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/001.txt.man)
+
+
+
+## Unsort - Сумма документа - итог по колонке таб часть
+
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/002.file.dt -->
+
+[002.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/002.file.dt)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/003.pic.jpg -->
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/003.pic.jpg)
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/017.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/017.d/001.txt.man)
+
+
+
+## Unsort - Реквизиты док видны в модуле по названию
 
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man -->
