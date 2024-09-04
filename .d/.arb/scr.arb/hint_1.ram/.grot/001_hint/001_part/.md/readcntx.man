@@ -161,6 +161,7 @@ Start Contents Menu
 	- [Unsort - Если регистр полное зеркало документа то он РегистрДокумента (Регистр\_Док\<НазваниеДок\>)](#unsort---если-регистр-полное-зеркало-документа-то-он-регистрдокумента-регистр_докназваниедок)
 	- [Unsort - Сумма документа - итог по колонке таб часть](#unsort---сумма-документа---итог-по-колонке-таб-часть)
 	- [Unsort - Реквизиты док видны в модуле по названию](#unsort---реквизиты-док-видны-в-модуле-по-названию)
+	- [Unsort - Структура кода ПроводкаБух](#unsort---структура-кода-проводкабух)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
@@ -181,9 +182,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 03092024191427
+DATE: 04092024133126
 
-DATX: 1725365667
+DATX: 1725431486
 -->
 
 
@@ -5830,6 +5831,22 @@ TAGS:
 - ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/011_less_d11/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
 
 
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/008.d/002.code.skd -->
+
+[002.code.skd](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/008.d/002.code.skd)
+
+
+```skd
+
+// язык скд
+
+// Приведение периода к концу дня и добавление секунды
+ДобавитьКДате(КонецПериода(&Период, "День"), "Секунда", 1)
+
+
+
+```
+
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/009.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/009.d/001.txt.man)
@@ -5981,6 +5998,42 @@ TAGS:
 
 ## Unsort - Реквизиты док видны в модуле по названию
 
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/018.d/001.txt.man -->
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/018.d/001.txt.man)
+
+
+
+## Unsort - Структура кода ПроводкаБух
+
+
+<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/018.d/002.code.bsl -->
+
+[002.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/018.d/002.code.bsl)
+
+
+```bsl
+
+// V_N
+// исправлено : 
+// исправить : 
+// ошибки : 
+
+Движения.<NAME_REG_BU>.Записывать = Истина;
+Проводка = Движения.<NAME_REG_BU>.Добавить(); 
+Проводка.Период = Дата;
+
+Проводка.СчетДт = ПланыСчетов.<NAME_PLAN>.<NAME_SCHET_DT>;
+Проводка.СчетКт = ПланыСчетов.<NAME_PLAN>.<NAME_SCHET_DB>;     
+Проводка.Сумма = <VARIABLE>;
+
+
+
+
+
+
+```
 
 <!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man -->
 
