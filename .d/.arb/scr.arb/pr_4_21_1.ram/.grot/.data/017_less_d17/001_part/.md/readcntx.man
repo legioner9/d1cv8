@@ -27,9 +27,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/01
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 05092024164740
+DATE: 05092024171216
 
-DATX: 1725529660
+DATX: 1725531136
 -->
 
 
@@ -280,6 +280,39 @@ DATX: 1725529660
 [026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/026.pic.jpg)
 
 ![026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/026.pic.jpg)
+
+
+[027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/027.pic.jpg)
+
+![027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/027.pic.jpg)
+
+
+[028.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/028.pic.jpg)
+
+![028.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/028.pic.jpg)
+
+
+[029.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/029.pic.jpg)
+
+![029.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/029.pic.jpg)
+
+
+[030.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/030.pic.jpg)
+
+![030.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/030.pic.jpg)
+
+
+[031.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/031.pic.jpg)
+
+![031.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/031.pic.jpg)
+
+
+[032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/032.pic.jpg)
+
+![032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/032.pic.jpg)
+
+
+[033.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/033.file.dt)
 
 
 [review_this2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/099.end.d/review_this2far.txt.man)
