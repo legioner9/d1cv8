@@ -10,6 +10,10 @@ Start Contents Menu
 
 - [start before2far](#start-before2far)
 - [D17](#d17)
+	- [D17 - ФДЗ: Создайте план видов расчета Начисления, в нем будут содержаться виды расчетов, имеющие](#d17---фдз-создайте-план-видов-расчета-начисления-в-нем-будут-содержаться-виды-расчетов-имеющие)
+	- [D17 - ФДЗ: Создайте предопределенные элементы – Оклад по тарифу и Невыход сотрудника.](#d17---фдз-создайте-предопределенные-элементы--оклад-по-тарифу-и-невыход-сотрудника)
+	- [D17 - ФДЗ: Создайте регистр сведений, описывающий график работы предприятия. Заполните данными этот регистр.](#d17---фдз-создайте-регистр-сведений-описывающий-график-работы-предприятия-заполните-данными-этот-регистр)
+	- [D17 - ФДЗ: Создайте регистр сведений, описывающий график работы предприятия. Заполните данными этот регистр.](#d17---фдз-создайте-регистр-сведений-описывающий-график-работы-предприятия-заполните-данными-этот-регистр-1)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -23,13 +27,11 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/01
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 04092024170656
+DATE: 05092024164740
 
-DATX: 1725444416
+DATX: 1725529660
 -->
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/001.start.d/before2far.txt.man -->
 
 [before2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/001.start.d/before2far.txt.man)
 
@@ -38,19 +40,13 @@ DATX: 1725444416
 # start before2far
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/000.file.dt -->
-
 [000.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/000.file.dt)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/001.pic.jpg -->
 
 [001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/001.pic.jpg)
 
 ![001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/001.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/002.txt.man -->
 
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/002.txt.man)
 
@@ -59,7 +55,232 @@ DATX: 1725444416
 # D17
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/099.end.d/review_this2far.txt.man -->
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/001.txt.man)
+
+
+
+## D17 - ФДЗ: Создайте план видов расчета Начисления, в нем будут содержаться виды расчетов, имеющие 
+протяженность во времени
+
+- Создайте план видов расчета Начисления, в нем будут содержаться виды расчетов, имеющие 
+протяженность во времени. 
+- Создайте предопределенные элементы – Оклад по тарифу и Невыход сотрудника. 
+- Создайте документ Начисление оклада и Невыход сотрудника, определите структуру этих документов. 
+- Создайте регистр расчета Начисления. Он будет хранить данные о начисленной заработной плате в 
+разрезе сотрудников. 
+- Создайте регистр сведений, описывающий график работы предприятия. Заполните данными этот регистр. 
+- Укажите связь регистра расчета с графиком.
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+
+[005.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/005.txt.man)
+
+
+
+## D17 - ФДЗ: Создайте предопределенные элементы – Оклад по тарифу и Невыход сотрудника. 
+Создайте документ Начисление оклада и Невыход сотрудника, определите структуру этих документов.
+
+ <!-- Создайте план видов расчета Начисления, в нем будут содержаться виды расчетов, имеющие 
+протяженность во времени.  -->
+
+Создайте предопределенные элементы – Оклад по тарифу и Невыход сотрудника. 
+Создайте документ Начисление оклада и Невыход сотрудника, определите структуру этих документов. 
+<!--
+Создайте регистр расчета Начисления. Он будет хранить данные о начисленной заработной плате в 
+разрезе сотрудников. 
+Создайте регистр сведений, описывающий график работы предприятия. Заполните данными этот регистр. 
+Укажите связь регистра расчета с графиком. -->
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+
+[008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+
+[009.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/009.txt.man)
+
+
+
+## D17 - ФДЗ: Создайте регистр сведений, описывающий график работы предприятия. Заполните данными этот регистр. 
+Укажите связь регистра расчета с графиком 
+
+ <!-- Создайте план видов расчета Начисления, в нем будут содержаться виды расчетов, имеющие 
+протяженность во времени.  
+
+Создайте предопределенные элементы – Оклад по тарифу и Невыход сотрудника. 
+Создайте документ Начисление оклада и Невыход сотрудника, определите структуру этих документов. -->
+
+Создайте регистр расчета Начисления. Он будет хранить данные о начисленной заработной плате в 
+разрезе сотрудников. 
+<!--
+Создайте регистр сведений, описывающий график работы предприятия. Заполните данными этот регистр. 
+Укажите связь регистра расчета с графиком. -->
+
+[010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/010.pic.jpg)
+
+![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/010.pic.jpg)
+
+
+[011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/011.pic.jpg)
+
+![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/011.pic.jpg)
+
+
+[012.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/012.txt.man)
+
+
+
+## D17 - ФДЗ: Создайте регистр сведений, описывающий график работы предприятия. Заполните данными этот регистр. 
+Укажите связь регистра расчета с графиком.
+
+ <!-- Создайте план видов расчета Начисления, в нем будут содержаться виды расчетов, имеющие 
+протяженность во времени.  
+
+Создайте предопределенные элементы – Оклад по тарифу и Невыход сотрудника. 
+Создайте документ Начисление оклада и Невыход сотрудника, определите структуру этих документов. -->
+
+Создайте регистр расчета Начисления. Он будет хранить данные о начисленной заработной плате в 
+разрезе сотрудников. 
+<!--
+Создайте регистр сведений, описывающий график работы предприятия. Заполните данными этот регистр. 
+Укажите связь регистра расчета с графиком. -->
+
+[013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/013.pic.jpg)
+
+![013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/013.pic.jpg)
+
+
+[014.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/014.code.bsl)
+
+
+```bsl
+
+// V_N ДОК: ЗаполнениеГрафикаПредприятия
+// содержание : делает движние в Графике предприятия
+// исправлено : 
+// исправить : 
+// ошибки : 
+
+
+Процедура ОбработкаПроведения(Отказ, РежимПроведения)
+	// Вставить содержимое обработчика. 
+	
+	ТекущаяДата_ = НачалоГода(Дата);
+	КонецГода_ = КонецГода(Дата);       
+	
+	// флаг разрешающий запись 
+	Движения.ГрафикПредприятия.Записывать = Истина;  
+	
+	Пока ТекущаяДата_ <= КонецГода_ Цикл        
+		// заполняем регистр график предприятия 
+		// создаем объект добавления в регистр - при выходе из процедуры он внесет изменения в рег если Записывать = Истина;
+		Движение = Движения.ГрафикПредприятия.Добавить();  
+		
+		Движение.Дата = ТекущаяДата_;
+		// номер дня до включая 6 до включая субботу
+		Если ДеньНедели(ТекущаяДата_) <= 6 Тогда 
+			Движение.РабочийДень = 1;
+		Иначе 
+			Движение.РабочийДень = 0;
+		КонецЕсли; 
+		
+		// прибавим к ТекущаяДата_ 1 сутки
+		ТекущаяДата_ = ТекущаяДата_ + 24*3600;			
+		
+	КонецЦикла;
+КонецПроцедуры
+
+
+
+
+```
+
+[015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/015.pic.jpg)
+
+![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/015.pic.jpg)
+
+
+[016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/016.pic.jpg)
+
+![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/016.pic.jpg)
+
+
+[017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/017.pic.jpg)
+
+![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/017.pic.jpg)
+
+
+[018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/018.pic.jpg)
+
+![018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/018.pic.jpg)
+
+
+[019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/019.pic.jpg)
+
+![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/019.pic.jpg)
+
+
+[020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/020.pic.jpg)
+
+![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/020.pic.jpg)
+
+
+[021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
+
+![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
+
+
+[022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/022.pic.jpg)
+
+![022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/022.pic.jpg)
+
+
+[023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+
+[024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/024.pic.jpg)
+
+![024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/024.pic.jpg)
+
+
+[025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
+
+![025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
+
+
+[026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/026.pic.jpg)
+
+![026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/002.d/003.d/026.pic.jpg)
+
 
 [review_this2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/017_less_d17/001_part/.md/_cntt/099.end.d/review_this2far.txt.man)
 
