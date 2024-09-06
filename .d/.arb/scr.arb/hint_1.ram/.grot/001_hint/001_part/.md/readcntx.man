@@ -162,6 +162,8 @@ Start Contents Menu
 	- [Unsort - Сумма документа - итог по колонке таб часть](#unsort---сумма-документа---итог-по-колонке-таб-часть)
 	- [Unsort - Реквизиты док видны в модуле по названию](#unsort---реквизиты-док-видны-в-модуле-по-названию)
 	- [Unsort - Структура кода ПроводкаБух](#unsort---структура-кода-проводкабух)
+	- [Unsort - Баг не работает Вытеснение Оклада Невыходами](#unsort---баг-не-работает-вытеснение-оклада-невыходами)
+		- [Unsort - Баг если не работает Вытеснение Оклада Невыходами - исправление](#unsort---баг-если-не-работает-вытеснение-оклада-невыходами---исправление)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
@@ -182,13 +184,11 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 04092024133126
+DATE: 06092024201327
 
-DATX: 1725431486
+DATX: 1725628407
 -->
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/001.start.d/before2far.txt.man -->
 
 [before2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/001.start.d/before2far.txt.man)
 
@@ -205,16 +205,12 @@ DATX: 1725431486
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/001.txt.man)
 
 
 
 # Клиентское приложение
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/001.txt.man)
 
@@ -223,29 +219,21 @@ DATX: 1725431486
 ## Клиентское приложение - Интерфейс
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/002.d/001.txt.man)
 
 
 
 ### Клиентское приложение - Интерфейс - Настройка
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/002.d/002.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/002.d/003.pic.jpg -->
-
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/002.d/002.d/002.d/003.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/001.txt.man)
 
@@ -254,8 +242,6 @@ DATX: 1725431486
 # Справочник
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/001.txt.man)
 
 
@@ -263,28 +249,20 @@ DATX: 1725431486
 ## Справочник - Настройка
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/003.d/001.txt.man)
 
@@ -293,14 +271,10 @@ DATX: 1725431486
 ## Cправочник - Описание
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/003.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/003.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/003.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/001.txt.man)
 
@@ -309,8 +283,6 @@ DATX: 1725431486
 # Конфигурация
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/001.txt.man)
 
 
@@ -318,28 +290,20 @@ DATX: 1725431486
 ## Конфигурация - Сравнение конфигураций
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/003.d/001.txt.man)
 
@@ -348,14 +312,10 @@ DATX: 1725431486
 ## Конфигурация - Хранилище конфигураций
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/003.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/003.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/004.d/003.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/001.txt.man)
 
@@ -364,8 +324,6 @@ DATX: 1725431486
 # Документ
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/002.d/001.txt.man)
 
 
@@ -373,14 +331,10 @@ DATX: 1725431486
 ## Документ - Описание
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/001.txt.man)
 
@@ -389,63 +343,45 @@ DATX: 1725431486
 ## Документ - Настройка
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/007.pic.jpg -->
 
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/007.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/008.pic.jpg -->
-
 [008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/008.pic.jpg)
 
 ![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/008.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/009.pic.jpg -->
-
 [009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/009.pic.jpg)
 
 ![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/003.d/009.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/004.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/004.d/001.txt.man)
 
@@ -453,8 +389,6 @@ DATX: 1725431486
 
 ## Документ - Доступ к строкам табличной части
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/004.d/002.code.bsl -->
 
 [002.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/004.d/002.code.bsl)
 
@@ -469,16 +403,12 @@ DATX: 1725431486
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/004.d/003.txt.man -->
-
 [003.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/004.d/003.txt.man)
 
 
 
 [Расширенный пример](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/007_less/001_part/.md/_cntt/003.d/002.code.bsl)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/005.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/005.d/001.txt.man)
 
@@ -488,8 +418,6 @@ DATX: 1725431486
 
 Названия данных документа встречающиеся 1 раз и только в шапке документа
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/006.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/006.d/001.txt.man)
 
@@ -503,14 +431,10 @@ DATX: 1725431486
 - учет при котором проводимый документ самый поздний по времени
 - использует данные остатков на текущую дату - без передачи параметров
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/006.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/006.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/005.d/006.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/006.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/006.d/001.txt.man)
 
@@ -519,8 +443,6 @@ DATX: 1725431486
 # Нумератор
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/006.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/006.d/002.d/001.txt.man)
 
 
@@ -528,14 +450,10 @@ DATX: 1725431486
 ## Нумератор - Описание
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/006.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/006.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/006.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/007.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/007.d/001.txt.man)
 
@@ -544,8 +462,6 @@ DATX: 1725431486
 # Последовательность
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/007.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/007.d/002.d/001.txt.man)
 
 
@@ -553,14 +469,10 @@ DATX: 1725431486
 ## Последовательность - Описание
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/007.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/007.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/007.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/008.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/008.d/001.txt.man)
 
@@ -568,8 +480,6 @@ DATX: 1725431486
 
 # Ссылочный тип 
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/008.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/008.d/002.d/001.txt.man)
 
@@ -579,14 +489,10 @@ DATX: 1725431486
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/008.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/008.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/008.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/001.txt.man)
 
@@ -595,8 +501,6 @@ DATX: 1725431486
 # Ссылка
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/001.txt.man)
 
 
@@ -604,49 +508,35 @@ DATX: 1725431486
 ## Ссылка - Удаление ссылок
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/006.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/007.pic.jpg -->
-
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/009.d/002.d/007.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/001.txt.man)
 
@@ -655,8 +545,6 @@ DATX: 1725431486
 # Регистp
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/001.txt.man)
 
 
@@ -664,28 +552,20 @@ DATX: 1725431486
 ## Регистр - Описание
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/001.txt.man)
 
@@ -693,8 +573,6 @@ DATX: 1725431486
 
 ## Регистр - Настройка
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/000.lcu.f -->
 
 [000.lcu.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/000.lcu.f)
 
@@ -708,8 +586,6 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/001.txt.man)
 
 
@@ -717,42 +593,30 @@ TAGS:
 ### Регистр - Настройка - Видимость из окна документа
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/002.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/001.txt.man)
 
@@ -761,42 +625,30 @@ TAGS:
 ### Регистр - Настройка - Общая
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/003.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/004.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/004.d/001.txt.man)
 
@@ -805,14 +657,10 @@ TAGS:
 ### Регистр - Настройка - Видимость через функцию технического специалиста
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/004.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/004.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/004.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/001.txt.man)
 
@@ -822,49 +670,35 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/006.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/007.pic.jpg -->
-
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/005.d/007.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/006.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/006.d/001.txt.man)
 
@@ -872,8 +706,6 @@ TAGS:
 
 ### Регистр - Настройка - Добавить строку
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/006.d/002.code.bsl -->
 
 [002.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/006.d/002.code.bsl)
 
@@ -885,8 +717,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/007.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/007.d/001.txt.man)
 
 
@@ -897,14 +727,10 @@ TAGS:
 - В реальных таблицах Группируется и ограничивается ВСЯ выборка без предварительных условий
 - Стараемся ВСЕГДА сводить работу к Запросам к вирт таб регистов
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/007.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/007.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/003.d/007.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/001.txt.man)
 
@@ -912,8 +738,6 @@ TAGS:
 
 ## Регистр - Регистр накопления
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/000.lcu.f -->
 
 [000.lcu.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/000.lcu.f)
 
@@ -924,8 +748,6 @@ MAIN:
 TAGS: 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/001.txt.man)
 
 
@@ -933,15 +755,11 @@ TAGS:
 ### Регистр - Регистр накопления - Виртуальные таблицы
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/002.txt.man -->
-
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/002.txt.man)
 
 
 
 #### Пример запроса к вирт таблицы
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/003.code.sdbl -->
 
 [003.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/003.code.sdbl)
 
@@ -957,8 +775,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/004.txt.man -->
-
 [004.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/004.txt.man)
 
 
@@ -971,8 +787,6 @@ TAGS:
 - в режиме Остатки
     - Остатки
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/005.txt.man -->
-
 [005.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/005.txt.man)
 
 
@@ -981,15 +795,11 @@ TAGS:
 - группирует по измерениям
 - суммирует по ресурсам
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/010.d/004.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/001.txt.man)
 
@@ -998,15 +808,11 @@ TAGS:
 # Конструктор
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/001.txt.man)
 
 
 
 ## Конструктор - Конструктор движений регистров
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/001.txt.man)
 
@@ -1015,36 +821,26 @@ TAGS:
 ### Конструктор - Конструктор движений регистров - Пример движение рег ост продуктов
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/004.txt.man -->
 
 [004.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/004.txt.man)
 
 
 
 ### Сгенерировано движение конструктором
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/005.code.bsl -->
 
 [005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/005.code.bsl)
 
@@ -1074,15 +870,11 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/011.d/002.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/001.txt.man)
 
@@ -1091,16 +883,12 @@ TAGS:
 # Модуль документ
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/001.txt.man)
 
 
 
 ## Модуль документ - Проведение 
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/002.d/001.txt.man)
 
@@ -1110,8 +898,6 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/002.d/002.txt.man -->
-
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/002.d/002.txt.man)
 
 
@@ -1119,8 +905,6 @@ TAGS:
 #### Отказ в проведении по количеству записей в табличной части
 
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/002.d/003.code.bsl -->
 
 [003.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/002.d/003.code.bsl)
 
@@ -1156,15 +940,11 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/002.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ##### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/001.txt.man)
 
@@ -1173,8 +953,6 @@ TAGS:
 ### Модуль документ - Проведение - группировка в запросе по продукту перед движением 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/002.txt.man -->
-
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/002.txt.man)
 
 
@@ -1182,21 +960,15 @@ TAGS:
 #### Постановка задачи - устранить повторы по продукту в рег ост прод
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/003.pic.jpg -->
-
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/005.code.bsl -->
 
 [005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/005.code.bsl)
 
@@ -1230,8 +1002,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/006.txt.man -->
-
 [006.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/006.txt.man)
 
 
@@ -1239,14 +1009,10 @@ TAGS:
 #### https://youtu.be/rgMWJOou8ak?list=PLfnvyWr5sdi2tJO4Fb5YLMMSluMKZsq_4&t=684
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/007.pic.jpg -->
-
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/007.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/008.code.sdbl -->
 
 [008.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/008.code.sdbl)
 
@@ -1265,21 +1031,15 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/009.pic.jpg -->
-
 [009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/009.pic.jpg)
 
 ![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/009.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/010.pic.jpg -->
-
 [010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/010.pic.jpg)
 
 ![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/010.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/011.code.sdbl -->
 
 [011.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/011.code.sdbl)
 
@@ -1300,14 +1060,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/012.pic.jpg -->
-
 [012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/012.pic.jpg)
 
 ![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/012.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/013.code.sdbl -->
 
 [013.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/013.code.sdbl)
 
@@ -1327,21 +1083,15 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/014.pic.jpg -->
-
 [014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/014.pic.jpg)
 
 ![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/014.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/015.pic.jpg -->
-
 [015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/015.pic.jpg)
 
 ![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/015.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/016.code.sdbl -->
 
 [016.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/016.code.sdbl)
 
@@ -1362,14 +1112,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/017.pic.jpg -->
-
 [017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/017.pic.jpg)
 
 ![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/017.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/018.code.sdbl -->
 
 [018.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/018.code.sdbl)
 
@@ -1389,28 +1135,20 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/019.pic.jpg -->
-
 [019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/019.pic.jpg)
 
 ![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/019.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/020.pic.jpg -->
 
 [020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/020.pic.jpg)
 
 ![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/020.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/021.pic.jpg -->
-
 [021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/021.pic.jpg)
 
 ![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/021.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/022.code.sdbl -->
 
 [022.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/022.code.sdbl)
 
@@ -1433,35 +1171,25 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/023.pic.jpg -->
-
 [023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/023.pic.jpg)
 
 ![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/023.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/024.pic.jpg -->
 
 [024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/024.pic.jpg)
 
 ![024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/024.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/025.pic.jpg -->
-
 [025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/025.pic.jpg)
 
 ![025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/025.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/026.pic.jpg -->
-
 [026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/026.pic.jpg)
 
 ![026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/026.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/027.code.sdbl -->
 
 [027.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/027.code.sdbl)
 
@@ -1483,8 +1211,6 @@ TAGS:
 	ДокПокупкаТабчДокПокупкаПродукты.РекТабчДокПокупкаПродуктыПродукт
 
 ```
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/028.code.bsl -->
 
 [028.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/028.code.bsl)
 
@@ -1552,21 +1278,15 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/029.pic.jpg -->
-
 [029.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/029.pic.jpg)
 
 ![029.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/029.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/030.pic.jpg -->
-
 [030.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/030.pic.jpg)
 
 ![030.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/030.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/031.code.bsl -->
 
 [031.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/031.code.bsl)
 
@@ -1624,14 +1344,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/032.pic.jpg -->
-
 [032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/032.pic.jpg)
 
 ![032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/032.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/033.code.bsl -->
 
 [033.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/033.code.bsl)
 
@@ -1691,22 +1407,16 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/034.pic.jpg -->
-
 [034.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/034.pic.jpg)
 
 ![034.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/034.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/rpn.d/pathto.txt.f -->
 
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/003.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/001.txt.man)
 
@@ -1715,28 +1425,20 @@ TAGS:
 ### Модуль документ - Проведение - Конструктор движений
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/005.code.bsl -->
 
 [005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/005.code.bsl)
 
@@ -1770,15 +1472,11 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/012.d/002.d/004.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/013.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/013.d/001.txt.man)
 
@@ -1787,16 +1485,12 @@ TAGS:
 # Консоль запросов
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/001.txt.man)
 
 
 
 # Внутренние заметки в данной документации
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/002.d/001.txt.man)
 
@@ -1806,8 +1500,6 @@ TAGS:
 
 - [запрос с группировкой и ссылкой](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/003.d/033.code.bsl )
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/003.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/003.d/001.txt.man)
 
 
@@ -1815,8 +1507,6 @@ TAGS:
 ## Внутренние заметки в данной документации - Пример конструктора движений - 1
 
 - [Пример конструктора движений](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/000_hint/001_part/.md/_cntt/012.d/002.d/004.d/001.txt.man)
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/001.txt.man)
 
@@ -1827,36 +1517,26 @@ TAGS:
 - Копировать из 9 урока [Пример списания по средней цене](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/001.txt.man)
 
 
 
 ### Создаем движение из конструктора
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/005.code.bsl -->
 
 [005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/005.code.bsl)
 
@@ -1890,28 +1570,20 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/007.pic.jpg -->
 
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/007.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/008.pic.jpg -->
-
 [008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/008.pic.jpg)
 
 ![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/008.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/009.txt.man -->
 
 [009.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/009.txt.man)
 
@@ -1919,14 +1591,10 @@ TAGS:
 
 ### Теперь нужно научиться считать суммы по среднему для списания
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/010.pic.jpg -->
-
 [010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/010.pic.jpg)
 
 ![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/010.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/011.txt.man -->
 
 [011.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/011.txt.man)
 
@@ -1934,28 +1602,20 @@ TAGS:
 
 #### Посмотрим что нам дадут вирт таблицы регистров
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/012.pic.jpg -->
-
 [012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/012.pic.jpg)
 
 ![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/012.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/013.pic.jpg -->
 
 [013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/013.pic.jpg)
 
 ![013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/013.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/014.pic.jpg -->
-
 [014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/014.pic.jpg)
 
 ![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/014.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/014.r.txt.man -->
 
 [014.r.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/014.r.txt.man)
 
@@ -1963,28 +1623,20 @@ TAGS:
 
 #### Ограничим по времени выборки - на дату
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/015.pic.jpg -->
-
 [015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/015.pic.jpg)
 
 ![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/015.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/016.pic.jpg -->
 
 [016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/016.pic.jpg)
 
 ![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/016.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/017.pic.jpg -->
-
 [017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/017.pic.jpg)
 
 ![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/017.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/017.r.code.sdbl -->
 
 [017.r.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/017.r.code.sdbl)
 
@@ -2002,36 +1654,26 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/018.txt.man -->
-
 [018.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/018.txt.man)
 
 
 
 #### Теперь ограничим выдачу по строкам - только как в документе потреблния
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/019.pic.jpg -->
-
 [019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/019.pic.jpg)
 
 ![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/019.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/020.pic.jpg -->
 
 [020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/020.pic.jpg)
 
 ![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/020.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/021.pic.jpg -->
-
 [021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/021.pic.jpg)
 
 ![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/021.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/022.code.sdbl -->
 
 [022.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/022.code.sdbl)
 
@@ -2049,14 +1691,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/023.pic.jpg -->
-
 [023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/023.pic.jpg)
 
 ![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/023.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/024.txt.man -->
 
 [024.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/024.txt.man)
 
@@ -2066,35 +1704,25 @@ TAGS:
 
 [query with 2 param file.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/002.d/022.code.sdbl)
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/025.pic.jpg -->
-
 [025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/025.pic.jpg)
 
 ![025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/025.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/026.pic.jpg -->
 
 [026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/026.pic.jpg)
 
 ![026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/026.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/027.pic.jpg -->
-
 [027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/027.pic.jpg)
 
 ![027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/027.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/028.pic.jpg -->
-
 [028.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/028.pic.jpg)
 
 ![028.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/028.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/029.code.bsl -->
 
 [029.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/029.code.bsl)
 
@@ -2157,8 +1785,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/030.code.bsl -->
-
 [030.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/030.code.bsl)
 
 
@@ -2219,8 +1845,6 @@ TAGS:
 
 
 ```
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/030.d.code.bsl -->
 
 [030.d.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/030.d.code.bsl)
 
@@ -2293,36 +1917,26 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/031.pic.jpg -->
-
 [031.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/031.pic.jpg)
 
 ![031.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/031.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/032.pic.jpg -->
 
 [032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/032.pic.jpg)
 
 ![032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/032.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/033.pic.jpg -->
-
 [033.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/033.pic.jpg)
 
 ![033.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/002.d/033.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/rpn.d/pathto.txt.f -->
 
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/004.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/001.txt.man)
 
@@ -2333,16 +1947,12 @@ TAGS:
 - Копировать из 9 урока [Пример проблемы копеек](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/009_less/001_part/.md/_cntt/003.d)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/001.txt.man)
 
 
 
 ## Внутренние заметки в данной документации - Пример проблемы копеек
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/001.u.txt.man -->
 
 [001.u.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/001.u.txt.man)
 
@@ -2351,49 +1961,35 @@ TAGS:
 ### Внутренние заметки в данной документации - Пример проблемы копеек - Последовательное списание
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/006.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/007.pic.jpg -->
-
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/007.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/008.txt.man -->
 
 [008.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/008.txt.man)
 
@@ -2402,8 +1998,6 @@ TAGS:
 ### Внутренние заметки в данной документации - Пример проблемы копеек - Одновременное списание 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/009.txt.man -->
-
 [009.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/009.txt.man)
 
 
@@ -2411,28 +2005,20 @@ TAGS:
 #### Внутренние заметки в данной документации - Пример проблемы копеек - Одновременное списание - в одной записи
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/010.pic.jpg -->
-
 [010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/010.pic.jpg)
 
 ![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/010.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/011.pic.jpg -->
 
 [011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/011.pic.jpg)
 
 ![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/011.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/012.pic.jpg -->
-
 [012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/012.pic.jpg)
 
 ![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/012.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/013.txt.man -->
 
 [013.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/013.txt.man)
 
@@ -2441,28 +2027,20 @@ TAGS:
 #### Внутренние заметки в данной документации - Пример проблемы копеек - Одновременное списание - в нескольких записях
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/014.pic.jpg -->
-
 [014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/014.pic.jpg)
 
 ![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/014.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/015.pic.jpg -->
 
 [015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/015.pic.jpg)
 
 ![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/015.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/016.pic.jpg -->
-
 [016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/016.pic.jpg)
 
 ![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/016.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/017.txt.man -->
 
 [017.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/017.txt.man)
 
@@ -2479,8 +2057,6 @@ TAGS:
 - &ПарамДатаЗапроса=МоментВремениЗАПРОСА() - каждый раз персчитывать 
 - документ списания нужно группировать по продукту - что бы избежать множественности строк в регистре
 - если списывается все количество то остаток обнулять - а не считать 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/018.code.bsl -->
 
 [018.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/018.code.bsl)
 
@@ -2553,16 +2129,12 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/019.txt.man -->
-
 [019.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/019.txt.man)
 
 
 
 ### Внутренние заметки в данной документации - Пример проблемы копеек - Пример решения Группировкой перед записью в регистр
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/020.txt.man -->
 
 [020.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/020.txt.man)
 
@@ -2571,35 +2143,25 @@ TAGS:
 ### Внутренние заметки в данной документации - Пример проблемы копеек - Пример решения Группировкой перед записью в регистр - Создаем запрос с групп по продуктам
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/021.pic.jpg -->
-
 [021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/021.pic.jpg)
 
 ![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/021.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/022.pic.jpg -->
 
 [022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/022.pic.jpg)
 
 ![022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/022.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/023.pic.jpg -->
-
 [023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/023.pic.jpg)
 
 ![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/023.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/024.pic.jpg -->
-
 [024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/024.pic.jpg)
 
 ![024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/024.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/025.code.sdbl -->
 
 [025.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/025.code.sdbl)
 
@@ -2641,21 +2203,15 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/026.pic.jpg -->
-
 [026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/026.pic.jpg)
 
 ![026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/026.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/027.pic.jpg -->
-
 [027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/027.pic.jpg)
 
 ![027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/027.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/028.code.bsl -->
 
 [028.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/028.code.bsl)
 
@@ -2727,8 +2283,6 @@ TAGS:
 
 
 ```
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/029.code.bsl -->
 
 [029.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/029.code.bsl)
 
@@ -2818,8 +2372,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/030.txt.man -->
-
 [030.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/030.txt.man)
 
 
@@ -2829,8 +2381,6 @@ TAGS:
 - Переносим код в запрос
 - Заменяем ТекСтрокаТабчДокПотреблениеПродукты на ВыборкаЗапросаПотребление
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/031.code.bsl -->
 
 [031.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/031.code.bsl)
 
@@ -2915,23 +2465,17 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/005.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/006.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/006.d/001.txt.man)
 
@@ -2944,15 +2488,11 @@ TAGS:
 - [Пример_1 скрытого запроса .bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/010_less/001_part/.md/_cntt/002.d/060.final.code.bsl)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/006.d/059.b.txt.man -->
-
 [059.b.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/006.d/059.b.txt.man)
 
 
 
 ### Комбинированный запрос - Пример 1 (Один ввместо двух [один из которых в цикле]) - Пример_1 скрытого запроса
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/006.d/060.final.code.bsl -->
 
 [060.final.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/006.d/060.final.code.bsl)
 
@@ -3059,15 +2599,11 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/006.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/006.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/001.txt.man)
 
@@ -3075,29 +2611,21 @@ TAGS:
 
 ## Внутренние заметки в данной документации - Комбинированный запрос Пример_1 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/003.pic.jpg -->
-
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/003.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.pic.jpg -->
 
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.r001.txt.man -->
-
 [004.r001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.r001.txt.man)
 
 
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - код проц док потр v_1 до объединения запросов
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.r002.code.bsl -->
 
 [004.r002.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.r002.code.bsl)
 
@@ -3188,8 +2716,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.x.txt.man -->
-
 [004.x.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/004.x.txt.man)
 
 
@@ -3197,8 +2723,6 @@ TAGS:
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - ЗАПР_1
 
 - группирует док потребление по продукту
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/005.code.sdbl -->
 
 [005.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/005.code.sdbl)
 
@@ -3220,14 +2744,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/006.x.txt.man -->
 
 [006.x.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/006.x.txt.man)
 
@@ -3236,8 +2756,6 @@ TAGS:
 ## Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - ЗАПР_2
 
 - клон отчета на кон дату
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/007.code.sdbl -->
 
 [007.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/007.code.sdbl)
 
@@ -3255,14 +2773,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/008.pic.jpg -->
-
 [008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/008.pic.jpg)
 
 ![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/008.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/009.txt.man -->
 
 [009.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/009.txt.man)
 
@@ -3283,19 +2797,13 @@ TAGS:
 - RDS -> Списываемая сумма продукта CC*(CS/CR)
 - RNP -> стр = НазваниеПродукта (Что бы не делать скрытый запрос в пояснении для пользоватн=еля)
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/010.file.ods -->
-
 [010.file.ods](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/010.file.ods)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/010.ods.pic.jpg -->
 
 [010.ods.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/010.ods.pic.jpg)
 
 ![010.ods.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/010.ods.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/011.txt.man -->
 
 [011.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/011.txt.man)
 
@@ -3304,14 +2812,10 @@ TAGS:
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - ЗАПР_3 (Объединяющий) Визуализация ЗАПР_1 + ЗАПР_2 = ЗАПР_3 конечный результат запроса Таблица
  
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/012.z3.pic.jpg -->
-
 [012.z3.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/012.z3.pic.jpg)
 
 ![012.z3.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/012.z3.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/013.txt.man -->
 
 [013.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/013.txt.man)
 
@@ -3319,77 +2823,55 @@ TAGS:
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - запомним рез Запр_1 во временную таблицу
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/014.pic.jpg -->
-
 [014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/014.pic.jpg)
 
 ![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/014.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/015.pic.jpg -->
 
 [015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/015.pic.jpg)
 
 ![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/015.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/016.pic.jpg -->
-
 [016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/016.pic.jpg)
 
 ![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/016.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/017.pic.jpg -->
 
 [017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/017.pic.jpg)
 
 ![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/017.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/018.pic.jpg -->
-
 [018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/018.pic.jpg)
 
 ![018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/018.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/019.pic.jpg -->
 
 [019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/019.pic.jpg)
 
 ![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/019.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/020.pic.jpg -->
-
 [020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/020.pic.jpg)
 
 ![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/020.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/021.pic.jpg -->
 
 [021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/021.pic.jpg)
 
 ![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/021.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/022.pic.jpg -->
-
 [022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/022.pic.jpg)
 
 ![022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/022.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/023.pic.jpg -->
-
 [023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/023.pic.jpg)
 
 ![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/023.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/024.txt.man -->
 
 [024.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/024.txt.man)
 
@@ -3397,14 +2879,10 @@ TAGS:
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - код проц док потр v_2
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/025.pic.jpg -->
-
 [025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/025.pic.jpg)
 
 ![025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/025.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/026.code.sdbl -->
 
 [026.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/026.code.sdbl)
 
@@ -3440,48 +2918,34 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/027.txt.man -->
-
 [027.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/027.txt.man)
 
 
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - Посмотрим рез в предпр
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/029.pic.jpg -->
-
 [029.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/029.pic.jpg)
 
 ![029.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/029.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/030.file.ods -->
-
 [030.file.ods](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/030.file.ods)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/031.ods.pic.jpg -->
 
 [031.ods.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/031.ods.pic.jpg)
 
 ![031.ods.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/031.ods.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/032.pic.jpg -->
-
 [032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/032.pic.jpg)
 
 ![032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/032.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/033.pic.jpg -->
-
 [033.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/033.pic.jpg)
 
 ![033.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/033.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/034.txt.man -->
 
 [034.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/034.txt.man)
 
@@ -3489,28 +2953,20 @@ TAGS:
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - Создаем левое объединоение
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/035.pic.jpg -->
-
 [035.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/035.pic.jpg)
 
 ![035.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/035.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/036.pic.jpg -->
 
 [036.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/036.pic.jpg)
 
 ![036.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/036.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/037.pic.jpg -->
-
 [037.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/037.pic.jpg)
 
 ![037.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/037.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/038.code.sdbl -->
 
 [038.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/038.code.sdbl)
 
@@ -3549,14 +3005,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/039.pic.jpg -->
-
 [039.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/039.pic.jpg)
 
 ![039.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/039.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/040.txt.man -->
 
 [040.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/040.txt.man)
 
@@ -3564,28 +3016,20 @@ TAGS:
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - Заменим поле КоличествоОстаток на ДосаточноПодукта (Истина или Ложь)
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/041.pic.jpg -->
-
 [041.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/041.pic.jpg)
 
 ![041.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/041.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/042.pic.jpg -->
 
 [042.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/042.pic.jpg)
 
 ![042.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/042.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/043.pic.jpg -->
-
 [043.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/043.pic.jpg)
 
 ![043.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/043.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/044.code.sdbl -->
 
 [044.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/044.code.sdbl)
 
@@ -3628,29 +3072,21 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/044.pic.jpg -->
-
 [044.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/044.pic.jpg)
 
 ![044.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/044.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/045.pic.jpg -->
 
 [045.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/045.pic.jpg)
 
 ![045.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/045.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/045.txt.man -->
-
 [045.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/045.txt.man)
 
 
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - Используем защиту ЕСТЬNULL
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/046.code.sdbl -->
 
 [046.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/046.code.sdbl)
 
@@ -3693,22 +3129,16 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/047.txt.man -->
-
 [047.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/047.txt.man)
 
 
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - Заменим СуммаОстаток (Сумма оставшегося продукта) на СтоимостьПотребления (стоимость позиции потребленного продукта)
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/048.pic.jpg -->
-
 [048.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/048.pic.jpg)
 
 ![048.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/048.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/049.sub.code.sdbl -->
 
 [049.sub.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/049.sub.code.sdbl)
 
@@ -3740,14 +3170,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/050.pic.jpg -->
-
 [050.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/050.pic.jpg)
 
 ![050.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/050.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/051.code.sdbl -->
 
 [051.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/051.code.sdbl)
 
@@ -3798,14 +3224,10 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/052.pic.jpg -->
-
 [052.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/052.pic.jpg)
 
 ![052.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/052.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/053.code.bsl -->
 
 [053.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/053.code.bsl)
 
@@ -3954,8 +3376,6 @@ TAGS:
 
 
 ```
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/054.code.bsl -->
 
 [054.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/054.code.bsl)
 
@@ -4131,44 +3551,32 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/055.txt.man -->
-
 [055.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/055.txt.man)
 
 
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - Добавим в запрос поле НзваниеПродукта
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/056.pic.jpg -->
-
 [056.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/056.pic.jpg)
 
 ![056.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/056.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/057.pic.jpg -->
 
 [057.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/057.pic.jpg)
 
 ![057.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/057.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/058.pic.jpg -->
-
 [058.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/058.pic.jpg)
 
 ![058.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/058.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/059.b.txt.man -->
 
 [059.b.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/059.b.txt.man)
 
 
 
 ### Внутренние заметки в данной документации - Комбинированный запрос Пример_1 - Пример_1 скрытого запроса
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/059.code.bsl -->
 
 [059.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/059.code.bsl)
 
@@ -4350,8 +3758,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/060.final.code.bsl -->
-
 [060.final.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/060.final.code.bsl)
 
 
@@ -4529,8 +3935,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/062.final.code.bsl -->
-
 [062.final.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/062.final.code.bsl)
 
 
@@ -4633,15 +4037,11 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/014.d/007.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/015.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/015.d/001.txt.man)
 
@@ -4650,8 +4050,6 @@ TAGS:
 # СКД
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/001.txt.man)
 
 
@@ -4659,16 +4057,12 @@ TAGS:
 # Отчет
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/001.txt.man)
 
 
 
 ## Отчет - Примеры
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/001.txt.man)
 
@@ -4679,8 +4073,6 @@ TAGS:
 - сделаем прямой запрос (предпр прод ост) из вирт таб регистра
 - составим отчет в СКД на предыдущем запросе
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/001.txt.man)
 
 
@@ -4688,14 +4080,10 @@ TAGS:
 #### Отчет - Примеры - Пример 1 - Запрос из вирт таб и отчет в предприятии
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/003.code.sdbl -->
 
 [003.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/003.code.sdbl)
 
@@ -4713,141 +4101,101 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/007.pic.jpg -->
 
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/007.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/008.pic.jpg -->
-
 [008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/008.pic.jpg)
 
 ![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/008.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/009.pic.jpg -->
 
 [009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/009.pic.jpg)
 
 ![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/009.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/010.pic.jpg -->
-
 [010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/010.pic.jpg)
 
 ![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/010.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/011.pic.jpg -->
 
 [011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/011.pic.jpg)
 
 ![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/011.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/012.pic.jpg -->
-
 [012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/012.pic.jpg)
 
 ![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/012.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/013.pic.jpg -->
 
 [013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/013.pic.jpg)
 
 ![013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/013.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/014.pic.jpg -->
-
 [014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/014.pic.jpg)
 
 ![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/014.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/015.pic.jpg -->
 
 [015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/015.pic.jpg)
 
 ![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/015.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/016.pic.jpg -->
-
 [016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/016.pic.jpg)
 
 ![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/016.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/017.pic.jpg -->
 
 [017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/017.pic.jpg)
 
 ![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/017.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/018.pic.jpg -->
-
 [018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/018.pic.jpg)
 
 ![018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/018.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/019.pic.jpg -->
 
 [019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/019.pic.jpg)
 
 ![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/019.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/020.pic.jpg -->
-
 [020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/020.pic.jpg)
 
 ![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/020.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/021.pic.jpg -->
 
 [021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/021.pic.jpg)
 
 ![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/021.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/001.txt.man)
 
@@ -4856,28 +4204,20 @@ TAGS:
 #### Отчет - Примеры - Пример 1 - Предыдущий запрос и Внешний отчет (отчет в файл)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/005.txt.man -->
 
 [005.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/005.txt.man)
 
@@ -4886,14 +4226,10 @@ TAGS:
 - ГОТОВЫЙ ОТЧЕТ /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_2_mirr.ram/.grot/.data/008_less/001_part/.bcp/v_vnesh_otch/.erf/ВнешОтчПродуктыОстатки.erf
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/007.code.sdbl -->
 
 [007.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/007.code.sdbl)
 
@@ -4911,113 +4247,81 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/007.pic.jpg -->
-
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/007.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/008.pic.jpg -->
 
 [008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/008.pic.jpg)
 
 ![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/008.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/009.pic.jpg -->
-
 [009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/009.pic.jpg)
 
 ![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/009.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/010.pic.jpg -->
 
 [010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/010.pic.jpg)
 
 ![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/010.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/011.pic.jpg -->
-
 [011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/011.pic.jpg)
 
 ![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/011.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/012.pic.jpg -->
 
 [012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/012.pic.jpg)
 
 ![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/012.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/013.pic.jpg -->
-
 [013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/013.pic.jpg)
 
 ![013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/013.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/014.pic.jpg -->
 
 [014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/014.pic.jpg)
 
 ![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/014.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/015.pic.jpg -->
-
 [015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/015.pic.jpg)
 
 ![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/015.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/016.pic.jpg -->
 
 [016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/016.pic.jpg)
 
 ![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/016.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/017.pic.jpg -->
-
 [017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/017.pic.jpg)
 
 ![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/017.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/018.pic.jpg -->
 
 [018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/018.pic.jpg)
 
 ![018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/018.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/019.pic.jpg -->
-
 [019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/019.pic.jpg)
 
 ![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/019.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/020.pic.jpg -->
 
 [020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/020.pic.jpg)
 
 ![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/020.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/016.d/002.d/002.d/003.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/017.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/017.d/001.txt.man)
 
@@ -5026,16 +4330,12 @@ TAGS:
 # Запрос
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/017.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/017.d/002.d/001.txt.man)
 
 
 
 ## Запрос - Параметр запроса
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/017.d/002.d/002.code.sdbl -->
 
 [002.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/017.d/002.d/002.code.sdbl)
 
@@ -5053,16 +4353,12 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/001.txt.man)
 
 
 
 # Время
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/001.txt.man)
 
@@ -5072,14 +4368,10 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/003.txt.man -->
 
 [003.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/003.txt.man)
 
@@ -5089,21 +4381,15 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/004.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/005.pic.jpg -->
-
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/005.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/006.txt.man -->
 
 [006.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/006.txt.man)
 
@@ -5113,14 +4399,10 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/007.pic.jpg -->
-
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/007.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/rpn.d/pathto.txt.f -->
 
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/018.d/002.d/rpn.d/pathto.txt.f)
 
@@ -5128,16 +4410,12 @@ TAGS:
 
 ###### pathto.txt.f
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/001.txt.man)
 
 
 
 # Журнал Документов
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/001.txt.man)
 
@@ -5149,43 +4427,31 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/019.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/001.txt.man)
 
@@ -5194,8 +4460,6 @@ TAGS:
 # Печатная форма
 
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/001.txt.man)
 
@@ -5207,85 +4471,61 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/007.pic.jpg -->
 
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/007.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/008.pic.jpg -->
-
 [008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/008.pic.jpg)
 
 ![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/008.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/009.pic.jpg -->
 
 [009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/009.pic.jpg)
 
 ![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/009.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/010.pic.jpg -->
-
 [010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/010.pic.jpg)
 
 ![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/010.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/011.pic.jpg -->
 
 [011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/011.pic.jpg)
 
 ![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/011.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/020.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/001.txt.man)
 
@@ -5295,8 +4535,6 @@ TAGS:
 
 - copy from /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/003_less_d3/001_part/.md/_cntt/002.d/003.d
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/001.txt.man)
 
 
@@ -5305,57 +4543,41 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/005.pic.jpg -->
 
 [005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/005.pic.jpg)
 
 ![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/005.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/006.pic.jpg -->
-
 [006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/006.pic.jpg)
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/006.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/007.pic.jpg -->
 
 [007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/007.pic.jpg)
 
 ![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/002.d/007.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/021.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/001.txt.man)
 
@@ -5365,8 +4587,6 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/001.txt.man)
 
 
@@ -5375,36 +4595,26 @@ TAGS:
 
 - copy from /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/004_less_d4/001_part/.md/_cntt/002.d
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/003.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/004.pic.jpg -->
-
 [004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/004.pic.jpg)
 
 ![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/004.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/rpn.d/pathto.txt.f -->
 
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/022.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/001.txt.man)
 
@@ -5414,16 +4624,12 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/001.txt.man)
 
 
 
 ## Бух учет - счета
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/023.d/002.d/002.d/001.txt.man)
 
@@ -5702,16 +4908,12 @@ TAGS:
 	- Прибыли и убытки	Счета бухгалтерского учета с субсчетами и описанием
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/907.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/907.d/001.txt.man)
 
 
 
 # Glossary 
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/907.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/907.d/002.d/001.txt.man)
 
@@ -5723,16 +4925,12 @@ TAGS:
 внешние зависимости - НЕ только контекст Модуля
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/001.txt.man)
 
 
 
 # Unsort
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/002.d/001.txt.man)
 
@@ -5741,8 +4939,6 @@ TAGS:
 ## Unsort - Скрытый запрос
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/002.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/002.d/002.d/001.txt.man)
 
 
@@ -5750,15 +4946,11 @@ TAGS:
 ### Unsort - Скрытый запрос - Пример_1
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/002.d/002.d/rpn.d/pathto.txt.f -->
-
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/002.d/002.d/rpn.d/pathto.txt.f)
 
 
 
 ###### pathto.txt.f
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/003.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/003.d/001.txt.man)
 
@@ -5769,8 +4961,6 @@ TAGS:
 - see [examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/008_less_d8/001_part/.md/_cntt/002.d/004.d/001.txt.man)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/004.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/004.d/001.txt.man)
 
 
@@ -5779,8 +4969,6 @@ TAGS:
 
 - [examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/005.pic.jpg)
 - see ![examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/004.d/005.pic.jpg)
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/005.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/005.d/001.txt.man)
 
@@ -5791,8 +4979,6 @@ TAGS:
 - [examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
 - see ![examp](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/009_less_d9/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/006.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/006.d/001.txt.man)
 
@@ -5805,8 +4991,6 @@ TAGS:
 - ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/007.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/007.d/001.txt.man)
 
 
@@ -5816,8 +5000,6 @@ TAGS:
 - [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
 
 - ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/010_less_d10/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/008.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/008.d/001.txt.man)
 
@@ -5830,8 +5012,6 @@ TAGS:
 
 - ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/011_less_d11/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/008.d/002.code.skd -->
 
 [002.code.skd](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/008.d/002.code.skd)
 
@@ -5847,8 +5027,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/009.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/009.d/001.txt.man)
 
 
@@ -5856,8 +5034,6 @@ TAGS:
 ## Unsort - Записать() против Записывать = Истина
 
 - [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/_cntt/002.d/003.d/003.code.bsl)
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/010.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/010.d/001.txt.man)
 
@@ -5870,8 +5046,6 @@ TAGS:
 - ![see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/012_less_d12/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/001.txt.man)
 
 
@@ -5879,14 +5053,10 @@ TAGS:
 ## Unsort - Подсветка идентичных идентификаторов в коде
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/011.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/001.txt.man)
 
@@ -5895,21 +5065,15 @@ TAGS:
 ## Unsort - Включить видимость реестра в интерфейсе
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/002.pic.jpg)
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/003.pic.jpg -->
-
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/012.d/003.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/013.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/013.d/001.txt.man)
 
@@ -5917,8 +5081,6 @@ TAGS:
 
 ## Unsort - Структура кода ЗаписатьДвижениеПоРегистру
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/013.d/002.code.bsl -->
 
 [002.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/013.d/002.code.bsl)
 
@@ -5943,8 +5105,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/014.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/014.d/001.txt.man)
 
 
@@ -5952,14 +5112,10 @@ TAGS:
 ## Unsort - Реквизит регистра это произвольная справочная информация о текущем движении - он не участвует в автогруппировках вирт таб
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/014.d/002.pic.jpg -->
-
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/014.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/014.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/015.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/015.d/001.txt.man)
 
@@ -5967,8 +5123,6 @@ TAGS:
 
 ## Unsort - Если регистр полное зеркало документа то он РегистрДокумента (Регистр_Док\<НазваниеДок>)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/001.txt.man)
 
@@ -5978,19 +5132,13 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/002.file.dt -->
-
 [002.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/002.file.dt)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/003.pic.jpg -->
 
 [003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/003.pic.jpg)
 
 ![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/016.d/003.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/017.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/017.d/001.txt.man)
 
@@ -5999,16 +5147,12 @@ TAGS:
 ## Unsort - Реквизиты док видны в модуле по названию
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/018.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/018.d/001.txt.man)
 
 
 
 ## Unsort - Структура кода ПроводкаБух
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/018.d/002.code.bsl -->
 
 [002.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/018.d/002.code.bsl)
 
@@ -6035,7 +5179,42 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man -->
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/001.txt.man)
+
+
+
+## Unsort - Баг не работает Вытеснение Оклада Невыходами 
+
+
+[002.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/002.file.dt)
+
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/003.pic.jpg)
+
+
+[004.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/004.txt.man)
+
+
+
+### Unsort - Баг если не работает Вытеснение Оклада Невыходами - исправление
+
+- Администрирование
+- Тестирование и исправление
+- поставить все флажки 
+- Выполнить
+
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/005.pic.jpg)
+
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/006.pic.jpg)
+
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man)
 
@@ -6045,16 +5224,12 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/002.d/001.txt.man)
 
 
 
 ## Standarts - Stack err log 
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/002.d/002.code.bsl -->
 
 [002.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/002.d/002.code.bsl)
 
@@ -6075,8 +5250,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/001.txt.man)
 
 
@@ -6089,19 +5262,13 @@ TAGS:
   - lo2
   - lo2
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/002.file.x -->
-
 [002.file.x](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/002.file.x)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/002.pic.jpg -->
 
 [002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/002.pic.jpg)
 
 ![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/002.pic.jpg)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/003.lcu.y -->
 
 [003.lcu.y](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/003.lcu.y)
 
@@ -6114,12 +5281,8 @@ MAIN:
 TAGS: 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/004.rpn.z -->
-
 [004.rpn.z](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/004.rpn.z)
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/005.code.bsl -->
 
 [005.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/005.code.bsl)
 
@@ -6153,8 +5316,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/008.code.sdbl -->
-
 [008.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/910.d/008.code.sdbl)
 
 
@@ -6172,8 +5333,6 @@ TAGS:
 
 ```
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/911.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/911.d/001.txt.man)
 
 
@@ -6181,8 +5340,6 @@ TAGS:
 # Example Flow
 
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/911.d/002.d/001.txt.man -->
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/911.d/002.d/001.txt.man)
 
@@ -6196,8 +5353,6 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/912.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/912.d/001.txt.man)
 
 
@@ -6206,16 +5361,12 @@ TAGS:
 
 
 
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/912.d/002.d/001.txt.man -->
-
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/912.d/002.d/001.txt.man)
 
 
 
 ## Examp code - skdlang конец дня плюс секунда 
 
-
-<!-- file:///home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/912.d/002.d/002.code.skd -->
 
 [002.code.skd](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/912.d/002.d/002.code.skd)
 
