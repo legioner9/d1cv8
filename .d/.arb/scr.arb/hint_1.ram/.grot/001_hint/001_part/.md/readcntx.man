@@ -164,6 +164,7 @@ Start Contents Menu
 	- [Unsort - Структура кода ПроводкаБух](#unsort---структура-кода-проводкабух)
 	- [Unsort - Баг не работает Вытеснение Оклада Невыходами](#unsort---баг-не-работает-вытеснение-оклада-невыходами)
 		- [Unsort - Баг если не работает Вытеснение Оклада Невыходами - исправление](#unsort---баг-если-не-работает-вытеснение-оклада-невыходами---исправление)
+	- [Unsort - Контекстная подсказка работает после сохранения конфигурации](#unsort---контекстная-подсказка-работает-после-сохранения-конфигурации)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
@@ -184,9 +185,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 06092024201327
+DATE: 1726380904_15092024131504
 
-DATX: 1725628407
+DATX: 1726380904
 -->
 
 
@@ -5215,6 +5216,13 @@ TAGS:
 
 ![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/019.d/006.pic.jpg)
 
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/020.d/001.txt.man)
+
+
+
+## Unsort - Контекстная подсказка работает после сохранения конфигурации
+ 
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man)
 

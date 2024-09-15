@@ -29,9 +29,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/01
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 06092024201639
+DATE: 1726378593_15092024123633
 
-DATX: 1725628599
+DATX: 1726378593
 -->
 
 
@@ -684,6 +684,9 @@ DATX: 1725628599
 [020.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/005.d/020.file.dt)
 
 
+[000.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/000.file.dt)
+
+
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/001.txt.man)
 
 
@@ -701,6 +704,144 @@ DATX: 1725628599
 - Обеспечьте начисление премий сотрудникам, указанным в табличной части, вновь созданного документа. 
 - В пользовательском режиме введите документы, отражающие начисление оклада и премии 
 -->
+
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/002.pic.jpg)
+
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/003.pic.jpg)
+
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/004.pic.jpg)
+
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/005.pic.jpg)
+
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/006.pic.jpg)
+
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/007.pic.jpg)
+
+
+[008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/008.pic.jpg)
+
+![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/008.pic.jpg)
+
+
+[009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/009.pic.jpg)
+
+![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/009.pic.jpg)
+
+
+[010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/010.pic.jpg)
+
+![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/010.pic.jpg)
+
+
+[011.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/011.code.bsl)
+
+
+```bsl
+
+// V_N ДОК: НачислениеПремий
+// содержание : 
+// исправлено : 
+// исправить : Заглушки даты
+// ошибки : 
+
+
+Процедура ОбработкаПроведения(Отказ, Режим)
+	//{{__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+	// Данный фрагмент построен конструктором.
+	// При повторном использовании конструктора, внесенные вручную изменения будут утеряны!!!
+
+	// регистр РегистрНачисленияЗарплаты
+	Движения.РегистрНачисленияЗарплаты.Записывать = Истина;
+	Для Каждого ТекСтрокаСотрудники Из Сотрудники Цикл
+		Движение = Движения.РегистрНачисленияЗарплаты.Добавить();
+		Движение.Сторно = Ложь;
+		Движение.ВидРасчета = ПланыВидовРасчета.Начисления.ПремияСуммой;
+		Движение.ПериодДействияНачало = Дата;
+		Движение.ПериодДействияКонец = Дата;
+		Движение.ПериодРегистрации = Дата;
+		Движение.Сотрудник = ТекСтрокаСотрудники.Сотрудник;
+		Движение.Результат = ТекСтрокаСотрудники.СуммаПремии;
+	КонецЦикла;
+
+	//}}__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+КонецПроцедуры
+
+
+
+
+```
+
+[012.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/012.code.bsl)
+
+
+```bsl
+
+// V_N ДОК: НачислениеПремий
+// содержание : 
+// исправлено : Заглушки даты
+// исправить : 
+// ошибки : 
+
+
+
+Процедура ОбработкаПроведения(Отказ, Режим)
+	//{{__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+	// Данный фрагмент построен конструктором.
+	// При повторном использовании конструктора, внесенные вручную изменения будут утеряны!!!
+
+	// регистр РегистрНачисленияЗарплаты
+	Движения.РегистрНачисленияЗарплаты.Записывать = Истина;
+	Для Каждого ТекСтрокаСотрудники Из Сотрудники Цикл
+		Движение = Движения.РегистрНачисленияЗарплаты.Добавить();
+		Движение.Сторно = Ложь;
+		Движение.ВидРасчета = ПланыВидовРасчета.Начисления.ПремияСуммой;
+		// Начало месяца
+		Движение.ПериодДействияНачало = НачалоМесяца(Дата);  
+		// Конец месяца
+		Движение.ПериодДействияКонец = КонецМесяца(Дата);
+		Движение.ПериодРегистрации = Дата;
+		Движение.Сотрудник = ТекСтрокаСотрудники.Сотрудник;
+		Движение.Результат = ТекСтрокаСотрудники.СуммаПремии;
+	КонецЦикла;
+
+	//}}__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
+КонецПроцедуры
+
+
+
+
+
+```
+
+[013.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/013.file.dt)
+
+
+[013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/013.pic.jpg)
+
+![013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/013.pic.jpg)
+
+
+[014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/014.pic.jpg)
+
+![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/014.pic.jpg)
 
 
 [pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/018_less_d18/001_part/.md/_cntt/002.d/006.d/rpn.d/pathto.txt.f)
