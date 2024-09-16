@@ -164,7 +164,8 @@ Start Contents Menu
 	- [Unsort - Структура кода ПроводкаБух](#unsort---структура-кода-проводкабух)
 	- [Unsort - Баг не работает Вытеснение Оклада Невыходами](#unsort---баг-не-работает-вытеснение-оклада-невыходами)
 		- [Unsort - Баг если не работает Вытеснение Оклада Невыходами - исправление](#unsort---баг-если-не-работает-вытеснение-оклада-невыходами---исправление)
-	- [Unsort - Контекстная подсказка работает после сохранения конфигурации](#unsort---контекстная-подсказка-работает-после-сохранения-конфигурации)
+	- [Unsort - Контекстная подсказка заработает после сохранения конфигурации](#unsort---контекстная-подсказка-заработает-после-сохранения-конфигурации)
+	- [Unsort - Стандартный Период](#unsort---стандартный-период)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
@@ -185,9 +186,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 1726380904_15092024131504
+DATE: 1726480214_16092024165014
 
-DATX: 1726380904
+DATX: 1726480214
 -->
 
 
@@ -5221,8 +5222,44 @@ TAGS:
 
 
 
-## Unsort - Контекстная подсказка работает после сохранения конфигурации
+## Unsort - Контекстная подсказка заработает после сохранения конфигурации
  
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/021.d/001.txt.man)
+
+
+
+## Unsort - Стандартный Период 
+
+
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/021.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/021.d/002.pic.jpg)
+
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/021.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/021.d/003.pic.jpg)
+
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/021.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/021.d/004.pic.jpg)
+
+
+[005.code.skd](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/021.d/005.code.skd)
+
+
+```skd
+
+// язык скд
+
+// Приведение Начала и Конца к стандартным ссылкам
+&Период.ДатаНачала
+&Период.ДатаОкончания
+
+```
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man)
 
