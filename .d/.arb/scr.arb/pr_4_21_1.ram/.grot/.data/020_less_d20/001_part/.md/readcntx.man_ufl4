@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo -e "${CYAN}--- readcntx_rnd7_ab59e8d() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/readcntx.man_ufl4---${NORMAL}" #started functions
+echo -e "${CYAN}--- readcntx_rnd7_f07955c() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/readcntx.man_ufl4---${NORMAL}" #started functions
 
-readcntx_rnd7_ab59e8d() {
+readcntx_rnd7_f07955c() {
 
     # gig from file://${ST_RC_D_PATH}/.d/.arb/stl0.arb/ufl_stl0.ram/.grot/ufl_stl0.sh
 
@@ -66,4 +66,4 @@ ufl_stl0 4 ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less
 
 }
 
-readcntx_rnd7_ab59e8d "$@"
+readcntx_rnd7_f07955c "$@"

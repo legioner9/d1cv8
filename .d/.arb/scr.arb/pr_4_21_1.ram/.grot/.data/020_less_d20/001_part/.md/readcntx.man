@@ -10,10 +10,11 @@ Start Contents Menu
 
 - [start before2far](#start-before2far)
 - [D20](#d20)
-  - [D20 - ФДЗ: Постройте отчет, показывающий ABC-классификацию номенклатуры по параметру 'Валовая прибыль'](#d20---фдз-постройте-отчет-показывающий-abc-классификацию-номенклатуры-по-параметру-валовая-прибыль)
-    - [D20 - ФДЗ: Постройте отчет, показывающий ABC-классификацию номенклатуры по параметру 'Валовая прибыль' - 1 этап только Ном и Вал Прибыль кол отчеат](#d20---фдз-постройте-отчет-показывающий-abc-классификацию-номенклатуры-по-параметру-валовая-прибыль---1-этап-только-ном-и-вал-прибыль-кол-отчеат)
-    - [Стандартный Период](#стандартный-период)
-    - [D20 - ФДЗ: Постройте отчет, показывающий ABC-классификацию номенклатуры по параметру 'Валовая прибыль' - 2 этап добавим колонку Категория Номенклатурры](#d20---фдз-постройте-отчет-показывающий-abc-классификацию-номенклатуры-по-параметру-валовая-прибыль---2-этап-добавим-колонку-категория-номенклатурры)
+	- [D20 - ФДЗ: Постройте отчет, показывающий ABC-классификацию номенклатуры по параметру 'Валовая прибыль'](#d20---фдз-постройте-отчет-показывающий-abc-классификацию-номенклатуры-по-параметру-валовая-прибыль)
+		- [D20 - ФДЗ: Постройте отчет, показывающий ABC-классификацию номенклатуры по параметру 'Валовая прибыль' - 1 этап только Ном и Вал Прибыль кол отчеат](#d20---фдз-постройте-отчет-показывающий-abc-классификацию-номенклатуры-по-параметру-валовая-прибыль---1-этап-только-ном-и-вал-прибыль-кол-отчеат)
+		- [Стандартный Период](#стандартный-период)
+		- [D20 - ФДЗ: Постройте отчет, показывающий ABC-классификацию номенклатуры по параметру 'Валовая прибыль' - 2 этап добавим колонку Категория Номенклатурры](#d20---фдз-постройте-отчет-показывающий-abc-классификацию-номенклатуры-по-параметру-валовая-прибыль---2-этап-добавим-колонку-категория-номенклатурры)
+					- [pathto.txt.f](#pathtotxtf)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -27,9 +28,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/02
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 1726485086_16092024181126
+DATE: 1726676088_18092024231448
 
-DATX: 1726485086
+DATX: 1726676088
 -->
 
 
@@ -188,11 +189,222 @@ DATX: 1726485086
 ![018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/002.d/018.pic.jpg)
 
 
-[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003d/001.txt.man)
+[000.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/000.file.dt)
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/001.txt.man)
 
 
 
 ### D20 - ФДЗ: Постройте отчет, показывающий ABC-классификацию номенклатуры по параметру 'Валовая прибыль' - 2 этап добавим колонку Категория Номенклатурры
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/002.pic.jpg)
+
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/003.pic.jpg)
+
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/004.pic.jpg)
+
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/005.pic.jpg)
+
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/006.pic.jpg)
+
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/007.pic.jpg)
+
+
+[008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/008.pic.jpg)
+
+![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/008.pic.jpg)
+
+
+[009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/009.pic.jpg)
+
+![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/009.pic.jpg)
+
+
+[010.code.sdbl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/010.code.sdbl)
+
+
+```sdbl
+
+// V_N ДОК: СКД Отчет КлассификацияНоменклатуры
+// содержание : Дублированное поле себестоимость
+// исправлено : 
+// исправить : Превратить его в классификацию
+// ошибки : 
+// примечания : 
+// результат работы : + -
+
+ВЫБРАТЬ
+	ПродажиОбороты.Номенклатура КАК Номенклатура,
+	ПродажиОбороты.СуммаОборот - ПродажиОбороты.СебестоимостьОборот КАК ВаловаяПрибыль,
+	ПродажиОбороты.СуммаОборот - ПродажиОбороты.СебестоимостьОборот КАК Класс
+ИЗ
+	РегистрНакопления.Продажи.Обороты КАК ПродажиОбороты
+
+```
+
+[011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/011.pic.jpg)
+
+![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/011.pic.jpg)
+
+
+[012.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/012.file.dt)
+
+
+[013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/013.pic.jpg)
+
+![013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/013.pic.jpg)
+
+
+[014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/014.pic.jpg)
+
+![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/014.pic.jpg)
+
+
+[015.code.skd](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/015.code.skd)
+
+
+```skd
+
+// язык скд
+
+// Приведение к классификации АБС
+КлассификацияABC("Сумма(Класс)", 3)
+
+```
+
+[015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/015.pic.jpg)
+
+![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/015.pic.jpg)
+
+
+[016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/016.pic.jpg)
+
+![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/016.pic.jpg)
+
+
+[017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/017.pic.jpg)
+
+![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/017.pic.jpg)
+
+
+[018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/018.pic.jpg)
+
+![018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/018.pic.jpg)
+
+
+[019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/019.pic.jpg)
+
+![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/019.pic.jpg)
+
+
+[020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/020.pic.jpg)
+
+![020.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/020.pic.jpg)
+
+
+[021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/021.pic.jpg)
+
+![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/021.pic.jpg)
+
+
+[022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/022.pic.jpg)
+
+![022.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/022.pic.jpg)
+
+
+[023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/023.pic.jpg)
+
+![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/023.pic.jpg)
+
+
+[024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/024.pic.jpg)
+
+![024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/024.pic.jpg)
+
+
+[025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/025.pic.jpg)
+
+![025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/025.pic.jpg)
+
+
+[026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/026.pic.jpg)
+
+![026.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/026.pic.jpg)
+
+
+[027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/027.pic.jpg)
+
+![027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/027.pic.jpg)
+
+
+[028.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/028.pic.jpg)
+
+![028.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/028.pic.jpg)
+
+
+[029.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/029.pic.jpg)
+
+![029.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/029.pic.jpg)
+
+
+[030.code.skd](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/030.code.skd)
+
+
+```skd
+
+// язык скд
+
+// Выводит строку в зависимости от значения переменной Класс
+Выбор Когда Класс = 1 Тогда "Класс А" Когда Класс = 2 Тогда "Класс Б" Иначе "Класс С"  Конец 
+
+```
+
+[031.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/031.pic.jpg)
+
+![031.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/031.pic.jpg)
+
+
+[032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/032.pic.jpg)
+
+![032.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/032.pic.jpg)
+
+
+[033.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/033.pic.jpg)
+
+![033.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/033.pic.jpg)
+
+
+[034.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/034.pic.jpg)
+
+![034.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/034.pic.jpg)
+
+
+[035.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/003.d/003.d/035.file.dt)
+
+
+[pathto.txt.f](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/002.d/rpn.d/pathto.txt.f)
+
+
+
+###### pathto.txt.f
 
 [review_this2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/020_less_d20/001_part/.md/_cntt/099.end.d/review_this2far.txt.man)
 
