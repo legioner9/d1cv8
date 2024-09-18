@@ -1,0 +1,1396 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part37</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part37.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492735341"></a><a name="_Toc494938230"><span style='mso-bookmark: _Toc492735341'>Глава 37<br> Работа с Файлами</a></h1>
+
+<p class=MsoNormal>Для работы с файлами в системе используется
+специальный агрегатный тип данных — <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ФС<span
+lang=RU>. Механизм работы с файлами предназначен для обеспечения возможности
+манипулирования файлами непосредственно из встроенного язы­ка программы 1С:Предприятия.</p>
+
+<h2><a name="_Toc492735342"></a><a name="_Toc494938231"><span style='mso-bookmark:
+_Toc492735342'>Контекст работы с Файлами</a></h2>
+
+<p class=MsoNormal>Во всех программных модулях для работы с
+файлами следует использовать методы объекта типа «ФС». По умолчанию в системе
+всегда доступен уже су­ществующий объект с именем <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ФС<span
+lang=RU> (англоязычный синоним — <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>FS<span
+lang=RU>) (имя сущест­вующего объекта совпадает с названием типа данных), к
+которому можно непо­средственно применять методы объекта ФС. Кроме того, можно
+создать произ­вольное число объектов типа «ФС» при помощи функции
+СоздатьОбъект. Чтобы вызвать метод объекта, имя метода (с указанием необходимых
+парамет­ров) пишется через точку после имени объекта.</p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ФС — <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>FS<span
+lang=RU>.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Здесь приведены примеры различных способов
+вызова методов объекта «ФС».</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ФС.УдалитьФайл(&quot;Текст1.txt&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВАКФайлы =
+СоздатьОбъект(&quot;ФС&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВАКФайлы.УдалитьФайл(&quot;Текст3.txt&quot;);<o:p></o:p></p>
+
+<h3><a name="_Toc492735343"></a><a name="_Toc494938232"><span style='mso-bookmark:
+_Toc492735343'>Методы объекта «ФС»</a></h3>
+
+<h4><a name="_Toc492735344"></a><a name="_Toc494938233"><span style='mso-bookmark:
+_Toc492735344'>ВыбратьФайл</a></h4>
+
+<p class=MsoNormal>Открывает окно диалога выбора/сохранения
+файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьФайл(&lt;ТипДиалога&gt;, &lt;ИмяФайла&gt;,
+&lt;ИмяНачКаталога&gt;, &lt;3аголовокОкна&gt;, &lt;Фильтр&gt;,<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            &lt;Расширение&gt;, &lt;Таймаут&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Selec<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>t<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>File<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b><b
+style='mso-bidi-font-weight:normal'><span style='mso-ansi-language:EN-US'><o:p></o:p></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span lang=RU style='mso-bidi-font-weight:
+  bold'>&lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>TипДиaлoгa<span
+  lang=RU>&gt;<o:p></o:p></p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  значение которого определяет тип открываемого диалога. Допустимые значения: 0
+  — диалог типа «открыть», 1 — диалог типа «сохранить».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайла&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя переменной,
+  содержащей строковое значение с именем файла. В эту же переменную система воз­вращает
+  имя выбранного файла.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяНачКаталога&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя переменной,
+  содержащей строковое значение с именем начального каталога. В эту же переменную
+  система возвращает имя выбранного каталога.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗаголовокОкна&gt;<o:p></o:p></p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  с помощью которого можно задать заголовок открываемого окна.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Фильтр&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  с помощью которого можно задать список фильтров отбора файлов. Фильтр состоит
+  из двух частей, разделенных сиволом &quot;&quot; (вертикальная черта): строки
+  представления, кото­рая отображается в окне выбора файла, и непо­средственно
+  строки маски. В строке маски можно использовать символ &quot;*&quot;, что
+  означает наличие лю­бого числа произвольных символов. Символ &quot;?&quot; в
+  строке маски означает наличие одного произволь­ного символа. Одновременно
+  можно задавать не­сколько фильтров в виде списка, в качестве разде­лителей
+  используется символ &quot;|&quot; (вертикальная чер­та). Например, список из
+  двух фильтров:</p>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&quot;Текст(*.txt)|*.txt|
+  Таблицы(*.mxl)|*.mxl&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Расширение&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  с помощью которого можно задать расширение файла по умолчанию, которое
+  используется системой при записи файла.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Таймаут&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение, значение которого задает время ожидания системы
+  (в секундах) на отклик пользователя.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 0 — если в окне диалога нажата кнопка
+«Отмена»; 1 — если в окне диалога нажата кнопка «ОК», при этом в переменную
+&lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИмяФайла&gt;
+возвраща­ется выбранное имя файла, а в переменную &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяНачКаталога<span
+lang=RU>&gt; возвращается имя выбранного каталога; -1 (минус единица) —
+закончилось время &lt;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Таймаут<span
+lang=RU>&gt; ожидания отклика пользователя.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьФайл<span
+lang=RU> открывает окно диалога выбора/сохранения файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура вызова
+диалога выбора файла.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура УдалФ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ИмяВыбрФайла = &quot;&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ИмяПути=&quot;&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ФС.ВыбратьФайл(0, ИмяВыбрФайла, ИмяПути, &quot;Выберите файл&quot;,<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">           &quot;Все файлы (*.*)!*.*&quot;, , ) = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+<span style="mso-spacerun: yes">   ФС.УдалитьФайл(ИмяПути +
+ИмяФайла);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735345"></a><a name="_Toc494938234"><span style='mso-bookmark:
+_Toc492735345'>ВыбратьФайлКартинки</a></h4>
+
+<p class=MsoNormal>Открывает окно диалога выбора/сохранения файла
+картинки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьФайлКартинки(&lt;ТипДиалога&gt;,
+&lt;ИмяФайла&gt;, &lt;ИмяНачКаталога&gt;, &lt;3аголовокОкна&gt;,<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                   <span style="mso-spacerun:
+yes"> &lt;Расширение&gt;, &lt;Таймаут&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectPictFile<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТипДиалога&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  значение которого определяет тип открываемого диалога. Допустимые значения: 0
+  — диалог типа «открыть», 1 — диалог типа «сохранить».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайла&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя переменной,
+  содержащей строковое значение с именем файла. В эту же переменную система воз­вращает
+  имя выбранного файла.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяНачКаталога&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя переменной,
+  содержащей строковое значение с именем начального каталога. В эту же переменную
+  система возвращает имя выбранного каталога.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3аголовокОкна&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  с помощью которого можно задать заголовок открываемого окна.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Расширение&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  с помощью которого можно задать расширение файла по умолчанию, которое
+  используется системой при записи файла.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Таймаут&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение, значение которого задает время ожидания системы
+  (в секундах) на отклик пользователя.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 0 — если в окне диалога нажата кнопка
+«Отмена»; 1 — если в окне диалога нажата кнопка «ОК», при этом в переменную
+&lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИмяФайла&gt;
+возвраща­ется выбранное имя файла, а в переменную &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяНачКаталога<span
+lang=RU>&gt; возвращается имя выбранного каталога; -1 (минус единица) —
+закончилось время &lt;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Таймаут<span
+lang=RU>&gt; ожидания отклика пользователя.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьФайлКартинки<span
+lang=RU> открывает окно диалога (с возможностью предварительного просмотра) выбора/сохранения
+файла картинки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура вызова
+диалога выбора файла кар­тинки.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Фото — Объект типа
+&quot;Картинка&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ЗагрКарт()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ИмяВыбрФайла = &quot;&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ИмяПути = &quot;&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Выбор файла с просмотром<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ФС.ВыбратьФайлКартинки(0, ИмяВыбрФайла, ИмяПути,<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         &quot;Выберите файл&quot;, &quot;bmp&quot;, ) = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Фото.Загрузить(ИмяПути + ИмяВыбрФайла);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735346"></a><a name="_Toc494938235"><span style='mso-bookmark:
+_Toc492735346'>ВыбратьКаталог</a></h4>
+
+<p class=MsoNormal>Открывает окно диалога выбора каталога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьКаталог(&lt;ИмяКаталога&gt;,
+&lt;3аголовок&gt;, &lt;Таймаут&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Se<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>lect<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Directory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяКаталога&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя переменной,
+  содержащей строковое значение с именем начального каталога. В эту же
+  переменную система возвращает имя выбранного каталога.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3аголовок&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  с помощью которого можно задать заголовок открываемого окна.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Таймаут&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение, значение которого задает время ожидания системы
+  (в секундах) на отклик пользователя.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 0 — если в окне диалога нажата кнопка
+«Отмена»; 1 — если в окне диалога нажата кнопка «ОК», при этом в переменную
+&lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИмяНачКаталога<span
+lang=RU>&gt; возвращается имя выбранного каталога; -1 (минус единица) —
+закончилось время &lt;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Таймаут<span
+lang=RU>&gt; ожидания отклика пользователя.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьКаталог<span
+lang=RU> открывает окно диалога выбора каталога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура вызова
+диалога выбора каталога.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Функция УстКат(ИмяПути)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ФС.ВыбратьКаталог(ИмяПути, &quot;Выберите каталог&quot;, 10) = 1
+Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат ИмяПути;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат КаталогПользователя();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735347"></a><a name="_Toc494938236"><span style='mso-bookmark:
+_Toc492735347'>СуществуетФайл</a></h4>
+
+<p class=MsoNormal>Проверяет существование файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Существуетфайл(&lt;ИмяФайла&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ExistFile<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайла&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем файла.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — файл существует; 0 — не существует.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СуществуетФайл<span
+lang=RU> проверяет существование файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура СущФ(ИмяФайла)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ФС.СуществуетФайл(ИмяФайла) = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(&quot;Файл &quot; + ИмяФайла + &quot; — существует&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735348"></a><a name="_Toc494938237"><span style='mso-bookmark:
+_Toc492735348'>КопироватьФайл</a></h4>
+
+<p class=MsoNormal>Копирует файл.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КопироватьФайл(&lt;ИмяФайлаИсточника&gt;,
+&lt;ИмяФайлаПриемника&gt;, &lt;ФлагОтказаПерезаписи&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>FileCopy<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайлаИсточника&gt;</p>
+  </td>
+  <td width=472 valign=top style='width:353.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем фай­ла источника.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайлаПриемника&gt;</p>
+  </td>
+  <td width=472 valign=top style='width:353.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем фай­ла приемника.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагОтказаПерезаписи&gt;</p>
+  </td>
+  <td width=472 valign=top style='width:353.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  0 — при суще­ствовании файла приемника заменяет его на копируемый; 1 — при
+  сущест­вовании файла приемника копирова­ния не производится.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КопироватьФайл<span
+lang=RU> копирует файл-источник в файл-приемник.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+копирования файла.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура КопирФ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ФС.КопироватьФайл(ИмяВыбрФайла, ФПриемник, 1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735349"></a><a name="_Toc494938238"><span style='mso-bookmark:
+_Toc492735349'>УдалитьФайл</a></h4>
+
+<p class=MsoNormal>Удалить файл.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УдалитьФайл<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>(<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;ИмяФайла&gt;<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>)<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>DeleteFile<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайла&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем удаляемого файла.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УдалитьФайл<span
+lang=RU> удаляет указанный файл.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+удаления файла.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура УдалФ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ФС.УдалитьФайл(ИмяФайла);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735350"></a><a name="_Toc494938239"><span style='mso-bookmark:
+_Toc492735350'>ПереименоватьФайл</a></h4>
+
+<p class=MsoNormal>Переименовать файл.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПереименоватьФайл(&lt;ИмяФайлаИсточника&gt;,
+&lt;ИмяФайлаПриемника&gt;, &lt;ФлагПерезаписи&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>MoveFile<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=176 valign=top style='width:132.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайлаИсточника&gt;</p>
+  </td>
+  <td width=496 valign=top style='width:371.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем файла ис­точника.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=176 valign=top style='width:132.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайлаПриемника&gt;</p>
+  </td>
+  <td width=496 valign=top style='width:371.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с требуемым именем файла.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=176 valign=top style='width:132.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагПерезаписи&gt;</p>
+  </td>
+  <td width=496 valign=top style='width:371.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  0 — запрещает пере­мещение файла между дисками и при существовании файла
+  приемника копирова­ния не производится; 1 — разрешает пере­мещение файла
+  (только для файлов) между дисками и при существовании файла прием­ника
+  замещает его на копируемый.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПереименоватьФайл<span
+lang=RU> выполняет переименование (перемещение) указанного файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+переименования файла.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПереимФ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ФС.ПереименоватьФайл(Результат, ФПриемник, 1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735351"></a><a name="_Toc494938240"><span style='mso-bookmark:
+_Toc492735351'>НайтиПервыйФайл</a></h4>
+
+<p class=MsoNormal>Открывает выборку файлов по заданной маске и
+находит первый файл.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НайтиПервыйФайл(&lt;МаскаИмени&gt;)<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>FindFirstFile<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>МаскаИмени&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с маской имен файлов. В строке маски можно использовать символ &quot;*&quot;,
+  что означает наличие любого числа произвольных символов. Символ &quot;?&quot;
+  в строке маски означает наличие одного произвольного символа.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строка с именем найденного файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиПервыйФайл<span
+lang=RU> находит первый файл и открывает выборку фай­лов по заданной маске.</p>
+
+<p class=MsoNormal>Замечание. Методы <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиПервыйФайл<span
+lang=RU> и <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НайтиСледующийФайл<span
+lang=RU> возвращают имена файлов в той же последовательности, как это делает
+команда <span style='mso-ansi-language:EN-US'>Dir
+операционной системы <span style='mso-ansi-language:EN-US'>MS <span
+style='mso-ansi-language:EN-US'>DOS, т. е. если задана
+маска &quot;*.*&quot;для некорне­вого каталога, первым возвращаемым значением
+будет &quot;.&quot; — обозначаю­щая ссылку на текущий каталог. Имя следующего
+файла будет &quot;..&quot; — обо­значающее ссылку на каталог уровнем выше. При
+получении следующих файлов возвращаемым значением будет имя найденного файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+открытия выборки файлов по за­данной маске.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПервФ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Результат = ФС.НайтиПервыйФайл(&quot;*.*&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиСледующийФайл</p>
+
+<h4><a name="_Toc492735352"></a><a name="_Toc494938241"><span style='mso-bookmark:
+_Toc492735352'>НайтиСледующийФайл</a></h4>
+
+<p class=MsoNormal>Находит следующий файл по открытой выборке
+файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НайтиСледующийФайл()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>FindNextFile<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строка с именем найденного файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиСледующийФайл<span
+lang=RU> находит следующий файл по открытой вы­борке файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура взятия
+следующего файла выбор­ки файлов.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура СледФ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Результат = ФС.НайтиСледующийФайл();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиПервыйФайл</p>
+
+<h4><a name="_Toc492735353"></a><a name="_Toc494938242"><span style='mso-bookmark:
+_Toc492735353'>АтрибутыФайла</a></h4>
+
+<p class=MsoNormal>Возвращает атрибуты файла.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>АтрибутыФайла(&lt;ИмяФайла&gt;,
+&lt;РазмерФайла&gt; , &lt;АтрибутыФайла&gt;, &lt;ВремяСоздания&gt;,<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            &lt;ВремяПоследнДоступа&gt;, &lt;ВремяПоследнЗаписи&gt;,
+&lt;РасширенноеИмяФайла&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetFileAttr<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=184 valign=top style='width:138.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФайла&gt;<o:p></o:p></p>
+  </td>
+  <td width=488 valign=top style='width:365.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем файла.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=184 valign=top style='width:138.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>РазмерФайла&gt;</p>
+  </td>
+  <td width=488 valign=top style='width:365.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Возвращаемое
+  Числовое значение размера файла в байтах.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=184 valign=top style='width:138.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>АтрибутыФайла&gt;</p>
+  </td>
+  <td width=488 valign=top style='width:365.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Возвращаемое
+  строковое значение длиной 9 символов, в котором закодированы атрибуты файла.
+  Символы могут принимать значения &quot;0&quot; или &quot;1&quot;:<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>Первый символ: если
+  &quot;1&quot; — файл только для чтения;</p>
+  <p class=MsoNormal style='text-indent:0in'>Второй символ: если
+  &quot;1&quot; — скрытый файл;</p>
+  <p class=MsoNormal style='text-indent:0in'>Третий символ: если
+  &quot;1&quot; — системный файл;</p>
+  <p class=MsoNormal style='text-indent:0in'>Четвертый символ:
+  если &quot;1&quot; — каталог;</p>
+  <p class=MsoNormal style='text-indent:0in'>Пятый символ: если
+  &quot;1&quot; — архивный файл;</p>
+  <p class=MsoNormal style='text-indent:0in'>Шестой символ: если
+  &quot;1&quot; — обычный файл (все другие атрибуты не установлены);</p>
+  <p class=MsoNormal style='text-indent:0in'>Седьмой символ: если
+  &quot;1&quot; — временный файл;</p>
+  <p class=MsoNormal style='text-indent:0in'>Восьмой символ: если
+  &quot; 1&quot; — файл, сжатый каким-либо архиватором;</p>
+  <p class=MsoNormal style='text-indent:0in'>Девятый символ: если
+  &quot;1&quot; — нет доступа к файлу.</p>
+  <p class=MsoNormal style='text-indent:0in'>Для проверки
+  атрибута можно применять вы­ражение:</p>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Цел(ПолученныйАтрибут/КодАтрибута)/2<o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>где <span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>кодАтрибута — 1/2/4/16/32...<o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>это выражение
+  возвращает 1 или 0, в зависи­мости от того, установлен атрибут или нет.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=184 valign=top style='width:138.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВремяСоздания&gt;</p>
+  </td>
+  <td width=488 valign=top style='width:365.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Возвращаемое
+  строковое значение, содержа­щее дату и время создания файла.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=184 valign=top style='width:138.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВремяПоследнДоступа&gt;</p>
+  </td>
+  <td width=488 valign=top style='width:365.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Возвращаемое
+  строковое значение, содержа­щее дату и время последнего доступа к файлу.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=184 valign=top style='width:138.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВремяПоследнЗаписи&gt;</p>
+  </td>
+  <td width=488 valign=top style='width:365.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Возвращаемое
+  строковое значение, содержа­щее дату и время последней записи файла.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=184 valign=top style='width:138.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>РасширенноеИмяФайла&gt;</p>
+  </td>
+  <td width=488 valign=top style='width:365.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Возвращаемое
+  строковое значение, содержа­щее полное имя файла.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>АтрибутыФайла<span
+lang=RU> считывает атрибуты файла и записывает их значе­ния в передаваемые
+параметры.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+считывания атрибутов файла., </p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Лроцедура АттрФ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ФС.АтрибутыФайла(ИмяВыбрФайла, A, B, C, D, E, F);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735354"></a><a name="_Toc494938243"><span style='mso-bookmark:
+_Toc492735354'>СоздатьКаталог</a></h4>
+
+<p class=MsoNormal>Создает новый каталог файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СоздатьКаталог<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>(<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;ИмяКат&gt;<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>CreateDirectory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяКат&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем создаваемого ка­талога.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьКаталог<span
+lang=RU> создает новый каталог файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+создания нового каталога файлов.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура СоздДир()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ФС.СоздатьКаталог(ИмяВыбрДир);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735355"></a><a name="_Toc494938244"><span style='mso-bookmark:
+_Toc492735355'>УдалитьКаталог</a></h4>
+
+<p class=MsoNormal>Удаляет каталог файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УдалитьКаталог(&lt;ИмяКат&gt;)<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>RemoveDirectory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<p class=MsoNormal>&lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяКат<span
+lang=RU>&gt;<span style='mso-tab-count:1'>    Строковое выражение с
+именем удаляемого каталога файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УдалитьКаталог<span
+lang=RU> удаляет каталог файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+удаления каталога файлов.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура УдалДир()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ФС.УдалитьКаталог(ИмяВыбрДир);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735356"></a><a name="_Toc494938245"><span style='mso-bookmark:
+_Toc492735356'>УстТекКаталог</a></h4>
+
+<p class=MsoNormal>Устанавливает текущий каталог файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстТекКаталог(&lt;ИмяКат&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b>Англоязычный синоним:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>G<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>etCurrentDirectory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяКат&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем текущего ка­талога файлов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстТекКаталог<span
+lang=RU> устанавливает текущий каталог файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+установки текущего каталога фай­лов</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура УстТекДир()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ФС.УстТекКаталог(ИмяВыбрДир);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТекКаталог</p>
+
+<h4><a name="_Toc492735357"></a><a name="_Toc494938246"><span style='mso-bookmark:
+_Toc492735357'>ТекКаталог</a></h4>
+
+<p class=MsoNormal>Возвращает текущий каталог файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекКаталог()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetCurrentDirectory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение имени текущего каталога
+файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТекКаталог<span
+lang=RU> возвращает строковое значение имени текущего катало­га файлов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекКат = ФС.ТекКаталог();<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстТекКаталог</p>
+
+<h4><a name="_Toc492735358"></a><a name="_Toc494938247"><span style='mso-bookmark:
+_Toc492735358'>WindowsКаталог</a></h4>
+
+<p class=MsoNormal>Возвращает имя <span style='mso-ansi-language:
+EN-US'>Windows директории.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>WindowsКаталог()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetWindowsDirectory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение — имя <span
+style='mso-ansi-language:EN-US'>Windows директории.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>WindowsКаталог<span
+lang=RU> возвращает имя <span style='mso-ansi-language:EN-US'>Windows<span
+lang=RU> директории.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример</b><b
+style='mso-bidi-font-weight:normal'><span style='mso-ansi-language:EN-US'>:</b><span
+style='mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>WinKaT = <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Ф<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>C.Windows<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Каталог<span class=a0><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>();<o:p></o:p></p>
+
+<h4><a name="_Toc492735359"></a><a name="_Toc494938248"><span style='mso-bookmark:
+_Toc492735359'>СвободноеМестоНаДиске</a></h4>
+
+<p class=MsoNormal>Определить размер свободного дискового
+пространства.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СвободноеМестоНаДиске(&lt;ИмяДиска&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetDiskFreeSpace<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяДиска&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  с именем диска.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Численое значение — размер свободного
+дискового пространства в байтах.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СвободноеМестоНаДиске<span
+lang=RU> возвращает численое значение размера</p>
+
+<p class=MsoNormal>свободного дискового пространства.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В данном примере приведена процедура
+определения свободного дискового пространства диска С:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура РазмД()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Рез = ФС.СвободноеМестоНаДиске(&quot;С:&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

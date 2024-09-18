@@ -1,0 +1,2310 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part33</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part33.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492735273"></a><a name="_Toc494938162"><span style='mso-bookmark: _Toc492735273'>Глава 33<br> Работа с Запросами</a></h1>
+
+<p class=MsoNormal>Для формирования и выполнения запросов к
+документам, справочникам, регистрам, журналам расчетов, планам счетов,
+бухгалтерским операциям и про­водкам в системе используется специальный
+агрегатный тип данных — «За­прос». Возможности работы со справочниками,
+документами и журналами расчетов предоставляют достаточно мощные средства
+получения различной информации об этих объектах. Однако, существует также
+необходимость в по­лучении информации, сгруппированной определенным образом,
+которую не­возможно или очень сложно получить непосредственно работая с
+документами, справочниками, регистрами или журналами расчетов. Для получения
+такой информации и существует механизм запросов.</p>
+
+<p class=MsoNormal>Одним из классических примеров его применения
+может служить сводка по состоянию регистра на конкретный момент времени. В более
+сложных запросах возможно получение сгруппированной информации по справочникам,
+журна­лам расчетов и документам.</p>
+
+<p class=MsoNormal>Кроме того, механизм запросов позволяет легко
+получать информацию в различных временных разрезах.</p>
+
+<h2><a name="_Toc492735274"></a><a name="_Toc494938163"><span style='mso-bookmark:
+_Toc492735274'>Контекст работы с запросами</a></h2>
+
+<p class=MsoNormal>Во всех программных модулях доступ к атрибутам
+и методам запросов мо­жет выполняться только через переменную, созданную
+функцией <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>. Чтобы вызвать атрибут или метод объекта, имя этого атрибу­та, метода
+(с указанием необходимых параметров) пишется через точку после имени
+переменной.</p>
+
+<p class=MsoNormal>При создании объекта типа «Запрос» в качестве
+параметра функции <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU> используется ключевое слово <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Запрос<span
+lang=RU> .<o:p></o:p></p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Запрос — <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Query<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос =
+СоздатьОбъект(&quot;Запрос&quot;);<o:p></o:p></p>
+
+<h2><a name="_Toc492735275"></a><a name="_Toc494938164"><span style='mso-bookmark:
+_Toc492735275'>Структура запросов и методика их использования</a></h2>
+
+<p class=MsoNormal>Использование запросов позволяет легко строить
+простые отчеты и облегча­ет построение сложных отчетов. При построении сложных
+отчетов использова­ние запросов может существенно снизить трафик сети, т.к.
+однажды выбранная лри исполнении запроса информация, хранящаяся во временном
+наборе дан­ных на локальном компьютере, может многократно использоваться.</p>
+
+<p class=MsoNormal>Запросы можно использовать не только для
+построения отчетов, но и для реализации других процедур конфигурации, требующих
+получения из БД не­кой сводной информации. Например, реализация алгоритма
+списания стоимо­сти товара по методам <span style='mso-ansi-language:
+EN-US'>FIFO или <span style='mso-ansi-language:
+EN-US'>LIFO.</p>
+
+<p class=MsoNormal>Работа с запросами предполагает следующий
+порядок:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l30 level1 lfo52;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>при помощи функции <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU> создается объект типа «Запрос» и ссылка на него присваивается какой-либо
+переменной. Далее обраще­ние к запросу производится посредством этой ссылки.</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l30 level1 lfo52;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>после создания переменной типа «Запрос»
+следует обращение к методу <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выполнить<span
+lang=RU>, которому в качестве параметра передается текст запроса, написанный на
+специальном языке запросов (см. главу «Язык запро­сов»). Метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Выполнить анализирует текст
+запроса, выполняет в соот­ветствии с ним выборку данных и формирует временный
+выходной на­бор данных (выборку).</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l30 level1 lfo52;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>после этого организуется циклическая
+обработка сформированного вре­менного набора данных (выборки) с целью получения
+требуемого отчета.</p>
+
+<p class=MsoNormal>В данном разделе мы рассмотрим структуру
+создаваемого запросом времен­ного набора данных и работу методов запросов по
+выборке информации из этого временного набора.</p>
+
+<p class=MsoNormal>Дальнейшее описание проведем на простом
+примере: необходимо получить отчет о количестве товаров, хранящихся на складах.
+Текст процедуры, выпол­няющей эту операцию приведен ниже.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НашЗапрос =
+СоздатьОбъект(&quot;Запрос&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекстЗапроса =<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&quot;//{{ЗАПРОС(Сформировать)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|СКЛАД = Регистр.ТоварныйЗапас.Склад;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|ТОВАР = Регистр.ТоварныйЗапас.Товар;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|КОЛИЧЕСТВО =
+Регистр.ТоварныйЗапас.Количество;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка ТОВАР Упорядочить По
+ТОВАР.Код;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка СКЛАД Упорядочить По
+СКЛАД.Код;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Функция КОЛ = КонОст(КОЛИЧЕСТВО);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|&quot;//}}ЗАПРОС<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Если ошибка в запросе, то выход из
+процедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если НашЗапрос.Выполнить(ТекстЗапроса)
+= 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal>Структура временного набора данных, созданная
+запросом &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НашЗапрос&quot;
+после его выполнения, представлена на следующем рисунке:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Товар</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Склад</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Кол.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Итог общий</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:gray;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  style='mso-ansi-language:EN-US'>X<o:p></o:p></p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:gray;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  style='mso-ansi-language:EN-US'>X<o:p></o:p></p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:gray;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>62</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Итог по товару Стол</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Стол</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  style='mso-ansi-language:EN-US'>X<o:p></o:p></p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>35</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Строка по товару Стол на складе Первый</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Стол</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Первый</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>10</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Строка по товару Стол на складе Второй</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Стол</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Второй</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>20</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Строка по товару Стол на складе Третий</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Стол</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Третий</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>5</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Итог по товару Стул</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Стул</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  style='mso-ansi-language:EN-US'>X<o:p></o:p></p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>9</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Строка по товару Стул на складе Второй</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Стул</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Второй</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>7</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Строка по товару Стул на складе Третий</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Стул</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Третий</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>2</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Итог по товару Шкаф</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Шкаф</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  style='mso-ansi-language:EN-US'>X<o:p></o:p></p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#A6A6A6;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>18</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Строка по товару Шкаф на складе Первый</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Шкаф</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Первый</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>8</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=303 valign=top style='width:227.4pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right;text-indent:0in'><span
+  lang=RU>Строка по товару Шкаф на складе Третий</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Шкаф</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>Третий</p>
+  </td>
+  <td width=72 valign=top style='width:.75in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;text-indent:0in'><span
+  lang=RU>10</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-top:12.0pt'>После выполнения
+запроса в программе можно использовать полученный временный набор данных.
+Изначально объект &quot;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>НашЗапрос<span
+lang=RU>&quot; спозиционирован на первой записи временного набора данных, где
+содержится общий итог по запросу. Поэтому общие итоги по запросу можно
+использовать сразу же после выполнения запроса.</p>
+
+<p class=MsoNormal>Далее, допустим, в цикле мы проходим только по
+самой внешней группи­ровке запроса: &quot;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+lang=RU>&quot;. В теле этого цикла объект &quot;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НашЗапрос<span
+lang=RU>&quot; позициони­руется во временном наборе данных на записи,
+содержащие итоги по каждому конкретному товару, поэтому в теле этого цикла мы
+можем использовать итоги по товарам.</p>
+
+<p class=MsoNormal>После завершения цикла по самой внешней
+группировке, объект &quot;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>НашЗапрос<span
+lang=RU>&quot; снова позиционируется на первой записи временного набора данных,
+где содержится общий итог по запросу. Поэтому, общие итоги по за­просу можно
+использовать в двух местах: до и после цикла по самой внешней группировке
+запроса.</p>
+
+<p class=MsoNormal><b>Продолжение примера:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//Итог общий<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока
+НашЗапрос.Группировка(&quot;Товар&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+//Итог по товару<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//Итог общий<o:p></o:p></p>
+
+<p class=MsoNormal>Поскольку после первого просмотра временного
+набора данных (как мы это сделали выше) объект &quot;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НашЗапрос<span
+lang=RU>&quot; снова спозиционирован на первой записи, то можно запустить
+просмотр еще раз.</p>
+
+<p class=MsoNormal>Допустим, теперь нам надо просмотреть в цикле
+всю информацию по внешней (&quot;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+lang=RU>&quot;) и вложенной группировке запроса (&quot;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Склад<span
+lang=RU>&quot;). В теле цик­ла по внешней группировке (&quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Товар&quot;) объект &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>НашЗапрос&quot; позиционируется
+во временном наборе данных на записи, содержащие итоги по каждому кон­кретному
+товару, поэтому в теле этого цикла мы можем использовать итоги по товарам.</p>
+
+<p class=MsoNormal>В теле цикла по вложенной группировке (&quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Склад&quot;) объект &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>НашЗапрос&quot; позиционируется
+во временном наборе данных на записи, содержащие строки по каждому конкретному
+товару на конкретном складе, поэтому в теле этого цикла мы можем использовать
+данные о количестве товара на складе.</p>
+
+<p class=MsoNormal>После завершения цикла по вложенной
+группировке (&quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Склад&quot;),
+объект &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НашЗапрос&quot;
+снова позиционируется на записи временного набора данных, где содержится общий
+итог по конкретному товару. Поэтому, общие итоги по конкретному товару можно
+использовать в двух местах: до и после цикла по вложенной группировке (&quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Склад&quot;).</p>
+
+<p class=MsoNormal>После завершения цикла по самой внешней
+группировке, объект &quot;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>НашЗапрос<span
+lang=RU>&quot; снова позиционируется на первой записи временного набора данных,
+где содержится общий итог по запросу. Поэтому, общие итоги по за­просу можно
+использовать в двух местах: до и после цикла по самой внешней группировке
+запроса.</p>
+
+<p class=MsoNormal><b>Продолжение примера:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//Итог общий<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока
+НашЗапрос.Группировка(&quot;Товар&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+//Итог по товару<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока НашЗапрос.Группировка(&quot;Склад&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+//Строка по товару — складу<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+//Итог по товару<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//Итог общий<o:p></o:p></p>
+
+<p class=MsoNormal>После выхода из процедуры, где была определена
+переменная, содержащая объект типа «Запрос» (в нашем примере &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>НашЗапрос&quot;) или после
+уничтоже­ния объекта типа «Запрос» (<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Наш3апрос
+= 0;), временный набор данных на локальной машине
+пользователя уничтожается.</p>
+
+<p class=MsoNormal>Из приведенного выше примера можно сделать
+несколько важных заключе­ний:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l46 level1 lfo53;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>при просмотре временного набора данных,
+вложенность циклов про­смотра должна точно повторять порядок группировок
+запроса (нельзя входить во вложенную группировку, не войдя в предыдущую);</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l46 level1 lfo53;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>допускается просматривать временный набор
+данных, опуская с некото­рого уровня все вложенные (внутренние) группировки;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l46 level1 lfo53;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>не следует прерывать последовательность
+просмотра временного набора данных (например, оператором <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Прервать<span
+lang=RU>;), если вы собираетесь ис­пользовать временный набор дальше или еще
+раз, т. к. в таком случае те­ряется точка позиционирования во временном наборе
+и продолжать про­смотр невозможно;</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока
+Запрос.Группировка(&quot;Товар&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если (Запрос.Товар = НужныйТовар) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Пока Запрос.Группировка(&quot;Отдел&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Если (Запрос.Отдел = НужныйОтдел) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            Пока Запрос.Группировка(&quot;Сотрудник&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">               Если (Запрос.Сотрудник = НужныйСотрудник) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                  Пока Запрос.Группировка(&quot;Док&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">              <span style="mso-spacerun: yes">       Док =
+Запрос.Док;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                     Если Запрос.ПрихКол &lt;&gt; 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                        Таб.ВывестиСекцию(&quot;Приход&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                     ИначеЕсли Запрос.РасхКол &lt;&gt; 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                        Приращение = Запрос.РасхКол;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                <span style="mso-spacerun:
+yes">        Таб.ВывестиСекцию(&quot;Расход&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                     КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                  КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">               КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h3><a name="_Toc492735276"></a><a name="_Toc494938165"><span style='mso-bookmark:
+_Toc492735276'>Атрибуты запросов</a></h3>
+
+<p class=MsoNormal>Атрибутами запроса являются объявленные в
+описании запроса внутренние переменные (см. главу «Язык запросов»), имена
+группировок и функций за­проса. Все атрибуты запросов — только для чтения.</p>
+
+<p class=MsoNormal>Чтобы обратиться к атрибуту запроса, имя этого
+атрибута пишется через точку после имени ссылки на запрос. Значения атрибутов запроса
+определяют­ся текущим положением в полученной выборке.</p>
+
+<h3><a name="_Toc492735277"></a><a name="_Toc494938166"><span style='mso-bookmark:
+_Toc492735277'>Методы запросов</a></h3>
+
+<h4><a name="_Toc492735278"></a><a name="_Toc494938167"><span style='mso-bookmark:
+_Toc492735278'>Выполнить</a></h4>
+
+<p class=MsoNormal>Выполнить запрос.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выполнить(&lt;ТекстЗапроса&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Execute<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТекстЗапроса&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее текст запроса на языке запросов (см. Главу «Язык запросов»).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если запрос выполнен успешно, 0 —
+если зафиксирована ошибка при выполнении запроса (синтаксическая или времени
+выполнения).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выполнить<span
+lang=RU> анализирует описание запроса, содержащееся в тексте запроса &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ТекстЗапроса&gt;, выполняет
+выборку данных, формирует временный выходной набор данных (выборку), вычисляет
+значения функций запроса (см. главу «Язык запросов»).</p>
+
+<p class=MsoNormal>Язык запросов предназначен для описания
+запросов к базе данных. Напи­санный на языке запросов текст описания передается
+методу <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выполнить в
+ка­честве параметра. Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выполнить<span
+lang=RU> непосредственно выполняет запрос, о результате его выполнения
+формируется временный выходной набор данных, который в дальнейшем используется
+для заполнения формы отчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Сформировать()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// сформируем данные на начало месяца<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ЖР = СоздатьОбъект(&quot;ЖурналРасчетов.Зарплата&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+_Дата = ЖР.НачалоТекущегоПериода();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Создание объектов типа &quot;Запрос&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes"> <span style="mso-spacerun: yes">  Запрос =
+СоздатьОбъект(&quot;Запрос&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ЗапросКат = СоздатьОбъект(&quot;Запрос&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+флаг1 = Запрос.Выполнить(<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+&quot;//({ЗАПРОС(Двойной)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Период с _Дата по _Дата;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Оклад = Справочник.Сотрудники.Оклад;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Пдр = Справочник.Сотрудники.МестоРаботы.Владелец;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Ктг = Справочник.Сотрудники.Категория;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Условие((Ктг.Выбран() = 1) И (Пдр.Выбран() = 1));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Группировка Пдр без групп;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Группировка Ктг без групп;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Функция Всего = Сумма(Оклад);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|&quot;//}} ЗАПРОС<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Флаг2 = ЗапросКат.Выполнить(<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+&quot;//{{ЗАПРОС(Одинарный)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Период с _Дата по _Дата;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Оклад = Справочник.Сотрудники.Оклад;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Ктг = Справочник.Сотрудники.Категория;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Условие(Ктг.Выбран() = 1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Группировка Ктг без групп;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Функция Всего = Сумма(Оклад);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|&quot;//}}ЗАПРОС<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Если ошибка в запросе, то выход из процедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ((Флаг1 = 0) ИЛИ (Флаг2 = 0)) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(&quot;Ошибка в запросе!&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Подготовка к заполнению выходных форм данными запроса<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб = СоздатьОбъект(&quot;Таблица&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Выводим заглавие таблицы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.ВывестиСекцию(&quot;Документ&lt;|ДокументВерт&lt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока ЗапросКат.Группировка(&quot;Ктг&quot;) = 1 Цикл<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Таб.ПрисоединитьСекцию(&quot;Документ&lt;|Осн2&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.ПрисоединитьСекцию(&quot;Документ&lt;|ДокументВерт&gt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Выводим колонтитул таблицы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.ВывестиСекцию(&quot;КолонТитул|ДокументВерт&lt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока ЗапросКат.Группировка(&quot;Ктг&quot;) = 1 Цикл<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Таб.ПрисоединитьСекцию(&quot;КолонТитул|Осн2&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.ПрисоединитьСекцию(&quot;КолонТитул|ДокументВерт&gt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Продолжать = 1;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока Запрос.Группировка(&quot;Пдр&quot;) = 1 Цикл<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// Заполнение полей<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Пдр Таб.ВывестиСекцию(&quot;Осн1|ДокументВерт&lt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Далее = 1;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Пока Продолжать = 1 Цикл<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         // Заполнение полей Ктг<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СлКат = ЗапросКат.Группировка(&quot;Ктг&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Если Далее = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            ОК = Запрос.Группировка(&quot;Ктг&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Если СлКат = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            Прервать;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Если ЗапросКат.Ктг = Запрос.Ктг Тогда<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            Таб.ПрисоединитьСекцию(&quot;Осн1|Осн2&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            Далее = 1;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            Таб.ПрисоединитьСекцию(&quot;Осн1|Пусто&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            Далее = 0;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Таб.ПрисоединитьСекцию(&quot;Осн1|ДокументВерт&gt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Заполнение полей &quot;Итого&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.ВывестиСекцию(&quot;Документ&gt;|ДокументВерт&lt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока ЗапросКат.Группировка(&quot;Ктг&quot;) = 1 Цикл<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Таб.ПрисоединитьСекцию(&quot;Документ&gt;|Осн2&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.ПрисоединитьСекцию(&quot;Документ&gt;|ДокументВерт&gt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Вывод заполненной формы Таб.Опции(0, 0, 0, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.ТолькоПросмотр(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.Показать(&quot;Результат&quot;, );<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735279"></a><a name="_Toc494938168"><span style='mso-bookmark:
+_Toc492735279'>ИспользоватьГрафуОтбора</a></h4>
+
+<p class=MsoNormal>Установить режим использования графы отбора в
+запросе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьГрафуОтбора(&lt;ГрафаОтбора&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseSelectionColumn<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ГрафаОтбора&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — идентификатор графы отбора, как он задан в конфигура­торе. Данный параметр
+  устанавливает ре­жим использования определенной графы отбора.<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>&quot;*&quot; — автоматический
+  выбор графы отбора.</p>
+  <p class=MsoNormal style='text-indent:0in'>Пустая строка — не
+  использовать графу отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение: идентификатор
+использованной реально графы отбора, если метод вызывается после выполнения
+запроса.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод устанавливает режим использования графы
+отбора в запросе. Если метод не используется — по умолчанию устанавливается автоматический
+выбор графы отбора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос =
+СоздатьОбъект(&quot;Запрос&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекстЗапроса =<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&quot;//{{ЗАПРОС(ОбработкаДок)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Период с '01.10.96' по '05.10.96';<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|ОбрабатыватьДокументы Все;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Тов = Документ.РасхНакл.Товар;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Клиент = Документ.РасхНакл.Клиент;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Клиент;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Тов;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Документ;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|&quot;//)}ЗАПРОС<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// ЕСЛИ ошибка в запросе, то выход из
+процедуры<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос.ИспользоватьГрафуОтбора(&quot;Клиент&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Запрос.Выполнить(ТекстЗапроса) = 0
+Тогда<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">  <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><span
+style="mso-spacerun: yes"> Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc492735280"></a><a name="_Toc494938169"><span style='mso-bookmark:
+_Toc492735280'>Группировка</a></h4>
+
+<p class=MsoNormal>Получить следующее значение выборки запроса на
+заданном уровне группировки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Группировка(&lt;Группировка&gt;,
+&lt;Направление&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Group<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Группировка&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение,
+  содержащее порядковый номер или имя группировки.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Направление&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение:</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — выборка значений
+  группировки по возрастанию;<span style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>-1 (минус единица) —
+  выборка значений группи­ровки по убыванию.<span style='mso-ansi-language:
+  EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>Значение по умолчанию:
+  1.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если получено следующее значение
+выборки запроса, 0 — если нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Группировка<span
+lang=RU> служит для организации цикла получения данных из выборки,
+сформированной в результате работы метода <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выполнить<span
+lang=RU>. Метод <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Группировка
+позиционирует в выборке очередную строку в порядке, опреде­ленном параметром
+&lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Группировка&gt;.
+Нельзя использовать метод <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Группировка<span
+lang=RU>, задавая в качестве параметра младшие группировки, не ис­пользовав
+предварительно этот метод для позиционирования по старшим груп­пировкам. Старшинство
+группировок определяется порядком их следования в тексте запроса.</p>
+
+<p class=a><b>Замечание</b>: Обход
+группировок по многоуровневым справочникам в порядке убывания не выполняется.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Сформировать()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Перем Запрос, ТекстЗапроса;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если (Число(ДатаНач) = 0) ИЛИ (Число(ДатаКон) = 0) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;Не задан период!&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+//Создание объекта типа &quot;Запрос&quot; Запрос =
+СоздатьОбъект(&quot;Запрос&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ТекстЗапроса =<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+&quot;//{{ЗАПРОС(Сформировать)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|с ДатаНач по ДатаКон;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Рез = ЖурналРасчетов.Зарплата.Результат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Сотр = ЖурналРасчетов.Зарплата.Объект;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Группировка Сотр без групп;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Группировка ПериодЖурнала;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Функция Сум = Сумма(Рез);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|&quot;//}}ЗАПРОС<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Сотрудник.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ТекстЗапроса = ТекстЗапроса + &quot;Условие(Сотр = Сотрудник);&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes"> 
+<span style="mso-spacerun: yes"> // Если ошибка в запросе, то
+выход из процедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Запрос.Выполнить(ТекстЗапр) = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Подготовка к заполнению выходных форм данными запроса<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб = СоздатьОбъект(&quot;Таблица&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// сначала используем группировку по сотрудникам<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// а потом группировку по периоду журнала!!!<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока Запрос.Группировка(&quot;Сотр&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// Заполнение полей Сотр<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Таб.ВывестиСекцию(&quot;Сотр&lt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Пока Запрос.Группировка(&quot;ПериодЖурнала&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         // Заполнение полей ПериодЖурнала<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Таб.ВывестиСекцию(&quot;Мес&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Таб.ВывестиСекцию(&quot;Сотр&gt;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Вывод заполненной формы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Заполнение полей &quot;Итого&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.Опции(0, 0, 0, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.ТолькоПросмотр(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Таб.Показать(&quot;Результат&quot;, );<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735281"></a><a name="_Toc494938170"><span style='mso-bookmark:
+_Toc492735281'>ЭтоГруппа</a></h4>
+
+<p class=MsoNormal>Возвращает флаг принадлежности группе
+справочника.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЭтоГруппа(&lt;ИмяГруппировки&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>IsItAGroup<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяГруппировки&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение,
+  содержащее порядковый номер или имя группировки (см. Главу «Язык запро­сов»).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если текущая строка выборки
+(временного набора данных, сформированного в результате выполнения запроса)
+является группой спра­вочника, 0 — если это обычный элемент справочника.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЭтоГруппа<span
+lang=RU> предназначен для выделения строк временного набора данных, которые
+являются группой справочника.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока
+(Запр.Группировка(&quot;Товар&quot;) = 1) И (Запр.ЭтоГруппа(&quot;Товар&quot;)
+= 1) Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492735282"></a><a name="_Toc494938171"><span style='mso-bookmark:
+_Toc492735282'>НачалоПериода</a></h4>
+
+<p class=MsoNormal>Возвращает дату начала периода формирования
+запроса.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НачалоПериода()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>BeginOfPeriod<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «дата» — начало периода
+формирования запроса.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НачалоПериода<span
+lang=RU> возвращает дату начала периода запроса. Если в тексте запроса (см.
+«Язык запросов») указана одна из предопреде­ленных группировок типа период
+(&quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Год&quot;, &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Месяц&quot;, &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>День&quot; и т. д.), то при
+обработке этой и вложенных в нее группировок метод <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НачалоПериода<span
+lang=RU> будет возвращать начало периодов текущих значений этих группировок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ДатаНачала = Запрос.НачалоПериода();<o:p></o:p></p>
+
+<h4><a name="_Toc492735283"></a><a name="_Toc494938172"><span style='mso-bookmark:
+_Toc492735283'>КонецПериода</a></h4>
+
+<p class=MsoNormal>Возвращает дату конца периода формирования
+запроса.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПериода()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EndOfPeriod<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «дата» — конец периода
+формирования запроса.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецПериода<span
+lang=RU> возвращает дату конца периода запроса. Если в тексте запроса (см.
+«Язык запросов») указана одна из предопреде­ленных группировок типа период
+(&quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Год&quot; ,
+&quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Месяц&quot;
+, &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>День&quot;
+и т. д.), то при обработке этой и вложенных в нее группировок метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>КонецПериода будет возвращать
+конец периодов текущих значений этих группировок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ДатаКонца = Запрос.КонецПериода();<o:p></o:p></p>
+
+<h4><a name="_Toc492735284"></a><a name="_Toc494938173"><span style='mso-bookmark:
+_Toc492735284'>Получить</a></h4>
+
+<p class=MsoNormal>Прямое позиционирование на запись в выборке по
+конкретным зна­чениям группировок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Получить(&lt;ЗначениеГруппировки_1&gt;,
+..., &lt;ЗначениеГруппировки_<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>n<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Get<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=208 valign=top style='width:156.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗначениеГруппировки_<span class=a0><span
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>n&gt;</p>
+  </td>
+  <td width=464 valign=top style='width:347.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение,
+  содержащее значение <span style='mso-ansi-language:EN-US'>n<span
+  lang=RU>-ой группировки запроса.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если запись найдена, 0 — если нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Получить<span
+lang=RU> осуществляет прямое позиционирование на запись в вы­борке по
+конкретным значениям группировок.</p>
+
+<p class=MsoNormal>Количество параметров метода зависит от
+количества группировок в запро­се. Можно пропускать значения одной или
+нескольких последних группировок, в этом случае метод позиционируется на
+запись, которая будет содержать ито­говые значения для указанных группировок.
+Пропускаемые при вызове метода последние значения группировок должны заменяться
+запятыми. Если при вы­зове метода опущены все параметры, то выборка
+позиционируется на самое начало временного набора данных, на строку итогов.</p>
+
+<p class=MsoNormal>После выполнения метода <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Получить<span
+lang=RU> может осуществляться дальнейший обход выборки вызовами метода <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Группировка.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Текст запроса<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Текст3апроса = &quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>| ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Должность;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Категория;<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>| ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>|&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Текст процедуры обработки запроса<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Запрос.Выполнить(ТекстЗапроса) = 0
+Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Запрос.Получить(ВыбДолжн,
+ВыбКатег) = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Запрос.Получить(ВыбДолжн, ) = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc492735285"></a><a name="_Toc494938174"><span style='mso-bookmark:
+_Toc492735285'>ВНачалоВыборки</a></h4>
+
+<p class=MsoNormal>Осуществляет прямое позиционирование на начало
+выборки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВНачалоВыборки()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ToSelectionBegin<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если операция выполнена успешно, 0
+— если нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВНачалоВыборки<span
+lang=RU> осуществляет прямое позиционирование на нача­ло выборки.</p>
+
+<p class=MsoNormal>Если необходимо перейти на верхний уровень
+группировок, чтобы затем ор­ганизовать проход группировки первого уровня (в
+любом направлении), следу­ет использовать метод <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВНачалоВыборки<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Текст запроса<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Текст3апроса = &quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>| ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Должность;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Категория;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>| ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Текст процедуры обработки запроса<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Запрос.Выполнить(ТекстЗапроса) = 0
+Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Запрос.Получить(ВыбДолжн,
+ВыбКатег) = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Запрос.Получить(ВыбДолжн, ) = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос.ВНачалоВыборки();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Запрос.Группировка(1, -1) цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Конеццикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492735286"></a><a name="_Toc494938175"><span style='mso-bookmark:
+_Toc492735286'>Выгрузить</a></h4>
+
+<p class=MsoNormal>Выгружает результаты запроса в таблицу
+значений.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выгрузить(&lt;ТаблЗнач&gt;,
+&lt;Флаг&gt;, &lt;Итоги&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Unload<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТаблЗнач&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Таблица значений,
+  куда выгружаются результаты запроса.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Число:</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — значения групп и
+  функций (по умолчанию);<span style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>1 — значения групп и
+  функций, дополнительных пе­ременных;<span style='mso-ansi-language:
+  EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>2 — значения
+  упорядочиваний групп и функций;</p>
+  <p class=MsoNormal style='text-indent:0in'>3 — значения
+  упорядочиваний групп и функций, до­полнительных переменных;<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>Строка — &quot;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Товар(1), Товар(2), Товар, Склад, Приход, Расход<span
+  lang=RU>&quot;<span style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>, где Товар(1) — значение
+  первого упорядочивания группировки &quot;<span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+  lang=RU>&quot;.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Итоги&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Число:<span style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>0 — итоги по группировкам
+  не выводить;</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — итоги по
+  группировкам выводить сверху (по умолчанию);</p>
+  <p class=MsoNormal style='text-indent:0in'>2 — итоги по
+  группировкам выводить снизу;<span style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>3 — итоги по
+  группировкам выводить сверху и снизу.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если выгрузка произошла успешно,
+иначе — 0.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выгрузить<span
+lang=RU> выгружает результаты запроса в таблицу значений.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Текст запроса<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Текст3апроса = &quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>| ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Должность;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Категория;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>| ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Текст процедуры обработки запроса<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Запрос.Выполнить(ТекстЗапроса) = 0
+Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТаблЗнач =
+Создать(&quot;ТаблицаЗначений&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос.Выгрузить(ТаблЗнач, 0, 0);<o:p></o:p></p>
+
+<h4><a name="_Toc492735287"></a><a name="_Toc494938176"><span style='mso-bookmark:
+_Toc492735287'>ЗначениеУпорядочивания</a></h4>
+
+<p class=MsoNormal>Возвращает значение поля упорядочивания для
+заданной группировки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗначениеУпорядочивания(&lt;Группировка&gt;,
+&lt;Упорядочив&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OrderValue<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Группировка&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение,
+  содержащее значение номера или имени группировки (номер работает быстрее).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Упорядочив&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Порядковый номер пара­метра упорядочивания указанной группировки.
+  Зна­чение по умолчанию: 1.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение поля упорядочивания.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗначениеУпорядочивания<span
+lang=RU> возвращает значение поля упорядочи­вания, выбирая его из временной выборки
+запроса, не обращаясь к базе дан­ных.</p>
+
+<p class=a><b>Замечание</b>: Если в тексте
+запроса для данной группировки не используется конструкция &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Упорядочить по&quot;, то в этом
+случае действует упорядочи­вание по умолчанию:</p>
+
+<p class=MsoNormal style='margin-left:.55in;text-indent:-19.8pt;mso-list:l24 level1 lfo54;
+tab-stops:list .55in'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>для справочников — зависит от основного
+представления при описании справочника в конфигураторе (код или наименование).</p>
+
+<p class=MsoNormal style='margin-left:.55in;text-indent:-19.8pt;mso-list:l24 level1 lfo54;
+tab-stops:list .55in'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>для документов — дата и время создания
+документа.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Текст запроса<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекстЗапроса = &quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|ВидРаб = Документ.Наряд.ВидРаботы;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Сотр = Документ.Наряд.Сотрудник;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка ВидРаб<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Упорядочить По ВидРаб.Код,
+ВидРаб.Стоимость;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>|<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Группировка Сотр;<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>|&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//...<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Фрагмент заполнения таблицы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Выбираем значение<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидРаб.Стоимость<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос.ЗначениеУпорядочивания(&quot;ВидРаб&quot;,
+2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Выбираем имя сотрудника<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос.ЗначениеУпорядочивания(2, 1);<o:p></o:p></p>
+
+<h4><a name="_Toc492735288"></a><a name="_Toc494938177"><span style='mso-bookmark:
+_Toc492735288'>ПолучитьАтрибут</a></h4>
+
+<p class=MsoNormal>Возвращает значение атрибута запроса по его
+имени.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут(&lt;ИмяАтрибута&gt;)<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal>Англоязычный синоним;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяАтрибута&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее значение лю­бого атрибута запроса.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение атрибута запроса.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут<span
+lang=RU> возвращает значение атрибута запроса по его имени.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Текст запроса<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекстЗапроса = &quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|ВидРаб = Документ.Наряд.ВидРаботы;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Сотр = Документ.Наряд.Сотрудник;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка ВидРаб<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Упорядочить По ВидРаб.Код,
+ВидРаб.Стоимость;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>|Группировка Сотр;<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>|&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Фрагмент заполнения таблицы<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Выбираем значение ВидРаб<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос.ПолучитьАтрибут(&quot;ВидРаб&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Выбираем сотрудника<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Запрос.ПолучитьАтрибут(&quot;Сотр&quot;);<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

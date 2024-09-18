@@ -1,0 +1,1592 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part25</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part25.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492735005"></a><a name="_Toc494937894"><span style='mso-bookmark: _Toc492735005'>Глава 25<br> Работа с Календарями и Праздниками</a></h1>
+
+<p class=MsoNormal>Объект Календарь в системе 1С:Предприятие
+предназначен для вычисления временных интервалов на основании произвольных
+временных графиков. Этот объект может использоваться, например, для учета
+графика работы предпри­ятия, графика работы внешних организаций, графика учета
+рабочего времени тех или иных работников предприятия и пр.</p>
+
+<p class=MsoNormal>Календарь представляет собой объект, который
+устанавливает для каждой календарной даты некоторое числовое значение, которое
+может интерпретиро­ваться при работе программы тем или иным образом. Например,
+в календаре, представляющем собой график работы организации или предприятия,
+каждому рабочему дню может соответствовать единица, а каждому выходному — ноль.
+В календаре учета рабочего времени сотрудников предприятия, каждой дате ка­лендаря
+может соответствовать число — продолжительность рабочего дня в часах и т. д.</p>
+
+<p class=MsoNormal>В глобальном контексте программы 1С:Предприятие
+есть атрибут &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календари&quot;.
+Этот объект в качестве своих атрибутов имеет значения объек­тов конкретных
+видов календарей, заданных в конфигурации. Кроме того, этот объект имеет метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПолучитьАтрибут, который
+позволяет получить доступ к объекту календаря конкретного вида по его имени.
+Т.е. допустимы следующие синтаксические конструкции:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календари.Служащие.Дней(ТекДата,
+ТекДата + 5);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календари.ПолучитьАтрибут(&quot;Служащие&quot;).Дней(ТекДата,
+ТекДата + 5);<o:p></o:p></p>
+
+<p class=MsoNormal>Праздники в системе 1С:Предприятие
+представляет собой объект похожий на календарь, но он заполняется выборочно (не
+все даты подряд) и в нем могут вводиться и удаляться строки для определенных
+дат. Данный объект исполь­зуются как набор исключений при заполнении календарей
+(см. метод календа­ря <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>УчитыватьПраздники<span
+lang=RU>).</p>
+
+<h2><a name="_Toc492735006"></a><a name="_Toc494937895"><span style='mso-bookmark:
+_Toc492735006'>Контекст работы с календарями</a></h2>
+
+<p class=MsoNormal>Доступ к атрибутам и методам календарей
+осуществляется, например, через объект, созданный системной функцией <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект с ключевым словом</p>
+
+<p class=MsoNormal>&quot;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Календарь<span
+lang=RU>&quot;.</p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Календарь&quot; — &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Calendar&quot;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Рассчитать продолжительность месяца
+в часах по календарю &quot;Служащие&quot;<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Час = Календ.Часов('01.01.96',
+'31.01.96');<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Рассчитать продолжительность
+текущего расчетного<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// периода журнала расчетов Зарплата по
+календарю Служащие<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЖР =
+СоздатьОбъект(&quot;ЖурналРасчетов.Зарплата&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Час =
+Календ.Часов(ЖР.НачалоТекущегоПериода(), ЖР.КонецТекущегоПериода());<o:p></o:p></p>
+
+<p class=MsoNormal>Кроме того, объекты типа «календарь» являются
+сохраняемыми, т. е. рекви­зиты справочников, документов, журналов расчета могут
+иметь тип «кален­дарь» и хранить ссылки на объекты этого типа.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПровестиРасчет()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// ВнСовместитель — реквизит журнала расчетов<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Категории — периодический реквизит справочника ВнутренниеСовместители<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Календарь — реквизит справочника Категории<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Календ = ВнСовместитель.Категория.Получить(ДатаОкончания).Календарь;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// размер оклада<span class=a0><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Оклад = ВнСовместитель.Оклад.Получить(ДатаОкончания) *<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                      
+ВнСовместитель.Ставка.Получить(ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Дней = Календ.Дней(ДатаНачала, ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ВсегоДней = Календ.Дней(НачалоПериодаПоДате(ДатаНачала),<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                           КонецПериодаПоДате(ДатаНачала));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ВсегоДней &gt; 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если Документ.Вид() = &quot;НачалоМесяца&quot; Тогда<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Результат = Окр(Оклад * Дней / ВсегоДней);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Результат = -Окр(Оклад*Дней/ВсегоДней);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Результат = 0;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes"> 
+<span style="mso-spacerun: yes">    Сообщить(&quot;Неправильно
+указан календарь (&quot; + Объект.Наименование + &quot;)&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(&quot;Возможно, не задана категория работника&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h2><a name="_Toc492735007"></a><a name="_Toc494937896"><span style='mso-bookmark:
+_Toc492735007'>Контекст работы с праздниками</a></h2>
+
+<p class=MsoNormal>Доступ к атрибутам и методам праздников
+осуществляется через объект, создаваемый системной функцией <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект с ключевым словом
+&quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Праздники&quot;.</p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Праздники&quot; — &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Holidays&quot;.</p>
+
+<h3><a name="_Toc492735008"></a><a name="_Toc494937897"><span style='mso-bookmark:
+_Toc492735008'>Атрибуты и методы объекта Календари</a></h3>
+
+<h4><a name="_Toc492735009"></a><a name="_Toc494937898"><span style='mso-bookmark:
+_Toc492735009'>&lt;ИмяКалендаря&gt;</a></h4>
+
+<p class=MsoNormal>Установить значение календаря конкретного
+вида.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal>&lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяКалендаря<span
+lang=RU>&gt;</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяКалендаря<span
+lang=RU>&gt; задает значение календаря конкретного вида. В тексте программного
+модуля используется название конкретного вида календа­ря, как он назван в
+конфигураторе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календари.Служащие.Дней(ТекДата,
+ТекДата + 5);<o:p></o:p></p>
+
+<h4><a name="_Toc492735010"></a><a name="_Toc494937899"><span style='mso-bookmark:
+_Toc492735010'>ПолучитьАтрибут</a></h4>
+
+<p class=MsoNormal>Получить значение объекта конкретного вида
+календаря по иденти­фикатору.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут(&lt;ИмяАтрибута&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяАтрибута&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя конкрет­ного вида календаря, как оно задано в конфигура­торе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение атрибута &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяАтрибута<span
+lang=RU> &gt;.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут<span
+lang=RU> позволяет получить значение объекта конкретно­го вида календаря по
+идентификатору, как оно задано в метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календари.ПолучитьАтрибут(&quot;Служащие&quot;).Дней(ТекДата,
+ТекДата - 5);<o:p></o:p></p>
+
+<h3><a name="_Toc492735011"></a><a name="_Toc494937900"><span style='mso-bookmark:
+_Toc492735011'>Атрибуты календарей и праздников</a></h3>
+
+<h4><a name="_Toc492735012"></a><a name="_Toc494937901"><span style='mso-bookmark:
+_Toc492735012'>Дата</a></h4>
+
+<p class=MsoNormal>Дата текущей строки календаря/праздника.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Дата<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Date<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Дата<span
+lang=RU> (только для чтения) содержит дату текущей (на которой по­зиционирована
+выборка) строки календаря/праздника.</p>
+
+<h4><a name="_Toc492735013"></a><a name="_Toc494937902"><span style='mso-bookmark:
+_Toc492735013'>Значение</a></h4>
+
+<p class=MsoNormal>Значение текущей строки календаря/праздника</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Значение<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Value<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Значение<span
+lang=RU> (доступно чтание и запись) содержит значение текущей (на которой
+позиционирована выборка) строки календаря/праздника — число с двумя знаками
+после запятой.</p>
+
+<h3><a name="_Toc492735014"></a><a name="_Toc494937903"><span style='mso-bookmark:
+_Toc492735014'>Общие методы календарей и праздников</a></h3>
+
+<h4><a name="_Toc492735015"></a><a name="_Toc494937904"><span style='mso-bookmark:
+_Toc492735015'>ПолучитьАтрибут</a></h4>
+
+<p class=MsoNormal>Получить значение атрибута по идентификатору.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут(&lt;ИмяАтрибута&gt;}<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяАтрибута&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя атрибута, как оно задано в конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение атрибута &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяАтрибута<span
+lang=RU> &gt;.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут<span
+lang=RU> позволяет получить значение атрибута по иден­тификатору, как оно задано
+в метаданных. Доступные имена атрибутов — &quot;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Дата<span
+lang=RU>&quot; и &quot;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Значение<span
+lang=RU>&quot;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Календарь служащих<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ.ВыбратьДаты(ДатаНачала,
+ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Календ.СледующаяДата() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;&quot; + Календ.ПолучитьАтрибут(&quot;Дата&quot;) +
+&quot;; &quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'> <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492735016"></a><a name="_Toc494937905"><span style='mso-bookmark:
+_Toc492735016'>УстановитьАтрибут</a></h4>
+
+<p class=MsoNormal>Установить значение атрибута по имени
+идентификатора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьАтрибут(&lt;ИмяРеквизита&gt;,
+&lt;Значение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>S<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>etAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизита&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя атрибута, как оно задано в конфигураторе.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Значение&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение,
+  содержащее устанавливаемое значе­ние атрибута.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьАтрибут<span
+lang=RU> позволяет установить значение атрибута по имени идентификатора, как
+оно задано в конфигураторе. Доступные имена ат­рибутов — &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Дата&quot; и &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Значение&quot;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Календарь служащих<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ.ВыбратьДаты(ДатаНачала,
+ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Календ.СледующаяДата() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Календ.УстановитьАтрибут(&quot;Значение&quot;, 1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'> <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h3><a name="_Toc492735017"></a><a name="_Toc494937906"><span style='mso-bookmark:
+_Toc492735017'>Методы календарей</a></h3>
+
+<h4><a name="_Toc492735018"></a><a name="_Toc494937907"><span style='mso-bookmark:
+_Toc492735018'>Выбран</a></h4>
+
+<p class=MsoNormal>Возвращает признак того, выбран конкретный
+календарь или нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выбран()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Selected<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1, если конкретный календарь выбран; 0
+в противном случае.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Этот метод предназначен для определения, не
+является ли «пустым» значе­ние переменной или реквизита типа «Календарь».</p>
+
+<p class=MsoNormal>Календарь в рамках описываемого встроенного
+языка — сохраняемый агре­гатный тип данных, т. е. объекты этого типа могут
+сохраняться в информацион-йой базе. Например, реквизиты справочника, документа
+или журнала расчетов, Могут иметь тип «Календарь» и, следовательно, хранить
+ссылки на конкретные календари. При этом часто необходимо иметь возможность
+определить выбрано ли конкретное значение для реквизита (например, справочника
+или документа) этого типа.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// реквизит справочника Календ имеет
+тип &quot;Календарь&quot;<span class=a0><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Спр = СоздатьОбъект(&quot;Справочник.Категории&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Спр.ВыбратьЭлементы();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Спр.ПолучитьЭлемент() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Спр.Календ.Выбран() = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(&quot;Не указан конкретный календарь! &quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492735019"></a><a name="_Toc494937908"><span style='mso-bookmark:
+_Toc492735019'>ВыбратьДаты</a></h4>
+
+<p class=MsoNormal>Открывает выборку записей календаря.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьДаты(&lt;ДатаНачала&gt;,
+&lt;ДатаОкончания&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectDates<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНачала&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата начала периода
+  выборки.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаОкончания&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата окончания
+  периода выборки.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — выборка открыта и в ней есть хоть
+одна запись; 0 — не обнаруже­но записей.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод ВыбратьДаты открывает выборку записей
+календаря. Выбираются все элементы с даты начала по дату окончания включительно.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Календарь служащих<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ.ВыбратьДаты(ДатаНачала,
+ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Календ.СледующаяДата() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+//<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'> <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СледующаяДата</p>
+
+<h4><a name="_Toc492735020"></a><a name="_Toc494937909"><span style='mso-bookmark:
+_Toc492735020'>СледующаяДата</a></h4>
+
+<p class=MsoNormal>Выбирает следующий день календаря в выборке.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СледующаяДата()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>NextDate<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — получена очередна язапись; 0 — не
+обнаружено очередной записи, т. е. конец выборки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Выбирает следующий день календаря
+(позиционируется на очередной запи­си выборки) в порядге дат.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Календарь служащих<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ.ВыбратьДаты(ДатаНачала,
+ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Календ.СледующаяДата() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//. .
+.<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьДаты</p>
+
+<h4><a name="_Toc492735021"></a><a name="_Toc494937910"><span style='mso-bookmark:
+_Toc492735021'>Дней</a></h4>
+
+<p class=MsoNormal>Получить количество «ненулевых» дней за
+период.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Дней(&lt;ДатаНачала&gt;,
+&lt;ДатаОкончания&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Days<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНачала&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата начала периода,
+  в котором определяется ко­личество дней.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаОкончания&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата окончания
+  периода, в котором определяется количество дней.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Целое положительное число — количество дней.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод предназначен для определения количества
+календарных дней, кото­рым соответствует ненулевое числовое значение. &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ДатаНачала&gt; и &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ДатаОкончания&gt; включаются в
+рассматриваемый период. Следовательно, если даты начала и окончания совпадают,
+метод возвратит ноль или единицу в зависимости от значения числа, соответствующего
+заданной дате. Если &lt;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>ДaтaHaчaлa<span
+lang=RU>&gt; больше, чем &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДатаОкончания<span
+lang=RU>&gt;, будет выведено сообщение об ошибке.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Расчет оплаты по окладу<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Календарь служащих<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// отработал...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Дни = Календ.Дней(ДатаНачала,
+ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// должен был бы работать...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Норма =
+Календ.Дней(НачалоПериодаПоДате(ДатаНачала),<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">                   <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'><span style="mso-spacerun: yes"> КонецПериодаПоДате(ДатаНачала));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// получим оклад сотрудника на дату
+начала<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// действия данного расчета<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Оклад =
+Объект.Оклад.Получить(ДатаНачала);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// результат<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Результат = Дни * Оклад / Норма;<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Часов</p>
+
+<h4><a name="_Toc492735022"></a><a name="_Toc494937911"><span style='mso-bookmark:
+_Toc492735022'>Часов</a></h4>
+
+<p class=MsoNormal>Получить сумму числовых значений дней за
+определенный период.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Часов(&lt;ДатаНачала&gt;,
+&lt;ДатаОкончания&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Hours<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНачала&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата начала периода,
+  в котором определяется сум­ма числовых значений, интерпретируемая как ко­личество
+  часов.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаОкончания&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата окончания
+  периода, в котором определяется сумма числовых значений, интерпретируемая как
+  количество часов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Положительное число — сумма числовых значений
+соответствующих тем дням календаря, которые попадают в заданный период.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод предназначен для суммирования числовых
+значений по календарю за промежуток времени с даты начала по дату окончания.
+Метод удобен при ин­терпретации числовых значений календаря как
+продолжительности рабочих дней в часах (что отражается в названии метода). &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ДатаНачала&gt; и &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ДатаОкончания&gt; включаются в
+рассматриваемый период. Если &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДатаНачала<span
+lang=RU>&gt; больше, чем &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДатаОкончания<span
+lang=RU>&gt;, будет выведено сообщение об ошибке.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Расчет оплаты по часовому тарифу<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Календарь рабочих<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Рабочие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// отработал...<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Чс = Календ.Часов(ДатаНачала,
+ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// должен был бы работать...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Норма =
+Календ.Часов(НачалоПериодаПоДате(ДатаНачала),<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                <span style="mso-spacerun:
+yes">     КонецПериодаПоДате(ДатаНачала));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// получим тариф сотрудника на дату
+начала действия данного расчета<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Тариф =
+Объект.Тариф.Получить(ДатаНачала);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// результат<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Результат = Чс * Тариф / Норма;<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Дней</p>
+
+<h4><a name="_Toc492735023"></a><a name="_Toc494937912"><span style='mso-bookmark:
+_Toc492735023'>Автозаполнение</a></h4>
+
+<p class=MsoNormal>Выполняет автозаполнение календаря в заданном
+периоде.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Автозаполнение(&lt;ДатаНачала&gt;,
+&lt;ДатаОкончания&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Autolayout<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНачала&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата начала периода
+  автозаполнения.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаОкончания&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата окончания
+  периода автозаполнения.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — получилось; 0 — не получилось.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Автозаполнение<span
+lang=RU> выполняет автозаполнение календаря в заданном периоде. При этом старые
+данные (в т.ч. «ручные» исправления) в указанном периоде пропадают.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Календарь служащих<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ = СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ.УчитыватьПраздники(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Результат =
+Календ.Автозаполнение(ДатаНачала, ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УчитыватьПраздники</p>
+
+<h4><a name="_Toc492735024"></a><a name="_Toc494937913"><span style='mso-bookmark:
+_Toc492735024'>УчитыватьПраздники</a></h4>
+
+<p class=MsoNormal>Установка флага учета праздников при
+автозаполнении.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УчитыватьПраздники(&lt;Флаг&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseHolidays<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Число: 1 — учитываются праздники при автозаполнении; 0 — не
+  учитывают­ся праздники при автозаполнении.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Возвращает текущую установку. Число: 1 — учитываются
+праздники при ав­тозаполнении; 0 — не учитываются праздники при автозаполнении.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УчитыватьПраздники<span
+lang=RU> выполняет установку флага учета праздни­ков при автозаполнении.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Календарь служащих<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ =
+СоздатьОбъект(&quot;Календарь.Служащие&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Календ.УчитыватьПраздники(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Результат =
+Календ.Автозаполнение(ДатаНачала, ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Автозаполнение</p>
+
+<h4><a name="_Toc492735025"></a><a name="_Toc494937914"><span style='mso-bookmark:
+_Toc492735025'>ПолучитьДату</a></h4>
+
+<p class=MsoNormal>Получить дату календаря.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьДату(&lt;ДатаНачала&gt;,
+&lt;Количество&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetDate<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНачала&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата начала периода,
+  от которой будут отсчиты­ваться дни.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Количество&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Количество дней,
+  отсчитываемых от &lt;<span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>ДатаНачала<span
+  lang=RU>&gt;.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «дата».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод предназначен для определения даты,
+отстоящей от заданной даты на известное количество дней. В отличие от простого
+прибавления числа к дате, результатом которого является дата, смещенная на
+заданное количество дней, данный метод календаря производит определение
+итоговой даты, пропуская дни календаря, для которых задано нулевое значение.
+Это значит, например, что если в конфигурации присутствует календарь,
+представляющий собой гра­фик работы предприятия, то данный метод позволит легко
+определить дату, отстоящую от заданной на определенное количество «рабочих»
+дней (т. е. дней, для которых задано ненулевое числовое значение).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПровестиДокумент()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Число(Окончание) = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// календарь<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Календ = Сотрудник.Категория.Получить(Начало).Календарь;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// при расчете отпуска, запишем дату его окончания<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Календ = СоздатъОбъект(&quot;Календарь.Отпуск&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Окончание = Календ.ПолучитьДату(Начало, КоличДней);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Расчет &lt;&gt; ВидРасчета.ОтпускПоУходуЗаРебенком Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если Окончание &gt; ЖрнЗарплата.КонецТекущегоПериода() Тогда<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         РасчетВперед(ГруппаРасчетов.ПересчДляОтпуска, Сотрудник,<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                      ТекущийДокумент());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ЖрнЗарплата.ВвестиРасчет(Сотрудник, Расчет, Начало, Окончание, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ЖрнЗарплата. ВвестиРасчет (Сотрудник, Расчет,<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">             Максимум(Начало, ЖрнЗарплата.НачалоТекущегоПериода()),<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                  Минимум(Окончание,
+ЖрнЗарплата.КонецТекущегоПериода()), 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Зарегистрировать(Контекст, ТекущийДокумент());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h3><a name="_Toc492735026"></a><a name="_Toc494937915"><span style='mso-bookmark:
+_Toc492735026'>Методы праздников</a></h3>
+
+<h4><a name="_Toc492735027"></a><a name="_Toc494937916"><span style='mso-bookmark:
+_Toc492735027'>Новый</a></h4>
+
+<p class=MsoNormal>Ввести новый «праздничный» день.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Новый(&lt;Дата&gt;, &lt;Значение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>New<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Дата&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата нового
+  праздника.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Значение&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Положительное число
+  с двумя знаками после запя­той (не более 100). Поскольку объект «Праздни­ки»,
+  как правило, используется для ввода выход­ных праздничных дней по календарям,
+  то значе­ние, как правило, задают равным нулю.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Новый<span
+lang=RU> вводит и записывает новую запись (новый «праздничный» день).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Праздничные дни<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Празд = СоздатьОбъект(&quot;Праздники&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Празд.Новый('01.05.99', 0)<o:p></o:p></p>
+
+<h4><a name="_Toc492735028"></a><a name="_Toc494937917"><span style='mso-bookmark:
+_Toc492735028'>Удалить</a></h4>
+
+<p class=MsoNormal>Удаляет «праздничный» день.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Удалить(&lt;Дата&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Delete<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Дaтa<span
+  lang=RU>&gt;<o:p></o:p></p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата удаляемой
+  строки (праздника).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Удалить<span
+lang=RU> позволяет удалить существующую запись («праздничный» день). Если
+строка с такой датой не найдена, то метод ничего не делает. Воз­вращаемого
+значения нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Праздничные дни<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Празд =
+СоздатьОбъект(&quot;Праздники&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Празд.Удалить('01.05.99');<o:p></o:p></p>
+
+<h4><a name="_Toc492735029"></a><a name="_Toc494937918"><span style='mso-bookmark:
+_Toc492735029'>ВыбратьДаты</a></h4>
+
+<p class=MsoNormal>Открывает выборку записей праздников.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьДаты(&lt;ДатаНачала&gt;,
+&lt;ДатаОкончания&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectDates<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНачала&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата начала периода
+  выборки.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаОкончания&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата окончания
+  периода выборки.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — выборка открыта и в ней есть хоть
+одна запись; 0 — не обнаруже­но записей.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьДаты<span
+lang=RU> открывает выборку записей праздников. Выбираются все элементы с даты
+начала по дату окончания включительно.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Праздничные дни<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Празд =
+СоздатьОбъект(&quot;Праздники&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Празд.ВыбратьДаты(ДатаНачала,
+ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Празд.СледующаяДата() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'> <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СледующаяДата</p>
+
+<h4><a name="_Toc492735030"></a><a name="_Toc494937919"><span style='mso-bookmark:
+_Toc492735030'>СледующаяДата</a></h4>
+
+<p class=MsoNormal>Выбирает следующий день праздников в выборке.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СледующаяДата()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>NextDate<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — получена очередна язапись; 0 — не
+обнаружено очередной записи, т. е. конец выборки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Выбирает следующий день праздников
+(позиционируется на очередной за­писи выборки) в порядке дат.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Праздничные дни<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Празд =
+СоздатьОбъект(&quot;Праздники&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Празд.ВыбратьДаты(ДатаНачала,
+ДатаОкончания);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Празд.СледующаяДата() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'> <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьДаты</p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

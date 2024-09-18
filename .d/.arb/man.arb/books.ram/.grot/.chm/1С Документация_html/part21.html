@@ -1,0 +1,650 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part21</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part21.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492734875"></a><a name="_Toc494937764"><span style='mso-bookmark:_Toc492734875'>Глава 21<br> Работа с Корректными проводками</a></h1>
+
+<p class=MsoNormal>Для работы с корректными проводками в системе
+используется специаль­ный тип данных «КорректныеПроводки».</p>
+
+<h2><a name="_Toc492734876"></a><a name="_Toc494937765"><span style='mso-bookmark:
+_Toc492734876'>Контекст работы с объектом «КорректныеПроводки»</a></h2>
+
+<p class=MsoNormal>У объекта типа «КорректныеПроводки» есть набор
+атрибутов и методов для работы с данным объектом. Во всех программных модулях
+доступ к атрибутам и вызов методов корректных проводок может выполняться только
+при помощи переменной со ссылкой на объект типа «КорректныеПроводки». Объект
+созда­ется функцией <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>, ссылка на который присваивается перемен­ной. Чтобы вызвать метод
+объекта, имя метода (с указанием необходимых па­раметров) пишется через точку
+после идентификатора переменной.</p>
+
+<p class=MsoNormal>Для создания объекта типа «КорректныеПроводки»
+в качестве параметра функции <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU> передается ключевое слово «КорректныеПроводки».</p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>КорректныеПроводки — <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>CorrectEntries.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<h3><a name="_Toc492734877"></a><a name="_Toc494937766"><span style='mso-bookmark:
+_Toc492734877'>Атрибуты объекта «КорректныеПроводки»</a></h3>
+
+<h4><a name="_Toc492734878"></a><a name="_Toc494937767"><span style='mso-bookmark:
+_Toc492734878'>Комментарий</a></h4>
+
+<p class=MsoNormal>Описание корректной проводки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Комментарий<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Description<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Комментарий<span
+lang=RU> дает доступ к значению описания корректной про­водки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.ВыбратьКорректныеПроводки();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока КП.ПолучитьКорректнуюПроводку() =
+1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(КП.Комментарий);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492734879"></a><a name="_Toc494937768"><span style='mso-bookmark:
+_Toc492734879'>СчетДт</a></h4>
+
+<p class=MsoNormal>Счет дебета корректной проводки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СчетДт<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AccountDt<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СчетДт<span
+lang=RU> дает доступ к значению счета дебета корректной проводки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.ВыбратьКорректныеПроводки();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока КП.ПолучитьКорректнуюПроводку() =
+1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(КП.Комментарий + &quot; счет дебета — &quot; + КП.СчетДт);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492734880"></a><a name="_Toc494937769"><span style='mso-bookmark:
+_Toc492734880'>СчетКт</a></h4>
+
+<p class=MsoNormal>Счет кредита корректной проводки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СчетКт<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AccountKt<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СчетКт<span
+lang=RU> дает доступ к значению счета кредита корректной провод­ки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.ВыбратьКорректныеПроводки();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока КП.ПолучитьКорректнуюПроводку() =
+1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(КП.Комментарий + &quot; счет кредита — &quot; + КП.СчетКт);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h3><a name="_Toc492734881"></a><a name="_Toc494937770"><span style='mso-bookmark:
+_Toc492734881'>Методы объекта «КорректныеПроводки»</a></h3>
+
+<h4><a name="_Toc492734882"></a><a name="_Toc494937771"><span style='mso-bookmark:
+_Toc492734882'>Выбрана</a></h4>
+
+<p class=MsoNormal>Проверить факт: выбрана ли корректная
+проводка.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выбрана()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Selected<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если корректная проводка выбрана; 0
+— если не выбрана.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выбрана<span
+lang=RU> возвращает число со значением 1 — объект выбран или 0 — если не
+выбран.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.ВыбратьКорректныеПроводки();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока КП.ПолучитьКорректнуюПроводку() =
+1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Кп.Выбрана() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(КП.Комментарий + &quot; счет кредита — &quot; + КП.СчетКт);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492734883"></a><a name="_Toc494937772"><span style='mso-bookmark:
+_Toc492734883'>ВыбратьКорректныеПроводки</a></h4>
+
+<p class=MsoNormal>Открыть выборку корректных проводок по плану
+счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьКорректныеПроводки(&lt;ПланСчетов&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный</b><b
+style='mso-bidi-font-weight:normal'><span lang=RU style='mso-ansi-language:
+EN-US'> синоним</b><b style='mso-bidi-font-weight:
+normal'><span style='mso-ansi-language:EN-US'>:</b><span
+style='mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectCorrectEntries<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ПланСчетов&gt;</p>
+  </td>
+  <td width=552 valign=top style='width:413.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Значение типа «План счетов». Если не задан, то по всем.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если есть хотя бы одна корректная
+проводка, удовлетворяющая условию; 0 — нет ни одной корректной проводки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьКорректныеПроводки<span
+lang=RU> предоставляет возможность выби­рать корректные проводки (открывает выборку)
+при помощи метода <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьКорректнуюПроводку<span
+lang=RU>.</p>
+
+<p class=MsoNormal>Дальнейшая выборка при помощи метода <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПолучитьКорректнуюПроводку будет
+происходить среди корректных прово­док указанного плана счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.ВыбратьКорректныеПроводки();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока КП.ПолучитьКорректнуюПроводку() =
+1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если КП.Выбрана() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(КП.Комментарий + &quot; счет кредита — &quot; + КП.СчетКт);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492734884"></a><a name="_Toc494937773"><span style='mso-bookmark:
+_Toc492734884'>ВыбратьКорректныеПроводкиПоСчету</a></h4>
+
+<p class=MsoNormal>Открыть выборку корректных проводок для
+указанного счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьКорректныеПроводкиПоСчету(&lt;Счет&gt;,
+&lt;ТипСчета&gt;, &lt;ПланСчетов&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectCorrectEntriesByAccount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Счет&gt;</p>
+  </td>
+  <td width=552 valign=top style='width:413.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Код счета или сам
+  счет для которого отбирать корректные проводки.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТипСчета&gt;</p>
+  </td>
+  <td width=552 valign=top style='width:413.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Число: 0 — передан­ный счет является счетом дебета; 1 — переданный
+  счет является счетом кредита. Значение по умол­чанию 0.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ПланСчетов&gt;</p>
+  </td>
+  <td width=552 valign=top style='width:413.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Значение типа «План счетов». Значение по умолчанию — главный план
+  счетов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если есть хотя бы одна корректная
+проводка, удовлетворяющая условию; 0 — нет ни одной корректной проводки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьКорректныеПроводкиПоСчету<span
+lang=RU> предоставляет возмож­ность выбирать корректные проводки (открывает
+выборку) при помощи мето­да <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьКорректнуюПроводку<span
+lang=RU>.</p>
+
+<p class=MsoNormal>Дальнейшая выборка при помощи метода <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПолучитьКорректнуюПроводку будет
+происходить среди корректных проводок указанного плана счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.ВыбратьКорректныеПроводкиПоСчету(&quot;41.1&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока КП.ПолучитьКорректнуюПроводку() =
+1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Кп.Выбрана() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(КП.Комментарий + &quot; счет кредита — &quot; + КП.СчетКт);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492734885"></a><a name="_Toc494937774"><span style='mso-bookmark:
+_Toc492734885'>ПолучитьКорректнуюПроводку</a></h4>
+
+<p class=MsoNormal>Получить из выборки следующую корректную
+проводку.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьКорректнуюПроводку()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetCorrectEntry<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — корректная проводка получена; 0 — не
+получена (отсутствует).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьКорректнуюПроводку<span
+lang=RU> выбирает следующую корректную проводку в выборке, открытой перед этим
+при помощи метода <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьКорректныеПроводки<span
+lang=RU> или <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьКорректныеПроводкиПоСчету<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП = СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.ВыбратьКорректныеПроводки();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока КП.ПолучитьКорректнуюПроводку() =
+1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Кп.Выбрана() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(КП.Комментарий + &quot; счет кредита — &quot; + КП.СчетКт);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492734886"></a><a name="_Toc494937775"><span style='mso-bookmark:
+_Toc492734886'>Новая</a></h4>
+
+<p class=MsoNormal>Добавить новую корректную проводку.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Новая()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>New<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Новая<span
+lang=RU> добавляет новую корректную проводку.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.Новая();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.Комментарий = &quot;НДС с комисс.
+вознаграждения&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.СчетДт = &quot;46.28&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.СчетКт = &quot;68.2&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Кп.Записать();<o:p></o:p></p>
+
+<h4><a name="_Toc492734887"></a><a name="_Toc494937776"><span style='mso-bookmark:
+_Toc492734887'>Записать</a></h4>
+
+<p class=MsoNormal>Записать измененную или новую корректную
+проводку.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Записать()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Write<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — корректная проводка успешно
+записана; 0 — не записана.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Записать<span
+lang=RU> записывает измененную или новую корректную проводку.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.Новая();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.Комментарий =&quot;НДС с комисс.
+вознаграждения&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.СчетДт = &quot;46.28&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.СчетКт = &quot;68.2&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Кп.Записать();<o:p></o:p></p>
+
+<h4><a name="_Toc492734888"></a><a name="_Toc494937777"><span style='mso-bookmark:
+_Toc492734888'>Удалить</a></h4>
+
+<p class=MsoNormal>Удалить корректную проводку.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Удалить()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Delete<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — корректная проводка успешно
+удалена; 0 — не удалена.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Удалить<span
+lang=RU> удаляет корректную проводку.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП =
+СоздатьОбъект(&quot;КорректныеПроводки&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КП.ВыбратьКорректныеПроводки();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока КП.ПояучитьКорректнуюПроводку() =
+1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если КП.Комментарий = &quot;НДС с комисс. вознаграждения&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КП.Удалить();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Прервать;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

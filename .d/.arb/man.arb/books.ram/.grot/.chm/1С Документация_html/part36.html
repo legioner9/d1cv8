@@ -1,0 +1,900 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part36</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part36.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492735324"></a><a name="_Toc494938213"><span style='mso-bookmark: _Toc492735324'>Глава 36<br> Работа с Диаграммами</a></h1>
+
+<p class=MsoNormal>В настоящий момент существует широкий ряд
+программных продуктов, по­зволяющих, в дополнение к табличным отчетам, получать
+графические отчеты (диаграммы). Одними из наиболее известных продуктов,
+выполняющих эти функции, являются <span style='mso-ansi-language:EN-US'>MS
+<span style='mso-ansi-language:EN-US'>Graph97 и <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>Excel
+<span style='mso-ansi-language:EN-US'>chart, система
+деловой графики, входящая в комплект <span style='mso-ansi-language:
+EN-US'>Lotus 1-2-3 фирмы «<span style='mso-ansi-language:
+EN-US'>Lotus», <span style='mso-ansi-language:EN-US'>VCI
+<span style='mso-ansi-language:EN-US'>First <span style='mso-ansi-language:
+EN-US'>impression <span style='mso-ansi-language:EN-US'>chart<span
+lang=RU> от <span style='mso-ansi-language:EN-US'>Visual <span
+style='mso-ansi-language:EN-US'>Components и многие
+другие.</p>
+
+<p class=MsoNormal>Все перечисленные продукты могут
+использоваться (через механизм <span style='mso-ansi-language:EN-US'>OLE
+<span style='mso-ansi-language:EN-US'>Automation) для
+построения диаграмм в системе 1С:Предприятие. Однако 1С:Предприятие имеет
+собственный встроенный объект, который, из всего мно­гообразия возможностей
+продуктов данного класса, выполняет наиболее акту­альные функции, необходимые
+для задач, решаемых системой программ 1С:Предприятие.</p>
+
+<p class=MsoNormal>Настоящая глава является руководством по
+использованию объекта «Диа­грамма» системы 1С:Предприятия.</p>
+
+<p class=MsoNormal>Использование данной возможности имеет
+следующие преимущества:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l25 level1 lfo56;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>не требуется наличия на компьютере
+программных продуктов других производителей;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l25 level1 lfo56;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>за счет более тесного взаимодействия с
+системой 1С:Предприятие, объ­ект «Диаграмма» обеспечивает большую скорость
+построения диаграмм;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l25 level1 lfo56;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>интеграция с 1С:Предприятием
+предоставляет дополнительные возмож­ности (расшифровка диаграммы);</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l25 level1 lfo56;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>простота использования — система
+атрибутов и методов достаточно про­ста, и ее освоение не потребует больших
+усилий.</p>
+
+<p class=MsoNormal>Объект «Диаграмма» предназначен для применения
+только в табличных до­кументах системы 1С:Предприятие и не может использоваться
+самостоятельно.</p>
+
+<h2><a name="_Toc492735325"></a><a name="_Toc494938214"><span style='mso-bookmark:
+_Toc492735325'>Контекст работы с диаграммами</a></h2>
+
+<p class=MsoNormal>Для использования диаграмм нужно в табличный
+документ 1С:Предприятия внедрить объект «Диаграмма», используя специальную
+кнопку инструментальной панели или через главное меню
+&lt;Таблица&gt;-&lt;Вставить рисунок&gt;-&lt;Диаграмма&gt;.</p>
+
+<p class=MsoNormal>Процесс внедрения объекта «Диаграмма» в
+табличный документ подробно описан в документации к 1С:Предприятию (см. книгу
+«Руководство по конфигурированию и администрированию»). После внедрения объект
+нужно активизировать, например, двойным щелчком указателя мыши, и настроить его
+внешний вид.</p>
+
+<p class=MsoNormal>Настройка диаграммы обычно проводится на этапе
+конфигурирования. За­дача настройки состоит в определении формата, специфического
+для каждой из областей диаграммы, их размера и расположения.</p>
+
+<p class=MsoNormal>В свойствах объекта есть закладка «Текст». В
+поле «Текст» этой закладки нужно внести вызов процедуры, управляющей объектом
+диаграммы. Сам объ­ект «Диаграмма», в момент вызова этой процедуры, является <i>текущим
+объек­том</i> таблицы (см. атрибут объекта «Таблицы» <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТекущийОбъект<span
+lang=RU>) и передается в процедуру как параметр. Например, этот вызов будет
+выглядеть так:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПостроитьДиаграмму(Таб.ТекущийОбъект);<o:p></o:p></p>
+
+<p class=MsoNormal>Наполнение диаграммы данными осуществляется в
+теле вызываемой проце­дуры с помощью атрибутов и методов данного объекта.</p>
+
+<p class=MsoNormal>Таким образом, во всех программных модулях
+доступ к атрибутам и вызов методов деловой графики может выполняться только при
+помощи переменной со ссылкой на объект типа «Диаграмма». Данный объект
+внедряется в таблицу 1С:Предприятие при конфигурировании. При инициировании
+построения диа­граммы, значение этого объекта в качестве фактического параметра
+передается в обрабатывающую процедуру, где ссылка на объект становится доступна
+через идентификатор фиктивного параметра. Чтобы вызвать метод деловой графики,
+имя метода (с указанием необходимых параметров) пишется через точку после
+идентификатора переменной.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТекущийОбъект</p>
+
+<h2><a name="_Toc492735326"></a><a name="_Toc494938215"><span style='mso-bookmark:
+_Toc492735326'>Объект «Диаграмма» — основные принципы и понятия, <br>
+используемые при визуальной настройке и управлении</a></h2>
+
+<p class=MsoNormal>Диаграмма представляет собой определенную
+фигуру, которая строится на основе матрицы данных размером [<span
+style='mso-ansi-language:EN-US'>M,&nbsp;<span
+style='mso-ansi-language:EN-US'>N], где N — количество
+серий значений (далее серий), М — количество точек, замерами в которых получены
+значения серий.</p>
+
+<p class=MsoNormal>Для количественной ориентации в диаграмме
+используются координатные оси. Каждому значению, отмеченному на оси, соответствует
+поясняющее имя (метка). В зависимости от типа координатной оси, метка может
+быть рассчи­танной, или определяться при заполнении данными.</p>
+
+<p class=MsoNormal>С точки зрения настройки, диаграмма состоит из
+четырех областей:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l36 level1 lfo57;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>область диаграммы — совокупность всех
+областей образующих диаграмму;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l36 level1 lfo57;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>область построения диаграммы — содержит
+координатное пространство и изображенную на нем фигуру;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l36 level1 lfo57;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>заголовок диаграммы;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l36 level1 lfo57;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>легенда — вспомогательная область,
+содержащая список меток, соответст­вующих сериям.</p>
+
+<p class=MsoNormal>Настройка размеров и положения областей
+диаграммы производится визуально. Подробнее о порядке визуальной настройки
+формата диаграммы следует читать в книге «Руководство по конфигурированию и
+администрированию».</p>
+
+<h3><a name="_Toc492735327"></a><a name="_Toc494938216"><span style='mso-bookmark:
+_Toc492735327'>Атрибуты диаграммы</a></h3>
+
+<h4><a name="_Toc492735328"></a><a name="_Toc494938217"><span style='mso-bookmark:
+_Toc492735328'>Заголовок</a></h4>
+
+<p class=MsoNormal>Заголовок диаграммы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Заголовок<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>TitleText<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Заголовок<span
+lang=RU> содержит текст заголовка диаграммы. По умолчанию имеет значение
+«Диаграмма».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма.Заголовок = &quot;Пример
+использования диаграммы&quot;;<o:p></o:p></p>
+
+<h3><a name="_Toc492735329"></a><a name="_Toc494938218"><span style='mso-bookmark:
+_Toc492735329'>Методы диаграммы</a></h3>
+
+<h4><a name="_Toc492735330"></a><a name="_Toc494938219"><span style='mso-bookmark:
+_Toc492735330'>КоличествоСерий</a></h4>
+
+<p class=MsoNormal>Явно устанавливает количество серий диаграммы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоСерий(&lt;Количество&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SeriesCount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Количество&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  которое задает количество серий диаграммы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее значение количества серий (до
+исполнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КоличествоСерий<span
+lang=RU> явно устанавливает количество серий диаграм­мы. Количество серий может
+быть изменено и в режиме визуальной настройки. Альтернативой использования
+этого метода является неявное изменение коли­чества серий: в случае если в
+метод, одним из параметров, использующий но­мер серии, передается значение превышающее
+количество серий, количество серий будет неявно увеличено.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диагр.КоличествоСерий(3);<span
+style="mso-spacerun: yes">       // установим количество серий 3<o:p></o:p></p>
+
+<h4><a name="_Toc492735331"></a><a name="_Toc494938220"><span style='mso-bookmark:
+_Toc492735331'>КоличествоТочек</a></h4>
+
+<p class=MsoNormal>Явно устанавливает количество точек диаграммы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоТочек(&lt;Количество&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>PointsCount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Количество&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  которое задает количество точек диаграммы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее значение количества точек (до
+исполнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КоличествоТочек<span
+lang=RU> явно устанавливает количество точек диаграммы. Количество точек может
+быть изменено и в режиме визуальной настройки. Альтернативой использования
+этого метода является неявное изменение коли­чества точек: в случае если в
+метод, одним из параметров, использующий номер точек, передается значение превышающее
+количество точек, количество точек будет неявно увеличено.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диагр.КоличествоТочек(4);<span
+style="mso-spacerun: yes">      // установим количество точек 4<o:p></o:p></p>
+
+<h4><a name="_Toc492735332"></a><a name="_Toc494938221"><span style='mso-bookmark:
+_Toc492735332'>УстановитьИмяСерии</a></h4>
+
+<p class=MsoNormal>Устанавливает имя серии.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьИмяСерии(&lt;НомерСерии&gt;,
+&lt;Имя&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetSeriesLabel<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерСерии&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  которое задает номер серии, для которой устанавливается имя.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Имя&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка, используемая
+  для обозначения серии в ле­генде и подписях к координатным осям.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьИмяСерии<span
+lang=RU> явно устанавливает имя для заданного номе­ра серии.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма.УстановитьИмяСерии(СчетчикСерий,
+Запрос.Товар.Наименование);<o:p></o:p></p>
+
+<h4><a name="_Toc492735333"></a><a name="_Toc494938222"><span style='mso-bookmark:
+_Toc492735333'>УстановитьИмяТочки</a></h4>
+
+<p class=MsoNormal>Устанавливает имя точки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьИмяТочки(&lt;НомерТочки&gt;,
+&lt;Имя&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetPointLabel<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерТочки&gt;</p>
+  </td>
+  <td width=552 valign=top style='width:413.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  которое задает номер точки, для которой устанавливается имя.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Имя&gt;</p>
+  </td>
+  <td width=552 valign=top style='width:413.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка, используемая
+  для обозначения точки в подписях к координатным осям.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьИмяТочки<span
+lang=RU> явно устанавливает имя для заданного номе­ра точки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма.УстановитьИмяТочки(1,
+&quot;Продано на сумму&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc492735334"></a><a name="_Toc494938223"><span style='mso-bookmark:
+_Toc492735334'>ЦветСерии</a></h4>
+
+<p class=MsoNormal>Устанавливает цвет серии.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЦветСерии(&lt;НомерСерии&gt;,
+&lt;Красный&gt;, &lt;3еленый&gt;, &lt;Синий&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetSeriesColor<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерСерии&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  которое задает номер серии, для которой устанавливается цвет.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Красный&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число, задающее
+  красную компоненту цвета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3еленый&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число, задающее
+  зеленую компоненту цвета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Синий&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число, задающее
+  синюю компоненту цвета.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЦветСерии<span
+lang=RU> устанавливает <span style='mso-ansi-language:EN-US'>RGB<span
+lang=RU> цвет для серии &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НомерСерии<span
+lang=RU>&gt;. По умолчанию первые 54 серии имеют уникальный цвет. Серии с
+большими номе­рами изображаются в диаграмме повторяя уже использованный цвет,
+но пере­стают окрашиваться сплошным цветом, используя более сложный способ за­ливки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма.ЦветСерии(1, 35, 67, 89);<o:p></o:p></p>
+
+<h4><a name="_Toc492735335"></a><a name="_Toc494938224"><span style='mso-bookmark:
+_Toc492735335'>АвтоУстановкаИменСерий</a></h4>
+
+<p class=MsoNormal>Автоматическая установка имен серий.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>АвтоУстановкаИменСерий(&lt;флаг&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AutoSeriesLabels<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое значение: 1
+  — разрешающий. 0 — запре­щающий автогенерацию имен серий.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>АвтоУстановкаИменСерий<span
+lang=RU> устанавливает режим автогенерации имен серий диаграммы. В случае, если
+автогенерация имен разрешена, сериям диаграммы будут автоматически
+присваиваться имена Серия1, Серия2, ..., Се-рия<span style='mso-ansi-language:
+EN-US'>N. По умолчанию автогенерация запрещена.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма.АвтоУстановкаИменСерий(1);<o:p></o:p></p>
+
+<h4><a name="_Toc492735336"></a><a name="_Toc494938225"><span style='mso-bookmark:
+_Toc492735336'>АвтоУстановкаИменТочек</a></h4>
+
+<p class=MsoNormal>Автоматическая установка имен точек.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>АвтоУстановкаИменТочек(&lt;флаг&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AutoPoin<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>t<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Labels<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое значение: 1
+  — разрешить автогенерацию имен точек. 0 — запретить автогенерацию имен точек.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>АвтоУстановкаМменТочек<span
+lang=RU> устанавливает режим автогенерации имен точек диаграммы. В случае, если
+автогенерация имен разрешена, точкам диаграммы будут автоматически
+присваиваться имена 1, 2, ..., N. По умолчанию автогенерация запрещена.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма.АвтоУстановкаИменТочек(1);<o:p></o:p></p>
+
+<h4><a name="_Toc492735337"></a><a name="_Toc494938226"><span style='mso-bookmark:
+_Toc492735337'>УстановитьЗначение</a></h4>
+
+<p class=MsoNormal>Установка значения в заданной точке и серии.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьЗначение(&lt;НомерТочки&gt;,
+&lt;НомерСерии&gt;, &lt;Значен&gt;, &lt;Расшифровка&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetValue<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерТочки&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  которое задает номер точки, для которой устанавливается значение.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерСерии&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  которое задает номер серии, для которой устанавливается значение.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начен&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое значение — задаваемое
+  значение диаграммы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Расшифровка&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Значение любого типа, используемое для расшифровки диаграммы при по­мощи
+  предопределенной процедуры <span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОбработкаЯчейкиТаблицы<span
+  lang=RU>.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьЗначение<span
+lang=RU> устанавливает значение серии &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НомерСерии<span
+lang=RU>&gt; в точке &lt;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>НомерТочки<span
+lang=RU>&gt; равным &lt;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Значен<span
+lang=RU>&gt; с возможностью его последующей расшифровки.</p>
+
+<p class=MsoNormal>Расшифровка может быть реализована при помощи
+предопределенной про­цедуры <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОбработкаЯчейкиТаблицы<span
+lang=RU>. Вызов предопределенной процедуры <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОбработкаЯчейкиТаблицы<span
+lang=RU> на исполнение производится в системе 1С:Предприятие по двойному щелчку
+мыши в табличном документе на вы­бранной точке диаграммы. При этом значение
+расшифровки &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Расшифровка&gt;
+этой точки диаграммы автоматически передается в качестве первого параметра в вызове
+предопределенной процедуры.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма.УстановитьЗначение(1, 5, 14);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОбработкаЯчейкиТаблицы</p>
+
+<h4><a name="_Toc492735338"></a><a name="_Toc494938227"><span style='mso-bookmark:
+_Toc492735338'>Обновление</a></h4>
+
+<p class=MsoNormal>Установка режима обновления диаграммы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Обновление(&lt;флаг&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>RedrawFlag<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое значение: 1
+  — разрешить перерисовку диа­граммы. 0 — запретить перерисовку диаграммы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Обновление<span
+lang=RU> устанавливает режим обновления диаграммы. Запрет перерисовки диаграммы
+рекомендуется в целях ускорения работы системы на ьремя наполнения данными. По
+умолчанию перерисовка разрешена.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма.Обновление(1);<span
+style="mso-spacerun: yes">         // включим перерисовку<o:p></o:p></p>
+
+<h4><a name="_Toc492735339"></a><a name="_Toc494938228"><span style='mso-bookmark:
+_Toc492735339'>Очистить</a></h4>
+
+<p class=MsoNormal>Очищает диаграмму.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Очистить()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Clear<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Очистить<span
+lang=RU> очищает диаграмму, т. е. удаляет все ранее установленные значения;
+количество серий и точек устанавливает нулевым; стирает все ранее установленные
+имена.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диагр.Очистить();<span
+style="mso-spacerun: yes">      // очистить диаграмму<o:p></o:p></p>
+
+<h2><a name="_Toc492735340"></a><a name="_Toc494938229"><span style='mso-bookmark:
+_Toc492735340'>Пример использования</a></h2>
+
+<p class=MsoNormal>Предположим, что проектируется отчет о продаже
+товара. Внешний вид от­чета визуально настроен. Мы предполагаем, что будет построена
+объемная гис­тограмма с одной точкой («Продано на сумму») и количеством серий
+равным количеству товаров.</p>
+
+<p class=MsoNormal>Фрагментом модуля отчета, является процедура <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПостроитьДиаграмму. Вызов этой
+процедуры находится в закладке «Текст» свойств внедренного в табличный
+документ, объекта «Диаграмма», он выглядит так:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПостроитьДиаграмму(Таб.ТекущийОбъект,
+Запрос)<o:p></o:p></p>
+
+<p class=MsoNormal>Параметрами процедуры являются:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l57 level1 lfo58;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Объект «Диаграмма», переданный как
+текущий объект табличного доку­мента (подробнее см. в главе Работа с
+таблицами);</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l57 level1 lfo58;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>запрос к базе данных, сформированный и
+выполненный ранее.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПостроитьДиаграмму(Диаграмма,
+Запрос)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+//На время наполнения данными, запретим перерисовку<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Диаграмма.Обновление(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// задаем текст заголовка<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Диаграмма.Заголовок = &quot;Пример использования диаграммы&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// задаем текст метки точки<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Диаграмма.УстановитьИмяТочки(1, &quot;Продано на сумму&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+СчетчикСерий = 1;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока Запрос.Группировка(&quot;Товар&quot;) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ПродСумма = Запрос.СуммаПродано;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// задаем очередное значение<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Диаграмма.Значение(1, СчетчикСерий, ПродСумма);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// задаем метку очередной серии<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Диаграмма.УстановитьИмяСерии(СчетчикСерий, Запрос.Товар.Наименование)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СчетчикСерий = СчетчикСерий + 1;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// После заполнения данных, включим перерисовку<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Диаграмма.Обновление(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

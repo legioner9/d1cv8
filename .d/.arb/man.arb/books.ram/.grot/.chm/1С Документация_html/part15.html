@@ -1,0 +1,849 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part15</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part15.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032680">Глава 15<br> Служебные типы данных компоненты «Бухгалтерский учет»</a></h1>
+
+<h2><a name="_Toc493032681">Тип данных «ПланСчетов»</a></h2>
+
+<p class=MsoNormal>Тип данных «ПланСчетов» является служебным
+типом данных. Он предна­значен для идентификации Плана счетов, созданного в
+метаданных. В основ­ном он используется для передачи в качестве параметра
+различным процедурам и функциям компоненты «Бухгалтерский учет» и для выбора
+плана счетов в формах. Тип значения «ПланСчетов» не поддерживает никаких данных
+в ин­формационной базе, а список возможных значений этого типа данных опреде­лен
+планами счетов созданными в конфигурации.</p>
+
+<p class=MsoNormal>Значения типа «ПланСчетов» могут выступать как
+реквизиты диалога фор­мы, как реквизиты документов, справочников и т. д.</p>
+
+<p class=MsoNormal>Для получения значения такого типа данных
+используется глобальный ат­рибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПланыСчетов<span
+lang=RU>, который имеет в свою очередь набор атрибутов типа «ПланСчетов»
+соответсвующих имеющимся в конфигурации планам счетов. Кроме того, глобальный
+атрибут <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПланыСчетов
+имеет методы для обхода всех существующих планов счетов.</p>
+
+<h3><a name="_Toc493032682">Методы типа данных «ПланСчетов»</a></h3>
+
+<h4><a name="_Toc493032683">Выбран</a></h4>
+
+<p class=MsoNormal>Проверяет наличие значения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выбран()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Selected<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числовое значение: 1 — значение не пусто; 0 —
+значение пусто.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Данный метод позволяет определить — пусто
+значение типа «ПланСчетгт или нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспПланСчетов<span
+lang=RU> — является реквизитом диалога формы, имеет тип «План Счетов».</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если ИспПланСчетов.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+БухИтоги.ИспользоватьПланСчетов(ИспПланСчетов);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032684">ПорядковыйНомер</a></h4>
+
+<p class=MsoNormal>Получить порядковый номер плана счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПорядковыйНомер()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Number<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числовое значение: порядковый номер плана
+счетов среди планов счетов конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПорядковыйНомер<span
+lang=RU> позволяет определить порядковый номер плана счетов среди планов
+счетов, созданных в конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если ИспПланСчетов.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;План счетов&quot; + ИспПланСчетов.ПорядковыйНоиер());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032685">Идентификатор</a></h4>
+
+<p class=MsoNormal>Определить строку-идентификатор плана счетов
+как он задан в ме­таданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Идентификатор()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Identifier<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строка-идентификатор плана счетов как он задан
+в метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Идентификатор<span
+lang=RU> позволяет определить строку-идентификатор плана счетов как он задан в
+метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если ИспПланСчетов.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(Идентификатор(ИспПланСчетов));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h3><a name="_Toc493032686">Атрибут глобального контекста
+«ПланыСчетов»</a></h3>
+
+<h4><a name="_Toc493032687">ПланыСчетов</a></h4>
+
+<p class=MsoNormal>Атрибут глобального контекста для получения
+существующих значе­ний типа «ПланСчетов».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПланыСчетов<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Charts0fAccounts<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПланыСчетов<span
+lang=RU> не имеет самостоятельного смысла, а служит для получения конкретных
+значений типа «ПланСчетов». Атрибут всегда использу­ется с доступными ему
+атрибутами и методами.</p>
+
+<p class=MsoNormal><b>Атрибуты и методы:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Для получения конкретного значения типа «План
+счетов» следует через точку указать атрибут — идентификатор плана счетов.</p>
+
+<p class=MsoNormal>Для получения количества существующих в
+конфигурации планов счетов следует через точку вызвать метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>КоличествоЗначений.</p>
+
+<p class=MsoNormal>Для получения значения типа «План счетов» по
+его номеру в метаданных, следует через точку вызвать метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ЗначениеПоНомеру(&lt;Число&gt;),
+где &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Число&gt; —
+номер плана счетов в метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч = СоздатьОбъект(&quot;Счет&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Сч.ПланСчетов() =
+ПланыСчетов.РабПлан Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По
+ПланыСчетов.КоличествоЗначений() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ПлСч = ПланыСчетов.ЗначениеПоНомеру(Инд);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h3><a name="_Toc493032688">Методы глобального атрибута
+«ПланыСчетов»</a></h3>
+
+<p class=MsoNormal>Значения типа «ПланСчетов» могут выступать как
+реквизиты диалога формы, как реквизиты документов, справочников и т. д.</p>
+
+<p class=MsoNormal>Для получения значений типа «ПланСчетов»
+используется глобальный ат­рибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПланыСчетов<span
+lang=RU>, который имеет в свою очередь набор атрибутов типа «План Счетов»
+соответсвующих имеющимся в конфигурации планам счет Кроме того, глобальный
+атрибут <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПланыСчетов
+имеет методы для обхода в существующих планов счетов.</p>
+
+<h4><a name="_Toc493032689">КоличествоЗначений</a></h4>
+
+<p class=MsoNormal>Получить общее количество планов счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоЗначений()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Count<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числовое значение: количество планов счетов
+конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КоличествоЗначений<span
+lang=RU> применяется к атрибуту глобального контек­ста <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПланыСчетов<span
+lang=RU> и позволяет определить общее количество планов счетов созданных в
+конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд=1 По
+ПланыСчетов.КоличествоЗначений() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ПлСч = ПланыСчетов.ЗначениеПоНомеру(Инд);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc493032690">ЗначениеПоНомеру</a></h4>
+
+<p class=MsoNormal>Определить план счетов, по номеру в списке
+планов счетов конфигу­рации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗначениеПоНомеру(&lt;Номер&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ValueByIndex<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=85 valign=top style='width:63.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Номер&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение.
+  Номер позиции плана сче­тов, заданный в Конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «План Счетов», соответствующее
+номеру заданной позиции.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗначениеПоНомеру<span
+lang=RU> применяется к атрибуту глобального контекста <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПланыСчетов<span
+lang=RU> и позволяет определить план счетов, соответствующий номеру в списке
+планов счетов конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По
+ПланыСчетов.КоличествоЗначений() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ПлСч = ПланыСчетов.ЗначениеПоНомеру(Инд);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла<o:p></o:p></p>
+
+<h4><a name="_Toc493032691">ЗначениеПоИдентификатору</a></h4>
+
+<p class=MsoNormal>Определить план счетов, по идентификатору.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗначениеПоИдентификатору(&lt;Идентификатор&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ValueByIdentifier<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Идентификатор&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение.
+  Идентификатор пла­на счетов, заданный в конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение плана счетов, соответствующее
+идентификатору в метаданных. Если не найдено — то пустое значение.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗначениеПоИдентификатору<span
+lang=RU> применяется к атрибуту глобального контекста <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПланыСчетов<span
+lang=RU> и позволяет определить план счетов, соответствующий идентификатору
+плана счетов конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПлСч =
+ПланыСчетов.ЗначениеПоИдентификатору(&quot;Основной&quot;);<o:p></o:p></p>
+
+<h2><a name="_Toc493032692">Тип данных «ВидСубконто»</a></h2>
+
+<p class=MsoNormal>Тип данных «ВидСубконто» является служебным
+типом данных. Он пред­назначен для идентификации самого Вида субконто.
+созданного в метаданных. В основном он используется для передачи в качестве
+параметра различным процедурам и функциям компоненты «Бухгалтерский учет» и для
+выбора вида субконто в формах. Тип данных «ВидСубконто» не поддерживает никаких
+дан­ных в информационной базе, а список возможных значений этого типа данных
+определен видами субконто, созданными в конфигурации.</p>
+
+<p class=MsoNormal>Значения типа «ВидСубконто» могут выступать
+как реквизиты диалога формы, как реквизиты документов, справочников и т. д.</p>
+
+<p class=MsoNormal>Для получения значения такого типа
+используется глобальный атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыСубконто<span
+lang=RU>, который имеет в свою очередь набор атрибутов типа «Вид­Субконто»
+соответсвующих имеющимся видам субконто. Кроме того, глобаль­ный атрибут <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ВидыСубконто имеет методы для
+обхода всех существующих видов субконто.</p>
+
+<h3><a name="_Toc493032693">Методы типа данных «ВидСубконто»</a></h3>
+
+<h4><a name="_Toc493032694">Выбран</a></h4>
+
+<p class=MsoNormal>Проверяет наличие значения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выбран()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Selected<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числовое значение:</p>
+
+<p class=MsoNormal>1 — значение не пусто;</p>
+
+<p class=MsoNormal>0 — значение пусто.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Данный метод позволяет определить — пусто
+значение типа «ВидСубконто» или нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбВидСубк1<span
+lang=RU> — является реквизитом диалога формы типа «ВидСубкон­то».</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если ВыбВидСубк1.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+БухИтоги.ИспользоватьСубконто(ВыбВидСубк1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032695">ПорядковыйНомер</a></h4>
+
+<p class=MsoNormal>Получить порядковый номер вида субконто.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПорядковыйНомер()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Number<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числовое значение: порядковый номер вида
+субконто среди видов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПорядковыйНомер<span
+lang=RU> позволяет определить порядковый номер вида субконто среди видов
+субконто, созданных в конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если ВыбВидСубк1.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Вид номер&quot; + ВыбВидСубк1.ПорядковыйНомер());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032696">ТипСубконто</a></h4>
+
+<p class=MsoNormal>Получить тип субконто.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТипСубконто()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>S<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ubcontoType<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение, описывающее тип субконто,
+например &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Справочник.Контрагенты<span
+lang=RU>&quot;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТипСубконто<span
+lang=RU> позволяет определить тип субконто, как он определен в конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Тип субконто &quot; +
+ВыбВидСубк1.ТипСубконто());<o:p></o:p></p>
+
+<h4><a name="_Toc493032697">Идентификатор</a></h4>
+
+<p class=MsoNormal>Определить строку-идентификатор вида субконто
+как он задан в метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Идентификатор()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Identifier<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строка-идентификатор вида субконто как он
+задан в метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Идентификатор<span
+lang=RU> позволяет определить строку-идентификатор ви­да субконто как он задан
+в метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Н=1 По
+ВидыСубконто.КоличествоЗначений() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(Идентификатор(ВидыСубконто.ЗначениеПоНомеру(Н)));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h3><a name="_Toc493032698">Атрибут глобального контекста
+«ВидыСубконто»</a></h3>
+
+<h4><a name="_Toc493032699">ВидыСубконто</a></h4>
+
+<p class=MsoNormal>Атрибут глобального контекста для получения
+существующих значе­ний типа <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидСубконто<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидыСубконто<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SubcontoKinds<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыСубконто<span
+lang=RU> не имеет самостоятельного смысла, а служит для получения конкретных
+значений типа «Вид субконто». Атрибут всегда исполь­зуется с доступными ему
+атрибутами и методами.</p>
+
+<p class=MsoNormal><b>Атрибуты и методы:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Для получения конкретного значения типа «Вид
+субконто» следует через точку указать атрибут-идентификатор вида субконто.</p>
+
+<p class=MsoNormal>Для получения количества существующих в
+конфигурации видов субконто следует через точку вызвать метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>КоличествоЗначений.</p>
+
+<p class=MsoNormal>Для получения значения типа «Вид субконто» по
+его номеру в метаданных следует через точку вызвать метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ЗначениеПоНомеру(&lt;Число&gt;),
+где &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Число&gt; —
+номер вида субконто в метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч = СоздатьОбъект(&quot;Счет&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Сч.ВидСубконто(1) =
+ВидыСубконто.Материалы Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По
+ВидыСубконто.КоличествоЗначений() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ВидСк = ВидыСубконто.ЗначениеПоНомеру(Инд);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h3><a name="_Toc493032700">Методы глобального атрибута
+«ВидыСубконто»</a></h3>
+
+<p class=MsoNormal>Для получения значений типа «ВидСубконто»
+используется глобальный ат­рибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыСубконто<span
+lang=RU>, который имеет в свою очередь набор атрибутов типа «ВидСубконто»
+соответсвующих имеющимся видам субконто. Кроме того, гло­бальный атрибут <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ВидыСубконто имеет методы для
+обхода всех существующих видов субконто.</p>
+
+<h4><a name="_Toc493032701">КоличествоЗначений</a></h4>
+
+<p class=MsoNormal>Получить общее количество видов субконто.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоЗначений()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Count<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числовое значение: количество видов субконто
+конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КоличествоЗначений<span
+lang=RU> применяется к атрибуту глобального контек­ста <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыСубконто<span
+lang=RU> и позволяет определить общее количество видов субконто, созданных в
+конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По
+ВидыСубконто.КоличествоЗначений() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ВидСк = ВидыСубконто.ЗначениеПоНомеру(Инд);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc493032702">ЗначениеПоНомеру</a></h4>
+
+<p class=MsoNormal>Определить вид субконто, по номеру в списке
+видов субконто кон­фигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗначениеПоНомеру(&lt;Номер&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ValueByIndex<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=85 valign=top style='width:63.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Номер&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение.
+  Номер позиции вида суб­конто, заданный в конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «ВидСубконто», соответствующее
+номеру заданной позиции.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗначениеПоНомеру<span
+lang=RU> применяется к атрибуту глобального контекста <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыСубконто<span
+lang=RU> и позволяет определить вид субконто, соответствующий номе­ру в списке
+видов субконто конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По
+ВидыСубконто.КоличествоЗначений() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ВидСк = ВидыСубконто.ЗначениеПоНомеру(Инд);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc493032703">ЗначениеПоИдентификатору</a></h4>
+
+<p class=MsoNormal>Определить вид субконто, по идентификатору
+видов субконто кон­фигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗначениеПоИдентификатору(&lt;Идентификатор&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ValueByIdentifier<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Идентификатор&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение.
+  Идентификатор вида субконто, заданный в конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «ВидСубконто», соответствующее
+идентификатору в мета­данных. Если не найдено — то пустое значение.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗначениеПоИдентификатору<span
+lang=RU> применяется к атрибуту глобального контекста <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыСубконто<span
+lang=RU> и позволяет определить вид субконто, соответст­вующий идентификатору
+видов субконто конфигурации.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидСк =
+ВидыСубконто.ЗначениеПоИдентификатору(&quot;Контрагент&quot;);<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

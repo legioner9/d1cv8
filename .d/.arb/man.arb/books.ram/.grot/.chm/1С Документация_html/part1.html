@@ -1,0 +1,2156 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part1</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part1.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032172">Глава 1<br> Формат исходных текстов программных модулей</a></h1>
+
+<h2><a name="_Toc493032173">Что такое программный модуль?</a></h2>
+
+<p class=MsoNormal>Программные модули в конфигурации системы
+1С:Предприятие не являют­ся самостоятельными программами в общепринятом
+понимании этого слова, поскольку они являются только частью всей <i
+style='mso-bidi-font-style:normal'>конфигурации задачи</i>. Программ­ный модуль
+— это своего рода «контейнер» для размещения текстов процедур и функций,
+вызываемых системой во время исполнения задачи в определенные моменты работы.
+Поэтому программный модуль не имеет формальных границ своего описания типа:
+«Начало модуля» — «Конец модуля».</p>
+
+<p class=MsoNormal>Место размещения конкретного программного
+модуля (тот самый «контей­нер») предоставляется конфигуратором в тех точках
+конфигурации задачи, ко­торые требуют описания специфических алгоритмов
+функционирования. Эти алгоритмы следует оформлять в виде процедур или функций,
+которые будут вызваны самой системой в заранее предусмотренных ситуациях
+(например, при нажатии кнопки в диалоговом окне).</p>
+
+<p class=MsoNormal>Каждый отдельный программный модуль
+воспринимается системой как единое целое, поэтому все процедуры и функции
+программного модуля вы­полняются в едином контексте.</p>
+
+<h3><a name="_Toc493032174">Контекст выполнения программного
+модуля</a></h3>
+
+<p class=MsoNormal>Каждый программный модуль связан с остальной
+частью конфигурации за­дачи. Эта связь называется контекстом выполнения модуля.
+Следует различать два вида контекста:</p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:32.2pt;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l14 level1 lfo1;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>глобальный контекст задачи;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l14 level1 lfo1;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>локальный контекст выполнения конкретного
+модуля.</p>
+
+<p class=MsoBodyTextIndent style='margin-top:12.0pt'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span lang=RU style='layout-grid-mode:
+both'>Глобальный контекст </i></b><span lang=RU style='layout-grid-mode:
+both'>образуется:<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:32.2pt;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l30 level1 lfo2;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>значениями системных атрибутов,
+системными процедурами и функ­циями;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l30 level1 lfo2;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>значениями заданных в конфигураторе <i
+style='mso-bidi-font-style:normal'>констант, перечислений, регист­ров, видов
+расчета, групп видов расчета</i>;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l30 level1 lfo2;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>переменными, процедурами и функциями
+глобального программного модуля, объявленными с ключевым словом <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Экспорт.</p>
+
+<p class=MsoBodyTextIndent style='margin-top:12.0pt'><span lang=RU
+style='layout-grid-mode:both'>Глобальный контекст виден всем программным
+модулям и определяет об­щую языковую среду конфигурации.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Локальный контекст </i></b>модуля
+образуется тем конкретным местом конфигу­рации задачи, для которого использован
+программный модуль. Локальный кон­текст виден только конкретному программному
+модулю и определяет для мо­дуля набор непосредственно доступных модулю значений
+агрегатных типов данных, их атрибутов и методов (см. «Виды программных
+модулей»). Однако, контекст модуля можно передать как объект в виде параметра
+при вызове про­цедур и функций (см. «Передача локального контекста программного
+модуля в качестве параметра»). Кроме того, контекст модуля определяет тот набор
+мето­дов, которые доступны только в данном контексте (см. «Атрибуты и методы
+контекста Модуля формы», «Методы контекста Модуля формы элемента спра­вочника»
+и т. п.). Локальный контекст предназначен для того, чтобы дать воз­можность
+управлять частными аспектами поведения задачи, присущими дан­ному модулю.</p>
+
+<h3><a name="_Toc493032175">Виды программных модулей</a></h3>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'>В системе
+1С:Предприятие существуют следующие виды программных мо­дулей (места размещения
+программных модулей в конфигурации задачи), дос­тупных в конфигураторе:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:2.0pt;
+ border-collapse:collapse;mso-padding-alt:0in 2.0pt 0in 2.0pt'>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><b
+  style='mso-bidi-font-weight:normal'>Размещение<o:p></o:p></b></p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><b
+  style='mso-bidi-font-weight:normal'>Момент запуска<o:p></o:p></b></p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><b
+  style='mso-bidi-font-weight:normal'>Контекст выполнения<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032176">Глобальный модуль</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в корне­вом разделе конфигу­рации: Метаданные.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при стар­те всей прикладной задачи.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Глобальный модуль оп­ределяет глобальный контекст всей задачи.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032177">Модуль Формы списка справочника</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Справочник — Форма
+  списка.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при вызо­ве формы списка справочника.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы списка справочника</i>, в котором непосредствен­но
+  доступен выбранный в списке элемент спра­вочника и реквизиты формы списка справоч­ника.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032178">Модуль Формы группы справочника</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Справочник — Форма
+  группы.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при от­крытии формы группы справочника.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы группы справочника</i>, в котором непосредствен­но доступны
+  реквизиты текущей группы спра­вочника и реквизиты формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032179">Модуль Формы элемента справочника</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Справочник — Форма
+  элемента.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при от­крытии формы эле­мента справочника.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы элемента справочника</i>, в котором непосредствен­но доступны
+  реквизиты текущего элемента спра­вочника и реквизиты формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><span style="mso-spacerun: yes"> <a
+  name="_Toc493032180">Модуль Формы документа</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Документ — Форма.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при от­крытии формы доку­мента.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы документа</i>, в котором непосредственно дос­тупны реквизиты
+  теку­щего документа и рек­визиты формы докумен­та.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032181">Модуль документа</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе</p>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>конфигурации: Мета­данные — Документ — Модуль документа.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при про­ведении документа, при удалении прове­денного
+  документа, при снятии проведе­ния, при выполнении архивации записей журнала
+  расчетов, по­рожденных докумен­том.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля доку­мента</i>, в котором непо­средственно доступны реквизиты
+  текущего документа.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032182">Модуль Формы журнала документов</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Журнал — Форма.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при вызо­ве формы журнала документов.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы журнала документов</i>, в котором непосредствен­но доступен
+  выбранный в журнале документ и реквизиты формы жур­нала.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032183">Модуль Формы журнала расчетов</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Журнал расчетов —
+  Форма.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при вызо­ве формы журнала расчетов.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы журнала расчетов</i>, в котором непосредствен­но
+  доступны реквизиты журнала расчетов и рек­визиты формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032184">Модуль Формы списка счетов</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — План сче­тов.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при вызо­ве формы списка сче­тов.</p>
+  </td>
+  <td width=383 valign=top style='width:287.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы списка счетов</i>, в котором непосредственно досту­пен
+  выбранный в списке счет и реквизиты формы списка счетов.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032185">Модуль Формы счета</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Справочник</p>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>— счет.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при от­крытии формы счета.</p>
+  </td>
+  <td width=383 valign=top style='width:287.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы счета</i>, в котором непо­средственно доступны реквизиты
+  текущего счета и реквизиты фор­мы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032186">Модуль Формы журнала операций</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Журнал операций —
+  Форма.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при вызо­ве формы журнала операций.</p>
+  </td>
+  <td width=383 valign=top style='width:287.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы журнала операций</i>, в котором непосредствен­но
+  доступны реквизиты журнала операций и реквизиты формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032187">Модуль Формы операции</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Операция.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при от­крытии формы опера­ции.</p>
+  </td>
+  <td width=383 valign=top style='width:287.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы операции</i>, в котором непосредственно дос­тупны реквизиты
+  теку­щей операции и рекви­зиты формы операции.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><span style="mso-spacerun: yes"> <a
+  name="_Toc493032188">Модуль Формы журнала проводок</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигурации: Мета­данные — Журнал проводок —
+  Форма.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при вызо­ве формы журнала проводок.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы журнала проводок</i>, в котором непосредствен­но
+  доступны реквизиты журнала проводок и реквизиты формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032189">Модуль Формы отчета</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигуратора: Мета­данные — Отчет — Форма.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при от­крытии диалоговой формы подготовки отчета.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы отчета</i>, в котором непо­средственно доступны
+  реквизиты формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032190">Модуль Формы обработки</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигуратора: Мета­данные — Обработка — Форма.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при от­крытии диалоговой формы обработки.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля формы обработки</i>, в котором непосредственно дос­тупны реквизиты
+  фор­мы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=671 colspan=5 valign=top style='width:503.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <h4><a name="_Toc493032191">Модуль вида расчета</a></h4>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Размещается в разделе конфигуратора: Метаданные — Вид расчета —
+  Модуль вида расчета.</p>
+  </td>
+  <td width=144 colspan=2 valign=top style='width:1.5in;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>Запускается при рас­чете соответствующих записей журнала рас­четов.</p>
+  </td>
+  <td width=384 colspan=2 valign=top style='width:288.25pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  lang=RU>В модуле доступны: глобальный контекст, контекст <i style='mso-bidi-font-style:
+  normal'>Модуля вида расчета</i>, в котором дос­тупны реквизиты жур­нала расчетов.</p>
+  </td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=143 style='border:none'></td>
+  <td width=1 style='border:none'></td>
+  <td width=143 style='border:none'></td>
+  <td width=1 style='border:none'></td>
+  <td width=383 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<h2><a name="_Toc493032192">Формат программного модуля</a></h2>
+
+<p class=MsoNormal>Исходный текст программного модуля может
+состоять из операторов и комментариев.</p>
+
+<h3><a name="_Toc493032193">Комментарии</a></h3>
+
+<p class=MsoNormal>Комментарий используется для размещения в
+исходном тексте программно­го модуля всякого рода пояснений к работе модуля.
+Хорошим тоном програм­мирования считается, когда исходный текст содержит
+исчерпывающий коммен­тарий с описанием алгоритма. В режиме исполнения программы
+комментарии пропускаются. В тексте программного модуля комментарий начинается
+парой символов &quot;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>//<span
+lang=RU>&quot; и заканчивается концом строки. Это значит, что комментарий можно
+начинать с начала строки или записывать его после оператора на той же строке.
+После начала комментария писать оператор на той же строке нельзя, необходимо
+закончить комментарий концом строки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>А=В; // Это – комментарий<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Это тоже комментарий<o:p></o:p></p>
+
+<h3><a name="_Toc493032194">Формат операторов</a></h3>
+
+<p class=MsoNormal>Операторы имеют вид стандартного обращения к
+процедуре, за исключени­ем оператора присваивания (А=В;) и управляющих
+конструкций (таких как <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Для, Пока, Если<span
+lang=RU>). Между собой операторы обязательно следует разделять сим­волом
+&quot;;&quot; ( точкой с запятой). Конец строки не является признаком конца опе­ратора,
+т. е. операторы могут свободно переходить через строки и продолжаться на другой
+строке. Можно располагать произвольное число операторов на од­ной строке,
+разделяя их символом &quot;;&quot;.</p>
+
+<p class=MsoNormal>Операторы языка в программном модуле можно
+подразделить на две кате­гории: операторы объявления переменных и исполняемые
+операторы.</p>
+
+<p class=MsoNormal>Операторы объявления переменных создают имена
+переменных, которыми манипулируют исполняемые операторы.</p>
+
+<p class=MsoNormal>Любой исполняемый оператор может иметь метку,
+используемую в качестве точки перехода в операторе Перейти.</p>
+
+<p class=MsoNormal>В общем случае формат оператора языка
+следующий:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>~метка:Оператор[(параметры)]
+[ДобКлючевоеСлово];<o:p></o:p></p>
+
+<p class=MsoBodyTextIndent style='margin-top:12.0pt'><span lang=RU
+style='layout-grid-mode:both'>В качестве меток используются специальные идентификаторы,
+начинаю­щиеся с символа '~' (тильда) и состоящие из последовательности букв,
+цифр и символов '_'. Чтобы пометить оператор, надо поместить перед ним метку и
+сле­дующий за ней символ &quot;:&quot;.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>~метка:А=В;<o:p></o:p></p>
+
+<h3><a name="_Toc493032195">Имена переменных, процедур и функций</a></h3>
+
+<p class=MsoNormal>Именем переменной, объявленной процедуры или
+функции может быть лю­бая последовательность букв, цифр и знаков подчеркивания
+&quot;_&quot;, начинающаяся с буквы или знака подчеркивания &quot;_&quot;.
+Вновь создаваемые имена не должны совпадать с зарезервированными словами языка
+или именами существующих процедур и функций, доступных на момент выполнения.
+Распознавание имен переменных, процедур и функций ведется без учета регистра
+букв.</p>
+
+<h3><a name="_Toc493032196">Зарезервированные слова</a></h3>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'>Приведенные далее <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>ключевые
+слова </i></b>являются зарезервированными и не могут использоваться в качестве
+создаваемых имен переменных и объявляе­мых процедур и функций. В данном
+варианте языка каждое из ключевых слов имеет два представления — русское и
+английское. Английское представление является традиционным для языков программирования.
+Ключевые слова в русском и английском представлении могут свободно смешиваться
+в одном исходном тексте. Регистр букв ключевых слов не имеет значения. Ниже
+приведен список ключевых слов в обоих вариантах представления.</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:16.2pt;
+ border-collapse:collapse;mso-padding-alt:0in 2.0pt 0in 2.0pt'>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Если<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>If<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>He<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Not<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Date<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Тогда<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Then<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Знач<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Val<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Формат<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Format<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>ИначеЕсли<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Elsif<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>СтрДлина<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>StrLen<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Разм<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Dim<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Иначе<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Else<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>СокрЛ<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>TrimL<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Вопрос<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Do Query Box<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>КонецЕсли</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Endlf</p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>СокрП</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>TrimR</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Контекст</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Context</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Цикл</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Do<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Лев<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Left<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Перем</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Var</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Для</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>For<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Прав<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Right<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Перейти</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Goto</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>По</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>To<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Сред<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Mid<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Возврат</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Return</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Пока</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>While<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Цел<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Int<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Продолжить</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Continue</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Функция</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Function<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Окр<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Round<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Прервать</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Break</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>КонецПроцедуры</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>EndProcedure<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Number<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>И</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>And</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>КонецФункции</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>EndFunction<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>String<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Или</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Or</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Предупреждение</p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>DoMessageBox<o:p></o:p></p>
+  </td>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>КонецЦикла<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-right:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>EndDo<o:p></o:p></p>
+  </td>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'>Процедура</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Procedure</p>
+  </td>
+ </tr>
+</table>
+
+<h3><a name="_Toc493032197">Структура программного модуля</a></h3>
+
+<p class=MsoNormal>Структуру программного модуля можно
+подразделить на следующие разде­лы:</p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:32.2pt;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l36 level1 lfo3;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>раздел определения переменных;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l36 level1 lfo3;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>раздел процедур и функций;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l36 level1 lfo3;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>раздел основной программы.</p>
+
+<p class=MsoBodyTextIndent style='margin-top:12.0pt'><span lang=RU
+style='layout-grid-mode:both'>В конкретном программном модуле любой из разделов
+может отсутствовать.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Раздел определения переменных </i></b><span
+lang=RU>размещается от начала текста модуля до первого оператора Процедура или
+оператора Функция или любого исполняе­мого оператора. В этом разделе могут
+находиться только операторы объявления переменных Перем.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Раздел процедур и функций </i></b>размещается
+от первого оператора Процедура или оператора Функция до любого исполняемого
+оператора вне тела описания процедур или функций.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Раздел основной программы </i></b>размещается
+от первого исполняемого опера­тора вне тела процедур или функций до конца
+модуля. В этом разделе могут находиться только исполняемые операторы. Раздел
+основной программы ис­полняется в момент запуска модуля на выполнение (см.
+«Виды программных модулей»). Обычно в разделе основной программы имеет смысл
+размещать операторы инициализации переменных какими-либо конкретными
+значениями, которые необходимо провести до первого вызова любой из процедур или
+функ­ций модуля.</p>
+
+<h2><a name="_Toc493032198">Специальные символы, используемые в
+исходном тексте</a></h2>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>//</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Двумя знаками «косая
+  черта» начинается комментарий. Коммен­тарием считается весь текст от знака
+  &quot;//&quot; до конца текущей стро­ки.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>|</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Вертикальная черта в
+  начале строки используется только в стро­ковых константах и означает, что
+  данная строка является про­должением предыдущей (перенос строки), (см.
+  «Строковые кон­станты»).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>~</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Знаком тильда
+  начинается метка оператора.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>:</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Двоеточием
+  заканчивается метка оператора.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>;</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Точка с запятой
+  является символом разделения операторов.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>( )</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>В круглые скобки
+  заключается список параметров методов, про­цедур и функций.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>[ ]</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>В квадратные скобки
+  заключается размерность массивов.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>, </p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Запятая разделяет
+  параметры в списке параметров методов, про­цедур и функций.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&quot; &quot;</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>В двойные кавычки
+  заключаются строковые константы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>' '</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>В одинарные кавычки
+  заключаются константы даты.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>.</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Десятичная точка в
+  числовых константах. Разделитель, используемый в описаниях агрегатных типов
+  данных.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>+</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Символ «плюс»
+  обозначает операцию сложения.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>-</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Символ «минус»
+  обозначает операцию вычитания.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>*</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Символ «звездочка»
+  обозначает операцию умножения.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>/</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Символ «косая черта»
+  обозначает операцию деления.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&gt;</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Правая угловая
+  скобка обозначает логическую операцию «боль­ше».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&gt;=</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Логическая операция
+  «больше или равно».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Левая угловая скобка
+  обозначает логическую операцию «мень­ше».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;=</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Логическая операция
+  «меньше или равно».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>=</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Знак равенства обозначает
+  присвоение или логическую операцию «равно».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=36 valign=top style='width:26.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;&gt;</p>
+  </td>
+  <td width=659 valign=top style='width:494.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Две угловые скобки
+  обозначают логическую операцию «не рав­но».</p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc493032199">Процедуры и функции программного
+модуля</a></h2>
+
+<h3><a name="_Toc493032200">Процедура</a></h3>
+
+<p class=MsoNormal>Секция описания процедуры.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура &lt;Имя_проц&gt;([[Знач]
+&lt;Парам1&gt;[=&lt;ДефЗнач&gt;], <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:.5in'><span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...
+, [Знач] &lt;ПapaмN&gt;[=&lt;ДeфЗнaч&gt;]]) [Экспорт]<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Объявления
+локальных переменных;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Операторы;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>[Возврат;]<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Операторы;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+Синтаксис:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Procedure &lt;Имя_проц&gt;([[Val]
+&lt;Парам1&gt;[=&lt;ДефЗнач&gt;], <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:.5in'><span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>... , [Val] &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Парам<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>N&gt;[=&lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДефЗнач<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>&gt;]]) [Export]<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Объявления
+локальных переменных;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Операторы;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>[Return;]<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Операторы;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EndProcedure<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:<o:p></o:p></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>&lt;Имя_проц&gt;<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Назначает имя
+  процедуры.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Знач<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательное
+  ключевое слово, которое указывает на то, что следующий за ним параметр
+  передается по значению, т. е. изменение значения формального параметра при
+  выполнении процедуры никак не повлияет на фактический параметр, переданный
+  при вызове процедуры. Если это ключевое слово не указано, то параметр
+  процедуры передается по ссылке, то есть изменение внутри процедуры зна­чения
+  формального параметра приведет к измене­нию значения соответствующего
+  фактического па­раметра.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>&lt;Парам1&gt;, ..., &lt;ПарамN&gt;<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  список формальных параметров, разделяемых запятыми. Значения формальных па­раметров
+  должны соответсвовать значениям пере­даваемых при вызове процедуры фактических
+  па­раметров. В этом списке определяются имена каж­дого из параметров так, как
+  они используются в тексте процедуры. Список формальных параметров может быть
+  пуст. <b style='mso-bidi-font-weight:normal'>См. также:</b> «Передача парамет­ров».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>=&lt;ДефЗнач&gt;<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Необязательная установка значения параметра
+  по умолчанию. Параметры с установленными значе­ниями по умолчанию можно
+  располагать в любом месте списка формальных параметров.</p>
+  <p class=MsoNormal>Если параметр при вызове процедуры опущен,
+  то он принимает либо установленное по умолчанию значение (если оно есть) либо
+  принимает «пустое» значение (значение неопределенного типа).</p>
+  <p class=MsoNormal>Если параметру не задано значение по умолча­нию
+  и он является последним в списке передавае­мых параметров, то при вызове
+  процедуры его нельзя опускать.</p>
+  <p class=MsoNormal>Если параметру задано значение по умолчанию
+  и он является последним в списке, то при вызове процедуры его можно опускать
+  в списке передавае­мых фактических параметров и не ставить запятую перед
+  опущенным параметром.</p>
+  <p class=MsoNormal style='text-indent:0in'>Если параметру не
+  задано значения по умолча­нию, то при вызове процедуры его можно опускать в
+  списке передаваемых фактических параметров, но разделительную запятую надо ставить.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Экспорт<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательное
+  ключевое слово, которое указывает на то, что данная процедура является доступной
+  из других программных модулей. Имеет смысл только в <i style='mso-bidi-font-style:
+  normal'>глобальном программном модуле</i>.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>//Объявления локальных переменных<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Объявляются
+  локальные переменные, на которые можно ссылаться только в рамках этой процедуры
+  (см. оператор <span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Перем).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>//Операторы<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Исполняемые операторы
+  процедуры.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Возврат<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательное
+  ключевое слово, которое завершает выполнение процедуры и осуществляет возврат
+  в точку программы, из которой было обращение к процедуре. Использование данного
+  оператора в процедуре не обязательно.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+  </td>
+  <td width=555 valign=top style='width:416.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Обязательное
+  ключевое слово, обозначающее конец исходного текста процедуры, завершение
+  выполне­ния процедуры. Возврат в точку, из которой было обращение к
+  процедуре.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Ключевое слово <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Процедура<span
+lang=RU> начинает секцию исходного текста, выполнение которого можно
+инициировать из любой точки программного модуля, просто указав <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Имя_процедуры со списком
+параметров (если параметры не передают­ся, то круглые скобки, тем не менее,
+обязательны). Если в <i style='mso-bidi-font-style:normal'>глобальном про­граммном
+модуле </i>в теле описания функции использовано ключевое слово <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Экспорт, то это означает, что
+данная процедура является доступной из всех других программных модулей
+конфигурации. Ключевое слово <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Экспорт<span
+lang=RU> имеет смысл использовать только в <i style='mso-bidi-font-style:normal'>глобальном
+программном модуле</i>.</p>
+
+<p class=MsoBodyTextIndent><span lang=RU style='layout-grid-mode:both'>При
+выполнении оператора <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Возврат<span
+lang=RU style='layout-grid-mode:both'> процедура заканчивается и возвраща­ет
+управление в точку вызова. Если в тексте процедуры не встретился оператор <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Возврат<span lang=RU style='layout-grid-mode:
+both'>, то после выполнения последнего исполняемого оператора происхо­дит
+выполнение неявного оператора <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Возврат<span
+lang=RU style='layout-grid-mode:both'>. Конец программной секции процедуры
+определяется по оператору <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<span
+lang=RU style='layout-grid-mode:both'>.<o:p></o:p></p>
+
+<p class=MsoNormal>Переменные, объявленные в теле процедуры в
+разделе <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Объявления_локальных_переменных<span
+lang=RU>, являются локальными переменными данной процедуры, поэтому доступны
+только в этой процедуре (за исключени­ем случая передачи их как параметров при
+вызове других процедур, функций или методов).</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'>Замечание:</b><span
+lang=RU> ключевые слова Процедура, КонецПроцедуры, являются не операторами, а
+операторными скобками, поэтому не должны заканчивать­ся точкой с запятой (это
+может приводить к ошибкам выполнения моду­ля).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> «Передача параметров»</p>
+
+<p class=MsoNormal style='margin-top:12.0pt'><b style='mso-bidi-font-weight:
+normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Перем Глоб;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Описание процедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура МояПроцедура(Пар1, Пар2,
+ПарЗ) Экспорт<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Глоб =
+Глоб + Пар1 + Пар2 + ПарЗ;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Глоб = 123;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>МояПроцедура(5, 6, 7);<span
+style='mso-tab-count:1'>   // Вызов процедуры<o:p></o:p></p>
+
+<h3><a name="_Toc493032201">Функция</a></h3>
+
+<p class=MsoNormal>Секция описания функции.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Функция &lt;Имя_функции&gt;([[Знач]
+&lt;Парам1&gt;[=&lt;ДефЗнач&gt;], ...<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:.5in'><span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>,
+[Знач] &lt;Парам<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>N<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>&gt; [=&lt;ДефЗнач&gt;]])[Экспорт]<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Объявления
+локальных переменных;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//
+Операторы;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Возврат
+&lt;ВозвращаемоеЗначение&gt;;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//
+Операторы;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецФункции<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+Синтаксис:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Function &lt;Имя_функции&gt; ([[Val]
+&lt;Парам1&gt;[=&lt;ДефЗнач&gt;], ...<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:.5in'><span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>, [Val] &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>П<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>apa<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>м<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>N&gt; [=&lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДефЗнач<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>&gt;]])[Export]<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Объявления
+локальных переменных;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//
+Операторы;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Return
+&lt;ВозвращаемоеЗначение&gt;;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//
+Операторы;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EndFunction<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:<o:p></o:p></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Имя_функции&gt;<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Назначает имя
+  функции.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Знач<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательное
+  ключевое слово, которое указывает на то, что следующий за ним параметр передается
+  по значению, т. е. изменение значения формального па­раметра при выполнении
+  функции никак не повлия­ет на значение фактического параметра, переданного
+  при вызове функции. Если это ключевое слово не указано, то параметр функции
+  передается по ссылке, то есть изменение внутри функции значения фор­мального
+  параметра приведет к изменению значения соответствующего фактического
+  параметра.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Парам1&gt;,
+  ..., &lt;Парам<span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>N<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>&gt;<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  список формальных параметров, разделяемых запятыми. Значения формальных пара­метров
+  должны соответсвовать значениям передавае­мых при вызове функции фактических
+  параметров. В этом списке определяются имена каждого из пара­метров так, как
+  они используются в тексте функции. Список формальных параметров может быть
+  пуст. <b style='mso-bidi-font-weight:normal'>См. также:</b> «Передача
+  параметров».</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>=&lt;ДефЗнач&gt;<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Необязательная установка значения параметра
+  по умолчанию. Параметры с установленными значения­ми по умолчанию можно
+  располагать в любом месте списка формальных параметров.</p>
+  <p class=MsoNormal>Если параметр при вызове процедуры опущен,
+  то он принимает либо установленное по умолчанию значение (если оно есть) либо
+  принимает «пустое» значение (значение неопределенного типа).</p>
+  <p class=MsoNormal>Если параметру не задано значение по
+  умолчанию и он является последним в списке передаваемых па­раметров, то при
+  вызове процедуры его нельзя опус­кать.</p>
+  <p class=MsoNormal>Если параметру задано значение по умолчанию
+  и он является последним в списке, то при вызове про­цедуры его можно опускать
+  в списке передаваемых фактических параметров и не ставить запятую перед
+  опущенным параметром.</p>
+  <p class=MsoNormal style='text-indent:0in'>Если параметру не
+  задано значения по умолчанию, то при вызове процедуры его можно опускать в
+  спи­ске передаваемых фактических параметров, но разде­лительную запятую надо
+  ставить.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Экспорт<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательное
+  ключевое слово, которое указывает на то, что данная функция является доступной
+  из других программных модулей. Данное ключевое сло­во имеет смысл
+  использовать только в <i style='mso-bidi-font-style:normal'>глобальном
+  программном модуле</i>.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Объявления
+  локальных переменных<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Объявляются
+  локальные переменные, на которые можно ссылаться только в рамках этой функции
+  (см. оператор <span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Перем).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>//Операторы<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Исполняемые
+  операторы функции.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Возврат<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Ключевое слово,
+  которое завершает выполнение функции и возвращает <span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВозвращаемоеЗначение<span
+  lang=RU> в выражение, в котором используется функция. Ис­пользование данного
+  ключевого слова в функции обязательно.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;ВозвращаемоеЗначение&gt;<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение, значение
+  которого содержит результат обращения к функции.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецФункции<o:p></o:p></p>
+  </td>
+  <td width=574 valign=top style='width:430.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Обязательное ключевое
+  слово, обозначающее конец исходного текста функции.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Ключевое слово <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Функция<span
+lang=RU> начинает секцию исходного текста функции, вы­полнение которой можно
+инициировать из любой точки программного модуля, просто указав Имя_функции со
+списком параметров (если параметры не пере­даются, то круглые скобки, тем не
+менее, обязательны). Если в <i style='mso-bidi-font-style:normal'>глобальном
+про­граммном модуле</i> в теле описания функции использовано ключевое слово <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Экспорт, то это означает, что
+данная функция является доступной из всех дру­гих программных модулей
+конфигурации. Ключевое слово <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Экспорт<span
+lang=RU> имеет смысл использовать только в <i style='mso-bidi-font-style:normal'>глобальном
+программном модуле</i>.</p>
+
+<p class=MsoNormal>Выполнение функции заканчивается обязательным
+оператором <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Возврат.
+Функции отличаются от процедур только тем, что возвращают <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Воз вращаемое Значение. Конец
+программной секции функции определяется по оператору <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецФункции<span
+lang=RU>.</p>
+
+<p class=MsoNormal>Вызов любой функции в тексте программного
+модуля можно записывать как вызов процедуры, т. е. в языке допускается не
+принимать от функции воз­вращаемое значение.</p>
+
+<p class=MsoNormal>Переменные, объявленные в теле функции в
+разделе <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Объявления_локальных_переменных<span
+lang=RU>, являются локальными переменными данной функции, поэтому доступны
+только в этой функции (за исключением случая передачи их как параметров при
+вызове других процедур, функций или методов).</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'>Замечание:</b><span
+lang=RU> ключевые слова <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Функция, КонецФункции<span
+lang=RU> являются не операто­рами, а операторными скобками, поэтому не должны
+заканчиваться точ­кой с запятой (это может приводить к ошибкам выполнения
+модуля).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> «Передача параметров»</p>
+
+<p class=MsoBodyTextIndent><b style='mso-bidi-font-weight:normal'><span
+lang=RU style='layout-grid-mode:both'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Перем Глоб;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Описание функции<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Функция МояФункция(Парам1, Парам2,
+ПарамЗ) Экспорт<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Лок =
+Глоб + Парам1 + Парам2 + ПарамЗ;<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Возврат
+Лок;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецФункции<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Глоб = 123;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Рез = МояФункция(5, 6, 7);<span
+style='mso-tab-count:1'>      // Вызов функции<o:p></o:p></p>
+
+<h3><a name="_Toc493032202">Предварительное описание процедур и
+функций</a></h3>
+
+<p class=MsoNormal>В тексте программного модуля допускается
+предварительное описание про­цедур и функций без их определения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l3 level1 lfo4;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>фрагмента текста модуля, содержащий
+предварительное описание процеду­ры.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура А(Парам1, Парам2) Далее<o:p></o:p></p>
+
+<p class=MsoBodyTextIndent><span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";layout-grid-mode:both'>Процедура
+Б()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Перем АА, ББ;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+А(АА, ББ);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+...<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура А(Парам1, Парам2)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoBodyTextIndent style='margin-top:12.0pt'><span lang=RU
+style='layout-grid-mode:both'>В приведенном фрагменте видно, что обращение к
+процедуре А (из проце­дуры Б) предшествует по тексту ее фактическому
+определению, но перед про­цедурой Б имеется предварительное описание процедуры
+А.<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in'><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура А(Парам1, Парам2) Далее<o:p></o:p></p>
+
+<p class=MsoNormal>На то, что это предварительное описание
+указывает наличие ключевого сло­ва <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Далее<span
+lang=RU> (англоязычный синоним — <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Forward<span
+lang=RU>), которое замещает в случае предварительного описания тело процедуры и
+ключевое слово <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<span
+lang=RU>. Предварительное описание процедуры/функции может со­держаться в любом
+месте текста модуля, где допускается фактическое опреде­ление процедуры или
+функции, а сам заголовок процедуры/функции должен в точности соответствовать
+заголовку в фактическом определении, включая на­личие, если необходимо,
+ключевого слова <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Экспорт и
+имен формальных пара­метров.</p>
+
+<h3><a name="_Toc493032203">Передача параметров</a></h3>
+
+<p class=MsoNormal>По умолчанию параметры методов, процедур и
+функций передаются по ссылке, то есть изменение внутри процедуры или функции
+значения формаль­ного параметра ведет к изменению значения соответствующего
+фактического параметра. При передаче параметра по значению изменение значения
+формаль­ного параметра никак не влияет на фактический параметр вызова
+процедуры. Для указания того, что тот или иной параметр следует передавать по
+значению, следует в исходном тексте процедуры или функции перед именем
+параметра записать ключевое слово <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Знач<span
+lang=RU> (англоязычный синоним — <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Val<span
+lang=RU>).</p>
+
+<p class=MsoNormal>Если параметру задано значение по умолчанию и
+он является последним в списке, то при вызове процедуры его можно опускать в
+списке передаваемых фактических параметров и не ставить запятую перед опущенным
+параметром.</p>
+
+<p class=MsoNormal>Если параметру не задано значения по
+умолчанию, то при вызове процеду­ры его можно опускать в списке передаваемых
+фактических параметров, но разделительную запятую надо ставить.</p>
+
+<p class=MsoNormal>Если параметр при вызове процедуры опущен, то
+он принимает либо уста­новленное по умолчанию значение (если оно есть) либо
+принимает «пустое» значение (значение неопределенного типа).</p>
+
+<p class=MsoNormal>Если при вызове метода, процедуры или функции
+параметры не передаются (пустой список параметров), то, тем не менее, круглые
+скобки обязательно тре­буется ставить.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Перем Глоб;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Описание функции<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Функция МояФункция(Знач Пар1, Пар2,
+Пар3) Экспорт<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Лок = Глоб + Пар1 + Пар2 + Пар3;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пар1 = 40;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Возврат Лок;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецФункции<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Глоб = 123;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>А = 10;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Рез = МояФункция(А, 6, 7); // Вызов
+функции<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Здесь Рез = 146, а переменная А =
+10, несмотря на то, что в теле<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// функции значение параметра Пар1
+изменено на 40<o:p></o:p></p>
+
+<h3><a name="_Toc493032204">Передача локального контекста
+программного модуля в качестве параметра</a></h3>
+
+<p class=MsoNormal>В языке есть возможность передавать локальный
+контекст программного модуля (см. «Контекст выполнения программного модуля»,
+«Виды программ­ных модулей») в качестве параметра процедуры или функции. Для
+этого в ка­честве фактического параметра при вызове процедуры или функции
+использу­ется ключевое слово <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Контекст<span
+lang=RU> (англоязычный синоним — <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Context<span
+lang=RU>). Данная возможность позволяет, например, написать в глобальном
+программном модуле процедуры и функции (общие для многих модулей), которые, при
+их вызове из других модулей, будут исполняться с использованием конкретного
+локального контекста вызвавшего модуля.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:32.2pt;text-indent:-.25in;mso-list:l18 level1 lfo5;tab-stops:list 32.2pt'><![if !supportLists]><span
+lang=RU style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Допустим, у нас есть несколько различных
+документов, причем у всех есть реквизит <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&quot;Склад&quot;<span
+lang=RU>. В каждом программном модуле формы редактирования документа нужна
+процедура выбора склада. В глобальном программном модуле напишем процедуру:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура УстСклада(Конт) Экспорт<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// создаем объект типа &quot;справочник&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Скл = СоздатьОбъект(&quot;Справочник.Склады&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// вызываем диалог для выбора элемента Справочника<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Скл.Выбрать(&quot;Выберите Склад&quot;, &quot;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Скл.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// если в диалоге элемент Справочника был выбран, <o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// то присваиваем его значение реквизиту Документа, <o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+// который доступен по локальному контексту<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Конт.Склад = Скл.ТекущийЭлемент();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:32.2pt;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo6;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Здесь переменная Конт является формальным
+параметром, которому при вызове процедуры будет присвоен локальный контекст. В
+данном примере обращение к реквизитам и методам локального контекста происходит
+«че­рез точку» после идентификатора Конт, например:</p>
+
+<p class=MsoFootnoteText style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in'><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Конт.Склад = Скл.ТекущийЭлемент();<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l21 level1 lfo7;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Теперь в любом программном модуле
+конфигурации (в данном примере в любом Модуле формы документа) для выбора
+склада можно вызвать про­цедуру, передав ей свой локальный контекст в качестве
+параметра:</p>
+
+<p class=MsoFootnoteText style='margin-top:12.0pt'><span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстСклад(Контекст);<o:p></o:p></p>
+
+<h2><a name="_Toc493032205">Пример исходного текста программного
+модуля</a></h2>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Перем ФлагПроводки; // Флаг проведения
+Документа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Перем ФлагИзменения; // Флаг изменения
+Документа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//————————————————————————————————————————————————<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Функция КонтрольОстатка()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// Функция возвращает текущее значение остатка товара на складе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Ост = Регистр.ОстаткиТоваров.Остаток(Склад, Товар,
+&quot;ОстатокТовара&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Возврат Ост;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецФункции<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//————————————————————————————————————————————————<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура УстФлагИзм()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ФлагИзменения = 1;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//————————————————————————————————————————————————<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ВводНового()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// предопределенная процедура, вызываемая при вводе нового документа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// установим дату Документа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ДатаДок = РабочаяДата();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// установим реквизиты Документа (по умолчанию)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ТипНакладной = Перечисление.ТипыНакладных.Перемещение;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Фирма = Константа.ДефФирма;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Склад = Константа.ДефСклад;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+СкладПолучатель = Константа.ДефСклад;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//————————————————————————————————————————————————<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ВыходноеСообщение()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// процедура, которую мы будем вызывать при нажатии кнопки
+&quot;ОК&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если (ФлагПроводки = 1) И (ФлагИзменения = 1) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;Проведенный Документ был изменен! При<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">           <span style="mso-spacerun: yes"> | сохранении
+обязательно проведите Документ снова!&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//————————————————————————————————————————————————<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// При входе в Форму запомним
+промежуточные переменные<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ФлагПроводки = Проведен();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ФлагИзменения = 0;<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

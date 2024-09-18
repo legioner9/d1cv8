@@ -1,0 +1,1352 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part40</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part40.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492735430"></a><a name="_Toc494938319"><span style='mso-bookmark: _Toc492735430'>Глава 40<br> Связь с внешними приложениями посредством<br> механизмов </a><span style='mso-bookmark:_Toc494938319'><span style='mso-bookmark:_Toc492735430'><span style='mso-ansi-language:EN-US'>DDE<span lang=RU> и <span style='mso-bookmark:_Toc494938319'><span style='mso-bookmark:_Toc492735430'><span style='mso-ansi-language:EN-US'>OLE <span style='mso-bookmark:_Toc494938319'><span style='mso-bookmark: _Toc492735430'><span style='mso-ansi-language:EN-US'>Automation</h1>
+
+<p class=MsoNormal>При формировании пользовательского интерфейса
+прикладной задачи до­вольно часто существуют ситуации, когда для удобства
+работы пользователя необходимо дать возможность обрабатывать имеющиеся данные с
+помощью других, имеющихся на компьютере программ.</p>
+
+<p class=MsoNormal>Одним из примеров использования такой
+возможности может служить за­пуск программы <span style='mso-ansi-language:
+EN-US'>Microsoft <span style='mso-ansi-language:EN-US'>Excel<span
+lang=RU> (непосредственно из программы 1С:Предприятие ) с одновременным выводом
+в нее результатов расчета. Далее пользователь может обрабатывать полученные
+результаты (просматривать, ре­дактировать, печатать и т. п.) непосредственно в
+среде <span style='mso-ansi-language:EN-US'>Microsoft <span
+style='mso-ansi-language:EN-US'>Excel.</p>
+
+<p class=MsoNormal>Одну из возможностей запуска и управления
+внешними приложениями дает механизм <span style='mso-ansi-language:EN-US'>OLE
+<span style='mso-ansi-language:EN-US'>Automation. Встроенный
+язык системы 1С:Предприятие под­держивает технологию управления объектами <span
+style='mso-ansi-language:EN-US'>OLE. Непосредственно при
+по­мощи операторов языка можно управлять, например, программами, входящи­ми в <span
+style='mso-ansi-language:EN-US'>Microsoft <span style='mso-ansi-language:
+EN-US'>Office.</p>
+
+<h2><a name="_Toc492735431"></a><a name="_Toc494938320"><span style='mso-bookmark:
+_Toc492735431'>Контекст работы с внешними приложениями</a></h2>
+
+<p class=MsoNormal>Внешнее приложение, с которым предполагается
+устанавливать связь, должно отвечать следующим условиям: внешнее приложение
+должно поддер­живать механизм <span style='mso-ansi-language:EN-US'>OLE
+<span style='mso-ansi-language:EN-US'>Automation и должно
+быть установлено на том компью­тере, где его намечено использовать.</p>
+
+<p class=MsoNormal>Во всех программных модулях вызов процедур или
+функций внешнего при­ложения может выполняться только при помощи переменной со
+ссылкой на объект, который создается функцией <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>. Чтобы вызвать метод внешнего приложения, имя метода (с указанием
+необходимых параметров) пи­шется через точку после идентификатора переменной.</p>
+
+<p class=MsoNormal>При создании переменной со ссылкой на внешнее
+приложение, в качестве имени объекта в операторе <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU> должен выступать зарегистриро­ванный <span style='mso-ansi-language:
+EN-US'>OLE идентификатор внешнего приложения.</p>
+
+<p class=MsoNormal>Зарегистрированный <span
+style='mso-ansi-language:EN-US'>OLE идентификатор внешнего
+приложения — это уникальный идентификатор программного продукта, который
+записывается в регистрационную базу <span style='mso-ansi-language:EN-US'>Windows<span
+lang=RU> при инсталляции программы.</p>
+
+<p class=MsoNormal>Примеры <span style='mso-ansi-language:
+EN-US'>OLE идентификаторов:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>Excel<o:p></o:p></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>&quot;Excel.Application&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>LotusApproach<o:p></o:p></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>&quot;Approach.Application&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>MSGraph<o:p></o:p></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>&quot;MSGraph.Application&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>PowerPoint<o:p></o:p></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span style='mso-ansi-language:
+  EN-US'>&quot;PowerPoint.Application&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Создаем объект Excel (запускаем
+программу Excel)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Ехсе<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>l <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>=<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'> <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект(&quot;Excel.Application&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// делаем окно программы Excel видимым
+и активным<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Excel.Visible =
+l;<o:p></o:p></p>
+
+<h2><a name="_Toc492735432"></a><a name="_Toc494938321"><span style='mso-bookmark:
+_Toc492735432'>Методы внешних приложений</a></h2>
+
+<p class=MsoNormal>Методы внешних приложений, а также синтаксис
+их использования у каж­дого приложения свои. Описание процедур и функций внешнего
+приложений можно получить только в документации данного приложения. Например,
+прак­тически все программы, входящие в пакет <span style='mso-ansi-language:
+EN-US'>Microsoft <span style='mso-ansi-language:EN-US'>Office<span
+lang=RU> используют для сво­его управления версию языка <span
+style='mso-ansi-language:EN-US'>Visual <span style='mso-ansi-language:
+EN-US'>Basic.</p>
+
+<p class=MsoNormal>Чтобы вызвать метод внешнего приложения в
+языке системы 1С:Предприятие, имя метода (с указанием необходимых параметров)
+пишется через точку после имени ссылки на объект внешнего приложения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// Создаем
+объект <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Excel<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> и присвоим его переменной языка<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ОкноЕхсеl =
+СоздатьОбъект(&quot;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Excel<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Application<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//
+устанавливаем имя окна <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Excel<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ОкноЕхсеl.Caption
+= &quot;Отчет&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// создадим
+новую рабочую книгу<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НовыеРабочиеКниги<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> = <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОкноЕхсе<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>l.Workbooks;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РабочаяКнига = НовыеРабочиеКниги.<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>Add<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>();<o:p></o:p></p>
+
+<p class=MsoNormal><b>Ограничения:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Не поддерживаются значения, передаваемые по
+ссылке;</p>
+
+<p class=MsoNormal>Не поддерживаются массивы, в точности <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>SAFEARRAY;</p>
+
+<p class=MsoNormal>Не поддерживаются значения типа <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>IUnknown.</p>
+
+<p class=MsoNormal>Эти ограничения не столь серьезны, т. к.
+например, все типы данных, с кото­рыми работает <span style='mso-ansi-language:
+EN-US'>Excel и большинство других наиболее распространенных
+про­грамм, полностью поддерживаются.</p>
+
+<p class=MsoNormal><b>Типы поддерживаемых данных:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Boolean<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Currency<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Date<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Double-precision floating-point<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Integer<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Long integer<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Object<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Single-precision floating-point<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>String<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//В данном
+примере запускается программа <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Excel<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>, <o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// затем в нее
+передаются некоторые данные, и затем<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// на их основе
+строится диаграмма.<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// Создаем
+объект <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Excel<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> и присвоим его переменной языка<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ОкноЕхсеl =
+СоздатьОбъект(&quot;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Excel<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Application<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//
+устанавливаем имя окна <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Excel<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ОкноЕхсеl.Caption
+= &quot;Отчет&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// создадим
+новую рабочую книгу<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НовыеРабочиеКниги<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> = <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОкноЕхсе<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>l.Workbooks;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РабочаяКнига = НовыеРабочиеКниги.А<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>dd<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ЧислоРядов =
+10;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ЧислоСтолбцов =
+5;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// проставим
+названия строк<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Ряд = 1 По ЧислоРядов Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Ячейка = ОкноЕхсе<span class=a0><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>l<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>.Cells(Ряд + 1, 1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Ячейка.Value = &quot;Строка &quot; + Строка(Ряд);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// проставим
+названия столбцов<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Столбец = 1 По ЧислоСтолбцов Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Ячейка = ОкноЕхсе<span class=a0><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>l<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>.Cells(1, Столбец + 1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Ячейка.Value = &quot;Столбец &quot; + Строка(Столбец);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// заполним
+ячейки таблицы значениями<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Ряд = 1 По ЧислоРядов Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Для Столбец = 1 По ЧислоСтолбцов Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Ячейка = ОкноЕхсе<span class=a0><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>l<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>.<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Cells<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>(Ряд + 1, Столбец + 1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Ячейка.<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Value<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'> = Ряд + Столбец;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// выделим
+область в таблице и присвоим ее переменной языка<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Область =
+ОкноЕхсеl.Range(ОкноЕхсеl.Cells(1, 1), <o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                          ОкноЕхсе<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>l<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>.Cells(ЧислоРядов
++ 1, ЧислоСтолбцов + 1));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// зададим имя выделенной области<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Область.Name = &quot;ОбластьДанных&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// определим рамку выделенной области и
+присвоим ее переменной языка<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Рамка = Область.Borders;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// установим
+стили для рамки выделенной области<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Рамка.LineStyle
+= 1;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Рамка.<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Colorlndex<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> = 3;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// построим
+диаграмму Лист=РабочаяКнига.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Worksheets<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Диаграмма = Лист.ChartObjects();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Диаграмма = Диаграмма.<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>Add<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>(5, 5
++ Область.Тор + Область.<span class=a0><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Height<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>,<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                          Область.<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>Width<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>, Область.<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>Height<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>МояДиаграмма = Диаграмма.Chart;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>МояДиаграмма.ChartWizard(&quot;ОбластьДанных
+&quot;, -4102, 6, 1, 1, 1, 1, &quot;Отчет&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>// сделаем окно
+<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Excel<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> видимым и активным<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ОкноЕхсеl.<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Visible<span class=a0><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>
+= 1;<o:p></o:p></p>
+
+<h2><a name="_Toc492735433"></a><a name="_Toc494938322"><span style='mso-bookmark:
+_Toc492735433'>Работа системы 1С:Предприятие в качестве </a><span
+style='mso-bookmark:_Toc494938322'><span style='mso-bookmark:_Toc492735433'><span
+style='mso-ansi-language:EN-US'>OLE <span
+style='mso-bookmark:_Toc494938322'><span style='mso-bookmark:_Toc492735433'><span
+style='mso-ansi-language:EN-US'>Automation сервера</h2>
+
+<p class=MsoNormal>Система 1С:Предприятие может быть запущена
+внешним приложением в качестве <span style='mso-ansi-language:EN-US'>OLE
+<span style='mso-ansi-language:EN-US'>Automation сервера и
+предоставляет доступ ко всем атрибутам и методам своего <i>глобального
+контекста </i>(см. «Контекст выполнения программно­го модуля»). Кроме того, OLE-сервер
+1С:Предприятие имеет дополнительные методы, с помощью которых можно выполнить
+последовательность операторов или вычислить выражение, заданное на встроенном
+языке 1С:Предприятие.</p>
+
+<p class=MsoNormal>Для запуска системы 1С:Предприятие в качестве <span
+style='mso-ansi-language:EN-US'>OLE <span style='mso-ansi-language:EN-US'>Automation<span
+lang=RU> сервера из внешнего приложения, выполняется следующая последовательность
+дейст­вий:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l40 level1 lfo60;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>создается объект с <span
+style='mso-ansi-language:EN-US'>OLE идентификатором:</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l40 level2 lfo60'><![if !supportLists]><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>V1<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>С<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Enterprise<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Application<span
+lang=RU> — версия независимый ключ;</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l40 level2 lfo60'><![if !supportLists]><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>V<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>77.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Application<span
+lang=RU> — версия зависимый ключ;</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l40 level2 lfo60'><![if !supportLists]><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>V<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>77<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>S<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Application<span
+lang=RU> — версия зависимый ключ, <span style='mso-ansi-language:EN-US'>SQL<span
+lang=RU> версия;</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l40 level2 lfo60'><![if !supportLists]><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>V<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>77<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>L<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Application<span
+lang=RU> — версия зависимый ключ, локальная версия;<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l40 level2 lfo60'><![if !supportLists]><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>V<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>77<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>M<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Application<span
+lang=RU> — версия зависимый ключ, сетевая версия.<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l40 level1 lfo60;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>выполняется инициализация системы
+1С:Предприятие методом <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Initialize<span
+lang=RU>.</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l40 level1 lfo60;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>вызываются атрибуты и методы системы
+1С:Предприятие как <span style='mso-ansi-language:EN-US'>OLE <span
+style='mso-ansi-language:EN-US'>Automation сервера</p>
+
+<p class=a><b>Замечание 1:</b> Поскольку
+программа 1С:Предприятие является одновременно <span style='mso-ansi-language:
+EN-US'>OLE <span style='mso-ansi-language:EN-US'>Automation<span
+lang=RU> сервером и <span style='mso-ansi-language:EN-US'>OLE <span
+style='mso-ansi-language:EN-US'>Automation клиентом, то
+возможно из 1С:Предприятие обращаться к другой копии 1С:Предприятие (например,
+к другой конфигурации) для обмена данными. В основном все современ­ные
+программные продукты поддерживают механизм <span style='mso-ansi-language:
+EN-US'>OLE <span style='mso-ansi-language:EN-US'>Automation<span
+lang=RU>, это касается в частности <span style='mso-ansi-language:EN-US'>MS
+<span style='mso-ansi-language:EN-US'>Office, <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>FoxPro<span
+lang=RU> и приложений на них на­писанных, <span style='mso-ansi-language:
+EN-US'>DAO и т. п., поэтому программа 1С:Предприятие может
+полно­стью интегрироваться с ними.</p>
+
+<p class=a><b>Замечание 2:</b> Не
+локализованные версии внешних программ, обращающихся к программе 1С:Предприятие
+посредством <span style='mso-ansi-language:EN-US'>OLE <span
+style='mso-ansi-language:EN-US'>Automation, могут непра­вильно
+интерпретировать русские идентификаторы объектов агрегатных типов данных,
+например, реквизитов справочников. Данное замечание не относится к продуктам <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>Office<span
+lang=RU> и к программам, использующим в каче­стве языка обращения к <span
+style='mso-ansi-language:EN-US'>OLE объектам <span
+style='mso-ansi-language:EN-US'>Microsoft <span style='mso-ansi-language:
+EN-US'>Visual <span style='mso-ansi-language:EN-US'>Basic<span
+lang=RU>. Рекоменду­ется использовать локализованные версии программных
+продуктов, либо в конфигурации использовать идентификаторы без символов кириллицы.
+Для обращения к атрибутам и методам агрегатных типов данных системы 1С:Предприятие
+из внешних приложений рекомендуется использовать их англоязычные синонимы.</p>
+
+<p class=a><b><span lang=RU style='layout-grid-mode:both'>Замечание 3:</b><span
+lang=RU> Все созданные объекты <span style='mso-ansi-language:EN-US'>OLE
+<span style='mso-ansi-language:EN-US'>Automation
+существуют до тех пор, пока существует переменная, которая содержит значение
+данного объекта. Следовательно, сама программа 1С:Предприятие, выступающая в
+качестве объекта <span style='mso-ansi-language:EN-US'>OLE <span
+style='mso-ansi-language:EN-US'>Automation в другой
+программе, будет находиться в памяти компьютера до удаления или изменения значения
+переменной, содержа­щей ее в качестве объекта.</p>
+
+<h3><a name="_Toc492735434"></a><a name="_Toc494938323"><span style='mso-bookmark:
+_Toc492735434'>Атрибуты системы 1С:Предприятие как </a><span
+style='mso-bookmark:_Toc494938323'><span style='mso-bookmark:_Toc492735434'><span
+style='mso-ansi-language:EN-US'>OLE <span
+style='mso-bookmark:_Toc494938323'><span style='mso-bookmark:_Toc492735434'><span
+style='mso-ansi-language:EN-US'>Automation сервера</h3>
+
+<p class=MsoNormal>Система 1С:Предприятие в качестве <span
+style='mso-ansi-language:EN-US'>OLE <span style='mso-ansi-language:EN-US'>Automation<span
+lang=RU> сервера предоставляет полный доступ к своему <i>глобальному контексту </i>(см.
+«Контекст выполнения программного модуля»). Поэтому объект OLE-сервер 1С:Предприятие
+в каче­стве своих атрибутов может иметь: системные константы, значения заданных
+в конфигураторе <i>констант</i>, <i>перечислений</i>, <i>регистров</i>, <i>видов
+расчета</i>, <i>групп видов расчета</i>, а также переменные, объявленные в
+глобальном программном модуле с ключевым словом <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Экспорт<span
+lang=RU>.</p>
+
+<h3><a name="_Toc492735435"></a><a name="_Toc494938324"><span style='mso-bookmark:
+_Toc492735435'>Методы системы 1С:Предприятие как </a><span
+style='mso-bookmark:_Toc494938324'><span style='mso-bookmark:_Toc492735435'><span
+style='mso-ansi-language:EN-US'>OLE <span
+style='mso-bookmark:_Toc494938324'><span style='mso-bookmark:_Toc492735435'><span
+style='mso-ansi-language:EN-US'>Automation сервера</h3>
+
+<p class=MsoNormal>Система 1С:Предприятие в качестве <span
+style='mso-ansi-language:EN-US'>OLE <span style='mso-ansi-language:EN-US'>Automation<span
+lang=RU> сервера предоставляет полный доступ к своему <i>глобальному контексту </i>(см.
+«Контекст выполнения программного модуля»). Поэтому объект OLE-сервер 1С:Предприятие
+в каче­стве своих методов может иметь: системные процедуры и функции, а также
+процедуры и функции глобального программного модуля, объявленные с клю­чевым
+словом <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Экспорт.
+Кроме того, OLE-сервер 1С:Предприятие имеет три дополнительных метода: <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Initialize, <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>EvalExpr, <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ExecuteBatch<span
+lang=RU>.</p>
+
+<h4><a name="_Toc492735436"></a><a name="_Toc494938325"><span style='mso-bookmark:
+_Toc492735436'>Initialize</a></h4>
+
+<p class=MsoNormal>Выполнить инициализацию системы 1С:Предприятие.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Initialize(&lt;Имя_Объекта&gt;.RMTrade,
+&lt;КоманднаяСтрока&gt;, &lt;ПустаяСтрока&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Initialize<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Имя_Объекта&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Идентификатор
+  созданного <span style='mso-ansi-language:EN-US'>OLE<span
+  lang=RU> объекта 1С:Предприятие.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>RMTrade<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Добавочное ключевое
+  слово.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>КоманднаяСтрока&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — командная строка за­пуска 1С:Предприятие.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ПустаяСтрока&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение.
+  Параметр может содер­жать пустую строку или строковое значение &quot;<span
+  style='mso-ansi-language:EN-US'>NO_<span
+  style='mso-ansi-language:EN-US'>SPLASH_<span
+  style='mso-ansi-language:EN-US'>SHOW&quot; — отключить
+  заставку при запуске системы 1С:Предприятие в режиме <span
+  style='mso-ansi-language:EN-US'>OLE <span style='mso-ansi-language:
+  EN-US'>Automation сервера.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение логического типа: <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>TRUE, если инициализация прошла
+удачно, или <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>FALSE, если
+нет.</p>
+
+<p class=a><b>Замечание</b>: В <span
+style='mso-ansi-language:EN-US'>OLE <span style='mso-ansi-language:EN-US'>Automation
+<span style='mso-ansi-language:EN-US'>TRUE и <span
+style='mso-ansi-language:EN-US'>FALSE имеют соответственно
+значе­ния: -1 (минус единица) и 0.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Initialize<span
+lang=RU> выполняет инициализацию системы 1С:Предприятие.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* здесь пример приводится на языке <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>Visual
+<span style='mso-ansi-language:EN-US'>Basic:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Dim v7 As Object<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Set v7 =
+CreateObject(&quot;V77.Application&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>result =
+v7.Initialize(v7.RMTrade, &quot;/DC:\V7\DB /M&quot;, &quot;&quot;)<o:p></o:p></p>
+
+<h4><a name="_Toc492735437"></a><a name="_Toc494938326"><span style='mso-bookmark:
+_Toc492735437'>EvalExpr</a></h4>
+
+<p class=MsoNormal>Вычислить выражение системы 1С:Предприятие.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EvalExpr(&lt;СтрокаВыражения&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EvalExpr<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>СтрокаВыражения&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — выражение, записанное на встроенном языке 1С:Предприятие.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Результат вычисленного выражения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>EvalExpr<span
+lang=RU> вычисляет выражение, записанное в параметре &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтрокаВыражения<span
+lang=RU>&gt; на встроенном языке 1С:Предприятие и возвращает ре­зультат
+вычисления. Результатом выражения может быть число, строка, дата или значение
+любого агрегатного типа данных. Результат с неопределенным типом данных
+преобразуются к строковому типу.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* здесь пример приводится на языке <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>Visual
+<span style='mso-ansi-language:EN-US'>Basic:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Dim v7 As Object<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Dim Товары As Object<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Set v7 =
+CreateObject(&quot;V77.Application&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>result = v7.Initialize(v7.RMTrade,
+&quot;/DC:\V7\DB /M&quot;, &quot;&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Set Товары =
+v7.EvalExpr(&quot;ОтдатьСправочникТоваров()&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc492735438"></a><a name="_Toc494938327"><span style='mso-bookmark:
+_Toc492735438'>CreateObject</a></h4>
+
+<p class=MsoNormal>Создает объект агрегатного типа данных системы
+1С:Предприятие и возвращает ссылку на него.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>CreateObject(&lt;ИмяАгрегатногоТипа&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>CreateObject<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=192 valign=top style='width:2.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяАгрегатногоТипа&gt;<o:p></o:p></p>
+  </td>
+  <td width=480 valign=top style='width:359.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  значение которого со­держит имя агрегатного типа данных, объявлен­ного в
+  конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Ссылка на созданный объект агрегатного типа
+данных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>CreateObject<span
+lang=RU> создает объект агрегатного типа данных системы 1С:Предприятие и
+возвращает ссылку на него. Данная функция обычно ис­пользуется одновременно с
+неявным определением переменной и присвоением ей ссылки на объект агрегатного
+типа данных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Загрузить()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ФС.Существуетфайл(Путь + &quot;\NUL&quot;) = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;Путь информационной базы не найден!&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+V7 = СоздатьОбъект(&quot;V77.Application&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Открыта = V7.Initialize(V7.RMTrade, &quot;/<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>d<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&quot;
++ Путь +<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                              &quot; /M /<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>N<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&quot;
++ Пользователь, &quot;&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если Открыта = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;Ошибка открытия информационной
+базы&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Возврат;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Импорт = <span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>V<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>7.CreateObject(&quot;Справочник.Контрагенты&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Импорт.ВыбратьЭлементы();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Пока Импорт.ПолучитьЭлемент() = 1 Цикл<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Если Импорт.ЭтоГруппа() = 0 Тогда<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">            Сообщить(Импорт.Наименование);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735439"></a><a name="_Toc494938328"><span style='mso-bookmark:
+_Toc492735439'>ExecuteBatch</a></h4>
+
+<p class=MsoNormal>Выполнить последовательность операторов
+системы 1С:Предприятие.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ExecuteBatch(&lt;СтрокаОператоров&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ExecuteBatch<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=176 valign=top style='width:132.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>СтрокаОператоров&gt;</p>
+  </td>
+  <td width=496 valign=top style='width:371.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — текст программы на встроенном языке 1С:Предприятие.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение логического типа: <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>TRUE, если последовательность операторов
+вы­полнены успешно, или <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>FALSE<span
+lang=RU>, если нет.</p>
+
+<p class=a><b>Замечание</b>: В <span
+style='mso-ansi-language:EN-US'>OLE <span style='mso-ansi-language:EN-US'>Automation
+<span style='mso-ansi-language:EN-US'>TRUE и <span
+style='mso-ansi-language:EN-US'>FALSE имеют соответственно
+значе­ния: -1 (минус единица) и 0.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ExecuteBatch<span
+lang=RU> выполняет последовательность операторов, запи­санную в параметре &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СтрокаОператоров&gt; на
+встроенном языке 1С:Предприятие.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* здесь пример приводится на языке <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>Visual
+<span style='mso-ansi-language:EN-US'>Basic:</p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Sub
+Command1_Click ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Dim v7 As Object<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Dim Price As Object<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Set v7 =
+CreateObject(&quot;V77.Application&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   result = v7.Initialize(v7.RMTrade,
+&quot;/DC:\V7\DB /M&quot;, &quot;&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Set Price = v7.EvalExpr(&quot;ОтдатьСправочникТоваров()&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Price.New<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Price.Code = &quot;112233&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Price.Description = &quot;Test string&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Price.Write;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   BoolResult = v7.ExecuteBatch(&quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПроцедураРегл<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>1();<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПроцедураРегл<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>2()&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>End Sub<o:p></o:p></p>
+
+<p class=MsoNormal>* Обращение к программе 1С:Предприятие из
+модуля <span style='mso-ansi-language:EN-US'>MS <span
+style='mso-ansi-language:EN-US'>Excel. В данном примере
+запускается и инициализируется конфигурация 1С:Предприятие с базой данных в
+каталоге <span style='mso-ansi-language:EN-US'>C:\<span
+style='mso-ansi-language:EN-US'>V7\<span
+style='mso-ansi-language:EN-US'>DB в монопольном режиме.
+Далее в про­грамме 1С:Предприятие создается объект типа
+&quot;Справочник.Товары&quot;, где создается новая группа элементов с названием
+&quot;***** Экспорт из <span style='mso-ansi-language:EN-US'>Excel
+******&quot;. Во вновь созданную группу каталога записываются
+данные из таб­лицы <span style='mso-ansi-language:EN-US'>MS <span
+style='mso-ansi-language:EN-US'>Excel. Здесь пример
+приводится на языке <span style='mso-ansi-language:EN-US'>MS <span
+style='mso-ansi-language:EN-US'>Visual <span style='mso-ansi-language:
+EN-US'>Basic.</p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Sub
+Excel_to_trade()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Dim trade As Object<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Dim <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> As Object<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Set trade = CreateObject(&quot;V77
+.Application&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   result = trade.Iinitialize(trade.RMTrade,
+&quot;/DC:\V7\DB /M&quot;, &quot;&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Set <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> = trade.EvalExpr(&quot;CreateObject(&quot;&quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Справочник<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товары<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>&quot;&quot;)&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Товар.НоваяГруппа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Товар.Наименование = &quot;***** Экспорт из Excel ******&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Товар.Записать<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Товар.ИспользоватьРодителя Товар.ТекущийЭлемент<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+N = 100 'Количество строк в документе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+For Count = 1 То N Товар.Новый<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">      <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Наименование<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> = Application.Cells(Count, 2).Value<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">      <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Розн<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>_<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Цена<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> = Application.Cells(Count, 3).Value<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">      <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Мел<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>_<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Опт<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>_<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Цена<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> = Application.Cells(Count, 4).Value<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">      <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.On<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>т<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>_<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Цена<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'> = Application.Cells(Count, 5).Value<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">      <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Товар<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>.<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Записать<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   Next Count<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>End Sub<o:p></o:p></p>
+
+<h3><a name="_Toc492735440"></a><a name="_Toc494938329"><span style='mso-bookmark:
+_Toc492735440'>Работа системы 1С:Предприятие в качестве </a><span
+style='mso-bookmark:_Toc494938329'><span style='mso-bookmark:_Toc492735440'><span
+style='mso-ansi-language:EN-US'>DDE сервера</h3>
+
+<p class=MsoNormal>Другим способом обращения к данным
+1С:Предприятие а из внешних про­грамм является режим <span
+style='mso-ansi-language:EN-US'>DDE. Основное преимущество
+данного режима является динамическое обновление получаемых из 1С:Предприятие
+данных.</p>
+
+<p class=MsoNormal>Система 1С:Предприятие является <span
+style='mso-ansi-language:EN-US'>DDE сервером и
+предоставляет свой сер­вис в получении данных и уведомлении <span
+style='mso-ansi-language:EN-US'>DDE клиента об их
+изменении.</p>
+
+<p class=MsoNormal>В качестве <span style='mso-ansi-language:
+EN-US'>DDE сервера 1С:Предприятие может возвращать
+значение неко­торого выражения, записанного на встроенном языке 1С:Предприятие.
+Возвра­щаемое значение является строкой. Для того, чтобы рассматривать результат
+выражения в качестве числа или даты, например в ячейке <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>Excel<span
+lang=RU>, может потребоваться задание формата значения.</p>
+
+<p class=MsoNormal>Для доступа к 1С:Предприятие посредством <span
+style='mso-ansi-language:EN-US'>DDE следует использовать DDE-объект
+с именем <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>1CV7|DDE.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Ниже приведены примеры размещения в ячейках <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>Excel
+<span style='mso-ansi-language:EN-US'>DDE связей с
+программой 1С:Предприятие. Первое выражение в примере обращается к стандартной
+функции встроенного языка 1С:Предприятие. Второе выраже­ние в примере
+обращается к функции, записанной в глобальном модуле конфигурации программы
+1С:Предприятие.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>='1<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>CV<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>7'|<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>DDE<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>!'РабочаяДата()'<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>='1CV7'|DDE!'СуммаПоНарядам()'<o:p></o:p></p>
+
+<p class=a><b>Замечание 1:</b> Для
+правильной интерпретации значения выражения в качестве числа или даты в <span
+style='mso-ansi-language:EN-US'>MS <span style='mso-ansi-language:EN-US'>Excel<span
+lang=RU>, нужно в операционной системе установить соответствующий формат представления
+даты и числа, как он принят в 1С:Предприятие.</p>
+
+<p class=a><b>Замечание 2:</b> Не
+рекомендуется обращаться посредством <span style='mso-ansi-language:
+EN-US'>DDE к функциям 1С:Предприятие, которые могут выполняться
+продолжительное время. Это связано с тем, что обращение к данной функции будет
+выполняться достаточно часто при обновлениях <span style='mso-ansi-language:
+EN-US'>DDE связей.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

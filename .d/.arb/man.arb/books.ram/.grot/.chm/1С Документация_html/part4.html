@@ -1,0 +1,746 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part4</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part4.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032217">Глава 4<br> Выражения и оператор присваивания</a></h1>
+
+<h2><a name="_Toc493032218">Выражения</a></h2>
+
+<p class=MsoNormal>Выражение — это математическая или логическая
+формула, по которой вы­числяется значение. Математическое выражение может
+стоять справа от знака равенства в операторах присваивания, быть параметром
+процедур или функ­ций, индексом массива переменных. Логическое выражение может
+быть услови­ем в управляющих операторах <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Если<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока, <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Для. Выражения состоят из кон­стант,
+переменных и функций, связанных символами логических и/или ариф­метических
+операций.</p>
+
+<h3><a name="_Toc493032219">Арифметические операции</a></h3>
+
+<p class=MsoNormal>В языке определены следующие виды
+арифметических операций:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:55.05pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>сложение</p>
+  </td>
+  <td width=95 valign=top style='width:70.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 + Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>вычитание</p>
+  </td>
+  <td width=95 valign=top style='width:70.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 - Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>умножение</p>
+  </td>
+  <td width=95 valign=top style='width:70.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 * Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>деление</p>
+  </td>
+  <td width=95 valign=top style='width:70.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 / Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>остаток от деления</p>
+  </td>
+  <td width=95 valign=top style='width:70.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 % Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>унарный минус</p>
+  </td>
+  <td width=95 valign=top style='width:70.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(-Оп1)</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Арифметические операции имеют один или два
+операнда, в зависимости от типа которых операция имеет ту или иную семантику.
+Тот или иной семанти­ческий вариант операции определяется по первому операнду.
+В случае несовпа­дения типа второго операнда с требуемым, значение
+преобразуется к требуемо­му типу в соответствии с правилами преобразования
+типов. Если тип первого операнда не соответствует ни одному из допустимых
+типов, то в зависимости от ситуации может производиться преобразование типов
+или возбуждаться состояние ошибки выполнения.</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Сложение определено
+  для следующих типов операндов:</p>
+  </td>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число + Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата + Число (к дате
+  прибавля­ется число дней)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Вычитание определено
+  для следующих типов операндов:</p>
+  </td>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число – Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата – Число (от
+  даты отнимает­ся число дней)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата – Дата
+  (результатом явля­ется число дней между датами)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Умножение:</p>
+  </td>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число * Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Деление:</p>
+  </td>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число / Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Остаток от деления:</p>
+  </td>
+  <td width=347 valign=top style='width:260.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число % Число</p>
+  </td>
+ </tr>
+</table>
+
+<p class=a><b style='mso-bidi-font-weight:normal'>Замечание</b><span
+lang=RU>. При выполнении операции % (остаток от деления) оба операнда операции
+округляются до целого значения.</p>
+
+<h3><a name="_Toc493032220">Операция конкатенации</a></h3>
+
+<p class=MsoNormal>Операция конкатенации (&quot;+&quot;)
+используется для того, чтобы присоединить одну строку к другой. Длина результирующей
+строки равна сумме длин соеди­няемых строк. В случае несовпадения типа данных
+второго или последующих операндов со строковым типом, их значение преобразуется
+к строковому типу в соответствии с правилами преобразования типов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l29 level1 lfo13;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Для того, чтобы удалить ненужные пробелы,
+используются системные функции <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СокрЛ<span
+lang=RU> и <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СокрП.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ФИО = СокрП(Фамилия) + &quot; &quot; +
+СокрП(Имя) + &quot; &quot; + СокрП(Отчество);<o:p></o:p></p>
+
+<h3><a name="_Toc493032221">Логические операции</a></h3>
+
+<p class=MsoNormal>Логическая операция сравнивает операнды и вырабатывает
+логическое зна­чение: «истина» или «ложь». Существует два вида логических
+операций: опера­ции сравнения и булевы операции. В операциях сравнения
+сравниваются два значения. Булевы операции выполняются над логическими
+значениями, реали­зуя булеву алгебру. Символы булевых операций могут
+комбинироваться, обра­зуя составные операции.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Операции сравнения:<o:p></o:p></i></b></p>
+
+<p class=MsoNormal>В языке определены следующие виды операций
+сравнения:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:55.05pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>больше</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 &gt; Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>больше или равно</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 &gt;= Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>равно</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 = Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>не равно</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 &lt;&gt; Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>меньше</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 &lt; Оп2)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>меньше или равно</p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>(Оп1 &lt;= Оп2)</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoBodyTextIndent style='margin-top:12.0pt'><span lang=RU
+style='layout-grid-mode:both'>Операции сравнения определены для следующих типов
+операндов:<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:55.05pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Больше<span
+  style='mso-tab-count:1'>  </p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число &gt; Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка &gt; Строка</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата &gt; Дата</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Больше или равно:<span
+  style='mso-tab-count:1'>             </p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число &gt;= Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка &gt;= Строка</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата &gt;= Дата</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Меньше:<span
+  style='mso-tab-count:1'>               </p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число &lt; Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка &lt; Строка</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата &lt; Дата</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Меньше или равно:<span
+  style='mso-tab-count:1'>            </p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число &lt;= Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка &lt;= Строка</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата &lt;= Дата</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Равно:<span
+  style='mso-tab-count:1'>    </p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число = Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка = Строка</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата = Дата</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>АгрегатныйТип =
+  АгрегатныйТип</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Не равно:<span
+  style='mso-tab-count:1'>              </p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число &lt;&gt; Число</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строка &lt;&gt;
+  Строка</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата &lt;&gt; Дата</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  lang=RU><o:p></o:p></p>
+  </td>
+  <td width=236 valign=top style='width:177.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>АгрегатныйТип
+  &lt;&gt; АгрегатныйТип</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-top:12.0pt'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>Булевы операции:<o:p></o:p></i></b></p>
+
+<p class=MsoNormal>В языке определены следующие виды булевых
+операций:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:83.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>И<span
+  lang=RU> или <span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>AND</p>
+  </td>
+  <td width=293 valign=top style='width:219.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>конъюнкция (булево
+  И)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИЛИ<span
+  lang=RU> или <span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>OR</p>
+  </td>
+  <td width=293 valign=top style='width:219.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>дизъюнкция (булево
+  ИЛИ)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НЕ<span
+  lang=RU> или <span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>NOT</p>
+  </td>
+  <td width=293 valign=top style='width:219.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>логическое отрицание
+  (булево отрицание НЕ)</p>
+  </td>
+ </tr>
+</table>
+
+<h3><a name="_Toc493032222">Числовые константы</a></h3>
+
+<p class=MsoNormal>Константа числового типа представляется в
+виде:</p>
+
+<p class=MsoNormal>[‘+’|
+‘-’]{‘0’|’1’|’2’|’3’|’4’|’5’|’6’|’7’|’8’|’9’}[.{‘0’|’1’|’2’|’3’|’4’|’5’|’6’|’7’|’8’|’9’}]</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>0<span style='mso-tab-count:1'>   123<span
+style='mso-tab-count:1'>      -15<span style='mso-tab-count:1'>      +24.11<span
+style='mso-tab-count:1'>      0.245<o:p></o:p></p>
+
+<h3><a name="_Toc493032223">Константы даты</a></h3>
+
+<p class=MsoNormal>Дата задается в формате 'ДД.ММ.ГГ' или
+'ДД.ММ.ГГГГ' (дата заключается в одиночные кавычки). Неопределенная дата
+задается как '00.00.00'.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>'12.04.95'<span style='mso-tab-count:
+1'>      '01.01.1996'<o:p></o:p></p>
+
+<h3><a name="_Toc493032224">Строковые константы</a></h3>
+
+<p class=MsoNormal>Константа строкового типа представляется как
+любая последовательность символов, заключенных в двойные кавычки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&quot;Ура заработала&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&quot;Это самая правильная строка&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&quot; &quot;</p>
+
+<p class=MsoNormal>Кроме того, допускаются «многострочные»
+строковые константы. В исход­ном тексте многострочные константы могут
+задаваться двумя способами:</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l4 level1 lfo14;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Первый вариант: В данном случае между
+фрагментами, представляющими отдельные строки многострочной константы, не
+должно встречаться ника­ких символов, за исключением пробелов, переводов строки
+и строк ком­ментариев.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Стр = &quot;Первая строка&quot;<span
+style="mso-spacerun: yes">    // пример строковой константы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&quot;Вторая строка&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&quot;Третья строка&quot;;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l15 level1 lfo15;
+tab-stops:list 32.2pt .5in'><![if !supportLists]><span lang=RU
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Второй вариант: В данном примере значение
+константы полностью иден­тично предыдущему примеру. Отличие заключается в том,
+что каждая от­дельная составляющая не замыкается кавычками, а на каждой последую­щей
+строке помещен символ переноса строки &quot;|&quot;. В этом варианте коммен­тарии
+между открывающей и закрывающей кавычками не допускаются.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Стр = &quot;Первая строка<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Вторая строка<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+|Третья строка&quot;;</p>
+
+<h3><a name="_Toc493032225">Строковые выражения</a></h3>
+
+<p class=MsoNormal>Строковые выражения могут использоваться в
+качестве параметров мето­дов, процедур и функций, либо в правой части оператора
+присваивания. Стро­ковым выражением может быть отдельная строка или сложное
+сочетание стро­ковых констант, функций и операций. То, что выражение является
+строковым, определяется по первому операнду. В случае несовпадения типа второго
+и по­следующих операндов со строковым типом, их значения преобразуются к тре­буемому
+типу в соответствии с правилами преобразования типов. Чтобы ука­зать, что
+выражение является строковым, можно, например, начинать его с пус­той строки
+символов &quot;&quot;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Стр = СокрП(&quot;Фамилия&quot; +
+&quot;, &quot; + Имя + &quot;, &quot; + &quot; отчество&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Стр1 = &quot;&quot; + Докум.Цена +
+Валюта.СокрНаим;<o:p></o:p></p>
+
+<h3><a name="_Toc493032226">Логические выражения</a></h3>
+
+<p class=MsoNormal>В логических выражениях происходит вычисление
+логического значения (истина/ложь). Обычно логические выражения используются в
+управляющих операторах, в которых на основании результата логического выражения
+опре­деляется дальнейшая последовательность выполнения программы. Логические
+выражения вычисляются слева направо. Для того, чтобы избежать неоднознач­ности
+и управлять последовательностью операндов, следует применять круглые скобки.</p>
+
+<p class=MsoNormal>Уровни старшинства логических операций:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Уровень 1</p>
+  </td>
+  <td width=274 valign=top style='width:205.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>операнды,
+  заключенные в скобки</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Уровень 2</p>
+  </td>
+  <td width=274 valign=top style='width:205.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>NOT</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Уровень 3</p>
+  </td>
+  <td width=274 valign=top style='width:205.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>AND</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 valign=top style='width:90.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Уровень 4</p>
+  </td>
+  <td width=274 valign=top style='width:205.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>OR</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-top:12.0pt'><b style='mso-bidi-font-weight:
+normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Стр = &quot;Угадал!&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>а = ВвестиСтроку(Стр, &quot;Назови
+пароль!&quot;, 15);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если (а=1) И ((Стр =
+&quot;пароль&quot;) ИЛИ (Стр = &quot;Пароль&quot;)) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(Стр);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;</p>
+
+<h2><a name="_Toc493032227">Оператор присваивания</a></h2>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&lt;Назначение&gt; = &lt;Источник&gt;;<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:<o:p></o:p></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=149 valign=top style='width:111.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Назначение&gt;<o:p></o:p></p>
+  </td>
+  <td width=546 valign=top style='width:409.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>В качестве <span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>&lt;Назначения&gt; может
+  выступать простая переменная, элемент массива, атрибут агрегатного типа
+  данных (который допускает запись). Элемент массива задается как<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Имя_массива[Индексное_выражение].</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=149 valign=top style='width:111.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Источник&gt;<o:p></o:p></p>
+  </td>
+  <td width=546 valign=top style='width:409.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Оператор присваивания (символ &quot;=&quot;)
+означает присваивание значения <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Источник&gt;<span
+lang=RU> переменной, обозначенной как <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Назначение&gt;<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>А = В;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Стр1 = &quot;777&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ДатаДок = '14.04.96';<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

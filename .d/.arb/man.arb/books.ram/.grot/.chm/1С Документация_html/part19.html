@@ -1,0 +1,967 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part19</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part19.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492734797"></a><a name="_Toc494937686"><span style='mso-bookmark:_Toc492734797'>Глава 19<br> Работа с Журналами проводок</a></h1>
+
+<h2><a name="_Toc492734798"></a><a name="_Toc494937687"><span style='mso-bookmark:
+_Toc492734798'>Контекст работы с журналами проводок</a></h2>
+
+<p class=MsoNormal>Журнал проводок — средство для работы со
+списком проводок. В терминах языка журнал проводок не является специальным
+типом данных (он не имеет значения, его нельзя создать при помощи функции <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект).</p>
+
+<p class=MsoNormal>С журналом в системе связана форма отображения
+списка проводок и про­граммный модуль формы журнала проводок (см. «Виды
+программных моду­лей»). В локальном контексте этого программного модуля
+непосредственно доступны реквизиты формы. Кроме того, здесь непосредственно
+доступен объ­ект «Операция», содержащий значение операции, которой принадлежит
+вы­бранная в журнале проводка. Другими словами, в модуле формы журнала про­водок
+обращение к атрибутам и методам текущей операции выполняется на­прямую.</p>
+
+<h3><a name="_Toc492734799"></a><a name="_Toc494937688"><span style='mso-bookmark:
+_Toc492734799'>Методы контекста Модуля формы журнала проводок</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе методы доступны
+только в контексте модуля формы журнала проводок (см. «Виды программных модулей»).</p>
+
+<h4><a name="_Toc492734800"></a><a name="_Toc494937689"><span style='mso-bookmark:
+_Toc492734800'>ВидыОтбора</a></h4>
+
+<p class=MsoNormal>Установить доступные виды отборов для журнала
+проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидыОтбора(&lt;СписокОтборов&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>KindsOfSelection<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>СписокОтборов&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Строковое выражение. Может принимать значения:</p>
+  <p class=MsoNormal style='text-indent:0in'>список имен отборов
+  через запятую — в журнале проводок будут доступны только указанные виды
+  отборов;</p>
+  <p class=MsoNormal style='text-indent:0in'>символ «*» — для
+  журнала используются все на­значенные в Конфигураторе виды отборов;</p>
+  <p class=MsoNormal style='text-indent:0in'>пустая строка
+  &quot;&quot; — запрещаются все виды отбо­ров.</p>
+  <p class=MsoNormal style='text-indent:0in'>Если параметр не
+  указан, метод возвращает текущий список разрешенных отборов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение, содержащее текущий (на
+момент до вызова метода) список отборов для журнала. Имена отбора в
+возвращаемой строке разделяются запятыми.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыОтбора<span
+lang=RU> устанавливает доступные виды отборов журнала про­водок. Использование
+данного метода влияет на полноту списка видов отбора, который выдается
+пользователю в диалоге «Отбор» при работе с системой 1С:Предприятие.</p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыОтбора<span
+lang=RU> позволяет ограничить число видов отбора, доступных конкретному
+пользователю при работе с журналом проводок, или совсем запре­тить выполнение
+отбора в журнале проводок. Данный метод доступен только в контексте модуля
+формы журнала проводок (см. «Виды программных моду­лей»).</p>
+
+<p class=MsoNormal>Можно выделить 4 варианта использования
+данного метода.</p>
+
+<p class=MsoNormal>1. Если параметр &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СписокОтборов<span
+lang=RU>&gt; не указан, метод возвращает текущий список отборов, установленных
+для журнала проводок.</p>
+
+<p class=MsoNormal>2. Чтобы ограничить использование отборов
+какими-либо конкретными ви­дами отбора, список этих видов отбора следует передать
+методу в качестве па­раметра. Указывать в списке можно как имена отборов,
+автоматически задавае­мые системой 1С:Предприятие, так и отборы, созданные в
+процессе конфигу­рирования: по реквизитам проводки и по субконто проводки.</p>
+
+<p class=MsoNormal>«Системные» отборы задаются включением
+соответствующих опций в окне редактирования свойств проводки в конфигураторе.
+Каждому виду отбора со­ответствует «системное» имя отбора — то, которое
+выдается пользователю в диалоге «Отбор», и которое можно использовать во
+встроенном языке (в том числе, и при вызове метода ВидыОтбора).</p>
+
+<p class=MsoNormal>Для журнала проводок допустимы следующие
+«системные» имена отборов:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сумма —
+отбор по сумме проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВалСумма — отбор
+по валютной сумме проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Валюта —
+отбор по валюте проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Количество
+— отбор по количеству проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Счет — отбор
+по счетам проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СчетДт — отбор
+по счетам дебета проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СчетКт — отбор
+по счетам кредита проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПланСчетов
+— отбор по плану счетов.</p>
+
+<p class=MsoNormal>Кроме этого, в конфигураторе можно включить
+возможность выполнять от­боры по субконто проводки и дополнительным реквизитам
+проводки. Для этого используется опция «Отбор» в закладке «Дополнительные»
+палитры свойств вида субконто или дополнительного реквизита проводки. В этих
+случаях в ка­честве имен отбора следует использовать идентификаторы видов
+субконто или дополнительных реквизитов проводки.</p>
+
+<p class=MsoNormal>3. Если параметр &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СписокОтборов<span
+lang=RU>&gt; равен «*», разрешаются все виды от­боров, установленные для
+журнала проводок в конфигураторе. Вызов метода <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыОтбора<span
+lang=RU> с таким параметром позволяет отключить ранее установленное ограничение
+на использование видов отборов.</p>
+
+<p class=MsoNormal>4. Если в качестве параметра методу <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ВидыОтбора передана пустая
+строка, метод запрещает пользователю выполнение любых отборов в журнале прово­док.</p>
+
+<p class=a><b>Замечание</b>. Ограничение
+списка отборов, выполненное при помощи метода <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыОтбора<span
+lang=RU>, не исключает использование «запрещенного» отбора сред­ствами
+встроенного языка. Например, методом <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыОтбора(&quot;&quot;)<span
+lang=RU> можно запретить использование любых отборов в журнале проводок, но
+устано­вить отбор проводок по конкретной организации. В этом случае пользова­тель
+будет просматривать проводки, относящиеся только к указанной ор­ганизации, но
+не будет иметь возможность изменить организацию.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидыОтбора(&quot;Склад, Клиент,
+Автор&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc492734801"></a><a name="_Toc494937690"><span style='mso-bookmark:
+_Toc492734801'>ЗакладкиОтбора</a></h4>
+
+<p class=MsoNormal>Установить в форме журнала проводок закладки
+для интерактивного отбора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗакладкиОтбора(&lt;ИмяОтбора&gt;,
+&lt;ВИнтервалеЖурнала&gt;, &lt;УстановитьНаЗначение&gt;,<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">               &lt;ЗначениеОтбора&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>TabCtrlSelection<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОтбора&gt;</p>
+  </td>
+  <td width=472 valign=top style='width:353.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение:
+  имя отбора.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВИнтервалеЖурнала&gt;</p>
+  </td>
+  <td width=472 valign=top style='width:353.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  признак отбора только в интервале журнала. Может принимать зна­чения:</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — текущие значения
+  отбора для закладок выбираются только по проводкам в установ­ленном интервале
+  журнала;</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — текущие значения
+  отбора для закладок выбираются по всем проводкам журнала.</p>
+  <p class=MsoNormal style='text-indent:0in'>По умолчанию — 0.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>УстановитьНаЗначение&gt;</p>
+  </td>
+  <td width=472 valign=top style='width:353.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  признак выбора зна­чения отбора для показа. Параметр может принимать
+  значения:</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — для показа
+  выбирается отбор по значе­нию, указанному в параметре &lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗначениеОтбора&gt;;</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — текущее значение
+  отображаемой заклад­ки отбора устанавливается на первое суще­ствующее
+  значение.</p>
+  <p class=MsoNormal style='text-indent:0in'>По умолчанию — 0.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=200 valign=top style='width:150.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗначениеОтбора&gt;</p>
+  </td>
+  <td width=472 valign=top style='width:353.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗакладкиОтбора<span
+lang=RU> устанавливает в форме журнала проводок заклад­ки для интерактивного осуществления
+отбора. При включении закладок в верхней части журнала проводок появляются
+ярлыки, соответствующие значе­ниям отбора. Щелчком мыши по ярлыку можно открыть
+«страницу» журнала проводок: такая «страница» будет содержать проводки, отобранные
+по указан­ному значению.</p>
+
+<p class=MsoNormal>Для включения отбора необходимо в качестве
+параметра &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИмяОтбора&gt;
+пе­редать методу имя отбора. Можно использовать как имена отборов, автомати­чески
+задаваемые системой 1С:Предприятие, так и отборы, созданные в процес­се конфигурирования:
+по реквизитам проводки и по субконто проводки.</p>
+
+<p class=MsoNormal>«Системные» отборы задаются включением
+соответствующих опций в окне редактирования свойств проводки в конфигураторе.
+Каждому виду отбора со­ответствует «системное» имя отбора — то, которое
+выдается пользователю в диалоге «Отбор», и которое можно использовать во
+встроенном языке.</p>
+
+<p class=MsoNormal>Для журнала проводок допустимы следующие
+«системные» имена отборов:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сумма — отбор
+по сумме проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВалСумма — отбор
+по валютной сумме проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Валюта — отбор
+по валюте проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Количество
+— отбор по количеству проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Счет — отбор
+по счетам проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СчетДт — отбор
+по счетам дебета проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СчетКт — отбор
+по счетам кредита проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПланСчетов
+— отбор по плану счетов.</p>
+
+<p class=MsoNormal>Кроме этого, в конфигураторе можно включить
+возможность выполнять от­боры по субконто проводки и дополнительным реквизитам
+проводки. Для этого используется опция «Отбор» в закладке «Дополнительные»
+палитры свойств вида субконто или дополнительного реквизита проводки. В этих
+случаях в ка­честве имен отбора следует использовать идентификаторы видов
+субконто или дополнительных реквизитов проводки.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+модуля формы журнала проводок (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗакладкиОтбора(&quot;Склады&quot;, 1,
+1, Константа.ОснСклад);<o:p></o:p></p>
+
+<h4><a name="_Toc492734802"></a><a name="_Toc494937691"><span style='mso-bookmark:
+_Toc492734802'>УстановитьОтбор</a></h4>
+
+<p class=MsoNormal>Установить отбор журнала проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьОтбор(&lt;ИмяОтбора&gt;,
+&lt;ЗначениеОтбора&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetSelection<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОтбора&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — имя отбора. Если это значение пустое, то отбор отключается.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗначениеОтбора&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьОтбор<span
+lang=RU> принудительно устанавливает отбор для журнала проводок. Для установки
+отбора методу должны быть переданы 2 параметра: имя отбора и значение отбора.</p>
+
+<p class=MsoNormal>Возможные виды отбора для журнала проводок
+задаются в конфигураторе. В окне редактирования свойств проводки можно включить
+опции, соответст­вующие различным видам отбора. Для таких отборов система
+1С:Предприятие использует зарезервированные имена:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сумма — отбор
+по сумме проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВалСумма — отбор
+по валютной сумме проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Валюта — отбор
+по валюте проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Количество
+— отбор по количеству проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Счет — отбор
+по счетам проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СчетДт — отбор
+по счетам дебета проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СчетКт — отбор
+по счетам кредита проводки;</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПланСчетов
+— отбор по плану счетов.</p>
+
+<p class=MsoNormal>Кроме этого, в конфигураторе можно включить
+возможность выполнять от­боры по субконто проводки и дополнительным реквизитам
+проводки. Для этого используется опция «Отбор» в закладке «Дополнительные»
+палитры свойств вида субконто или дополнительного реквизита проводки. В этих
+случаях в ка­честве имен отбора следует использовать идентификаторы видов
+субконто или дополнительных реквизитов проводки.</p>
+
+<p class=MsoNormal>Отбор устанавливается по значению, указанному
+в параметре &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗначениеОтбора<span
+lang=RU>&gt;.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+модуля формы журнала прово­док (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Изм =
+УстановитьОтбор(&quot;Склады&quot;, Склад1);<o:p></o:p></p>
+
+<h4><a name="_Toc492734803"></a><a name="_Toc494937692"><span style='mso-bookmark:
+_Toc492734803'>ПолучитьОтбор</a></h4>
+
+<p class=MsoNormal>Возвратить текущее значение отбора журнала
+проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьОтбор(&lt;ИмяОтбора&gt;,
+&lt;ЗначениеОтбора&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetSelection<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОтбора&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Имя переменной, куда будет записано строковое значение имени отбора.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗначениеОтбора&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Имя переменной, куда будет записано значение отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числовое значение: 1 — отбор включен; 0 — отбор
+не включен.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьОтбор<span
+lang=RU> возвращает текущее значение отбора журнала. Имя отбора и текущее
+значение отбора записываются в переменные, передаваемые методу <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПолучитьОтбор в качестве
+параметров.</p>
+
+<p class=MsoNormal>Возвращаемое значение метода может
+использоваться для определения того, включен отбор в журнале проводок или нет.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+модуля формы журнала прово­док (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Изм = ПолучитьОтбор();<o:p></o:p></p>
+
+<h4><a name="_Toc492734804"></a><a name="_Toc494937693"><span style='mso-bookmark:
+_Toc492734804'>УстановитьИнтервал</a></h4>
+
+<p class=MsoNormal>Установить интервал журнала проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьИнтервал(&lt;ДатаНач&gt;,
+&lt;ДатаКон&gt;, &lt;ФлагИзменения&gt;}<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetRange<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНач&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение типа
+  «дата» — начальная дата интер­вала журнала проводок.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаКон&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение типа «дата»
+  — конечная дата интерва­ла журнала проводок.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагИзменения&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Этим флагом регули­руется возможность интерактивного изменения
+  интервала журнала. 1 — пользователь может изме­нить интервал журнала
+  интерактивно, 0 — пользо­ватель не может интерактивно изменить интервал
+  журнала.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьИнтервал<span
+lang=RU> позволяет установить интервал видимости записей в журнале проводок.
+При работе с журналом проводок будут доступны проводки, даты которых лежат
+внутри указанного интервала.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+модуля формы журнала проводок (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьИнтервал(НИ, КИ);<o:p></o:p></p>
+
+<h4><a name="_Toc492734805"></a><a name="_Toc494937694"><span style='mso-bookmark:
+_Toc492734805'>НачалоИнтервала</a></h4>
+
+<p class=MsoNormal>Возвратить дату начала интервала журнала
+проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НачалоИнтервала()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>BegOfRange<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «Дата» — начальная дата
+интервала журнала проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НачалоИнтервала<span
+lang=RU> позволяет получить начальную дату интервала журнала проводок.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+модуля формы журнала проводок (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НИ = НачалоИнтервала();<o:p></o:p></p>
+
+<h4><a name="_Toc492734806"></a><a name="_Toc494937695"><span style='mso-bookmark:
+_Toc492734806'>КонецИнтервала</a></h4>
+
+<p class=MsoNormal>Возвратить дату конца интервала журнала
+проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецИнтервала()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EndOfRange<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «Дата» — конечная дата интервала
+журнала проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецИнтервала<span
+lang=RU> позволяет получить конечную дату интервала журнала проводок.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+модуля формы журнала проводок (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КИ = КонецИнтервала();<o:p></o:p></p>
+
+<h3><a name="_Toc492734807"></a><a name="_Toc494937696"><span style='mso-bookmark:
+_Toc492734807'>Предопределенные процедуры модуля формы журнала
+проводок</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе системные
+предопределенные процедуры должны располагаться только в модулях форм журнала
+проводок (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal>В основном данные процедуры предназначены для
+расширения возможно­сти программного управления правами доступа к системе.</p>
+
+<p class=MsoNormal>Предопределенные процедуры не является
+встроенными процедурами язы­ка. Для них зарезервированы только название и
+синтаксис. Тело процедур должно быть написано самим разработчиком в
+соответствующих программных модулях. Вызов предопределенных процедур на
+исполнение производится в системе 1С:Предприятие неявно при возникновении
+соответствующего собы­тия. Описание предопределенных процедур также см. гл.
+«Системные предо­пределенные процедуры».</p>
+
+<h4><a name="_Toc492734808"></a><a name="_Toc494937697"><span style='mso-bookmark:
+_Toc492734808'>ПриУстановкеОтбора</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при установке
+отбора в журнале прово­док.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУстановкеОтбора(&lt;ИмяОтбора&gt;,
+&lt;Значение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnSetSelectInJournal<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОтбора&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — имя отбора.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗначениеОтбора&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУстановкеОтбора производится
+системой 1С:Предприятие неявно при интерактивной попытке установить от­бор в
+журнале проводок.</p>
+
+<p class=MsoNormal>Если в данной предопределенной процедуре установлен
+статус возврата 0 (например, если данному пользователю нельзя устанавливать
+данное значение отбора проводок), установка отбора не будет выполнена.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться в модуле формы журнала проводок и в глобальном программном
+модуле. Если данная процеду­ра присутствует в модуле формы журнала проводок, то
+будет вызвана она, если нет, то будет вызвана процедура из глобального модуля.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриУстановкеОтбора(ИмяОтбора,
+ЗначОтбора)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если (ИмяОтбора = &quot;Счет&quot;) И (ЗначОтбора.Валютный = 1) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc492734809"></a><a name="_Toc494937698"><span style='mso-bookmark:
+_Toc492734809'>ПриУстановкеИнтервала</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при установке
+интервала журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУстановкеИнтервала(&lt;ДатаНач&gt;,
+&lt;ДатаКон&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnSetSelectInJournal<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНач&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата начала
+  интервала журнала.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаКон&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата конца интервала
+  журнала.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУстановкеИнтервала произво­дится
+системой 1С:Предприятие неявно при интерактивной попытке устано­вить интервал в
+журнале документов. Если в данной предопределенной проце­дуре установить статус
+возврата — 0 (например, если данному пользователю нельзя изменять интервал
+журнала), установка не будет выполнена.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриУстановкеИнтервала(ДатаНач,
+ДатаКон)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;У вас нет права изменять интервал журнала!&quot;,
+2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc492734810"></a><a name="_Toc494937699"><span style='mso-bookmark:
+_Toc492734810'>ПриПоказеПроводокПоДокументу</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при показе проводок
+по документу (операции).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриПоказеПроводокПоДокументу(&lt;Документ&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnShowEntrysByDoc<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Документ&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Документ по которому
+  выводятся проводки.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>При работе с журналом операций или журналом
+документов пользователь имеет возможность включить режим показа проводок
+текущей операции. При этом открывается окно журнала проводок
+«синхронизированного» с текущим журналом. В этом журнале проводок будут
+выдаваться для просмотра проводки операции, на которой стоит курсор в журнале
+документов(операций). При ус­тановке курсора на другой документ(операцию)
+содержимое журнала проводок будет изменяться, показывая проводки по текущей
+операции. В журнале опера­ций такой журнал проводок может быть выведен в нижней
+части окна.</p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриПоказеПроводокПоДокументу
+производится системой 1С:Предприятие неявно при обновлении содержимого
+подчиненного журнала проводок текущей операции.</p>
+
+<p class=MsoNormal>Переданный в качестве параметра документ может
+быть использован для определения необходимости показха проводок по данной
+операции.</p>
+
+<p class=MsoNormal>Если в данной предопределенной процедуре
+установлен статус возврата 0, то проводки операции показываться не будут
+(например, если пользователю запрещен просмотр проводок).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриПоказеПроводокПоДокументу(ТекДок)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ТекДок.Операция.Фирма &lt;&gt; ТекФирма Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

@@ -1,0 +1,212 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part0</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part0.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032165">Введение</a></h1>
+<p class=MsoNormal>Данная книга является описанием встроенного
+языка системы 1С:Предприятие и предназначена для специалистов, выполняющих
+конфигури­рование системы для решения конкретной задачи автоматизации учета.</p>
+
+<p class=MsoNormal>1С:Предприятие является гибкой настраиваемой
+системой, с помощью ко­торой можно решать широкий круг задач в сфере
+автоматизации деятельности предприятий. Специфические алгоритмы конфигурации
+описываются в систе­ме 1С:Предприятие при помощи программной компоненты
+Конфигуратор (да­лее по тексту — конфигуратор) в программных модулях,
+содержащих тексты на встроенном языке системы 1С:Предприятие.</p>
+
+<h2><a name="_Toc493032166">Назначение и краткая характеристика
+встроенного языка</a></h2>
+
+<p class=MsoNormal>Встроенный язык системы 1С:Предприятие
+предназначен для описания (на стадии разработки конфигурации) алгоритмов
+функционирования прикладной задачи.</p>
+
+<p class=MsoNormal>Встроенный язык (далее по тексту — язык)
+представляет собой предметно-ориентированный язык программирования, специально
+разработанный с уче­том возможности его применения не только профессиональными
+программи­стами. В частности, все операторы языка имеют как русское, так и
+англоязыч­ное написание, которые можно использовать одновременно в одном
+исходном тексте. Основной язык, описываемый в данной книге — русский, однако
+для каждого оператора языка приводится его англоязычный синоним.</p>
+
+<p class=MsoNormal>При своей относительной простоте язык обладает
+некоторыми объектно-ориентированными возможностями, например, правила доступа к
+атрибутам и методам специализированных типов данных (документам, справочникам и
+т.&nbsp;п.) подобны свойствам и методам объектов, используемых в других
+объектно-ориентированных языках. Однако специализированные типы данных не могут
+определяться средствами самого языка, а задаются в визуальном режиме кон­фигуратора.</p>
+
+<p class=MsoNormal>Типизация переменных в языке не жесткая, т. е.
+тип переменной определя­ется ее значением. Переменные не обязательно объявлять
+в явном виде. Неяв­ным определением переменной является ее первое упоминание в
+левой части оператора присваивания. Возможно также явное объявление переменных
+при помощи соответствующего оператора. Допускается применение массивов.</p>
+
+<h2><a name="_Toc493032167">Построение книги</a></h2>
+
+<p class=MsoNormal>Элементы языка в данной книге описываются
+логически сгруппированными на основании их функциональной направленности,
+поэтому оглавление данной книги не упорядочено по алфавиту. Обычно в начале
+главы приводится тип обрабатываемых данных, затем следуют его атрибуты, а в
+конце исполняемые методы, использующие этот тип данных.</p>
+
+<h2><a name="_Toc493032168">Формат описания элементов языка</a></h2>
+
+<p class=MsoNormal>Каждый элемент (конструкция) языка, упомянутый
+в этом руководстве, пе­чатается таким шрифтом. Информация по компонентам языка
+приводится в виде синтаксической диаграммы, подробного описания и примера
+исходного текста.</p>
+
+<h3><a name="_Toc493032169">Соглашения и обозначения, принятые в
+синтаксических диаграммах</a></h3>
+
+<p class=MsoNormal>В синтаксических диаграммах используются
+следующие символы:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><b style='mso-bidi-font-weight:
+  normal'>Символ<o:p></o:p></b></p>
+  </td>
+  <td width=558 valign=top style='width:418.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><b style='mso-bidi-font-weight:
+  normal'>Значение<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>[ ]</p>
+  </td>
+  <td width=558 valign=top style='width:418.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>В квадратных скобках
+  заключаются необязательные син­таксические элементы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>( )</p>
+  </td>
+  <td width=558 valign=top style='width:418.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Круглые скобки
+  заключают в себе список параметров.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>|</p>
+  </td>
+  <td width=558 valign=top style='width:418.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Вертикальной линией
+  разделяются синтаксические эле­менты, среди которых нужно выбрать только
+  один.</p>
+  </td>
+ </tr>
+</table>
+
+<h3><a name="_Toc493032170">Синтаксическая диаграмма описания
+элемента языка</a></h3>
+
+<p class=MsoNormal>Формат описания элемента языка, используемый в
+данном руководстве, ил­люстрируется синтаксической диаграммой, приведенной
+ниже.</p>
+
+<h4><a name="_Toc493032171">ЭлементЯзыка</a></h4>
+
+<p class=MsoNormal style='text-indent:.5in'>Краткое описание
+того, что делает данный <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>ЭлементЯзыка<span
+lang=RU>.</p>
+
+<p class=MsoNormal style='margin-top:3.0pt'><b style='mso-bidi-font-weight:
+normal'>Синтаксис:<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in'><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЭлементЯзыка(&lt;Параметр1&gt;,
+&lt;Параметр2&gt;, ...) [ДобКлючевоеСлово]<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:3.0pt'><b style='mso-bidi-font-weight:
+normal'>Англоязычный Синтаксис: </b>(в
+случае языковых конструкций)<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in'><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Keyword(&lt;Параметр1&gt;,
+&lt;Параметр2&gt;, ...)[AddKeyWord]<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:3.0pt'><b style='mso-bidi-font-weight:
+normal'>Англоязычный синоним:</b> (в случае
+описания методов, функций и процедур)</p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in'><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Keyword<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:3.0pt'><b style='mso-bidi-font-weight:
+normal'>Параметры:<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:141.75pt;text-indent:-127.55pt'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Параметр1&gt;<span
+lang=RU><span style='mso-tab-count:1'> краткое описание <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>&lt;Параметра1&gt;.</p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:141.75pt;text-indent:-127.55pt'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Параметр2&gt;<span
+lang=RU><span style='mso-tab-count:1'> краткое описание <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>&lt;Параметра2&gt;.</p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:141.75pt;text-indent:-127.55pt'><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>[ДобКлючевоеСлово]<span
+lang=RU><span style='mso-tab-count:1'> краткое описание <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ДобКлючевоеСлово.</p>
+
+<p class=MsoNormal style='margin-top:3.0pt'><b style='mso-bidi-font-weight:
+normal'>Возвращаемое значение:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Тип и краткое описание возвращаемого значения.</p>
+
+<p class=MsoNormal style='margin-top:3.0pt'><b style='mso-bidi-font-weight:
+normal'>Описание:<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in'>Подробное описание того, что реализует <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ЭлементЯзыка.</p>
+
+<p class=MsoNormal style='margin-top:3.0pt'><b style='mso-bidi-font-weight:
+normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l23 level1 lfo10;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Краткое описание примера</p>
+
+<p class=MsoFootnoteText style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in'><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Исходный текст примера<o:p></o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><b style='mso-bidi-font-weight:
+normal'>См. также:</b> Ссылки на другие
+методы, процедуры или функции.</p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

@@ -1,0 +1,208 @@
+<head>
+<title>1С-Предприятие. Документация | Управление распределенными ИБ. Дополнение</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="../1c.css">
+</head>
+
+<body bgcolor="#FFFFFF" background="../images/background_main.gif">
+ <div align="center"> 
+  <h2>Дополнение</h2>
+  <hr class="std">
+  <ul>
+    <li> 
+      <div align="left"> 
+        <h5><font face="Arial, Helvetica, sans-serif"><b><a href="#001">Где взять 
+          (желательно &quot;на халяву&quot;) компоненту УРБД?</a></b></font></h5>
+      </div>
+    </li>
+  </ul>
+  <ul>
+    <li> 
+      <div align="left"> 
+        <h5><font face="Arial, Helvetica, sans-serif"><b><a href="#002">Пример: 
+          Пакетный режим автообмена РБД.</a></b></font></h5>
+      </div>
+    </li>
+    <li> 
+      <div align="left"> 
+        <h5><font face="Arial, Helvetica, sans-serif"><b><a href="#003">Добавление 
+          информации по УРБД в &quot;Синтаксис-Помощник&quot; 1С:Конфигуратора.</a></b></font></h5>
+      </div>
+    </li>
+    <li> 
+      <div align="left">
+        <h5><font face="Arial, Helvetica, sans-serif"><b><a href="#004">Деинициализация 
+          УРБД.</a></b></font></h5>
+      </div>
+    </li>
+  </ul>
+  <hr class="std">
+  <h3 align="center"><font face="Arial, Helvetica, sans-serif"><b><a name="001"></a>Где 
+    взять (желательно &quot;на халяву&quot;) компоненту УРБД?</b></font></h3>
+  <p align="left"><font face="Arial, Helvetica, sans-serif">Как ни странно, но 
+    компонента &quot;1С:Предприятие 7.7. Управление распределенными базами данных&quot; 
+    присутствует пактически в любом дистрибутиве 1С:Предприятия. </font></p>
+  <p align="left"><font face="Arial, Helvetica, sans-serif">Если в каталоге установки 
+    системы 1С:Предприятие 7.7. присутствует файл <b><a href="http://sparku.virtualave.net/download/distrdb.zip">DistrDB.dll</a></b> 
+    (представляющий собой компоненту УРБД), то он обновляется в период инсталяции 
+    из дистрибутива. </font></p>
+  <p align="left"><font face="Arial, Helvetica, sans-serif">Для установки УРБД 
+    при её отсутствии, достаточно создать <b>любой</b> файл с именем <b>DistrDB.dll</b> 
+    в каталоге ../1Cv77/BIN и переустановить 1С:Предприятие 7.7. </font></p>
+  <p align="left"><font face="Arial, Helvetica, sans-serif">Если после этого вы 
+    не обнаружите УРБД в списке установленных компонент, то: </font></p>
+</div>
+<ol>
+  <li><font face="Arial, Helvetica, sans-serif"> Проверьте факт обновления файла 
+    DistrDB.dll. Сделать это можно просмотрев его свойства в &quot;Проводнике 
+    Windows&quot;. В случае отрицательного ответа, прийдётся с прискорбием констатировать 
+    отсутствие компоненты УРБД на вашем дистрибутиве. </font> </li>
+  <li><font face="Arial, Helvetica, sans-serif"> Ваш ключ защиты HASP не поддерживает 
+    УРБД, и тогда либо купить &quot;1С:Предприятие 7.7.УРБД&quot; официально, 
+    либо незаконно пользовать подходящий HASP-эмулятор.</font></li>
+</ol>
+  <hr class="std">
+<div align="center"> 
+  <h3 align="center"><font face="Arial, Helvetica, sans-serif"><a name="002"></a><b>Пример: 
+    Пакетный режим автообмена УРБД</b></font></h3>
+  <div align="left"> 
+    <p><font face="Arial, Helvetica, sans-serif">Наличие в системе &quot;1С:Предприятие 
+      7.7.&quot; пакетного режима запуска значительно облегчает осуществление 
+      автообмена ИБ. При этом исключается потребность лезть руками в &quot;Конфигуратор&quot; 
+      и снижается вероятность ошибки со стороны неопытных пользователей. Автообмен 
+      сводится к простому &quot;клику&quot; по ярлыку, например такого содержания:</font></p>
+    <p><b><font size="2">"C:\Program Files\1Cv77\BIN\1cv7.exe" CONFIG /DF:\База 
+      /NПупкин /Pмойпароль /@F:\База\paket.prm</font></b></p>
+    <table width="100%" border="1">
+      <tr> 
+        <td> 
+          <div align="center"><i>Параметр</i></div>
+        </td>
+        <td> 
+          <div align="center"><i>Значение</i></div>
+        </td>
+        <td> 
+          <div align="center"><i>Описание</i></div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center"><b>config</b></div>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <div align="left">Запуск 1С:Предприятие в режиме конфигуратора</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center"><font face="Arial, Helvetica, sans-serif"><b>/D</b></font></div>
+        </td>
+        <td>
+          <div align="center"><font face="Arial, Helvetica, sans-serif"><b>F:\База</b></font></div>
+        </td>
+        <td>
+          <div align="left">Путь к каталогу ИБ</div>
+        </td>
+      </tr>
+      <tr> 
+        <td>
+          <div align="center"><font face="Arial, Helvetica, sans-serif"><b>/N</b></font></div>
+        </td>
+        <td>
+          <div align="center"><font face="Arial, Helvetica, sans-serif"><b>Пупкин</b></font></div>
+        </td>
+        <td>
+          <div align="left">Имя зарегистрированного пользователя</div>
+        </td>
+      </tr>
+      <tr> 
+        <td>
+          <div align="center"><font face="Arial, Helvetica, sans-serif"><b>/P 
+            </b></font></div>
+        </td>
+        <td>
+          <div align="center"><font face="Arial, Helvetica, sans-serif"><b>мойпароль</b></font></div>
+        </td>
+        <td>
+          <div align="left">Пароль пользователя Пупкин. Если пароля нет, то параметр 
+            можно не указывать.</div>
+        </td>
+      </tr>
+      <tr> 
+        <td>
+          <div align="center"><font face="Arial, Helvetica, sans-serif"><b>/@</b></font></div>
+        </td>
+        <td>
+          <div align="center"><font face="Arial, Helvetica, sans-serif"><b>F:\База\paket.prm</b></font></div>
+        </td>
+        <td>
+          <div align="left">Путь к файлу параметров пакетного режима запуска. 
+            Представляет собой текстовый файл по типу *.INI-файлов Windows</div>
+        </td>
+      </tr>
+    </table>
+    <p><font face="Arial, Helvetica, sans-serif"><b><i>Пример содержания файла 
+      параметров пакетного режима:</i></b></font></p>
+    <p><b>[General]</b> ;Общий раздел </p>
+  </div>
+</div>
+<blockquote> 
+  <div align="center"> 
+    <div align="left"><b>AutoExchange=1</b> ;Выполнение раздела "AutoExchange 
+      (Автообмен)" (1-да, 0 -нет) </div>
+  </div>
+  <div align="center"> 
+    <div align="left"><b>Quit=1</b> ;Выйти из Конфигуратора по завершении (1-да, 
+      0 -нет)</div>
+  </div>
+</blockquote>
+<div align="center"> 
+  <div align="left"> 
+    <p><b>[AutoExchange] </b>; Раздел&quot;Автообмен&quot; </p>
+  </div>
+</div>
+<blockquote> 
+  <div align="center"> 
+    <div align="left"><b>SharedMode=1</b> ; Раздельный (1)/Монопольный (0) режим 
+    </div>
+  </div>
+  <div align="center"> 
+    <div align="left"><b>WriteTo=РТ*</b> ; Коды баз выгрузки (шаблон или через 
+      запятую) </div>
+  </div>
+  <div align="center"> 
+    <div align="left"><b>ReadFrom=РТ*</b> ; Коды баз загрузки (шаблон или через 
+      запятую) </div>
+  </div>
+</blockquote>
+<div align="center"> 
+  <hr class="std">
+  <h3 align="center"><font face="Arial, Helvetica, sans-serif"><a name="003"></a><b>Добавление 
+    информации по УРБД в &quot;Синтаксис-Помощник&quot; 1С:Конфигуратора.</b></font></h3>
+  <p align="left"><font face="Arial, Helvetica, sans-serif">Для того, чтобы в 
+    &quot;Синтакс-Помощнике&quot; появился раздел <i>Встроенный язык - УправлениеРБД, 
+    </i>в каталог установки 1С:Предприятия \BIN необходимо поместить файл <b><a href="http://sparku.virtualave.net/download/rbd.zip">rbd.als</a>.</b></font></p>
+  <hr class="std">
+  <h3 align="center"><font face="Arial, Helvetica, sans-serif"><a name="004"></a>Деинициализация 
+    <b>УРБД.</b></font></h3>
+  <p align="left">Согласно документации, процесс инициализации РБД - необратимый, 
+    но иногда возникает потребность удалить всякое упоминание о том, что база 
+    данных когда-то была распределенной. Что для этого необходимо сделать:</p>
+  </div>
+<ol>
+  <li>В первую очередь, в файле 1SSYSTEM.DBF вручную очистить 3-х символьное поле 
+    DBSIGN (содержащее код ИБ). и в принципе этого достаточно. Но для возврата 
+    ИБ в первозданное состояние, нужно выполнить п.п.2-3.</li>
+  <li>Удалить файлы 1SDBSET.DBF, 1SDWNLDS.DBF, 1SUPDTS.DBF и соответствующие индексные 
+    файлы (.CDX) .</li>
+  <li>В файле 1SSYSTEM.DBF обнулить 36-ти символьную строку DBSETUUID: 00000000-0000-0000-	
+    0000-000000000000. </li>
+</ol>
+
+<div align="center">
+<hr class="std">
+  &nbsp;</div>
+
+
+  </body>

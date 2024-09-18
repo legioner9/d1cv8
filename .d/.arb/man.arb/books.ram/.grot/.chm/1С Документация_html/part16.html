@@ -1,0 +1,3895 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part16</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part16.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032704">Глава 16<br> работа с бухгалтерскими счетами</a></h1>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Счета — это
+агрегатный тип данных для доступа к объектам данных — бух­галтерским счетам.
+Бухгалтерские счета используются компонентой «Бухгал­терский учет» системы
+1С:Предприятие для идентификации разрезов синтети­ческого учета наличия и
+движения средств. В общем виде смысл типа данных «Счет» вполне соответвует
+общепринятому понятию «Счет» в бухгалтерском учете. Подробно об основных
+свойствах типа данных «Счет» можно ознако­миться в руководстве по
+конфигурированию системы 1С:Предприятие.</p>
+
+<p class=MsoNormal>В конфигурации системы может быть создано
+несколько планов счетов. План счетов является фактически видом для значения
+типа «Счет». Например, реквизит диалога типа «Счет» может иметь конкретный вид
+(относиться к кон­кретному плану счетов) или быть неопределенного вида — то
+есть принимать значение различных планов счетов.</p>
+
+<p class=MsoNormal>Структура данных для объектов типа «Счет»
+задается в конфигураторе и является одинаковой для всех планов счетов. Счета
+имеют стандартные рекви­зиты (код, наименование и т. д.), для которых в
+конфигурации настраиваются только их свойства (например, длина наименования).
+Кроме того, для счетов в конфигурации могут быть заданы дополнительные
+реквизиты. Дополнительные реквизиты могут быть периодическими, то есть иметь
+разные значения на раз­ные даты.</p>
+
+<p class=MsoNormal>Список счетов (план счетов) может быть многоуровневым.
+При этом каж­дый объект типа «Счет» вне зависимости от реального наличия
+подчиненных счетов всегда является либо конкретным счетом, либо группой. Это
+свойство конкретного счета задается при его создании и не изменяется в
+дальнейшем. При этом счета-группы не могут участвовать в проводках.</p>
+
+<p class=MsoNormal>Заметим, что бухгалтерские счета внесенные в
+конфигураторе в метаданные не могут изменять свои основные реквизиты (код,
+наименование, настройки аналитического, валютного и количественного учета).</p>
+
+<h2><a name="_Toc493032705">Контекст работы с бухгалтерскими
+счетами</a></h2>
+
+<p class=MsoNormal>В синтаксисе языка доступ к атрибутам, а также
+вызов методов счетов зави­сит от контекста выполнения программного модуля.</p>
+
+<p class=MsoNormal>Если счет входит (согласно локальному
+контексту) в набор непосредственно Доступных модулю значений агрегатных типов
+данных (см. «Виды программ-йьгх модулей»), то доступ к атрибутам и вызов метода
+для этого счета — просто имя этого атрибута или метода с указанием необходимых
+параметров.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Модуль формы счета выполняется в контексте
+«Счет». Поэтому в модуп возможен непосредственный доступ к текущему счету.
+Например, для пои сваивания счету наименования запишем:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Наименование = &quot;Основные
+средства&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal>Значение счета может быть получено из других
+источников, например, как реквизит документа. В этом случае обращение к
+атрибутам и методам такого документа представляет собой сложное выражение, где
+имена реквизитов раз­деляются точкой.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Например, в структуре документа
+«ПриходныйОрдер» существует рекви­зит «КоррСчет» типа «Счет». Тогда получить
+наименование счета, указан­ного в этом реквизите, можно следующим образом</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НаименованиеСчета =
+Док.КоррСчет.Наименование;<o:p></o:p></p>
+
+<p class=MsoNormal>В других случаях, доступ к атрибутам, вызов
+методов конкретного счета происходит при помощи переменной со ссылкой на объект
+типа «Счет». Объ­ект создается функцией <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>, ссылка на который присваивается переменной. Чтобы вызвать атрибут или
+метод объекта, имя этого атрибута или метода (с указанием необходимых параметров)
+пишется через точку после име­ни ссылки.</p>
+
+<p class=MsoNormal>При создании ссылки на объект типа «Счет» при
+помощи функции <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU> в качестве типа объекта указывается слово &quot;Счет&quot; и может
+быть через точку указан вид — идентификатор плана счетов.</p>
+
+<p class=MsoNormal>Полное имя типа счет записывается следующим
+образом:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Счет.&lt;ВидСчета&gt;<o:p></o:p></p>
+
+<p class=MsoNormal>где &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидСчета<span
+lang=RU>&gt; — идентификатор плана счетов.</p>
+
+<p class=MsoNormal>Применение ключевого слова &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Счет&quot; (без вида счета)
+используется для ор­ганизации доступа ко всем планам счетов.</p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Счет — <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Account<span
+lang=RU>.</p>
+
+<p class=a><b>Замечание</b>: Следует
+обратить особое внимание, что переменная типа «Счет», созданная функцией <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект — это ссылка на
+список счетов, в отличие от переменных, содержащих само значение объекта
+(например, переменной может быть присвоено значение некоторого реквизита доку­мента,
+который имеет тип «Счет»). Использование ссылки на список сче­тов, созданной
+при помощи функции <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>, существенно от­личается от работы со значением типа «Счет». Только
+при работе со объ­ектом-ссылкой на список счетов разрешено изменять позицию (найти-выбрать...)
+текущего счета в списке (т. е. осуществлять позиционирование по списку счетов),
+создавать новые, изменять и удалять существующие счета, С другой стороны,
+ссылка на список счетов не содержит собственно значения конкретного счета,
+которое можно присвоить чему-либо. Одна­ко. его всегда можно получить,
+используя функцию <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекущийСчет.</p>
+
+<p class=a><b>Замечание</b>. Объект,
+созданный при помощи функции <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>, изна­чально не определен, т. е. не содержит никакого значения. Чтобы
+начать с ним работать, его предварительно надо позиционировать (установить на
+конкретный счет) при помощи процедур <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиСчет<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьСчет<span
+lang=RU> и т. п.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>*</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч = СоздатьОбъект(&quot;Счет&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч1 =
+СоздатьОбъект(&quot;Счет.ОснПлан&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч2 =
+СоздатьОбъект(&quot;Счет.РабПлан&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal>*</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//В модуле формы счета // меняем
+наименование счета<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Наименование = &quot;Новый счет&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal>*</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч1 =
+СоздатьОбъект(&quot;Счет.ОснПлан&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// создаем новый счет Сч1.Новый();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч1.Код = &quot;12.01&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч1.Записать();<o:p></o:p></p>
+
+<h3><a name="_Toc493032706">Атрибуты объекта «Счет»</a></h3>
+
+<h4><a name="_Toc493032707">Код</a></h4>
+
+<p class=MsoNormal>Полный код счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Код<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Code<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Код счета в общем случае представляет собой
+символьную строку вида:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&lt;Код счета&gt;.&lt;Код
+субсчета&gt;.&lt;Код субсчета&gt; ...<o:p></o:p></p>
+
+<p class=MsoNormal>Общая длина кода счета в системе
+1С:Предприятие ограничена 255 симво­лами. В это значение входят: код счета
+первого уровня, коды субсчетов всех нижележащих уровней и разделители номеров
+счета и субсчетов (точка). При помощи атрибута <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Код<span
+lang=RU> можно получать и задавать код счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* При показе готового табличного документа (в
+данном примере это отчет «Карточка счета») в заголовке окна выдается
+наименование отчета и код счета, по которому построен отчет.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Формирование отчета &quot;Карточка
+счета&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Табл =
+СоздатьОбъект(&quot;Таблица&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&lt;команды формирования отчета и
+выдачи секций табличного документа&gt;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Показ готового отчета<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Табл.Показать(&quot;Карточка счета:
+&quot; + Счет.Код);<o:p></o:p></p>
+
+<h4><a name="_Toc493032708">Наименование</a></h4>
+
+<p class=MsoNormal>Наименование счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Наименование<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Description<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Наименование счета представляет собой
+произвольную строку символов. Наименование, как правило, разъясняет назначение
+счета. Максимальная длина наименования счета задается при редактировании
+свойств планов счетов в Конфигураторе.</p>
+
+<p class=MsoNormal>При помощи атрибута <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Наименование<span
+lang=RU> можно получать и задавать наимено­вание счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* При показе готового табличного документа (в
+данном примере это отчет «Карточка счета») в заголовке окна выдается наименование
+отчета, код и наименование счета, по которому построен отчет.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Формирование отчета &quot;Карточка
+счета&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Табл =
+СоздатьОбъект(&quot;Таблица&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>&lt;команды формирования отчета и
+выдачи секций табличного документа&gt;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// ...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Показ готового отчета<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Табл.Показать(&quot;Карточка счета:
+&quot; + Счет.Код + &quot; &quot; + Счет.Наименование);<o:p></o:p></p>
+
+<h4><a name="_Toc493032709">Валютный</a></h4>
+
+<p class=MsoNormal>Признак ведения валютного учета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Валютный<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>IsCurrency<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Значение:</b></p>
+
+<p class=MsoNormal>1 — валютный учет ведется по данному счету;</p>
+
+<p class=MsoNormal>0 — валютный учет не ведется по данному счету;</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут содержит признак ведения валютного
+учета по счету. Изменение данного значения из языка следует производить только
+в особых случаях и с учетом всех особенностей настройки учета. После изменения
+настроек учета система может потребовать выполнить пересчет итогов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Валютный = 1;<o:p></o:p></p>
+
+<h4><a name="_Toc493032710">Количественный</a></h4>
+
+<p class=MsoNormal>Признак ведения количественного учета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Количественный<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>IsAmount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Значение:</b></p>
+
+<p class=MsoNormal>1 — количественный учет ведется по данному
+счету;</p>
+
+<p class=MsoNormal>0 — количественный учет не ведется по данному
+счету;</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут содержит признак ведения
+количественного учета по счету. Изме­нение данного значения из языка следует
+производить только в особых случаях и с учетом всех особенностей настройки
+учета. После изменения настроек учета система может потребовать выполнить
+пересчет итогов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Количественный = 1;<o:p></o:p></p>
+
+<h4><a name="_Toc493032711">Забалансовый</a></h4>
+
+<p class=MsoNormal>Признак забалансовости счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Забалансовый<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>IsSingle<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Значение:</b></p>
+
+<p class=MsoNormal>1 — выбранный счет является забалансовым
+счетом;</p>
+
+<p class=MsoNormal>0 — выбранный счет является балансовым счетом.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут содержит признак того, что счет
+является забалансовым, то есть не участвует в двойной записи, не требует в
+проводках наличия корреспонденции и не может корреспондировать с балансовыми
+счетами. Изменение данного значения из языка следует производить только в
+особых случаях и с учетом всех особенностей настройки учета. После изменения
+настроек учета система может потребовать выполнить пересчет итогов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Забалансовый = 1;<o:p></o:p></p>
+
+<h4><a name="_Toc493032712">Активный</a></h4>
+
+<p class=MsoNormal>Тип остатка по счету (активный, пассивный,
+активно-пассивный).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Активный<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>IsActive<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Значение:</b></p>
+
+<p class=MsoNormal>1 — счет является активным;</p>
+
+<p class=MsoNormal>2 — счет является пассивным;</p>
+
+<p class=MsoNormal>3 — счет является активно-пассивным;</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут содержит тип остатка счета. Счет может
+являться активным, (ос­татки должны быть дебетовыми), пассивным (остатки должны
+быть кредитов выми), активно-пассивным (остатки могут быть дебетовыми и
+кредитовыми).</p>
+
+<p class=MsoNormal>Данный признак влияет на способ отражения
+остатков по счету в итогах. Например, для активного счета, превышение
+кредитового оборота над дебето­вым приведет к отрицательному дебетовому
+остатку, а для активно-пассивного — к положительному кредитовому.</p>
+
+<p class=MsoNormal>По умолчанию все счета считаются
+активно-пассивными.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Активный = 2;<o:p></o:p></p>
+
+<h4><a name="_Toc493032713">&lt;Реквизит&gt;</a></h4>
+
+<p class=MsoNormal>Возвращает или задает значение дополнительного
+реквизита счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Реквизит&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Идентификатор
+  дополнительного реквизита счета, как он задан в конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Помимо реквизитов счета, задаваемых на
+системном уровне (код, наимено­вание, признаки количественного и валютного
+учета, и другие), в процессе конфигурирования для счета можно создать
+практически неограниченное число дополнительных реквизитов для хранения любой
+необходимой информации.</p>
+
+<p class=MsoNormal>Атрибут &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Реквизит<span
+lang=RU>&gt; позволяет обращаться к значениям дополнительных реквизитов
+выбранного счета. Для обращения к конкретному реквизиту должен быть указан его
+идентификатор, заданный для этого реквизита в конфигурато­ре.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Для счетов определен реквизит &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Ответственный&quot; типа &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Справочник.Сотрудники&quot;.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.ВыбратьСчета();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Пока Сч.ПолучитьСчет() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.Ответственный = ВыбСотр;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(Сч.Ответственный.Наименование);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.Записать();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла<o:p></o:p></p>
+
+<h3><a name="_Toc493032714">Методы объекта «Счет»</a></h3>
+
+<h4><a name="_Toc493032715">ВыбратьСчета</a></h4>
+
+<p class=MsoNormal>Метод открывает выборку счетов из текущего
+плана счетов для по­следующей обработки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбратьСчета()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectAccounts<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если действие выполнено и в выборке
+есть хотя бы один счет; 0 — если действие не выполнено или в выборке нет ни одного
+счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьСчета<span
+lang=RU> открывает выборку счетов для текущего плана сче­тов. Вызов данного
+метода позволяет затем перебрать счета. Непосредственно извлечение счетов из
+выборки осуществляется при помощи метода <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьСчет<span
+lang=RU>. Счета извлекаются в порядке возрастания кода счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Сформировать()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ВыбратьСчета();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока Сч.ПолучитьСчет() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(Сч.Код);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc493032716">ПолучитьСчет</a></h4>
+
+<p class=MsoNormal>Получить из выборки следующий счет. Выборка
+должна быть пред­варительно открыта при помощи метода <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьСчета<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьСчет([&lt;Режим&gt;])<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetAccount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=565 valign=top style='width:423.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выраже­ние — признак выборки подчиненных счетов. Может принимать
+  значения: 0 — не включать подчиненные счета; 1 — включать подчиненные счета.
+  По умолчанию — 1.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — следующий счет выбран успешно; 0 —
+следующий счет не вы­бран (отсутствует).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьСчет<span
+lang=RU> выбирает очередной счет из выборки, содержащей счета из плана счетов.
+Перед применением метода <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьСчет<span
+lang=RU> выборка должна быть открыта при помощи метода <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбратьСчета<span
+lang=RU>. Счета извлекаются в порядке возрастания кода счета.</p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьСчет<span
+lang=RU> используется для организации цикла по счетам. Ус­ловием цикла может
+служить равенство 1 возвращаемого значения метода: цикл выполняется, пока метод
+<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьСчет<span
+lang=RU> возвращает 1.</p>
+
+<p class=MsoNormal>Метод возвращает 0, когда очередной счет не
+выбран. Это происходит, если при предыдущем применении метода был выбран
+последний счет выборки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Сформировать()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ВыбратьСчета();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока Сч.ПолучитьСчет() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(Сч.Код);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc493032717">УстановитьАтрибут</a></h4>
+
+<p class=MsoNormal>Установить значение реквизита по имени
+идентификатора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьАтрибут(&lt;ИмяРеквизита&gt;,
+&lt;3начение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизита&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя реквизи­та, как оно задано в конфигураторе.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение,
+  содержащее устанавливаемое значение реквизита.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьАтрибут<span
+lang=RU> позволяет установить значение реквизита по имени идентификатора, как
+оно задано в конфигураторе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Счт.УстановитьАтрибут(&quot;ЦенаРозн&quot;,
+ЦенаТов);<o:p></o:p></p>
+
+<h4><a name="_Toc493032718">ПолучитьАтрибут</a></h4>
+
+<p class=MsoNormal>Получить значение реквизита по имени
+идентификатора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут(&lt;ИмяРеквизита&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизита&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя реквизи­та, как оно задано в конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение реквизита &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяРеквизита<span
+lang=RU>&gt;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут<span
+lang=RU> позволяет получить значение реквизита по име­ни идентификатора, как
+оно задано в конфигураторе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЦенаТов =
+Счт.ПолучитьАтрибут(&quot;ЦенаРозн&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc493032719">Выбрать</a></h4>
+
+<p class=MsoNormal>Выбрать счет из плана счетов в диалоге.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выбрать(&lt;Подсказка&gt;,
+&lt;ФормаСписка&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Choose<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Подсказка&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Символьное выраже­ние — текст заголовка окна диалога выбора счета.
+  Может использоваться в качестве подсказки.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФормаСписка&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Символьное выраже­ние — идентификатор формы списка плана счетов
+  (как он указан в конфигураторе), которая должна использоваться для выбора.
+  Если значение пустое, то используется форма списка для выбора по умол­чанию.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — счет выбран; 0 — счет не выбран.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выбрать<span
+lang=RU> вызывает на экран диалог, содержащий план счетов. Поль­зователь должен
+интерактивно выбрать требуемый счет.</p>
+
+<p class=MsoNormal>Если счет выбран, метод возвращает 1 и
+позиционирует объект на выбран­ном счете.</p>
+
+<p class=MsoNormal>Данный метод может использоваться только для
+объектов, созданных функцией <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Выбрать(&quot;Выберите счет&quot;,
+&quot;ДляВыбораВДиалоге&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc493032720">НайтиПоКоду</a></h4>
+
+<p class=MsoNormal>Выполняет поиск счета в плане счетов по коду
+счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НайтиПоКоду(&lt;КодСчета&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>FindByCode<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>КодСчета&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Символьное выражение
+  — код счета, как он указан в плане счетов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — счет найден; 0 — счет не найден.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиПоКоду<span
+lang=RU> выполняет поиск счета в плане счетов по коду счета, который передается
+методу в качестве параметра.</p>
+
+<p class=MsoNormal>Если счет найден, метод возвращает 1 и
+позиционирует объект на выбран­ном счете.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;01.01&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc493032721">НайтиСчет</a></h4>
+
+<p class=MsoNormal>Метод выполняет поиск счета в плане счетов по
+значению типа «Счет».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НайтиСчет(&lt;Счет&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>FindAccount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Счет&gt;</p>
+  </td>
+  <td width=565 valign=top style='width:423.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение типа
+  «Счет».</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — счет найден; 0 — счет не найден.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиСчет<span
+lang=RU> выполняет поиск счета по значению, заданному пара­метром &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Счет&gt;, и позиционирует объект
+на выбранном счете.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиСчет(ВыбСчет);<o:p></o:p></p>
+
+<h4><a name="_Toc493032722">Выбран</a></h4>
+
+<p class=MsoNormal>Проверяет факт выбора счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выбран()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Selected<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числ: 1 — если счет выбран (спозиционирован);
+0 — если не выбран.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выбран<span
+lang=RU> для объекта созданного функцией <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU> опреде­ляет, спозиционирован ли объект на каком либо счете или нет,
+для объекта хранящего значение типа «Счет» он определяет является значение
+пустым или нет. Метод возвращает число со значением 1 — если счет выбран
+(спозициони­рован) или значение не пустое, 0 — если не выбран или значение
+пустое.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду (&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Сч.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Счет найден&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032723">ЗаданВКонфигурации</a></h4>
+
+<p class=MsoNormal>Определяет, задан текущий счет в конфигурации
+или в информаци­онной базе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗаданВКонфигурации()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>DefinedInConfiguration<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если счет задан в конфигурации; 0 —
+если счет введен в инфор­мационной базе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗаданВКонфигурации<span
+lang=RU> определяет, задан текущий счет в конфигу­рации или в информационной
+базе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Сч.ЗаданВКонфигурации() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Счет задан в Конфигурации &quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032724">Вид</a></h4>
+
+<p class=MsoNormal>Позволяет определить, к какому плану счетов
+относится указанный счет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Вид()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Kind<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Символьная строка — идентификатор плана
+счетов, к которому относится данный счет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Вид<span
+lang=RU> позволяет определить план счетов, к которому относится дан­ный счет.
+Метод возвращает идентификатор плана счетов в виде строки симво­лов. Метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПланСчетов позволяет получить
+значение типа «План счетов» к которому относится выбранный счет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Вид - &quot; +
+Сч.Вид());<o:p></o:p></p>
+
+<h4><a name="_Toc493032725">ПредставлениеВида</a></h4>
+
+<p class=MsoNormal>Определить пользовательское представление вида
+плана счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПредставлениеВида()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>KindPresent<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение, содержащее
+пользовательское представление вида пла­на счетов (синоним вида плана счетов
+или, если он пустой, то идентификатор вида).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПредставлениеВида<span
+lang=RU> позволяет получить пользовательское пред­ставление вида плана счетов,
+как оно задано в конфигураторе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// отобразим пользовательское
+представление в строке состояния<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Состояние(Сч.ПредставлениеВида());<o:p></o:p></p>
+
+<h4><a name="_Toc493032726">ПланСчетов</a></h4>
+
+<p class=MsoNormal>Выдает план счетов, которому принадлежит счет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПланСчетов()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ChartOfAccounts<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «План счетов».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод выдает план счетов (значение типа «План
+счетов»), которому при­надлежит счет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;План счетов - &quot; +
+Сч.ПланСчетов());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Выдает &quot;План счетов -
+Основной&quot;<o:p></o:p></p>
+
+<h4><a name="_Toc493032727">ЭтоГруппа</a></h4>
+
+<p class=MsoNormal>Определяет, является ли данный счет группой.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЭтоГруппа()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>IsGroup<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — счет является группой; 0 — счет не
+является группой.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Для каждого счета при создании указывается —
+может ли он иметь субсчета (будет являться группой) или будет собственно счетом
+(не группой). Счета-группы не могут участвовать в проводках. В дальнейшем это
+свойство счета не изменяется.</p>
+
+<p class=MsoNormal>Данная функция определяет, является счет
+группой (может иметь субсчета) или нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Сч.ЭтоГруппа() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Найдена группа&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032728">Уровень</a></h4>
+
+<p class=MsoNormal>Возвращает уровень вложенности текущего счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Уровень()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Level<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число — уровень вложенности счета: 1 — счета
+верхнего уровня.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>В системе 1С:Предприятие количество уровней
+вложенности субсчетов в плане счетов не ограничивается. В качестве
+«ограничителя» выступает величи­на реквизита «Максимальная длина кода счета» в
+окне редактирования «Планы счетов». В пределах указанной длины можно задавать
+произвольное количество уровней вложенности, комбинируя символы «#» и «.» в
+шаблоне счета.</p>
+
+<p class=MsoNormal>Шаблон кода представляет собой символьную
+строку состоящую из симво­лов «#» и «.». Шаблон кода схематически иллюстрирует
+структуру полного кода счета. Фактически, шаблон кода задает количество уровней
+субсчетов, которое может быть открыто к счету. Например, символьная строка вида</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>##.#.###<o:p></o:p></p>
+
+<p class=MsoNormal>означает, что к счету могут быть открыты 2
+уровня субсчетов. Метод <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Уровень()<span
+lang=RU> возвращает уровень вложенности текущего счета. Для счета верхнего
+уровня метод возвратит 1, для счета второго уровня — 2, и так далее.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Уровень счета - &quot; +
+Сч.Уровень());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//Возвращает — 2<o:p></o:p></p>
+
+<h4><a name="_Toc493032729">ТекущийСчет</a></h4>
+
+<p class=MsoNormal>Возвращает текущее значение счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекущийСчет()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>CurAccount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «Счет».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Объекты созданные функцией <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект не содержат
+собственно значения типа «Счет», так как они могут быть спозиционированы на
+разные счета. Метод <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>ТекущийСчет<span
+lang=RU> позволяет получить значение типа «Счет» у такого объекта в соответвии
+с его текущей позицией. Данный метод применяется, на­пример, если нужно счет
+передать как параметр в вызове какого-либо метода, или присвоить какому-либо
+реквизиту, или занести в проводку.</p>
+
+<p class=MsoNormal>Кроме того, в контексте формы счета данный
+метод может выдать текущее (для открытой формы) значение типа «Счет».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Сч.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Операция.Дебет.Счет = Сч.ТекущийСчет();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032730">ПометкаУдаления</a></h4>
+
+<p class=MsoNormal>Проверяет наличие пометки на удаление для
+текущего счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПометкаУдаления()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>DeleteMark<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>1 — счет помечен на удаление;</p>
+
+<p class=MsoNormal>0 — счет не помечен на удаление.</p>
+
+<p class=MsoNormal>Описание;</p>
+
+<p class=MsoNormal>Метод используется для проверки, помечен ли на
+удаление текущий счет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Сч.ПометкаУдаления() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Счет помечен на удаление&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032731">ВыборГруппы</a></h4>
+
+<p class=MsoNormal>Устанавливает или сбрасывает признак выбора
+группы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыборГруппы([&lt;ПризнакВыбораГруппы&gt;])<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectGroup<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=198 valign=top style='width:148.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ПризнакВыбораГруппы&gt;</p>
+  </td>
+  <td width=470 valign=top style='width:352.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое вы­ражение: 1 — выбирать группы; 0 — не вы­бирать группы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее числовое значение режима выборки групп
+(на момент до исполне­ния метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыборГруппы<span
+lang=RU> устанавливает режим выборки групп. Данный метод может применяться как
+для позиционируемых объектов, созданных функцией <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>, так и для элементов диалога типа «Счет» (см. «Методы эле­ментов
+диалога»).</p>
+
+<p class=MsoNormal>Рекомендуется отключать возможность выбора
+группы, если значение будет использовано для формирования проводок.</p>
+
+<p class=MsoNormal>По умолчанию выбор группы разрешен, за
+исключением счетов дебета и кредита в проводках операции.</p>
+
+<p class=MsoNormal>Режим, устанавливаемый данным методом для
+элементов диалога, влияет на интерактивный выбор пользователем значения типа
+«Счет» из списка счетов (плана счетов). Такой выбор производится вызовом метода
+<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выбрать или
+нажа­тием кнопки выбора, если объект является элементом диалога. Установка ре­жима
+позволяет разрешить или запретить пользователю выбирать счета-группы (счета,
+которые могут иметь субсчета). Это имеет смысл для установки режима сразу на
+все значения реквизита табличной части документа.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.ВыборГруппы(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Выбрать(&quot;Выберите конкретный
+счет&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc493032732">ПринадлежитГруппе</a></h4>
+
+<p class=MsoNormal>Определяет, является ли текущий счет субсчетом
+для счета, указан­ного в качестве параметра метода.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПринадлежитГруппе(&lt;Счет&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>BelongsToGroup<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=85 valign=top style='width:63.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Счет&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение типа «Счет»
+  — счет, к субсчетам которого проверяется принадлежность те­кущего счета.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — текущий счет является субсчетом для
+счета, указанного в каче­стве параметра; 0 — текущий счет не является субсчетом
+для счета, указанного в качестве параметра.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПринадлежитГруппе<span
+lang=RU> позволяет проверить, является ли текущий счет субсчетом для счета,
+переданного в качестве параметра метода. Проверка выполняется по всем
+вышестоящим уровням счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если
+Сч.ПринадлежитГруппе(СчетПоКоду(&quot;76&quot;)) = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Счет принадлежит группе&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc493032733">КоличествоСубконто</a></h4>
+
+<p class=MsoNormal>Определяет количество субконто у текущего
+счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоСубконто()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SubcontoCount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число — количество видов субконто у текущего
+счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Максимальное количество видов субконто,
+которое можно «прикрепить» к счету, устанавливается в конфигураторе при
+редактировании свойств планов счетов. Количество субконто, которое реально
+прикреплено к счету, не может превышать установленного максимального
+количества.</p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КоличествоСубконто<span
+lang=RU> служит для определения количества видов субконто, прикрепленных к
+текущему счету в плане счетов.</p>
+
+<p class=MsoNormal>Необходимо обратить внимание, что все виды
+субконто, прикрепленные к счету в плане счетов, имеют порядковые номера. Эти
+номера выдаются в назва­ниях колонок видов субконто в окне редактирования плана
+счетов; «Субкон­то1», «Субконто2» ... «Субконто6».</p>
+
+<p class=MsoNormal>При задании видов субконто для счета их
+обязательно «выстраивать» по порядку один за другим: например, к счету могут
+быть прикреплены субконто таким образом, что их порядковые номера будут 1 и 2.
+Метод <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоСубконто<span
+lang=RU> возвращает общее количество видов субконто, прикре­пленное к счету (в
+данном примере — 2), а не максимальное количество воз­можных видов субконто у
+счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По Сч.КоличествоСубконто()
+Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Субконто &quot; + Сч.ВидСубконто(Инд));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc493032734">ВидСубконто</a></h4>
+
+<p class=MsoNormal>Устанавливает/возвращает вид субконто счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидСубконто(&lt;НомерСубконто&gt;,
+&lt;ВидСубконто&gt;, &lt;ТолькоОбороты&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SubcontoKind<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерСубконто&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  порядковый номер суб­конто счета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВидСубконто&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Значение типа «Вид субконто», которое должно быть установлено.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТолькоОбороты&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое значение: 1 или 0. Данный параметр снимает или устанавли­вает
+  флаг «Только обороты» для данного субкон-то счета. Если параметр не
+  используется, то флаг «Только обороты» не меняется.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «Вид субконто».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>К любому счету или субсчету в плане счетов
+может быть «прикреплено» до 5 видов субконто. Максимальное количество видов
+субконто, которое можно «прикрепить» к счету, устанавливается в конфигураторе
+при редактировании свойств планов счетов. Количество субконто, которое реально
+прикреплено к счету, не превышает установленного максимального количества. Все
+виды суб­конто, прикрепленные к счету в плане счетов, имеют порядковые номера.
+Эти номера выдаются в названии колонок для видов субконто в окне редактирова­ния
+плана счетов; «Субконто!», «Субконто2» ... «Субконто5».</p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидСубконто<span
+lang=RU> при использовании его без второго параметра воз­вращает значение типа
+«ВидСубконто», имеющего порядковый номер, передан­ный в качестве первого
+параметра.</p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидСубконто<span
+lang=RU> при вызове со вторым параметром устанавливает у счета вид субконто,
+имеющего порядковый номер, переданный в качестве пер­вого параметра.</p>
+
+<p class=MsoNormal>Применение данного метода следует производить
+только в особых случаях и с учетом всех особенностей настройки учета. После
+изменения настроек учета система может потребовать выполнить пересчет итогов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По Сч.КоличествоСубконто()
+Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Субконто &quot; + Сч.ВидСубконто(Инд));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc493032735">ТолькоОбороты</a></h4>
+
+<p class=MsoNormal>Устанавливает/возвращает значение флага
+«Только обороты» суб­конто счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТолькоОбороты(&lt;НомерСубконто&gt;,
+&lt;ТолькоОбороты&gt;]<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>TurnoversOnly<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерСубконто&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  порядковый номер суб­конто счета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТолькоОбороты&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое значение: 1 или 0. Данный параметр снимает или устанавли­вает
+  флаг «Только обороты» для данного субкон­то счета. Если параметр не
+  используется, то флаг «Только обороты» не меняется.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение флага «Только обороты» на момент до
+использования метода: 1 — флаг установлен; 0 — флаг не установлен.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>К любому счету или субсчету в плане счетов
+может быть «прикреплено» до 5 видов субконто. Максимальное количество видов
+субконто, которое можно «прикрепить» к счету, устанавливается в конфигураторе
+при редактировании свойств планов счетов. Все виды субконто, прикрепленные к
+счету в плане сче­тов, имеют порядковые номера. Для субконто может быть
+установлен флаг «Только обороты», который устанавливает для данного субконто
+использование только для оборотов по счету, а не для остатков.</p>
+
+<p class=MsoNormal>Применение данного метода следует производить
+только в особых случаях и с учетом всех особенностей настройки учета. После
+изменения настроек учета система может потребовать выполнить пересчет итогов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По Сч.КоличествоСубконто()
+Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Субконто &quot; + Сч.ВидСубконто(Инд) +<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         ?(Сч.ТолькоОбороты(Инд) = 1, &quot;(об.)&quot;,
+&quot;&quot;));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc493032736">УчетПоСумме</a></h4>
+
+<p class=MsoNormal>Устанавливает/возвращает значение флага «Учет
+по сумме» субкон­то счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УчетПоСумме(&lt;НомерСубконто&gt;,
+&lt;УчетПоСумме&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AccountingBySum<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерСубконто&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  порядковый номер суб­конто счета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>УчетПоСумме&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое значение: 1 или 0. Данный параметр снимает или устанавли­вает
+  флаг «Учет по сумме» для данного субконто счета. Если параметр не используется,
+  то флаг «Учет по сумме» не меняется.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение флага «Учет по сумме» на момент до
+использования метода: 1 — флаг установлен; 0 — флаг не установлен.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Все виды субконто, прикрепленные к счету в
+плане счетов, имеют порядко­вые номера. Для субконто может быть установлен флаг
+«Учет по сумме», кото­рый устанавливает для данного субконто счета режим
+использования учета по сумме.</p>
+
+<p class=MsoNormal>Применение данного метода для изменения флага
+учета следует произво­дить только в особых случаях и с учетом всех особенностей
+настройки учета. После изменения настроек учета система может потребовать
+выполнить пере­счет итогов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По Сч.КоличествоСубконто()
+Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Субконто &quot; + Сч.ВидСубконто(Инд) +<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">       
+? (Сч.УчетПоСумме(Инд) = 1, &quot;(об.)&quot;, &quot;&quot;));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032737">УчетПоВалютнойСумме</a></h4>
+
+<p class=MsoNormal>Устанавливает/возвращает значение флага «Учет
+по валютной сум­ме» субконто счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УчетПоВалютнойСумме(&lt;НомерСубконто&gt;,
+&lt;УчетПоСумме&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AccountingByCurrencySum<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерСубконто&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  порядковый номер суб­конто счета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>УчетПоСумме&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое значение: 1 или 0. Данный параметр снимает или устанавли­вает
+  флаг «Учет по валютной сумме» для данного субконто счета. Если параметр не
+  используется, то флаг «Учет по валютной сумме» не меняется.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение флага «Учет по валютной сумме» на
+момент до использования метода: 1 — флаг установлен; 0 — флаг не установлен.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Все виды субконто, прикрепленные к счету в
+плане счетов, имеют порядко­вые номера. Для субконто может быть установлен флаг
+«Учет по валютной сумме», который устанавливает для данного субконто счета
+режим использова­ния учета по валютной сумме.</p>
+
+<p class=MsoNormal>Применение данного метода для изменения флага
+учета следует произво­дить только в особых случаях и с учетом всех особенностей
+настройки учета. После изменения настроек учета система может потребовать
+выполнить пере­лет итогов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По Сч.КоличествоСубконто()
+Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Субконто &quot; + Сч.ВидСубконто(Инд) + <o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">       
+?(Сч.УчетПоВалютнойСумме(Инд) = 1, &quot;(об.)&quot;, &quot;&quot;));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032738">УчетПоКоличеству</a></h4>
+
+<p class=MsoNormal>Устанавливает/возвращает значение флага «Учет
+по количеству» субконто счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УчетПоКоличеству(&lt;НомерСубконто&gt;,
+&lt;УчетПоКоличеству&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AccountingByAmount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерСубконто&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  порядковый номер суб­конто счета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>УчетПоКоличеству&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое значение: 1 или 0. Данный параметр снимает или устанавли­вает
+  флаг «Учет по количеству» для данного суб­конто счета. Если параметр не
+  используется, то флаг «Учет по количеству» не меняется.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение флага «Учет по количеству» на момент
+до использования мето­да: 1 — флаг установлен; 0 — флаг не установлен.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Все виды субконто, прикрепленные к счету в
+плане счетов, имеют порядко­вые номера. Для субконто может быть установлен флаг
+«Учет по количеству», который устанавливает для данного субконто счета режим
+использования учета по количеству.</p>
+
+<p class=MsoNormal>Применение данного метода для изменения флага
+учета следует произво­дить только в особых случаях и с учетом всех особенностей
+настройки учета. После изменения настроек учета система может потребовать
+выполнить пере­счет итогов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По Сч.КоличествоСубконто()
+Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Субконто &quot; + Сч.ВидСубконто(Инд) +<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">           ?(Сч.УчетПоКоличеству(Инд) = 1, &quot;(об.)&quot;,
+&quot;&quot;));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032739">ИспользоватьДату</a></h4>
+
+<p class=MsoNormal>Установить дату выборки периодических
+реквизитов счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьДату(&lt;Дата&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseDate<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Дата&gt;</p>
+  </td>
+  <td width=574 valign=top style='width:430.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Выражение типа «да­та».</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее значение используемой даты (на момент
+до исполнения метода). <b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьДату<span
+lang=RU> устанавливает для объекта типа «Счет» дату, на которую будут в
+дальнейшем выбираться (или записываться) значения перио­дических реквизитов
+счета.</p>
+
+<p class=MsoNormal>Данный метод, используется обычно, если нужно
+обращаться сразу к не-сколькитм периодическим реквизитам спозиционированного
+объекта. Для оди­ночных обращений рекомендуется использовать методы
+периодического рекви­зита счета <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Получить(&lt;Дата&gt;)<span
+lang=RU> и <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Установить(&lt;Дата&gt;, &lt;3начение&gt;)<span
+lang=RU> .</p>
+
+<p class=a><b>Замечание</b>: Если к объекту
+типа «Счет» однажды применен метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьДату<span
+lang=RU>, то в дальнейшем, чтобы выбирать значения перио­дических реквизитов,
+нельзя применять к этому же объекту методы <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Получить<span
+lang=RU> и <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Установить,
+т. е. в такой последовательности эти методы не­совместимы.</p>
+
+<p class=a><b>Замечание</b>: Метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ИспользоватьДату устанавливает
+дату выборки для данного объекта. В случае, если обращение к объекту типа счет
+выполня­ется по длинному пути (например, <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Клиент.СчетУчета.СтатусУчета<span
+lang=RU>) значение типа «Счет» создается динамически и после первого обращения
+к нему с вызовом метода <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьДату<span
+lang=RU> уничтожается, поэому при повторном обращении для получении значения
+реквизита данная уста­новка уже действовать не будет.</p>
+
+<p class=a><b>Замечание</b>: Метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ИспользоватьДату должен быть
+вызван до позициониро­вания объекта. В этом случае после позиционирования
+периодические ре­квизиты будут выдаваться на указанную дату.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Выведем список счетов со значением
+периодического реквизита &quot;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусУчета<span
+lang=RU>&quot;.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Сформировать()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ИспользоватьДату(РабочаяДата());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ВыбратьСчета();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока Сч.ПолучитьСчет() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(&quot;Статус учета &quot; + Сч.Код + &quot; - &quot; +
+Сч.СтатусУчета);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc493032740">ИспользоватьПланСчетов</a></h4>
+
+<p class=MsoNormal>Устанавливает план счетов, который будет
+использован объектом.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьПланСчетов(&lt;ПланСчетов&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseChartOfAccounts<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ПланСчетов&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение типа «План
+  Счетов».</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «План Счетов». Текущее значение
+на момент до исполнения метода.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Данный метод выдает и устанавливает для
+объекта план счетов, который будет использован им в дальнейшем для поиска,
+выбора, обхода счетов.</p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьПланСчетов<span
+lang=RU> имеет смысл использовать в том случае, если объект создан функцией <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект для работы с
+разными планами счетов — <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект(&quot;Счет&quot;)<span
+lang=RU>. Если объект был создан для работы с конкретным планом счетов, то все
+операции поиска и обхода счетов будут ра­ботать только с этим планом счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Сформировать()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч = СоздатьОбъект(&quot;Счет&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ИспользоватьПланСчетов(ПланыСчетов.Основной);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ВыбратьСчета();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока Сч.ПолучитьСчет() = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(&quot;Счет &quot; + Сч.Код);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc493032741">Родитель</a></h4>
+
+<p class=MsoNormal>Выдает счет вышестоящего уровня.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Родитель(&lt;НомерУровня&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<p class=MsoNormal>&lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НомерУровня<span
+lang=RU>&gt;<span style='mso-tab-count:1'>                Необязательный
+параметр. Число — номер уровня. Определяет какого уровня вышестоящий счет
+должен быть выдан. Если параметр не указан -выдается непосредственный родитель.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «Счет». Счет вышестоящего уровня
+данного счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>При наличии в плане счетов нескольких уровней
+счетов-субсчетов данный метод позволяет получить счет вышестоящего уровня
+выбранного счета. Если параметр не задан, выдается непосредственный родитель,
+если задан — родитель указанного уровня.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Родитель &quot; +
+Сч.Родитель());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//Возвращает &quot;Родитель 76&quot;<o:p></o:p></p>
+
+<h4><a name="_Toc493032742">ИспользоватьРодителя</a></h4>
+
+<p class=MsoNormal>Устанавливает/выдает значение родителя (счета
+вышестоящего уровня), используемого для выборки счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьРодителя(&lt;Родитель&gt;,
+&lt;ФлагИзменения&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseParent<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Родитель&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение типа
+  «Счет», устанавливаемое в качестве используемого родителя. Необязательный
+  параметр. Если параметр не указан — значение используемого родителя не изменяется.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагИзменения&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Этим флагом регулирует­ся возможность интерактивного изменения
+  родителя. 1 — пользователь может изменить родителя интерак­тивно, 0 — пользователь
+  не может интерактивно изме­нить родителя.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение типа «Счет». Текущее значение
+используемого родителя на мо­мент до исполнения метода.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>При наличии в плане счетов нескольких уровней
+счетов-субсчетов при пе­реборе или выборе счета существует возможность отбирать
+только счета подчи­ненные некоторому счету. Метод ИспользоватьРодителя
+устанавливает зна­чение, которе будет затем использовано методами перебора и
+выбора счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Сформировать ()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ИспользоватьРодителя(СчетПоКоду(&quot;01&quot;));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ВыбратьСчета();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Пока Сч.ПолучитьСчет(0) = 1 Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Сообщить(Сч.Код);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc493032743">КодСубсчета</a></h4>
+
+<p class=MsoNormal>Выдает код счета без кодов счетов вышестоящих
+уровней.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КодСубсчета()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SubAccountCode<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение — код счета без кодов
+счетов вышестоящих уровней.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>При наличии в плане счетов нескольких уровней
+счетов-субсчетов атрибут &quot;Код&quot; объекта типа «Счет» содержит полный
+код счета с учетом всех выше­стоящих счетов через разделитель (точку). Метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>КодСубсчета выдает собст­венно
+код даного счета без кодов счетов вышестоящих уровней.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Код счета &quot; +
+Сч.Код); //Возвращает &quot;76.02&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Код Субсчета &quot; +
+Сч.КодСубсчета); //Возвращает &quot;76&quot;<o:p></o:p></p>
+
+<h4><a name="_Toc493032744">Блокировка</a></h4>
+
+<p class=MsoNormal>Установить/прочитать режим блокировки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Блокировка(&lt;ВклВыкл&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Locking<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВклВыкл&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Число: 1 — включить; 0 — выключить.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Если при вызове метода параметр &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ВклВыкл&gt; не задан, то
+возвращается Режим блокировки до выполнения метода. Число: 1 — заблокирован; 0
+— свобо­ден.</p>
+
+<p class=MsoNormal>Если при вызове метода параметр &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ВклВыкл&gt; задан, то
+возвращается ре­зультат выполнения метода блокировки. Число: 1 — успешно; 0 —
+не получи­лось.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Блокировка<span
+lang=RU> позволяет установить/прочитать режим блокировки.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Блокировка(0);<o:p></o:p></p>
+
+<h4><a name="_Toc493032745">Новый</a></h4>
+
+<p class=MsoNormal>Создает новый счет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Новый(&lt;ЕстьСубсчета&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>New<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЕстьСубсчета&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  признак наличия субсчетов у создаваемого счета. Может принимать значения:</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — счет не будет
+  иметь субсчета;</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — счет будет иметь
+  субсчета.</p>
+  <p class=MsoNormal style='text-indent:0in'>По умолчанию 0;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Создает новый счет. При добавлении нового
+счета необходимо указать, бу­дет ли счет иметь субсчета. То есть будет он
+являться собственно счетом или группой.</p>
+
+<p class=MsoNormal>Если счет будет иметь субсчета, то такой счет
+нельзя будет указать в каче­стве корреспондирующего счета при вводе проводок —
+необходимо будет ука­зывать субсчета этого счета. Иначе, если счет не будет
+иметь субсчетов, его можно указывать при вводе проводок.</p>
+
+<p class=MsoBodyTextIndent><span lang=RU style='layout-grid-mode:both'>Однако,
+если для счета, для которого было указано отсутствие субсчетов, все-таки введен
+субсчет, то система 1С:Предприятие выполнит следующее:<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l16 level1 lfo37;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Будет создан новый счет (группа) с тем же
+кодом;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l16 level1 lfo37;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Код данного счета будет дополнен
+субсчетом 0;</p>
+
+<p class=MsoNormal>В дальнейшем код субсчета 0 можно будет
+изменить на другой.</p>
+
+<p class=a><b>Замечание</b>. Метод <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Новый сам по себе не выполняет
+запись нового счета в ин­формационную базу, для внесения нового счета в список
+счетов, следует выполнить метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Записать<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Новый();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Код = &quot;76.02&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Записать();<o:p></o:p></p>
+
+<h4><a name="_Toc493032746">НазначитьТип</a></h4>
+
+<p class=MsoNormal>Назначить тип для реквизита неопределенного
+вида.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НазначитьТип(&lt;ИмяРеквизита&gt;,
+&lt;ИмяТипа&gt;, &lt;Длина&gt;, &lt;Точность&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetType<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизита&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — название реквизита счета неопределенного типа, как он назван в конфигурато­ре.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяТипа&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — название типа данных (или Вид субконто), который назначается реквизиту
+  счета. Например:</p>
+  <p class=MsoNormal style='text-indent:0in'>&quot;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Строка&quot;, &quot;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Число&quot;, &quot;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Справочник.Товары&quot;,
+  &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Документ. РасходнаяНакладная<span
+  lang=RU>&quot; и т. п.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Длина&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение — длина поля представления данных. Имеет смысл
+  только при задании числового или строкового типа.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Точность&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение — число знаков числа после десятичной точки.
+  Имеет смысл только при задании числового типа.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НазначитьТип<span
+lang=RU> позволяет назначить тип для реквизита, которому в конфигураторе
+назначен тип «Неопределенный».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбСчет.НазначитьТип(&quot;ТМЦ&quot;,
+&quot;Справочник.Товары&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc493032747">Записать</a></h4>
+
+<p class=MsoNormal>Записывает изменения счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Записать()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Write<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Записать<span
+lang=RU> выполняет запись (обновление) счета. Все изменения сделанные в
+существующем счете, или созданном счете будут занесены в информационную базу
+только после вызова метода Записать.</p>
+
+<p class=a><b>Замечание</b>. Если этот метод
+применяется в Модуле формы счета непосредст­венно к счету локального контекста,
+то данный метод отрабатывает те же действия, как интерактивное нажатие
+пользователем кнопки с формулой &quot;#Записать&quot;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Наименование = &quot;Прочие
+взаиморасчеты&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Записать();<o:p></o:p></p>
+
+<h4><a name="_Toc493032748">Удалить</a></h4>
+
+<p class=MsoNormal>Удаляет счет из плана счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Удалить(&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Delete<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=76 valign=top style='width:56.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=593 valign=top style='width:444.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  1 — непосредственное уда­ление; 0 — пометка на удаление. По умолчанию 1;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Удалить<span
+lang=RU> удаляет (или помечает на удаление) текущий счет. Данный метод может
+использоваться только для объектов, созданных функцией <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=a><b>Замечание</b>.
+Непосредственное удаление объекта следует применять только в особых случаях,
+так как счет может участвовать в проводках и непосред­ственное удаление может
+повлечет нарушение в бухгалтерском учете.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч =
+СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.Удалить(0);<o:p></o:p></p>
+
+<h4><a name="_Toc493032749">СнятьПометкуУдаления</a></h4>
+
+<p class=MsoNormal>Снять пометку удаления счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СнятьПометкуУдаления()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ClearDeleteMark<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СнятьПометкуУдаления<span
+lang=RU> снимает пометку удаления текущего сче­та.</p>
+
+<p class=MsoNormal>Данный метод может использоваться только для
+объектов, созданных функцией <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч = СоздатьОбъект(&quot;Счет.Основной&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.НайтиПоКоду(&quot;76.02&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сч.СнятьПометкуУдаления();<o:p></o:p></p>
+
+<h3><a name="_Toc493032750">Методы контекста Модуля формы списка
+счетов</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе методы доступны
+только в контексте Модуля формы списка счетов (см. «Виды программных модулей»).</p>
+
+<h4><a name="_Toc493032751">ИспользоватьДату</a></h4>
+
+<p class=MsoNormal>Установить дату выборки периодических
+реквизитов формы списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьДату(&lt;Дата&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseDate<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Дата&gt;</p>
+  </td>
+  <td width=574 valign=top style='width:430.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение со
+  значением типа «дата»</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение даты выборки периодических реквизитов
+формы списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьДату<span
+lang=RU> устанавливает для формы списка счетов дату, на которую будут в
+дальнейшем выбираться (или записываться) значения пе­риодических реквизитов
+справочника.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+Модуля формы списка счетов (см. «Виды программных модулей»). Действие данного
+метода относится толь­ко к текущему справочнику, который доступен в локальном
+контексте Модуля формы списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьДату(РабочаяДата());<o:p></o:p></p>
+
+<h4><a name="_Toc493032752">ИспользоватьПланСчетов</a></h4>
+
+<p class=MsoNormal>Установить (получить) текущий план счетов
+формы списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьПланСчетов(&lt;ПланСчетов&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseChartOfAccounts<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ПланСчетов&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение типа
+  «ПланСчетов».</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение текущего плана счетов формы до вызова
+метода.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьПланСчетов<span
+lang=RU> устанавливает текущий план счетов в форме списка счетов, если форма открыта
+для просмотра нескольких планов счетов. Если параметр не задан, то метод
+позволяет получить текущий план счетов.</p>
+
+<p class=MsoNormal>Данный метод доступен в контексте Модуля формы
+списка счетов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Печать()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч = СоздатьОбъект(&quot;Счет&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сч.ИспользоватьПланСчетов(ИспользоватьПланСчетов());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры;<o:p></o:p></p>
+
+<h4><a name="_Toc493032753">ИспользоватьРодителя</a></h4>
+
+<p class=MsoNormal>Установить родителя для формы списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьРодителя(&lt;Родитель&gt;,
+&lt;ФлагИзменения&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseParent<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Родитель&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение со
+  значением счета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагИзменения&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Этим флагом регулирует­ся возможность интерактивного изменения
+  родителя. 1 — пользователь может изменить родителя интерак­тивно, 0 —
+  пользователь не может интерактивно изме­нить родителя.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение родителя для формы списка счетов (до
+применения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьРодителя<span
+lang=RU> устанавливает счет в качестве основного для формы списка счетов
+(показываются субсчета выбранного счета).</p>
+
+<p class=MsoNormal>Данный метод доступен в контексте Модуля формы
+списка счетов (см. «Виды программных модулей»). Действие данного метода относится
+ко всему текущему списку счетов, который доступен в локальном контексте Модуля
+формы списка счетов.</p>
+
+<p class=MsoNormal>При добавлении нового субсчета текущего плана
+счетов данный параметр также будет являться свойством нового субсчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьРодителя(ВыбСчет, 1);<o:p></o:p></p>
+
+<h4><a name="_Toc493032754">ИспользоватьКорСчет</a></h4>
+
+<p class=MsoNormal>Установить счет для показа списка
+корреспондирующих счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьКорСчет(&lt;Счет&gt;,
+&lt;Корреспонденция&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>UseCorAccount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Счет&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение со
+  значением счета.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Корреспонденция&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число: 1 — дебетовый
+  счет; 0 — кредитовый счет.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьКорСчет<span
+lang=RU> устанавливает счет для показа списка кор­респондирующих с ним счетов.
+Корреспондирующие счета задаются с помощью корректных проводок.</p>
+
+<p class=MsoNormal>Данный метод доступен в контексте Модуля формы
+списка счетов (см. «Виды программных модулей»). Действие данного метода
+относится ко всему текущему списку счетов, который доступен в локальном
+контексте Модуля формы списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьКорСчет(ВыбСчет, 1);<o:p></o:p></p>
+
+<h4><a name="_Toc493032755">ИерархическийСписок</a></h4>
+
+<p class=MsoNormal>Установить режим иерархического списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИерархическийСписок(&lt;ФлагИерархСписка&gt;,
+&lt;ФлагИзменения&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>HierarchicalList<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагИерархСписка&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Флаг иерархического
+  списка. 1 — иерархический список; 0 — неиерархический список.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагИзменения&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Этим флагом регу­лируется возможность интерактивного измене­ния
+  флага иерархического списка. 1 — пользова­тель может изменить иерархичность
+  интерактивно, 0 — пользователь не может интерактивно изменить иерархичность.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение флага иерархического списка для формы
+списка счетов (до при­менения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИерархическийСписок<span
+lang=RU> устанавливает режим иерархического спи­ска счетов.</p>
+
+<p class=MsoNormal>Данный метод доступен в контексте Модуля формы
+списка счетов (см. «Виды программных модулей»). Действие данного метода
+относится ко всему текущему списку счетов, который доступен в локальном
+контексте Модуля формы списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИерархическийСписок(1, 1);<o:p></o:p></p>
+
+<h4><a name="_Toc493032756">РедактироватьВДиалоге</a></h4>
+
+<p class=MsoNormal>Установить способ редактирования счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РедактироватьВДиалоге(&lt;Способ&gt;,
+&lt;Разрешение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EditInForm<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Способ&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Способ редактирова­ния счета: 1 — в диалоге; 0 — в строке.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Разрешение&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Флаг разрешения пользователю менять способ редактирования: 1
+  —разрешить; 0 — запретить.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение установленного на данный момент
+способа счета (до применения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>РедактироватьВДиалоге<span
+lang=RU> устанавливает способ редактирования счета.</p>
+
+<p class=MsoNormal>Данный метод доступен в контексте Модуля формы
+списка счетов. Дейст­вие данного метода относится ко всему текущему списку
+счетов, который дос­тупен в локальном контексте Модуля формы списка.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекСп = РедактироватьВДиалоге();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// какой сейчас способ?<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РедактироватьВДиалоге(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// установить редактирование в диалоге<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РедактироватьВДиалоге(1, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// установить редактирование в диалоге
+и запретить его менять<o:p></o:p></p>
+
+<h4><a name="_Toc493032757">ВыборГруппы</a></h4>
+
+<p class=MsoNormal>Устанавливает или сбрасывает признак выбора
+группы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыборГруппы([&lt;ФлагВыбораГруппы&gt;])<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectGroup<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагВыбораГруппы&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение: 1 — выбирать группы; 0 — не выбирать группы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее числовое значение режима выборки групп
+(на момент до исполне­ния метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыборГруппы<span
+lang=RU> устанавливает режим выборки групп для формы спи­ска счетов, которая
+открыта в режиме выбора или подбора счета. Открытие такой формы списка счетов
+обычно производится вызовом метода Выбрать или нажатием кнопки выбора, если
+выбираемый счет является элементом диа­лога.</p>
+
+<p class=MsoNormal>По умолчанию выбор группы разрешен. Режим,
+устанавливаемый данным методом для списка счетов, влияет на интерактивный выбор
+пользователем значения типа «Счет» из списка счетов (плана счетов). Установка
+режима по­зволяет разрешить или запретить пользователю выбирать счета-группы
+(счета, которые могут иметь субсчета).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыборГруппы(0);<o:p></o:p></p>
+
+<h3><a name="_Toc493032758">Предопределенные процедуры модуля
+формы списка счетов</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе системные
+предопределенные процедуры должны располагаться только в Модулях форм списка
+счетов (см. «Виды про­граммных модулей»).</p>
+
+<p class=MsoNormal>В основном, данные процедуры предназначены для
+расширения возможно­сти программного управления правами доступа к системе.</p>
+
+<p class=MsoNormal>Предопределенные процедуры не является
+встроенными процедурами язы­ка. Для них зарезервированы только название и
+синтаксис. Тело процедур должно быть написано самим разработчиком в
+соответствующих программных модулях. Вызов предопределенных процедур на
+исполнение производится в системе 1С:Предприятие неявно при возникновении
+соответствующего собы­тия. Описание предопределенных процедур также см. гл.
+«Системные предо­пределенные процедуры».</p>
+
+<h4><a name="_Toc493032759">ПриВводеСтроки</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при вводе новой
+строки списка счетов</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриВводеСтроки()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnNewLine<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриВводеСтроки производится в
+сис­теме 1С:Предприятие при интерактивном вводе новой строки (до начала ввода)
+в форме списка счетов. Если в данной предопределенной процедуре установить
+статус возврата 0 (например, если данному пользователю нельзя вводить новые
+строки списка счетов), то новая строка списка счетов не будет инициирована.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться в Модуле формы списка счетов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриВводеСтроки()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Оператор&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;У вас нет права добавлять счета!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032760">ПриРедактированииНовойСтроки</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при редактировании
+новой строки спи­ска счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриРедактированииНовойСтроки()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnEditNewLine<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриРедактированииНовойСтроки
+производится в системе 1С:Предприятие в момент начала интерактивного ре­дактирования
+новой строки списка счетов (после того, как новая строка уже заведена). Данная
+процедура может использоваться, например, для установки начальных значений
+(значений по умолчанию) характеристик нового счета. В данной предопределенной
+процедуре установка статуса возврата не имеет смысла, т. к. отказаться от ввода
+новой строки в этот момент уже невозможно.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться в Модуле формы списка счетов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриРедактированииНовойСтроки()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+СтатусСчета = ОснСтатусСчетов;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc493032761">ПриНачалеРедактированияСтроки</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при начале
+редактирования сущест­вующей строки списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриНачалеРедактированияСтроки()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnStartEditLine<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриНачалеРедактированияСтроки
+производится в системе 1С:Предприятие в момент начала интерактивного ре­дактирования
+существующей строки списка счетов (кроме новой). Если в дан­ной
+предопределенной процедуре установить статус возврата 0 (например, если данному
+пользователю нельзя изменять характеристики бухгалтерских счетов), строка не
+будет изменена.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может располагаться
+в Модуле формы списка счетов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриНачалеРедактированияСтроки()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Оператор&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;У вас нет права менять счета!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032762">ПриВыбореРодителя</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура выбора родительской
+группы счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриВыбореРодителя(&lt;Счет&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnSetParent<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Счет&gt;</p>
+  </td>
+  <td width=565 valign=top style='width:423.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение счета,
+  который интерактивно установ­лен в качестве родителя.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриВыборе Родителя производится
+в системе 1С:Предприятие при интерактивной смене родительской группы счета
+(выбор следующего или предыдущего уровня). Если в данной предопределен­ной
+процедуре установить статус возврата — 0, то выбор родительской группы не будет
+произведен.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в Модуле формы списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриВыбореРодителя(Родитель)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если Родитель = ЗапрещеннаяГруппа Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;Вам запрещено изменять счет!&quot;,
+2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032763">ПриЗаписи</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при записи строки
+списка счетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриЗаписи(&lt;СписокПериодРекв&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnWrite<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>СписокПериодРекв&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое значение —
+  список разделенных запя­тыми изменяемых периодических реквизитов счета. В
+  данный параметр система 1С:Предприятие передает перечень периодиче­ских
+  реквизитов, которые были интерактивно выбраны пользователем для обновления в
+  окне диалога выбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриЗаписи производится системой
+1С:Предприятие при интерактивной записи строки списка счетов. Если в дан­ной
+предопределенной процедуре установить статус возврата 0 (например, если данному
+пользователю нельзя изменять некоторые характеристики счета), то запись строки
+списка счетов не будет выполнена.</p>
+
+<p class=MsoNormal>Формальный параметр &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СписокПериодРекв<span
+lang=RU>&gt; используется в теле проце­дуры для обработки ситуаций изменений
+периодических реквизитов счета.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться в следующих программных модулях: модуль формы счета, модуль формы
+списка счетов, (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриЗаписи(СписокРекв)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Валютный = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h3><a name="_Toc493032764">Предопределенные процедуры модуля
+формы счета</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе системные
+предопределенные процедуры должны располагаться только в модуле формы счета
+(см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal>В основном, данные процедуры предназначены для
+расширения возможно­сти программного управления правами доступа к системе.</p>
+
+<p class=MsoNormal>Предопределенные процедуры не является
+встроенными процедурами язы­ка. Для них зарезервированы только название и
+синтаксис. Тело процедур должно быть написано самим разработчиком в
+соответствующих программных модулях. Вызов предопределенных процедур на
+исполнение производится в системе 1С:Предприятие неявно при возникновении
+соответствующего собы­тия. Описание предопределенных процедур также см. гл.
+«Системные предо­пределенные процедуры».</p>
+
+<h4><a name="_Toc493032765">ВводНового</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при вводе нового
+счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВводНового(&lt;ПризнКопирования&gt;,
+&lt;ОбъектКопирования&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>InputNew<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=180 valign=top style='width:134.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ПризнКопирования&gt;</p>
+  </td>
+  <td width=489 valign=top style='width:366.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Признак того, что
+  объект введен копированием. Число: 1 — объект введен копированием, 0 — просто
+  новый объект. Данный признак может быть использован для анализа необходимости
+  инициализации реквизитов нового объекта.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:134.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ОбъектКопирования&gt;</p>
+  </td>
+  <td width=489 valign=top style='width:366.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Объект, который был
+  скопирован.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов процедуры <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВводНового<span
+lang=RU> производится в системе 1С:Предприятие неявно в момент выбора открытия
+формы счета для ввода нового счета. Данная процедура может использоваться,
+например, для установки начальных значе­ний (по умолчанию) характеристик нового
+счета.</p>
+
+<p class=MsoNormal>Если в данной предопределенной процедуре
+установить статус возврата 0 (например, если данному пользователю нельзя вводить
+новые счета), ввода нового счета и открытие формы счета не будет выполнено.</p>
+
+<p class=MsoNormal>Процедура <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВводНового<span
+lang=RU> контекста справочников должна находиться в мо­дуле: формы счета (см.
+«Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ВводНового()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Оператор&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;У вас нет права добавлять счета!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+СтатусСчета = ОснСтатусСчетов;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b>См. также:</b><span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>
+СтатусВозврата<o:p></o:p></p>
+
+<h4><a name="_Toc493032766">ПриЗаписи</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при записи счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриЗаписи(&lt;СписокПериодРекв&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnWrite<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>СписокПериодРекв&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое значение —
+  список разделенных запя­тыми изменяемых периодических реквизитов счета. В
+  данный параметр система 1С:Предприятие передает перечень периодиче­ских
+  реквизитов, которые были интерактивно выбраны пользователем для обновления в
+  окне диалога выбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриЗаписи производится системой
+1С:Предприятие при интерактивной записи счета. Если в данной предопреде­ленной
+процедуре установить статус возврата 0 (например, если данному поль­зователю
+нельзя изменять некоторые характеристики счета), то запись счета не будет
+выполнена.</p>
+
+<p class=MsoNormal>Формальный параметр &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СписокПериодРекв<span
+lang=RU>&gt; используется в теле проце­дуры для обработки ситуаций с изменениями
+периодических реквизитов счета.</p>
+
+<p class=MsoNormal>Процедура <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПриЗаписи<span
+lang=RU> контекста справочников должна находиться в моду­ле формы счета (см.
+«Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриЗаписи(СписокРекв)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Валютный = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

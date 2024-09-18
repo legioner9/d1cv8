@@ -1,0 +1,684 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part24</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part24.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492734988"></a><a name="_Toc494937877"><span style='mso-bookmark: _Toc492734988'>Глава 24<br> Работа с Правилами перерасчета</a></h1>
+
+<p class=MsoNormal>«Правила перерасчета» являются
+вспомогательными объектами метаданных компоненты «Расчет». Они предназначены
+для автоматического отслеживания актуальности результатов проведенных расчетов
+при вводе новых записей жур­нала расчетов.</p>
+
+<p class=MsoNormal>При создании правила перерасчета в
+конфигураторе определяются виды расчетов, при редактировании которых правило
+перерасчета «срабатывает», и виды расчетов, которые должны быть перерасчитаны
+при срабатывании данно­го правила.</p>
+
+<p class=MsoNormal>Список видов расчета, на основании которых
+срабатывает правило перерас­чета условно называется «ведущие виды расчета».
+Список видов расчета, кото­рые должны быть перерасчитаны при срабатывании
+данного правила условно называется «зависимые виды расчета».</p>
+
+<p class=MsoNormal>Для организации правильного перерасчета доплат
+следует в качестве веду­щих видов расчета указать те, на основании которых
+считаются доплаты (например<b style='mso-bidi-font-weight:normal'>:</b> оклад,
+тариф, сдельная оплата), а в качестве зависимых видов расчета следует указать
+собственно перерасчитываемые доплаты.</p>
+
+<p class=MsoNormal>После ввода в систему такого правила
+перерасчетов журнал расчетов будет вести себя описанным ниже образом. При этом
+сначала рассмотрим случай для взаимосвязи видов расчета в одном периоде.</p>
+
+<p class=MsoNormal>Итак, если в журнале расчетов появится новая
+(в результате проведения документа), исчезнет (при отмене проведения) или будет
+исправлена сущест­вующая запись с одним из «ведущих» видов расчета (в нашем
+примере оклад, тариф, сдельная оплата), то будет снят признак «Рассчитана» со
+всех записей, соответствующих доплатам, если найдутся таковые с тем же периодом
+дейст­вия, что и введенная, удаленная или исправленная запись.</p>
+
+<p class=MsoNormal>Если при этом вводится запись с периодом
+действия не в текущем расчет­ном периоде, а в одном из прошлых (например,
+расчет оклада задним числом за прошлый месяц), то система введет
+записи-перерасчеты для всех доплат соот­ветствующего прошлого периода.</p>
+
+<p class=MsoNormal>Правило перерасчета может быть двух типов:
+перерасчет «по текущему пе­риоду» или «по будущим периодам».</p>
+
+<p class=MsoNormal>В первом случае перерасчитываются заданные
+виды расчетов с тем же пе­риодом действия, что и новая введенная запись. Во
+втором — перерасчитывают­ся записи одного или нескольких будущих расчетных
+периодов.</p>
+
+<h2><a name="_Toc492734989"></a><a name="_Toc494937878"><span style='mso-bookmark:
+_Toc492734989'>Контекст работы с правилами перерасчета</a></h2>
+
+<p class=MsoNormal>Средства языка предоставляют возможность
+непосредственного доступа к атрибутам и методам правил перерасчета, объявленных
+в конфигураторе, в лю­бом программном модуле (все объявленные в конфигураторе
+правила перерас­чета <i>принадлежат глобальному контексту </i>конфигурации). Во
+всех текстах про­граммных модулей для доступа к атрибутам или вызова методов
+правил пере­расчета можно записать соответствующий метод или атрибут через
+точку после полного имени правила перерасчета.</p>
+
+<p class=MsoNormal>Полное имя правила перерасчета записывается
+следующим образом:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПравилоПерерасчета.&lt;ХХХХХ&gt;<span
+lang=RU>, <o:p></o:p></p>
+
+<p class=MsoNormal>где &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ХХХХХ<span
+lang=RU>&gt; — идентификатор Правила Перерасчета, объявленный в кон­фигураторе.</p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПравилоПерерасчета — <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>RecalculationRule.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КолПериодов =
+ПравилоПерерасчета.Главное.КоличествоПериодов;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВР = ВидРасчета.ПоОкладу;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗависитОтОклада =
+ПравилоПерерасчета.ПересчДоплат.ИмеетВедущий(ВР);<o:p></o:p></p>
+
+<h3><a name="_Toc492734990"></a><a name="_Toc494937879"><span style='mso-bookmark:
+_Toc492734990'>Атрибуты правил перерасчета</a></h3>
+
+<h4><a name="_Toc492734991"></a><a name="_Toc494937880"><span style='mso-bookmark:
+_Toc492734991'>Тип</a></h4>
+
+<p class=MsoNormal>Тип правила перерасчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Тип<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Type<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Тип<span
+lang=RU> позволяет прочитать/установить значение типа правила пере­расчета.
+Данный атрибут может принимать следующие значения:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l19 level1 lfo48;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>0 — зависимые виды расчетов должны быть
+перерасчитаны в том же перио­де, что и вводимая запись журнала расчетов;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l19 level1 lfo48;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>1 — зависимые виды расчетов должны быть
+перерасчитаны в нескольких периодах, следующих за периодом действия вводимой
+записи журнала рас­четов (количество периодов задано атрибутом <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>КоличествоПериодов).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Тип = ПравилоПерерасчета.Главное.Тип;<o:p></o:p></p>
+
+<h4><a name="_Toc492734992"></a><a name="_Toc494937881"><span style='mso-bookmark:
+_Toc492734992'>КоличествоПериодов</a></h4>
+
+<p class=MsoNormal>Количество перерасчитываемых периодов для
+правила перерасчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоПериодов<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>NumberOfPeriods<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КоличествоПериодов<span
+lang=RU> позволяет прочитать/установить количест­во периодов перерасчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КолПер =
+ПравилоПерерасчета.Главное.КоличествоПериодов;<o:p></o:p></p>
+
+<h3><a name="_Toc492734993"></a><a name="_Toc494937882"><span style='mso-bookmark:
+_Toc492734993'>Методы правил перерасчета</a></h3>
+
+<h4><a name="_Toc492734994"></a><a name="_Toc494937883"><span style='mso-bookmark:
+_Toc492734994'>КоличествоВедущих</a></h4>
+
+<p class=MsoNormal>Возвращает количество «ведущих» видов расчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоВедущих()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>NumberOfLeadings<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Количество «ведущих» видов расчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КоличествоВедущих<span
+lang=RU> возвращает количество «ведущих» видов рас­чета (при вводе которых в
+журнал расчетов необходимо произвести перерасче­ты согласно данного правила).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// выведем все виды расчета от которых
+зависят доплаты<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Сч = 1 По
+ПравилоПерерасчета.Доплаты.КоличествоВедущих() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(ПравилоПерерасчета.Доплаты.ПолучитьВедущий(Сч));<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h4><a name="_Toc492734995"></a><a name="_Toc494937884"><span style='mso-bookmark:
+_Toc492734995'>ИмеетВедущий</a></h4>
+
+<p class=MsoNormal>Установить принадлежность вида расчета к
+ведущим для правила перерасчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИмеетВедущий(&lt;ВидРасчета&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>HasLeading<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВидРасчета&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Вид расчета.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1, если данное правило перерасчета
+имеет заданный вид расчета в качестве ведущего (т. е. при вводе этого вида
+расчета в журнал расчетов сработает данное правило перерасчета); 0, если данное
+правило перерасчета не имеет заданный вид расчета в качестве ведущего.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмеетВедущий<span
+lang=RU> позволяет установить принадлежность вида расчета к ведущим для правила
+перерасчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// зависит ли доплата от премии?<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Зависит =
+ПравилоПерерасчета.Доплаты.ИмеетВедущий(ВидРасчета.Премия);<o:p></o:p></p>
+
+<h4><a name="_Toc492734996"></a><a name="_Toc494937885"><span style='mso-bookmark:
+_Toc492734996'>ПолучитьВедущий</a></h4>
+
+<p class=MsoNormal>Возвращает вид расчета из списка «ведущих»
+расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьВедущий(&lt;НомерВР&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetLeading<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерВР&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  номер вида расчета в списке «ведущих» расчетов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Вид расчета с номером &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>НомерВР&gt; из списка «ведущих»
+расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьВедущий<span
+lang=RU> возвращает вид расчета с номером &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НомерВР<span
+lang=RU>&gt; из списка «ведущих» расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидВедРасч =
+ПравилоПерерасчета.Доплаты.ПолучитьВедущий(Инд);<o:p></o:p></p>
+
+<h4><a name="_Toc492734997"></a><a name="_Toc494937886"><span style='mso-bookmark:
+_Toc492734997'>ДобавитьКакВедущий</a></h4>
+
+<p class=MsoNormal>Добавляет вид расчета в список «ведущих».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ДобавитьКакВедущий(&lt;ВидРасчета&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AddAsLeading<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВидРасчета&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Вид расчета.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДобавитьКакВедущий<span
+lang=RU> добавляет &lt;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидРасчета<span
+lang=RU>&gt; в список «веду­щих».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПравилоПерерасчета.Доплаты.ДобавитьКакВедущий(ВидРасчета.Премия);<o:p></o:p></p>
+
+<h4><a name="_Toc492734998"></a><a name="_Toc494937887"><span style='mso-bookmark:
+_Toc492734998'>УдалитьВсеВедущие</a></h4>
+
+<p class=MsoNormal>Удаляет все виды расчета из списка «ведущих».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УдалитьВсеВедущие()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>DeleteAlILeadings<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УдалитьВсеВедущие<span
+lang=RU> удаляет все виды расчета из списка «веду­щих».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПравилоПерерасчета.Доплаты.УдалитьВсеВедущие();<o:p></o:p></p>
+
+<h4><a name="_Toc492734999"></a><a name="_Toc494937888"><span style='mso-bookmark:
+_Toc492734999'>КоличествоПодчиненных</a></h4>
+
+<p class=MsoNormal>Возвращает количество «подчиненных» видов
+расчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КоличествоПодчиненных()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>NumberOfDependents<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Количество «подчиненных» видов расчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КоличествоПодчиненных<span
+lang=RU> возвращает количество «подчиненных» видов расчета (для которых необходимо
+произвести перерасчеты согласно дан­ного правила).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Колич =
+ПравилоПерерасчета.Доплаты.КоличествоПодчиненных();<o:p></o:p></p>
+
+<h4><a name="_Toc492735000"></a><a name="_Toc494937889"><span style='mso-bookmark:
+_Toc492735000'>ИмеетПодчиненный</a></h4>
+
+<p class=MsoNormal>Установить принадлежность вида расчета к
+«подчиненным» для пра­вила перерасчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИмеетПодчиненный(&lt;ВидРасчета&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>HasDependent<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВидРасчета&gt;</p>
+  </td>
+  <td width=552 valign=top style='width:413.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Вид расчета.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1, если данное правило перерасчета
+имеет заданный вид расчета в качестве подчиненного (т. е. для этого вида расчета
+в журнале расчетов сработа­ет данное правило перерасчета); 0, если данное
+правило перерасчета не имеет заданный вид расчета в качестве подчиненного.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмеетПодчиненный<span
+lang=RU> позволяет установить принадлежность вида расчета к подчиненным для
+правила перерасчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Подч =
+ПравилоПерерасчета.Доплаты.ИмеетПодчиненный(ВидРасчета.Премия);<o:p></o:p></p>
+
+<h4><a name="_Toc492735001"></a><a name="_Toc494937890"><span style='mso-bookmark:
+_Toc492735001'>ПолучитьПодчиненный</a></h4>
+
+<p class=MsoNormal>Возвращает вид расчета из списка «подчиненных»
+расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьПодчиненный(&lt;НомерВР&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetDependent<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерВР&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  номер вида расчета в списке «подчиненных» расчетов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Вид расчета с номером &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>НомерВР&gt; из списка
+«подчиненных» расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьПодчиненный<span
+lang=RU> возвращает вид расчета с номером &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НомерВР<span
+lang=RU>&gt; из списка «подчиненных» расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидПодчРасч =
+ПравилоПерерасчета.Доплаты.ПолучитьПодчиненный(Инд);<o:p></o:p></p>
+
+<h4><a name="_Toc492735002"></a><a name="_Toc494937891"><span style='mso-bookmark:
+_Toc492735002'>ДобавитьКакПодчиненный</a></h4>
+
+<p class=MsoNormal>Добавляет вид расчета в список «подчиненных».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ДобавитьКакПодчиненный(&lt;ВидРасчета&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AddAsDependent<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВидРасчета&gt;</p>
+  </td>
+  <td width=552 valign=top style='width:413.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Вид расчета.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДобавитьКакПодчиненный<span
+lang=RU> добавляет &lt;<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидРасчета<span
+lang=RU>&gt; в список «подчиненных».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПравилоПерерасчета.Доплаты.ДобавитьКакПодчиненный(ВидРасчета.Премия);<o:p></o:p></p>
+
+<h4><a name="_Toc492735003"></a><a name="_Toc494937892"><span style='mso-bookmark:
+_Toc492735003'>УдалитьВсеПодчиненные</a></h4>
+
+<p class=MsoNormal>Удаляет все виды расчета из списка
+«подчиненных».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УдалитьВсеПодчиненные()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>DeleteAllDependents<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УдалитьВсеПодчиненные<span
+lang=RU> удаляет все виды расчета из списка «подчиненных».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПравилоПерерасчета.Доплаты.УдалитьВсеПодчиненные();<o:p></o:p></p>
+
+<h4><a name="_Toc492735004"></a><a name="_Toc494937893"><span style='mso-bookmark:
+_Toc492735004'>Применять</a></h4>
+
+<p class=MsoNormal>Устанавливает необходимость применять или не
+применять все пра­вила перерасчетов при вводе новых записей в журнал расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Применять(&lt;ФлагПрименения&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Use<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагПрименения&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число: 1 — применять;
+  0 — не применять.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее значение флага применения (до
+исполнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Применять<span
+lang=RU> устанавливает необходимость применять или не приме­нять все заданные в
+конфигурации правила перерасчетов при изменении соста­ва или исправлении
+записей журнала расчетов.</p>
+
+<p class=MsoNormal><b>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПравилоПерерасчета.Применять(1);<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

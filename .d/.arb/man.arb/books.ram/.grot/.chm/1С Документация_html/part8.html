@@ -1,0 +1,1377 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part8</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part8.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032393">Глава 8<br> Системные предопределенные процедуры</a></h1>
+
+<p class=MsoFootnoteText>Системные предопределенные процедуры
+предназначены для того, чтобы дать возможность программно обрабатывать
+системные события, возникающие при интерактивных действиях пользователя, таких
+как ввод нового, изменение, удаление. Исключение составляют только
+предопределенные процедуры Моду­ля документа: <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОбработкаПроведения<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОбработкаУдаленияПроведения<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>АрхивироватьДокумент<span
+lang=RU>, которые вызываются как при интерактивном, так и при программном
+возникновении события.</p>
+
+<p class=a><b>ВНИМАНИЕ!</b> Системные
+предопределенные процедуры не являются встроен­ными процедурами языка. Для них
+зарезервированы только название и синтаксис. Тело процедур должно быть написано
+самим разработчиком конфигурации в соответствующих программных модулях.</p>
+
+<p class=MsoNormal>Вызов системных предопределенных процедур
+(если они использованы в конфигурации) производится неявно самой системой
+1С:Предприятие перед обработкой какого-либо интерактивного действия
+пользователя, например, при вводе нового документа. В этот момент система
+передает в предопределенную процедуру фактические значения параметров. В теле
+процедур переданные па­раметры могут использоваться для обработки события,
+например, выдачи пре­дупреждающих сообщений, установки статуса возврата и т. п.</p>
+
+<p class=MsoFootnoteText>С помощью системной функции <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СтатусВозврата в теле
+предопределен­ной процедуры можно устанавливать значение статуса возврата
+процедуры. Статус возврата используется системой, чтобы определить — выполнить
+или нет действие того системного события, которое вызвало данную предопреде­ленную
+процедуру.</p>
+
+<h3><a name="_Toc493032394">Предопределенные процедуры
+Глобального модуля</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе системные
+предопределенные процедуры должны располагаться только в глобальном программном
+модуле. Данные про­цедуры, например, могут использоваться для расширения
+возможности про­граммного управления правами доступа пользователя к системе.</p>
+
+<h4><a name="_Toc493032395">ПриНачалеРаботыСистемы</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при начале работы
+задачи.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриНачалеРаботыСистемы()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnStartSystem<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриНачалеРаботыСистемы произво­дится
+системой 1С:Предприятие неявно при начале работы с программой. Если в данной
+предопределенной процедуре установить статус возврата — 0 (напри­мер, если время
+доступа данного пользователя к системе истекло), то пользова­тель не сможет
+войти в программу.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриНачалеРаботыСистемы()<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Курс = Константа.ОсновнаяВалюта.Текущ_Курс.Получить(ТекущаяДата();<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Предупреждение(&quot;Добро пожаловать! Сегодня &quot; + &quot; &quot; +
+ТекущаяДата() +<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         РазделительСтрок + &quot;Сейчас установлен курс
+доллара=&quot; + Курс), 7);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032396">ПриЗавершенииРаботыСистемы</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при завершении
+работы задачи.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриЗавершенииРаботыСистемы()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnFinishSystem<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриЗавершенииРаботыСистемы про­изводится
+системой 1С:Предприятие неявно при завершении работы пользова­теля с системой.
+Если в данной предопределенной процедуре установить статус возврата — 0
+(например, если пользователь не выполнил какие-либо штатные операции), то
+работа системы не будет завершена, т. е. пользователь не сможет выйти из
+программы.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриЗавершенииРаботыСистемы()<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Предупреждение(&quot;До свидания !&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032397">ПриУдаленииДокумента</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при удалении
+документа и при отмене пометки на удаление.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУдаленииДокумента(&lt;УдалДокум&gt;,
+&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnDeleteDoc<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=123 valign=top style='width:92.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>УдалДокум&gt;</p>
+  </td>
+  <td width=546 valign=top style='width:409.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение
+  удаляемого документа.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=123 valign=top style='width:92.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=546 valign=top style='width:409.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение флага
+  непосредственного удаления: 1 — непосредственное уда­ление; 0 — пометка на удаление.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУдаленииДокумента производит­ся
+системой 1С:Предприятие неявно при интерактивном удалении документа и в случае
+отмены пометки на удаление. В этом случае, условия вызова можно узнать методом <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПометкаУдаления документа. Если
+в данной предопределен­ной процедуре установить статус возврата — 0 (например,
+если не истек срок хранения документа), то удаление документа не будет выполнено.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриУдаленииДокумента(Док,
+Реж)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если (Док.Вид() = &quot;РасходнаяНакл&quot;) И (Реж = 1) Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;У вас нет права удалять
+накладную!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032398">ПриУдаленииЭлемента</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при удалении
+элемента справочника и при отмене пометки на удаление.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУдаленииЭлемента(&lt;УдалЭлем&gt;,
+&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnDeleteItem<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>УдалЭлем&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение
+  удаляемого элемента справочни­ка.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение флага
+  непосредственного удале­ния: 1 — непосредственное удаление; 0 — пометка на удаление.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУдаленииЭлемента производится
+системой 1С:Предприятие неявно при интерактивном удалении элемента спра­вочника
+и в случае отмены пометки на удаление. В этом случае, условия вызо­ва можно
+узнать методом <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПометкаУдаления<span
+lang=RU> элемента справочника. Если в данной предопределенной процедуре
+установить статус возврата — 0 (напри­мер, если нарушается ссылочная
+целостность системы), то удаление элемента справочника не будет выполнено.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриУдаленииЭлемента(Элем,
+Реж)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если (Элем.Вид() = &quot;Товар&quot;) И (Реж = 1) Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;У вас нет права удалять Товар!&quot;,
+2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032399">ПриОткрытииИстории</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при открытии окна
+«История» значе­ния периодического реквизита элемента справочника или
+константы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриОткрытииИстории(&lt;ТипОбъекта&gt;,
+&lt;Объект&gt;, &lt;ТолькоПросмотр&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnOpenHistory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТипОбъекта&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Название
+  периодического объекта конфигурации, как оно задано в конфигураторе (например,
+  &quot;Справочник.Валюты.ТекущийКурс&quot; или &quot; Константа.
+  ИмяДиректора&quot;). Строковое назва­ние агрегатного типа данных может
+  передаваться системой в русском или англоязычном написании (Справочник или
+  Reference, Константа или Const) — в зависимости от установки флага ос­новного
+  языка системы (см. ОсновнойЯзык).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Объект&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Элемент
+  справочника, для которого выполняется открытие окна истории периодического
+  реквизита. Имеет смысл только для периодических реквизитов справочников, а не
+  для констант.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТолькоПросмотр&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Флаг установки
+  режима &quot;только просмотр&quot; для окна истории значения. Если значение
+  этого пара­метра установить в 1 (в предопределенной проце­дуре), то окно
+  истории будет открыто только для чтения. Установка значения в 0 — введет
+  режим по умолчанию (определенный правами). Уже открытое окно истории
+  соответствующим образом изменит режим (если это случай, когда процедура
+  обрабаты­вает не открытие окна, а смену отображаемого объ­екта). Значение по
+  умолчанию — 0.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриОткрытииИстории производится
+системой 1С:Предприятие неявно при при открытии окна «История» значения
+периодического реквизита элемента справочника или константы. Если в данной
+предопределенной процедуре установить статус возврата — 0 (например, если
+данному пользователю запрещено изменение периодических реквизитов), то запись
+нового периодического значения не будет выполнена.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриОткрытииИстории(ТипОб, Об,
+ФлагРежима)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если (ТипОб = &quot;Справочник.Валюты.ТекКурс&quot;) И<o:p></o:p></p>
+
+<p class=MsoFootnoteText style='margin-left:14.2pt;text-indent:0in'><span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'><span style="mso-spacerun: yes">           (Об =
+Константа.ОсновнаяВалюта)) Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;У вас нет права просматривать историю
+курса!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОсновнойЯзык</p>
+
+<h4><a name="_Toc493032400">ПриЗаписиИстории</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при записи в окне
+«История» значения периодического реквизита элемента справочника или константы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриЗаписиИстории(&lt;ТипОбъекта&gt;,
+&lt;Объект&gt;, &lt;3начение&gt;, &lt;ДатаИстории&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnWriteHistory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=123 valign=top style='width:92.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТипОбъекта&gt;</p>
+  </td>
+  <td width=546 valign=top style='width:409.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Название
+  периодического объекта конфигурации, как оно задано в конфигураторе (например,
+  &quot;Справочник.Валюты.ТекущийКурс&quot; или &quot;Константа. ИмяДиректора&quot;).
+  Строковое назва­ние агрегатного типа данных может передаваться системой в
+  русском или англоязычном написании (Справочник или Reference, Константа или
+  Const) — в зависимости от установки флага ос­новного языка системы (см.
+  ОсновнойЯзык).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=123 valign=top style='width:92.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Объект&gt;</p>
+  </td>
+  <td width=546 valign=top style='width:409.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Элемент
+  справочника, для которого выполняется изменение периодического реквизита.
+  Имеет смысл только для периодических реквизитов справочни­ков, а не для констант.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=123 valign=top style='width:92.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение&gt;</p>
+  </td>
+  <td width=546 valign=top style='width:409.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение
+  периодической записи.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=123 valign=top style='width:92.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаИстории&gt;</p>
+  </td>
+  <td width=546 valign=top style='width:409.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Дата
+  периодической записи.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриЗаписиИстории производится
+системой 1С:Предприятие неявно при интерактивной записи нового периоди­ческого
+значения в окне «История». Если в данной предопределенной процеду­ре установить
+статус возврата — 0 (например, если данному пользователю за­прещено изменение
+периодических реквизитов), то запись нового периодиче­ского значения не будет
+выполнена.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриЗаписиИстории(ТипОб, Об,
+Значен, ДатаИстор)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если (ТипОб = &quot;Справочник.Валюты.ТекКурс&quot;) И<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">           (Об = Константа.ОсновнаяВалюта) И (ДатаИстор &gt;
+РабочаяДата()) Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         // Записывается курс для валюты, которая записана в
+Константе<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;У вас нет права устанавливать курс на
+будущую дату!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText>Ом. также: <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОсновнойЯзык</p>
+
+<h4><a name="_Toc493032401">ПриУдаленииИстории</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при удалении в окне
+«История» значе­ния периодического реквизита элемента справочника или
+константы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУдаленииИстории(&lt;ТипОбъекта&gt;,
+&lt;Объект&gt;, &lt;3начение&gt;, &lt;ДатаИстории&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnDeleteHistory<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТипОбъекта&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Название
+  периодического объекта конфигурации, как оно задано в конфигураторе (например,
+  &quot;Справочник.Валюты.ТекущийКурс&quot; или &quot; Константа.
+  ИмяДиректора&quot;). Строковое назва­ние агрегатного типа данных может
+  передаваться системой в русском или англоязычном написании (Справочник или
+  Reference, Константа или Const) — в зависимости от установки флага ос­новного
+  языка системы (см. ОсновнойЯзык).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Объект&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Элемент
+  справочника, для которого выполняется изменение периодического реквизита.
+  Имеет смысл только для периодических реквизитов справочни­ков, а не для констант.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение
+  периодической записи.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаИстории&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Дата
+  периодической записи.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУдаленииИстории производится
+системой 1С:Предприятие неявно при интерактивном удалении периодической записи
+в окне «История». Если в данной предопределенной процедуре устано­вить статус
+возврата — 0 (например, если данному пользователю запрещено изменение
+периодических реквизитов), то удаления периодического значения не будет
+выполнено.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриУдаленииИстории(ТипОб, Об,
+Значен, ДатаИстор)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если (ТипОб = &quot;Справочник.Валюты.ТекКурс&quot;) И<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">           (Об=Константа.ОсновнаяВалюта) И (ДатаИстор &lt;
+РабочаяДата() - 7) Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         // Удаляется курс для валюты, которая записана в Константе<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;У вас нет права удалять прошлый
+курс!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОсновнойЯзык</p>
+
+<h4><a name="_Toc493032402">ПриЗаписиКонстанты</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при записи значения
+константы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриЗаписиКонстанты(&lt;ИмяКонстанты&gt;,
+&lt;3начение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnWriteConst<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяКонстанты&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Название
+  константы, как оно задано в конфигура­торе (например, &quot;СкладПоУмолчанию&quot;).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Новое значение
+  константы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриЗаписиКонстанты производится
+системой 1С:Предприятие неявно при интерактивной записи значения кон­станты.
+Если в данной предопределенной процедуре установить статус возврата — 0
+(например, если данное значение константы запрещено), то запись кон­станты не
+будет выполнена.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриЗаписиКонстанты(ИмяКонстанты, Значение)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ИмяКонстанты = &quot;ТекущийПрефикс&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;У вас нет права менять
+префикс!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032403">ПриОтменеПроведенияДокумента</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при отмене
+проведения документа.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриОтменеПроведенияДокумента(&lt;Докум&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnUnPosting<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=85 valign=top style='width:63.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Докум&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение
+  обрабатываемого документа.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриОтменеПроведенияДокумента
+производится системой 1С:Предприятие неявно при интерактивной попытке выполнить
+операцию «Сделать непроведенным». Если в данной предопреде­ленной процедуре
+установить статус возврата — 0 (например, если дата доку­мента меньше некоторой
+константы), то отмена проведения документа не будет выполнена.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриОтменеПроведенияДокумента(Док)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Док.ДатаДок &lt;= Константа.ДатаЗащитыДокументов Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;Нельзя снимать с проведения архив!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СделатьНеПроведенным</p>
+
+<h4><a name="_Toc493032404">ПриИзмененииВремениДокумента</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при изменении
+времени документа.</p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриИзмененииВремениДокумента(&lt;Докум&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnChangeTimeDoc<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Докум&gt;</p>
+  </td>
+  <td width=565 valign=top style='width:423.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение
+  обрабатываемого документа.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриИзмененииВремениДокумента
+производится самой системой 1С:Предприятие неявно при интерактивной по­пытке
+изменить время документа. Если в данной предопределенной процедуре установить
+статус возврата — 0 (например, если время данного документа нель­зя менять),
+изменение времени документа не будет выполнено.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриИзмененииВремениДокумента(Док)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;У вас нет права менять время документа!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032405">ПриУстановкеОтбора</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при установке
+отбора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУстановкеОтбора(&lt;ИмяРеквизОтбора&gt;,
+&lt;3начение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnSetSelectInJournal<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизОтбора&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Строковое
+  значение — название общего рекви­зита документа (как оно задано в конфигура­торе),
+  по которому производится отбор (на­пример, &quot;Автор&quot;).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение
+  реквизита отбора. Допустим, у документов существует общий реквизит
+  &quot;Автор&quot;, по которому решено про­вести отбор, значит в этом
+  параметре будет передано конкретное значение этого реквизи­та, по которому
+  решено провести отбор (на­пример, &quot;Сидоров И.А.&quot;).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУстановкеОтбора производится
+самой системой 1С:Предприятие неявно при интерактивной попытке устано­вить
+отбор документов в журнале. Если в данной предопределенной процедуре установить
+статус возврата — 0 (например, если данному пользователю нельзя устанавливать
+данное значение отбора документов), установка не будет выпол­нена.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может располагаться
+в глобальном программном модуле и модуле формы журнала. Если данная процедура
+при­сутствует в модуле формы соответствующего журнала, то будет вызвана она,
+если нет, то будет вызвана процедура из глобального модуля.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриУстановкеОтбора(ИмяОтбора,
+ЗначОтбора)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если (Имя0тбора = &quot;Автор&quot;) И (ЗначОтбора &lt;&gt;
+ТекущПользователь) Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;У вас нет права просматривать чужие
+документы!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032406">ПриСменеРасчетногоПериода</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура, вызываемая при
+смене текущего рас­четного периода журнала расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриСменеРасчетногоПериода(&lt;ЖурналРасчетов&gt;,
+&lt;Период&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnРег1odChange<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЖурналРасчетов&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Журнал
+  расчетов, период которого изменяет­ся (агрегатный объект типа «ЖурналРасче-тов»).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Период&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Устанавливаемый
+  расчетный период (значе­ние типа «ПериодРасчета»).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриСменеРасчетногоПериода на
+исполнение производится системой 1<span style='mso-ansi-language:EN-US'>C<span
+lang=RU>:Предприятие неявно при попытке сме­ны текущего расчетного периода
+любого журнала расчетов. Если в данной пре­допределенной процедуре установить
+статус возврата — 0, то текущий расчет­ный период не будет изменен.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриСменеРасчетногоПериода(ЖР,
+Период)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ЖР.Вид() = &quot;Зарплата&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;Это смена текущего расчетного периода для журнала<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">                          | Зарплата&quot;);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Период.ДатаНачала &lt;= ЖР.НачалоТекущегоПериода Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+//не позволяем откатывать период назад<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032407">ПриУдаленииСчета</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура, выполняемая при
+удалении бухгалтер­ского счета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУдаленииСчета(&lt;УдалСчет&gt;,
+&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnDeleteAccount<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>УдалСчет&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение типа
+  «Счет» — удаляемый бух­галтерский счет.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Режим
+  удаления. Может принимать значе­ния:</p>
+  <p class=MsoFootnoteText style='text-indent:0in'>1 — счет будет
+  удален;</p>
+  <p class=MsoFootnoteText style='text-indent:0in'>0 — счет будет
+  помечен на удаление.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУдаленииСчета производится
+системой 1С:Предприятие неявно при интерактивном удалении счета из плана
+счетов. В качестве параметров в процедуру передаются значение удаляемого счета
+и режим удаления: непосредственное удаление или пометка на удаление.</p>
+
+<p class=MsoNormal>Если в данной процедуре установить статус
+возврата 0 (например, если на­рушается ссылочная целостность системы), то счет
+не будет удален (или поме­чен на удаление).</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриУдаленииСчета(УдСчет)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если УдСчет.Валютный() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032408">ПриВыклВклПроводокОперации</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура, выполняемая при
+выключении или включении проводок.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриВыклВклПроводокОперации(&lt;Документ&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnOperEntryOffOn<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:77.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Документ&gt;</p>
+  </td>
+  <td width=565 valign=top style='width:423.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoFootnoteText style='text-indent:0in'>Значение типа
+  «Документ» — документ, которому принадлежит операция.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoFootnoteText>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриВыклВклПроводокОперации про­изводится
+системой 1С:Предприятие неявно при интерактивном выключении или включении
+проводок. В качестве параметра в процедуру передается значе­ние документа,
+которому принадлежит операция.</p>
+
+<p class=MsoNormal>Если в данной процедуре установить статус
+возврата 0, то действие не будет выполнено.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может располагаться
+только в гло­бальном программном модуле.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриВыклЗклПроводокОперации(Док)<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Док.Вид() &lt;&gt; &quot;Операция&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoFootnoteText><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

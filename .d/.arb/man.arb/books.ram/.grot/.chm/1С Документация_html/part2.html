@@ -1,0 +1,1049 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part2</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part2.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032206">Глава 2<br> Типы данных</a></h1>
+
+<h2><a name="_Toc493032207">Базовые типы данных</a></h2>
+
+<p class=MsoNormal>В языке поддерживаются следующие базовые типы
+данных:</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l34 level1 lfo8;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>числовой;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l34 level1 lfo8;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>строковый;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l34 level1 lfo8;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>дата.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Числовым</i></b> типом может быть
+представлено любое десятичное число. Над данными числового типа определены
+основные арифметические операции.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Строковым</i></b> типом может
+задаваться любая последовательность символов, в том числе и пустая.</p>
+
+<p class=MsoNormal>Типом <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>дата</i></b> может представляться любая
+корректная дата.</p>
+
+<h3><a name="_Toc493032208">Правила преобразования типов данных</a></h3>
+
+<p class=MsoNormal>В процессе работы модуля или вычисления
+выражений может возникнуть необходимость в преобразовании типов данных
+отдельных значений. Для базо­вых типов определены следующие правила
+преобразования:</p>
+
+<p class=MsoHeading8>Число -&gt; Строка</p>
+
+<p class=MsoNormal>Если число не имеет форматных установок, то
+его строковым представлени­ем является полное представление числа в формате с
+фиксированной точкой.</p>
+
+<p class=MsoHeading8>Дата -&gt; Строка</p>
+
+<p class=MsoNormal>Дата преобразованная к строковому типу имеет
+вид ДД.ММ.ГГ, где ГГ — две цифры года, ММ — числовое обозначение месяца (01,
+..., 12), ДД — день месяца.</p>
+
+<p class=MsoHeading8>Строка -&gt; Число</p>
+
+<p class=MsoNormal>Строка преобразуется в число пока это
+возможно. Получившееся число счи­тается результатом преобразования. (Например,
+строка &quot;1.22 Glass&quot; будет преобразована к числу 1.22). Если в начале
+строки не имеется ничего, что мог­ло бы быть проинтерпретировано как число, то
+результат равен 0.</p>
+
+<p class=MsoHeading8>Дата -&gt; Число</p>
+
+<p class=MsoNormal>Результатом данного преобразования является
+численное представление да­ты.</p>
+
+<p class=MsoHeading8>Строка -&gt; Дата</p>
+
+<p class=MsoNormal>Если в начале строки содержится что-то, что
+может быть проинтерпретиро­вано как строковое представление даты в виде
+ДД.ММ.ГГ, где ГГ — две цифры года, ММ — числовое обозначение месяца (01, ..., 12),
+ДД — день месяца, то бу­дет произведено соответствующее преобразование. В
+противном случае значе­ние даты будет нулевым.</p>
+
+<p class=MsoHeading8>Число -&gt; Дата</p>
+
+<p class=MsoNormal>Делается попытка взять целую часть Числа и
+проинтерпретировать как чис­ленное представление даты. Если число отрицательно,
+то итогом является ну­левая дата.</p>
+
+<h2><a name="_Toc493032209">Агрегатные типы данных</a></h2>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Агрегатные типы данных </i></b>— это
+специализированные типы данных систе­мы 1С:Предприятие, суть которых —
+отражение объектов предметной области и способ работы с ними.</p>
+
+<p class=MsoNormal>Работа с агрегатными типами данных имеет
+существенные отличия от рабо­ты с обычными базовыми типами данных. Конкретные
+значения существую­щих агрегатных типов данных могут быть определены в
+программном модуле двумя способами:</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l35 level1 lfo9;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>некоторые значения заранее известны в
+программном модуле из его гло­бального и локального контекста;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l35 level1 lfo9;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>другие значения могут быть определены с
+помощью системной функции <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>, которой в качестве параметра передается строка с именем агрегатного
+типа данных, созданного в конфигураторе.</p>
+
+<p class=MsoNormal>Каждый агрегатный тип данных, как правило,
+имеет набор атрибутов и ме­тодов.</p>
+
+<p class=MsoNormal>Атрибуты по свойствам напоминают переменные,
+т. е. им можно присваи­вать или читать их значения.</p>
+
+<p class=MsoNormal>Методы — это те действия, которые может
+выполнять агрегатный тип дан­ных. Методы могут иметь или не иметь возвращаемое
+значение. Если метод имеет возвращаемое значение, то он может размещаться в
+правой части опера­тора присваивания, в выражениях, в описании фактических
+параметров других вызываемых методов, процедур или функций.</p>
+
+<p class=a style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt'><b style='mso-bidi-font-weight:normal'>Замечание</b><span
+lang=RU>. В тексте программного модуля вызов любого метода можно запи­сывать
+отдельным оператором программы (как вызов процедуры) даже в том случае, если
+метод имеет возвращаемое значение. Другими словами, в языке допускается
+игнорировать возвращаемое значение.</p>
+
+<p class=a style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt'><b style='mso-bidi-font-weight:normal'>Замечание</b><span
+lang=RU>. Работа с агрегатными типами данных языка напоминает работу с
+объектными типами в Visual Basic. Атрибуты агрегатного типа данных — аналогичны
+свойствам объектного типа в Visual Basic. Методы — анало­гичны методам
+объектного типа в VisualBasic.</p>
+
+<p class=a style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt'><b style='mso-bidi-font-weight:normal'>Замечание</b><span
+lang=RU>. При конфигурировании агрегатных типов данных, например Справочников,
+Документов, Регистров и т. п. не рекомендуется использо­вать в качестве
+идентификаторов создаваемых рекизитов существующие термины названий атрибутов и
+методов объектов.</p>
+
+<p class=MsoNormal>Типичная последовательность работы с объектом
+агрегатного типа данных выглядит следующим образом:</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l37 level1 lfo11;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>с помощью функции <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU> создается объект агрегатного типа данных, и какой-либо переменной присваивается
+ссылка на него;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l37 level1 lfo11;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>объект позиционируется на нужном элементе
+данных;</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l37 level1 lfo11;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>производятся различные манипуляции с
+объектом агрегатного типа дан­ных через вызовы методов и обращения к его
+атрибутам.</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l37 level1 lfo11;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>в случае, если объект агрегатного типа
+данных больше не нужен, он мо­жет быть отсоединен от переменной посредством
+переприсваивания пе­ременной какого-либо значения базового типа (например,
+числа 0). От­соединение объекта выполнять не обязательно.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Создаем объект типа
+&quot;справочник.Сотрудники&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сотр =
+СоздатьОбъект(&quot;Справочник.Сотрудники&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Позиционируем созданный объект Сотр
+по известному наименованию<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сотр.НайтиПоНаименованию(&quot;Петров&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Сотр.Выбран() = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// если сотрудник найден, отобразим его оклад<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Предупреждение(&quot;Оклады&quot; + Сотр.Оклад);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Предупреждение(&quot;Петров не найден&quot; + &quot; !!!&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// отсоединяем объект<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сотр=0;<o:p></o:p></p>
+
+<p class=a style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt'><b style='mso-bidi-font-weight:normal'>Замечание</b><span
+lang=RU>. Объект, созданный при помощи функции. <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>, изна­чально не определен, т. е. не содержит никакого конкретного
+значения. Чтобы начать с ним работать, его предварительно надо позиционировать
+(установить на конкретный <i style='mso-bidi-font-style:normal'>документ</i>
+или элемент <i style='mso-bidi-font-style:normal'>справочника</i>). Для до­кументов
+позиционирование выполняется при помощи методов <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НайтиДокумент<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НайтиПоНомеру<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьДокумент<span
+lang=RU>. Для справочни­ков позиционирование выполняется при помощи методов <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>НайтиЭлемент, <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>НайтиПоКоду, <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПолучитьЭлемент.</p>
+
+<p class=a style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt'><b style='mso-bidi-font-weight:normal'>Замечание</b><span
+lang=RU>. Следует понимать, что в случае, если значение переменной, содер­жащей
+ссылку на объект агрегатного типа данных, присвоить другой пе­ременной, то это
+не означает создание нового объекта, просто другая пе­ременная будет содержать
+ссылку на тот же объект. Новые объекты соз­даются только с помощью обращения к
+функции <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>. Уда­ление объекта производится самой системой после того, когда не
+остается ни одной переменной, содержащей ссылку на объект.</p>
+
+<p class=MsoNormal>Агрегатными типами данных называются следующие
+типы данных:</p>
+
+<p class=MsoBodyTextIndent><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=RU style='layout-grid-mode:both'>Константа</i></b><span
+lang=RU style='layout-grid-mode:both'> — средство работы с постоянными (или
+условно постоянными) значениями. В <i style='mso-bidi-font-style:normal'>константах</i>
+хранится информация, которая не изменяется или изменяется достаточно редко.
+Например, название организации, почтовый ад­рес. Перечень <i style='mso-bidi-font-style:
+normal'>констант</i>, доступный в конкретной конфигурации, их названия и тип
+определяются в конфигураторе.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Справочник</i></b> — средство для
+ведения списков однородных элементов дан­ных. Помимо наименования элементов
+данных, списки могут содержать различную дополнительную информацию. Физическим
+аналогом <i style='mso-bidi-font-style:normal'>справочника</i> мо­жет являться
+картотека. Каждая карточка — это элемент <i style='mso-bidi-font-style:normal'>справочника</i>,
+а сведе­ния, заносимые в карточку, являются реквизитами <i style='mso-bidi-font-style:
+normal'>справочника</i>. Перечень <i style='mso-bidi-font-style:normal'>спра­вочников</i>,
+доступных в конкретной конфигурации, их названия и реквизиты определяются в
+конфигураторе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Перечисление</i></b> — средство
+работы с элементами данных, список возможных значений которых жестко задан (например,
+для <i style='mso-bidi-font-style:normal'>перечисления</i> «<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ФормаОплаты» можно задать
+возможные значения: «<span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Нал<span
+lang=RU>», «<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Безнал»). В
+отличие от <i style='mso-bidi-font-style:normal'>справочни­ков</i>, списки
+значений в <i style='mso-bidi-font-style:normal'>перечислении</i> задаются в
+процессе их создания в конфи­гураторе и при выполнении задачи не могут быть
+изменены. Состав <i style='mso-bidi-font-style:normal'>перечисле­ний</i>,
+доступных в конкретной конфигурации, их названия и допустимые значе­ния
+определяются в конфигураторе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Документ</i></b> — средство для
+ввода первичной информации о совершаемых хо­зяйственных операциях. Перечень <i
+style='mso-bidi-font-style:normal'>документов</i>, доступных в конкретной конфи­гурации,
+их названия, реквизиты и другие свойства определяются в конфигура­торе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Регистр</i></b> — средство обработки
+и накопления сводной информации опера­тивного учета. Перечень <i
+style='mso-bidi-font-style:normal'>регистров</i>, доступных в конкретной
+конфигурации, их названия, измерения, ресурсы и другие свойства определяются в
+конфигурато­ре. (<i style='mso-bidi-font-style:normal'>Регистры доступны только
+при наличии компоненты «Оперативный учет»</i>)</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>ПланСчетов</i></b> является
+служебным типом данных. Он предназначен для идентификации Плана счетов,
+созданного в метаданных. В основном он ис­пользуется для передачи в качестве
+параметра различным процедурам и функ­циям компоненты «Бухгалтерский учет» и
+для выбора плана счетов в формах. Тип значения «ПланСчетов» не поддерживает
+никаких данных в информаци­онной базе, а список возможных значений этого типа
+данных определен плана­ми счетов созданными в конфигурации. Значения типа
+«ПланСчетов» могут выступать как реквизиты диалога формы, как реквизиты
+документов, справоч­ников и т. д. Для получения значения такого типа данных
+используется гло­бальный атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПланыСчетов<span
+lang=RU>, который имеет в свою очередь набор атрибу­тов типа «ПланСчетов»
+соответсвующих имеющимся в конфигурации планам счетов. Кроме того, глобальный
+атрибут <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПланыСчетов
+имеет методы для обхо­да всех существующих планов счетов. (<i style='mso-bidi-font-style:
+normal'>Данные типа ПланСчетов доступны только при наличии компоненты «Бухгалтерский
+учет»</i>)</p>
+
+<p class=MsoBodyTextIndent><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=RU style='layout-grid-mode:both'>Счет</i></b><span
+lang=RU style='layout-grid-mode:both'> — это агрегатный тип данных для доступа
+к объектам данных — бух­галтерским счетам. Бухгалтерские счета используются
+компонентой «Бухгал­терский учет» системы 1С:Предприятие для идентификации
+разрезов синтети­ческого учета наличия и движения средств. В общем виде смысл
+типа данных «Счет» вполне соответвует общепринятому понятию «Счет» в
+бухгалтерском учете. В конфигурации системы может быть создано несколько планов
+счетов. План счетов является фактически видом для значений типа «Счет».
+Например, реквизит типа «Счет» некоторого диалога может иметь конкретный вид
+(отно­ситься к конкретному плану счетов) или быть неопределенного вида — то
+есть принимать значение различных планов счетов. (<i style='mso-bidi-font-style:
+normal'>Данные типа Счет доступны только при наличии компоненты. «Бухгалтерский
+учет»</i>)<o:p></o:p></p>
+
+<p class=MsoBodyTextIndent><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=RU style='layout-grid-mode:both'>ВидСубконто</i></b><span
+lang=RU style='layout-grid-mode:both'> является служебным типом данных. Он
+предназначен для идентификации Вида субконто, созданного в метаданных. В
+основном он ис­пользуется для передачи в качестве параметра различным
+процедурам и функ­циям компоненты «Бухгалтерский учет» и для выбора вида
+субконто в формах. Список возможных значений этого типа данных определен видами
+субконто, созданными в конфигурации. Значения типа «ВидСубконто» могут выступать
+как реквизиты диалога формы, как реквизиты документов, справочников и т. д. Для
+получения значения такого типа используется глобальный атрибут <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ВидыСубконто<span lang=RU style='layout-grid-mode:
+both'>, который имеет в свою очередь набор атрибутов типа «Вид­Субконто»
+соответствующих имеющимся видам субконто. Кроме того, глобаль­ный атрибут <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ВидыСубконто<span lang=RU style='layout-grid-mode:
+both'> имеет методы для обхода всех существующих ви­дов субконто. (<i
+style='mso-bidi-font-style:normal'>Данные типа ВидСубконто доступны только при
+наличии компо­ненты «Бухгалтерский учет»</i>)<o:p></o:p></p>
+
+<p class=MsoBodyTextIndent><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=RU style='layout-grid-mode:both'>Операция</i></b><span
+lang=RU style='layout-grid-mode:both'> — средство для манипулирования из
+встроенного языка данны­ми бухгалтерских операций и проводок формируемых
+документом. Так как проводки в системе 1С:Предприятие принадлежат операциям, то
+управление и операциями и проводками выполняется объектом «Операция». (<i
+style='mso-bidi-font-style:normal'>Данные типа Операция доступны только при
+наличии компоненты «Бухгалтерский учет»</i>)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>БухгалтерскиеИтоги</i></b> —
+средство для организации доступа к бухгалтер­ским итогам в различных разрезах,
+за различные периоды и с разной степенью детализации. При наличии в системе
+1С:Предприятие компоненты «Бухгалтер­ский учет» система автоматически реализует
+специальный механизм работы с бухгалтерскими итогами. Данный механизм
+обеспечивает хранение, динамиче­ский пересчет бухгалтерских итогов и их
+извлечение средствами встроенного языка. Система хранения бухгалтерских итогов
+поддерживается системой 1С:Предприятие автоматически на основе существующих
+планов счетов. При редактировании планов счетов — в конфигураторе или при
+работе с системой 1С:Предприятие — для счета могут быть установлены ряд
+свойств, которые влияют на организацию хранения бухгалтерских итогов: это
+признаки ведения валютного и количственного учета, а также включение
+аналитического учета по субконто. Изменение бухгалтерских итогов может
+производиться только про­водками бухгалтерских операций. (<i style='mso-bidi-font-style:
+normal'>Данные типа БухгалтерскиеИтоги доступны только при наличии компоненты
+«Бухгалтерский учет»</i>)</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>ЖурналРасчетов</i></b> — средство
+для учета расчетных действий по тем или иным объектам расчета. Каждая <i
+style='mso-bidi-font-style:normal'>строка журнала </i>расчетов соответствует
+одному расчетному действию — акту расчета, выполняемому по определенному алго­ритму
+(<i style='mso-bidi-font-style:normal'>виду расчета</i>), в определенном
+временном интервале и имеющему ре­зультат. (<i style='mso-bidi-font-style:normal'>ЖурналыРасчетов
+доступны только при наличии компоненты «Рас­чет»</i>)</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>ВидРасчета</i></b> — средство для
+выполнения расчетов по определенным алго­ритмам через <i style='mso-bidi-font-style:
+normal'>журнал расчетов</i>. Перечень <i style='mso-bidi-font-style:normal'>видов
+расчета</i>, доступных в конкрет­ной конфигурации, их названия и другие
+свойства определяются в конфигура­торе. (<i style='mso-bidi-font-style:normal'>ВидыРасчета
+доступны только при наличии компоненты «Расчет»</i>)</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>ГруппаРасчетов</i></b> — тип данных,
+предназначенный для объединения <i style='mso-bidi-font-style:normal'>видов
+расчета</i> по тому или иному признаку. Перечень <i style='mso-bidi-font-style:
+normal'>групп расчетов</i>, доступных в конкретной конфигурации, их названия и
+другие свойства определяются в конфигураторе. (<i style='mso-bidi-font-style:
+normal'>ГруппыРасчетов доступны только при наличии компоненты «Расчет»</i>)</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Календарь</i></b> — средство для
+ведения учета времени по календарным датам. Перечень <i style='mso-bidi-font-style:
+normal'>календарей</i>, доступных в конкретной конфигурации, их названия и
+другие свойства определяются в конфигураторе. (<i style='mso-bidi-font-style:
+normal'>Календари доступны только при наличии компоненты «Расчет»</i>)</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Запрос</i></b> — средство для
+выполнения обращения к документам, регистрам, документам, справочникам и
+журналам расчетов с целью получения сводной информации при формировании
+выходных отчетов. В программных модулях допускается создавать произвольное
+число объектов типа <i style='mso-bidi-font-style:normal'>Запрос</i> при помощи
+вызова системной функции <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Текст</i></b> — средство работы с
+текстовыми документами. В программных мо­дулях допускается создавать произвольное
+число объектов типа <i style='mso-bidi-font-style:normal'>Текст</i> при по­мощи
+вызова системной функции <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Таблица</i></b> — средство работы с
+таблицами (отчетами). В программных моду­лях допускается создавать произвольное
+число объектов типа <i style='mso-bidi-font-style:normal'>Таблица</i>, при по­мощи
+вызова системной функции <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>СписокЗначений</i></b> — средство
+для создания списка значений каких-либо данных и возможности в дальнейшем сортировать
+и выбирать нужные значе­ния из списка. При добавлении в диалоговых формах полей
+типа «Список» или «Поле со списком», система автоматически создает объекты <i
+style='mso-bidi-font-style:normal'>СписокЗначений</i>, доступ к которым в языке
+возможен по идентификатору поля. В программных модулях допускается создавать
+произвольное число объектов типа <i style='mso-bidi-font-style:normal'>СписокЗна­чений</i>
+при помощи вызова системной функции <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>ТаблицаЗначений</i></b> — средство
+для создания списка значений каких-либо данных и возможности в дальнейшем
+сортировать и выбирать нужные значе­ния из списка. При добавлении в диалоговых
+формах полей типа «Список» или «Поле со списком», система автоматически создает
+объекты <i style='mso-bidi-font-style:normal'>СписокЗначений</i>, доступ к
+которым в языке возможен по идентификатору поля. В программных модулях
+допускается создавать произвольное число объектов типа <i style='mso-bidi-font-style:
+normal'>СписокЗна­чений</i> при помощи вызова системной функции <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Картинка</i></b> — средство для
+работы с графическими файлами. При добавле­нии в диалоговых формах и в таблицах
+полей типа «Картинка», система авто­матически создает объекты <i
+style='mso-bidi-font-style:normal'>Картинка</i>, доступ к которым в языке
+возможен по идентификатору поля. В программных модулях допускается создавать
+произ­вольное число объектов типа <i style='mso-bidi-font-style:normal'>Картинка</i>
+при помощи вызова системной функ­ции <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Периодический</i></b> — средство для
+работы с периодическими реквизитами справочников и периодическими константами.
+В программных модулях допус­кается создавать произвольное число объектов типа <i
+style='mso-bidi-font-style:normal'>Периодический</i> при помощи вызова
+системной функции <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>ФС</i></b> — средство для работы с
+дисковыми файлами непосредственно из встроенного языка системы 1С:Предприятие.
+В программных модулях допуска­ется создавать произвольное число объектов типа <i
+style='mso-bidi-font-style:normal'>ФС</i> при помощи вызова сис­темной функции <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект. Кроме того, в
+глобальном контексте по умол­чанию существует один уже созданный объект этого
+типа с именем ФС (имя объекта совпадает с названием агрегатного типа данных).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>XBase</i></b> — средство для работы
+с файлами баз данных DBF формата непо­средственно из встроенного языка системы
+1С:Предприятие. В программных модулях допускается создавать произвольное число
+объектов типа <i style='mso-bidi-font-style:normal'>XBase</i> при помощи вызова
+системной функции <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<h3><a name="_Toc493032210">Англоязычные синонимы названий
+агрегатных типов данных</a></h3>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:16.2pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 2.0pt 0in 2.0pt'>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+  6.0pt;margin-left:0in'><b style='mso-bidi-font-weight:normal'>Названия
+  агрегатных типов данных<o:p></o:p></b></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+  6.0pt;margin-left:0in'><b style='mso-bidi-font-weight:normal'>Англоязычные
+  синонимы<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Константа<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Const<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Справочник<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Reference<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Перечисление<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Enum<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Документ<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Document<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Регистр<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Register<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ПланСчетов<span
+  class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ChartOfAccounts<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Счет<span class=a0><span
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Account<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ВидСубконто<span
+  class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>SubcontoKind<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Операция<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>Operation<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>БухгалтерскиеИтоги<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>BookkeepingTotals<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ЖурналРасчетов<span
+  class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>CalcJournal<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ВидРасчета<span
+  class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>CalculationKind<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ГруппаРасчетов<span
+  class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>CalculationGroup<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Календарь<span
+  class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Calendar<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Запрос<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Query<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Текст<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Text<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Таблица<span class=a0><span
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Table<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>СписокЗначений<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ValueList<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ТаблицаЗначений<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>ValueTable<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Картинка<span class=a0><span
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Picture<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Периодический<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Рег1odic<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ФС<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>FS<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:191.35pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>XBase<o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:146.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 2.0pt 0in 2.0pt'>
+  <p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Xbase<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<h3><a name="_Toc493032211">Атрибуты агрегатных типов данных</a></h3>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Атрибут</i></b> — свойство
+агрегатного типа данных. В общем случае атрибуты могут размещаться в правой и в
+левой части оператора присваивания, в выра­жениях, быть параметром вызываемых
+методов, процедур или функций. Имена атрибутов можно использовать для того,
+чтобы определить или задать текущее значение атрибута конкретного объекта
+агрегатного типа данных. Некоторые атрибуты доступны только для чтения, это
+специально указывается при описа­нии этого атрибута в данном руководстве.
+Атрибуты только для чтения не мо­гут стоять в левой части оператора
+присваивания.</p>
+
+<p class=MsoNormal>Доступ к атрибутам конкретного объекта
+агрегатного типа данных зависит от контекста программного модуля.</p>
+
+<p class=MsoNormal>Если объект агрегатного типа данных входит
+(согласно контекста) в набор непосредственно доступных модулю значений
+агрегатных типов данных, то доступ к атрибуту — просто имя этого атрибута.</p>
+
+<p class=MsoNormal>В других случаях, доступ к атрибутам
+конкретного объекта агрегатного типа данных происходит при помощи создания
+ссылки на объект. Объект агрегатно­го типа данных создается при помощи функции <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект. Для доступа к
+атрибуту объекта, имя атрибута пишется через точку после имени перемен­ной,
+содержащей ссылку на этот объект.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>*</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Спр = СоздатьОбъект(&quot;Справочник.Сотрудники&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>А = Спр.Выбрать(&quot;Выберите
+объект&quot;, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//Выбираем наименование и оклад как
+атрибуты справочника<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Выбран сотрудник &quot;
++ Спр.Наименование);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Оклад - &quot; +
+Спр.Оклад );<o:p></o:p></p>
+
+<p class=MsoNormal>*</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Спр =
+СоздатьОбъект(&quot;Справочник.Сотрудники&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>А = Спр.Выбрать(&quot;Выберите
+объект&quot;, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Док =
+СоздатьОбъект(&quot;Документ.ПриказНаДоплату&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Док.Новый();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Устанавливаем атрибут НомерДок<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Док.НомерДок = &quot;777&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Устанавливаем атрибут ДатаДок<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Док.ДатаДок = '14.04.96';<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Док.ТипРасчета = ВидРасчета.ДоплатаСуммой;<o:p></o:p></p>
+
+<h3><a name="_Toc493032212">Методы агрегатных типов данных</a></h3>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Методы</i></b> — это те действия,
+которые может выполнять агрегатный тип дан­ных. Методы могут иметь или не иметь
+возвращаемое значение. В тексте про­граммного модуля вызов любого метода можно
+записывать отдельным операто­ром программы (как вызов процедуры), т. е. в языке
+допускается не принимать от методов возвращаемое значение. Если метод имеет
+возвращаемое значение, то он может размещаться в правой части оператора
+присваивания, в выражени­ях, в качестве фактических параметров других
+вызываемых методов, процедур или функций.</p>
+
+<p class=MsoNormal>Синтаксис вызова методов конкретного
+агрегатного типа данных зависит от контекста программного модуля.</p>
+
+<p class=MsoNormal>Если объект агрегатного типа данных входит
+(согласно контекста) в набор непосредственно доступных модулю значений
+агрегатных типов данных, то вызов метода — просто имя этого метода с указанием
+необходимых параметров.</p>
+
+<p class=MsoNormal>В других случаях вызов метода конкретного
+агрегатного типа данных про­исходит при помощи создания ссылки на объект.
+Объект агрегатного типа дан­ных создается при помощи функции СоздатьОбъект.
+Чтобы вызвать метод объекта, имя этого метода (с указанием необходимых
+параметров) пишется через точку после имени созданного объекта.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> «Передача параметров»</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Спр = СоздатьОбъект(&quot;Справочник.Товары&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>А = Спр.Выбрать(&quot;Выберите
+товар&quot;, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку =
+СоздатьОбъект(&quot;Документ.НаклПрих&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.Новый();<span style="mso-spacerun:
+yes">                // Вызываем метод<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.Склад = 22;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.НомерДок = &quot;777&quot;;<span
+style="mso-spacerun: yes">       // Устанавливаем номер документа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.ДатаДок = '14.04.96';<span
+style="mso-spacerun: yes">   // Устанавливаем дату документа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.АвтоВремяОтключить();<span
+style="mso-spacerun: yes">   // Вызываем метод<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.УстановитьВремя(17, 30, 00);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.НоваяСтрока();<span
+style="mso-spacerun: yes">          // Вызываем метод<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.Товар = Спр.ТекущийЭлемент();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доку.Количество = 100;<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

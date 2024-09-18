@@ -1,0 +1,985 @@
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Geneva;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Tms Rmn";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helv;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"MS Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"MS Sans Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"New York";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:System;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Mincho;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\660E\671D;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 134676480 16 0 131072 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\BC14\D0D5;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\5B8B\4F53;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:PMingLiU;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\65B0\7D30\660E\9AD4;
+	mso-font-charset:136;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:1 134742016 16 0 1048576 0;}
+@font-face
+	{font-family:Gothic;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\FF7B\FF9E\FF7C\FF6F\FF78;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 134676480 16 0 131072 0;}
+@font-face
+	{font-family:Dotum;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\B3CB\C6C0;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:SimHei;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\9ED1\4F53;
+	mso-font-charset:134;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:MingLiU;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\7D30\660E\9AD4;
+	mso-font-charset:136;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 134742016 16 0 1048576 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"\FF2D\FF33 \660E\671D";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 134676480 16 0 131072 0;}
+@font-face
+	{font-family:Gulim;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:\AD74\B9BC;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 134676480 16 0 131072 0;}
+@font-face
+	{font-family:Century;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU; margin-left:0in; margin-right:0in; margin-top:0in}
+.shadow      { font-family: Arial; font-size: 12pt; color: #000080; font-weight: bold }
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:14.2pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;
+	mso-bidi-font-weight:normal;}
+h4
+	{mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:14.2pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;
+	font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h5
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:120.5pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-106.3pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;
+	mso-bidi-font-weight:normal;}
+h6
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	mso-bidi-font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:8;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	text-transform:uppercase;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-variant:small-caps;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:49.65pt;
+	margin-bottom:.0001pt;
+	text-indent:-15.45pt;
+	mso-pagination:widow-orphan;
+	tab-stops:right dotted 509.75pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:170.1pt;
+	margin-bottom:.0001pt;
+	text-indent:-155.9pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:127.6pt;
+	margin-bottom:.0001pt;
+	text-indent:-127.6pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.a, li.a, div.a
+	{mso-style-name:¬нимание;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:28.35pt;
+	text-align:justify;
+	text-indent:-28.35pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;}
+span.a0
+	{mso-style-name:—ырцы;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.msoIns
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:underline;
+	text-underline:single;
+	color:teal}
+span.msoDel
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:line-through;
+	color:red}
+span.msoChangeProp
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	color:black}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:35.45pt 28.35pt 35.45pt 56.7pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:28075139;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:45185455;
+	mso-list-type:hybrid;
+	mso-list-template-ids:392707288 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:51126647;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-229598832 1290029410 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-start-at:100;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:50.0pt;
+	mso-level-number-position:left;
+	margin-left:50.0pt;
+	text-indent:-.3in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l3
+	{mso-list-id:81032000;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:114181338;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:257563157;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1782390438 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:428546488;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1661685298 2028377328 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:48.2pt;
+	mso-level-number-position:left;
+	margin-left:48.2pt;
+	text-indent:-19.8pt;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:430201350;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-472888892 1290029410 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l7:level1
+	{mso-level-start-at:100;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:50.0pt;
+	mso-level-number-position:left;
+	margin-left:50.0pt;
+	text-indent:-.3in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l8
+	{mso-list-id:434328221;
+	mso-list-type:hybrid;
+	mso-list-template-ids:222872264 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l9
+	{mso-list-id:527183815;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1321386126 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l10
+	{mso-list-id:589966905;
+	mso-list-type:hybrid;
+	mso-list-template-ids:38950476 1290029410 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l10:level1
+	{mso-level-start-at:100;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:50.0pt;
+	mso-level-number-position:left;
+	margin-left:50.0pt;
+	text-indent:-.3in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l11
+	{mso-list-id:612054226;
+	mso-list-type:hybrid;
+	mso-list-template-ids:995534228 1290029410 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l11:level1
+	{mso-level-start-at:100;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:50.0pt;
+	mso-level-number-position:left;
+	margin-left:50.0pt;
+	text-indent:-.3in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l12
+	{mso-list-id:615718011;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l12:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l13
+	{mso-list-id:646055270;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2022742058 1290029410 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l13:level1
+	{mso-level-start-at:100;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:50.0pt;
+	mso-level-number-position:left;
+	margin-left:50.0pt;
+	text-indent:-.3in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l14
+	{mso-list-id:660043879;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l14:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l15
+	{mso-list-id:687487905;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l15:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l16
+	{mso-list-id:732047596;
+	mso-list-type:hybrid;
+	mso-list-template-ids:995534228 2028377328 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l16:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:34.0pt;
+	mso-level-number-position:left;
+	margin-left:34.0pt;
+	text-indent:-19.8pt;
+	font-family:Symbol;}
+@list l17
+	{mso-list-id:801121350;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1203229676 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l17:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l18
+	{mso-list-id:944927261;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l18:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l19
+	{mso-list-id:1046951263;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1617965294 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l19:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l20
+	{mso-list-id:1149861603;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1979050376 1290029410 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l20:level1
+	{mso-level-start-at:100;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:35.8pt;
+	mso-level-number-position:left;
+	margin-left:35.8pt;
+	text-indent:-.3in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l21
+	{mso-list-id:1186403418;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l21:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l22
+	{mso-list-id:1204833112;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2135987864 1290029410 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l22:level1
+	{mso-level-start-at:100;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:50.0pt;
+	mso-level-number-position:left;
+	margin-left:50.0pt;
+	text-indent:-.3in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l23
+	{mso-list-id:1237399581;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l23:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l24
+	{mso-list-id:1238638705;
+	mso-list-type:hybrid;
+	mso-list-template-ids:995534228 -1919911580 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l24:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:19.85pt;
+	mso-level-number-position:left;
+	margin-left:19.85pt;
+	text-indent:-19.85pt;
+	font-family:Symbol;}
+@list l25
+	{mso-list-id:1307275878;
+	mso-list-type:hybrid;
+	mso-list-template-ids:757887862 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l25:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l26
+	{mso-list-id:1387416794;
+	mso-list-type:hybrid;
+	mso-list-template-ids:976513292 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l26:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l27
+	{mso-list-id:1531139548;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1545654574 1290029410 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l27:level1
+	{mso-level-start-at:100;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:50.0pt;
+	mso-level-number-position:left;
+	margin-left:50.0pt;
+	text-indent:-.3in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l28
+	{mso-list-id:1555460935;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1967721372 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l28:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l29
+	{mso-list-id:1593196594;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l29:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l30
+	{mso-list-id:1662462397;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l30:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l31
+	{mso-list-id:1823505288;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1544814146 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l31:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l32
+	{mso-list-id:1944846990;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2041712502 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l32:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l33
+	{mso-list-id:1958634531;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1448825950 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l33:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l34
+	{mso-list-id:2014065570;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l34:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l35
+	{mso-list-id:2044557569;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l35:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l36
+	{mso-list-id:2058815628;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l36:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l37
+	{mso-list-id:2121097943;
+	mso-list-type:simple;
+	mso-list-template-ids:68747265;}
+@list l37:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+body         { background-image: url('images/norton-bg.gif') }
+hr           { color: #000000 }

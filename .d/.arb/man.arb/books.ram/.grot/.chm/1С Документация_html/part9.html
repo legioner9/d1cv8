@@ -1,0 +1,470 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part9</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part9.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032409">Глава 9<br> Работа с Константами</a></h1>
+
+<p class=MsoNormal>Константа — это агрегатный тип данных,
+средство работы с постоянными (условно постоянными) величинами. В константах
+хранится информация, ха­рактеризующая конфигурацию в целом, которая может быть
+как постоянной, так и изменяться с той или иной периодичностью.</p>
+
+<p class=MsoNormal>Константы могут быть периодическими или нет
+(это задается в конфигура­торе при их создании). Периодические константы — это
+константы, значения которых связаны с датой. При изменении значения
+периодической константы старое значение сохраняется, просто новое значение
+действует с указанной да­ты, а старое до указанной даты.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Изначально значение периодической константы <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Константа.ИмяДиректора было —
+&quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Иванов И. И.<span
+lang=RU>&quot;. В некоторый мо­мент директор сменился.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Константа.ИмяДиректора.Установить('01.05.96',
+&quot;Петров П.П.&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal>* Данный оператор устанавливает новое значение
+периодической константы с даты '01.05.96', но старое значение — &quot;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Иванов И. И.&quot; сохраняется
+до этой даты и может быть получено, например, следующей строкой текста программы:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПрежнДирект = Константа.ИмяДиректора.Получить('01.01.96');<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:12.0pt'>Средства языка
+предоставляют возможность непосредственного доступа к созданным в конфигураторе
+названиям констант в любом программном модуле, т. к. константы принадлежат
+глобальному контексту задачи. Работа с периоди­ческими константами
+осуществляется при помощи методов <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Получить<span
+lang=RU> и <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Уста­новить
+или при помощи специального агрегатного типа данных — <i>Периодиче­ский</i>.
+Работа с непериодическими константами осуществляется непосредствен­но через их
+идентификаторы.</p>
+
+<p class=MsoNormal>Использование непериодических констант в
+синтаксисе языка аналогично глобальным переменным, т. е. идентификаторы
+непериодических констант могут размещаться в левой и правой части оператора
+присваивания, в выражениях, быть параметрами методов, процедур или функций в
+любом программном мо­дуле.</p>
+
+<p class=MsoNormal>В качестве имени константы обязательно должно
+выступать полное имя конкретной константы, как оно объявлено в конфигураторе.
+Имя константы записывается через точку после ключевого слова <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Константа, т. е. полное имя константы
+записывается следующим образом:</p>
+
+<p class=MsoFootnoteText><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Константа.&lt;Имя_константы&gt;, <o:p></o:p></p>
+
+<p class=MsoNormal>где &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Имя_константы<span
+lang=RU>&gt; — название конкретной константы, как оно объявлено в окне
+«Метеданные» конфигуратора.</p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Константа — <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Const.</p>
+
+<p class=MsoNormal><b>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal>* Пример работы с непериодическими константами:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Константа.Организация = &quot;АО
+СПЕЦСТРОЙКОНСЕРВБАНК&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Константа.Адрес = &quot;г.Москва,
+Вернадского, 523, 25&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Р_Счет = Константа.НашСчет;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// операторы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если Всего &gt;
+Константа.МинимальнаяЗарплата Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// операторы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// операторы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h3><a name="_Toc493032410">Методы констант</a></h3>
+
+<h4><a name="_Toc493032411">НазначитьТип</a></h4>
+
+<p class=MsoNormal>Назначить тип для константы неопределенного
+типа.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НазначитьТип(&lt;ИмяКонстанты&gt;,
+&lt;ИмяТипа&gt;, &lt;Длина&gt;, &lt;Точность&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetType<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяКонстанты&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — название константы неопре­деленного типа, как она названа в конфигураторе.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяТипа&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — название типа данных (или Вид субконто), который назначается константе.
+  Например:</p>
+  <p class=MsoNormal style='text-indent:0in'>&quot;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Строка&quot;, &quot;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Число&quot;, &quot;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Справочник.Товары&quot;,
+  &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Документ.РасходнаяНакладная<span
+  lang=RU>&quot; и т. п.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Длина&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный параметр.
+  Числовое выражение — длина поля представления данных. Имеет смысл только при
+  задании числового или строкового типа.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Точность&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение — число знаков числа после десятичной точки.
+  Имеет смысл только при задании числового типа.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НазначитьТип<span
+lang=RU> позволяет назначить тип для константы, которой в конфигураторе
+назначен тип «Неопределенный».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Константа.НазначитьТип(&quot;ТМЦ&quot;,
+&quot;Справочник.Товары&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc493032412">УстановитьАтрибут</a></h4>
+
+<p class=MsoNormal>Установить значение константы по имени идентификатора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьАтрибут(&lt;ИмяРеквизита&gt;,
+&lt;3начение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизита&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя констан­ты, как оно задано в конфигураторе.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение,
+  содержащее устанавливаемое значе­ние константы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьАтрибут<span
+lang=RU> позволяет установить значение константы по имени идентификатора, как
+оно задано в конфигураторе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Константа.УстановитьАтрибут(&quot;ФлагЗапретаРедактирования&quot;,
+1);<o:p></o:p></p>
+
+<h4><a name="_Toc493032413">ПолучитьАтрибут</a></h4>
+
+<p class=MsoNormal>Получить значение константы по идентификатору.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут(&lt;ИмяАтрибута&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=132 valign=top style='width:99.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяАтрибута&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:402.25pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя констан­ты, как оно задано в конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение константы &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяАтрибута<span
+lang=RU>&gt;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут<span
+lang=RU> позволяет получить значение константы по идентификатору, как оно
+задано в метаданных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ФлЗапрРед =
+Константа.ПолучитьАтрибут(&quot;ФлагЗапретаРедактирования&quot;);<o:p></o:p></p>
+
+<h3><a name="_Toc493032414">Методы периодических констант</a></h3>
+
+<h4><a name="_Toc493032415">Получить</a></h4>
+
+<p class=MsoNormal>Получить значение периодической константы на
+дату.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Получить(&lt;Дата&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetValue<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Дата&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение со
+  значением требуемой даты.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение константы на заданную дату.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Получить<span
+lang=RU> возвращает значение константы на определенную дату. Данный метод можно
+использовать только для периодических констант.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Константа.РазмерКомпенсации -
+периодическая<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// поэтому получим значение этой
+константы на дату документа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РазмерДК = Константа.РазмерКомпенсации.Получить(ДатаДок);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если РазмерДК &lt;&gt; 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Результат = РазмерДК;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// операторы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc493032416">Установить</a></h4>
+
+<p class=MsoNormal>Установить значение периодической константы на
+дату.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Установить(&lt;Дата&gt;,
+&lt;3начение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetValue<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Дата&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение со
+  значением требуемой даты.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение&gt;</p>
+  </td>
+  <td width=555 valign=top style='width:416.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Новое значение
+  константы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Установить<span
+lang=RU> устанавливает значение константы на определенную дату. Данный метод
+можно использовать только для периодических констант.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Константа.РасчетныйСчет.Установить('01.07.96',
+&quot;77889001&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Константа.Директор.Установить('01.01.85',
+&quot;Иванов П.С.&quot;)<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

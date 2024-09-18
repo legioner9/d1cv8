@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>1С-Предприятие. Документация | Технология создания внешних компонент. Оглавление.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="../../../1c.css">
+</head>
+
+<body background="../../../images/background_main.gif">
+<h1 align="left"><font size="4">Технология
+создания внешних компонент</font></h1>
+<p align="left" class="std">Примечание: Файлы примеров компонент включены в файл 
+документации. <a href="../../../extcomptech.zip">Возьмите их сдесь</a></p>
+<hr>
+<p><b><a href="tsvk000.html">Введение</a></b></p>
+<ul>
+  <li><a href="tsvk000.html#001">Версии компонент </a></li>
+  <li><a href="tsvk000.html#002">Что Вы должны знать </a></li>
+  <li><a href="tsvk000.html#003">Структура руководства </a></li>
+</ul>
+<p><b><a href="tsvk001.html">Часть 1. Внешние компоненты</a></b></p>
+<ul>
+  <li><a href="tsvk001.html#_toc502332880">Внешние компоненты</a></li>
+  <li><a href="tsvk001.html#_toc502332881">Средства встроенного языка 1С:Предприятия, предназначенные 
+    для работы с внешними компонентами.</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332882">ЗагрузитьВнешнююКомпоненту</a></li>
+      <li><a href="tsvk001.html#_toc502332883">ПодключитьВнешнююКомпоненту</a></li>
+      <li><a href="tsvk001.html#_toc502332884">ОбработкаВнешнегоСобытия</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332885">Разработка внешней компоненты</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332886">Создание OLE-объекта внешней компоненты</a></li>
+      <li><a href="tsvk001.html#_toc502332887">Инициализация и выгрузка компоненты</a> 
+        <ul>
+          <li><a href="tsvk001.html#_toc502332888">HRESULT Init(IDispatch *pBackConnection)</a></li>
+          <li><a href="tsvk001.html#_toc502332889">HRESULT Done(void)</a></li>
+          <li><a href="tsvk001.html#_toc502332890">HRESULT GetInfo(SAFEARRAY **pInfo)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332891">Страница свойств</a></li>
+  <li><a href="tsvk001.html#_toc502332892">Расширение встроенного языка</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332893">HRESULT RegisterExtensionAs(BSTR *pExtensionName):</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332894">Свойства расширения</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332895">HRESULT GetNProps(long *plProps)</a></li>
+      <li><a href="tsvk001.html#_toc502332896">HRESULT FindProp(BSTR pszPropName,long*plPropNum)</a></li>
+      <li><a href="tsvk001.html#_toc502332897">HRESULT GetPropName(long lPropNum,long lAliasNum,BSTR 
+        *pPropName)</a></li>
+      <li><a href="tsvk001.html#_toc502332898">HRESULT GetPropVal(long lPropNum,VARIANT *pvPropVal)</a></li>
+      <li><a href="tsvk001.html#_toc502332899">HRESULT SetPropVal(long lPropNum, VARIANT *pvPropVal)</a></li>
+      <li><a href="tsvk001.html#_toc502332900">HRESULT IsPropReadable(long lPropNum, BOOL 
+        *pboolPropReadable)</a></li>
+      <li><a href="tsvk001.html#_toc502332901">HRESULT IsPropWritable(long lPropNum, BOOL 
+        *pboolPropWritable)</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332902">Методы расширения</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332903">HRESULT GetNMethods(long *plMethods)</a></li>
+      <li><a href="tsvk001.html#_toc502332904">HRESULT FindMethod(BSTR bstrMethodName,long 
+        *plMethNum)</a></li>
+      <li><a href="tsvk001.html#_toc502332905">HRESULT GetMethodName(long lMethodNum, long 
+        lAliasNum,BSTR  *pbstrMethName)</a></li>
+      <li><a href="tsvk001.html#_toc502332906">HRESULT GetNParams(long lMethodNum, long *plMethParams)</a></li>
+      <li><a href="tsvk001.html#_toc502332907">HRESULT GetParamDefValue(long lMethodNum, long 
+        lParamNum,VARIANT *pvParamDefVal)</a></li>
+      <li><a href="tsvk001.html#_toc502332908">HRESULT HasRetVal(long lMethodNum,BOOL *pboolHasRetVal)</a></li>
+      <li><a href="tsvk001.html#_toc502332909">HRESULT CallAsProc(long lMethodNum, SAFEARRAY 
+        **pVars)</a></li>
+      <li><a href="tsvk001.html#_toc502332910">HRESULT CallAsFunc(long lMethodNum, VARIANT 
+        *pRetValue, SAFEARRAY**pVars)</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332911">Использование типа OLE VARIANT при обмене данными</a></li>
+  <li><a href="tsvk001.html#_toc502332912">Вызов функции компоненты</a></li>
+  <li><a href="tsvk001.html#_toc502332913">Возвращение значений из компоненты</a></li>
+  <li><a href="tsvk001.html#_toc502332914">Вызов метода объекта 1С:Предприятия из компоненты</a></li>
+  <li><a href="tsvk001.html#_toc502332915">OLE интерфейсы 1C:Предприятия</a> </li>
+  <li><a href="tsvk001.html#_toc502332916">Сохранение параметров объекта компоненты</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332917">HRESULT RegisterProfileAs(BSTR bstrProfileName)</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332918">Информационные сообщения о работе объекта</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332919">HRESULT AddError(BSTR pszPropName, LPEXCEPINFO 
+        pExcepInfo)</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332920">Внешние события</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332921">HRESULT SetEventBufferDepth(long lDepth)</a></li>
+      <li><a href="tsvk001.html#_toc502332922">HRESULT GetEventBufferDepth(long *plDepth)</a></li>
+      <li><a href="tsvk001.html#_toc502332923">HRESULT ExternalEvent(BSTR bstrWho, BSTR bstrWhat, 
+        BSTR bstrData)</a></li>
+      <li><a href="tsvk001.html#_toc502332924">HRESULT CleanBuffer()</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332925">Работа с строкой состояния</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332926">HRESULT SetStatusLine(BSTR bstrStatusText)</a></li>
+      <li><a href="tsvk001.html#_toc502332927">HRESULT ResetStatusLine()</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332928">Создание окон в среде 1С:Предприятия</a> 
+    <ul>
+      <li><a href="tsvk001.html#_toc502332929">Модальные диалоги</a></li>
+      <li><a href="tsvk001.html#_toc502332930">Немодальные диалоги</a></li>
+      <li><a href="tsvk001.html#_toc502332931">Формы</a></li>
+      <li><a href="tsvk001.html#_toc502332932">HRESULT GetAppMainFrame(HWND *pHWnd)</a></li>
+      <li><a href="tsvk001.html#_toc502332933">HRESULT GetAppMDIFrame(HWND *pHWnd)</a></li>
+      <li><a href="tsvk001.html#_toc502332934">HRESULT CreateAddInWindow(BSTR bstrProgID, 
+        BSTR bstrTitle, long lStyles,long lExStyles, RECT *rctSize, long lFlags, 
+        HWND *pHwnd, IDispatch   **pDisp)</a></li>
+    </ul>
+  </li>
+  <li><a href="tsvk001.html#_toc502332935">Доступ к 1С:Предприятию через механизм OLE Automation</a></li>
+  <li><a href="tsvk001.html#_toc502332936">Доступ к методам интерфейсов 1С:Предприятия через 
+    OLE Automation</a></li>
+</ul>
+<p><a href="http://www.sharemation.com/%7esparku/extcomp/index.html" target="_blank"><b>Часть 
+  2. Примеры внешних компонент.</b></a></p>
+<ul>
+  <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Структура каталогов.</a></li>
+  <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html"> Описание конфигураций. 
+    </a>
+    <ul>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Конфигурация 
+        для 1С:Предприятия 7. 5.</a></li>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Конфигурация 
+        для 1С:Предприятия 7. 7.</a></li>
+    </ul>
+  </li>
+  <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html"> Описание компонент 
+    </a>
+    <ul>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Компонента SAMPLE</a></li>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Компонента SAMPLE2</a></li>
+    </ul>
+  </li>
+  <li> <a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Microsoft Visual 
+    C++ 50 </a>
+    <ul>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Компонента SAMPLE</a></li>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Компонента SAMPLE2</a></li>
+    </ul>
+  </li>
+  <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Microsoft Visual 
+    Basic 5.0 и 6.0 (Enterprise Edition) </a>
+    <ul>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Общая часть 
+        компонент</a></li>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Компонента SAMPLE 
+        </a></li>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Компонента SAMPLE2</a></li>
+    </ul>
+  </li>
+  <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Borland Delphi 3.0 
+    и 4.0 </a>
+    <ul>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Общая часть 
+        компонент.</a></li>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Компонента SAMPLE</a></li>
+      <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Компонента SAMPLE2</a></li>
+    </ul>
+  </li>
+  <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html"> Шаблоны</a></li>
+  <li><a href="http://www.sharemation.com/%7esparku/extcomp/index.html">Рекомендации по 
+    построению компоненты</a></li>
+</ul>
+<p><a href="tsvk003.html"><b>Часть 3. Введение в OLE</b></a></p>
+<ul>
+  <li><a href="tsvk003.html#003001">Интерфейсы в OLE</a></li>
+  <li><a href="tsvk003.html#003002">Объекты OLE</a></li>
+  <li><a href="tsvk003.html#003003"> OLE Automation</a></li>
+  <li><a href="tsvk003.html#003004"> Active Documents</a></li>
+  <li><a href="tsvk003.html#003005">Литература</a></li>
+</ul>
+<hr>

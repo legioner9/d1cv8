@@ -1,0 +1,878 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part13</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part13.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032605">Глава 13<br> Работа с Журналами документов</a></h1>
+
+<h2><a name="_Toc493032606">Контекст работы с журналами
+документов</a></h2>
+
+<p class=MsoNormal>Журнал документов — средство для работы со
+списком документов. В тер­минах языка журнал не является специальным типом
+данных (он не имеет зна­чения, его нельзя создать при помощи функции <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СоздатьОбъект).</p>
+
+<p class=MsoNormal>С журналом в системе связана форма отображения
+списка документов и программный модуль формы журнала документов (см. «Виды
+программных модулей»). В локальном контексте этого программного модуля
+непосредствен­но доступны реквизиты формы журнала. Кроме того, здесь
+непосредственно доступен атрибут «только для чтения» — <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТекущийДокумент<span
+lang=RU>, содержащий значение выбранного в журнале документа.</p>
+
+<h3><a name="_Toc493032607">Атрибуты контекста Модуля формы
+журнала документов</a></h3>
+
+<p class=MsoNormal>Описанный в данном разделе атрибут можно
+вызывать только в Модуле формы журнала (см. «Виды программных модулей»).</p>
+
+<h4><a name="_Toc493032608">ТекущийДокумент</a></h4>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекущийДокумент<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>CurrentDocument<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут (только для чтения) <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ТекущийДокумент содержит
+значение вы­бранного в журнале документа. Этот атрибут позволяет использовать в
+про­грамме полученное значение документа. Поскольку данный атрибут фактиче­ски
+является ссылкой на позиционируемый объект типа «документ», то поэто­му для
+передачи или запоминания самого значения текущего документа журна­ла
+рекомендуется использовать конструкцию</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТекущийДокумент.ТекущийДокумент()</p>
+
+<p class=MsoNormal>Данный атрибут может использоваться только в
+локальном контексте про­граммного модуля формы журнала документов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// только в модуле Формы журнала
+документа<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//
+———————————————————————————————————————<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>функция Операция()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Число(ТекущийДокумент.Выбран()) &gt; 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат &quot;&quot; + ТекущийДокумент.ДатаДок + &quot; &quot; +
+ТекущийДокумент.Вид;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат &quot;Пусто&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецФункции<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>//————————————————————————————————————————<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Функция ЖурналСумма()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Число(ТекущийДокумент.Выбран()) &gt; 0 тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат Константа.МинЗарплата.Получить(ДатаДок);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Возврат 0;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецФункции<o:p></o:p></p>
+
+<h3><a name="_Toc493032609">Методы контекста Модуля формы журнала
+документов</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе методы доступны
+только в контексте Модуля формы журнала документов (см. «Виды программных
+модулей»).</p>
+
+<p class=MsoNormal>Отбор по значениям может производиться только
+в «Общем» журнале, т. е. в котором установлен признак «Все документы». Таким
+образом, отбор по значе­ниям может выступать в качестве альтернативного способа
+выбора документов в журнале, относительно выбору документов по видам. С другой
+стороны, сам набор ссылок на реквизиты документов определенных видов в
+настройке графы отбора определяет состав видов документов включаемых в данный
+отбор. Для того, чтобы при открытии журнала не показывался список всех
+документов, следует в предопределенной процедуре <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПриОткрытии<span
+lang=RU> установить отбор по не­существующему значению отбора, например, по
+пустому значению.</p>
+
+<h4><a name="_Toc493032610">ВидыОтбора</a></h4>
+
+<p class=MsoNormal>Установить доступные виды отборов журнала для
+вызова их в инте­рактивном режиме.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидыОтбора(&lt;СписокИменОтборов&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>KindsOfSelection<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=170 valign=top style='width:127.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>СписокИменОтборов&gt;</p>
+  </td>
+  <td width=499 valign=top style='width:373.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Строковое вы­ражение, содержащее список имен отборов для журнала.
+  Виды указываются через за­пятую. Если вместо списка — символ &quot;*&quot;,
+  то значит для журнала используются все на­значенные в конфигураторе виды отборов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение, содержащее текущий список
+имен отборов для журна­ла, разделенных запятыми (на момент до исполнения
+метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВидыОтбора<span
+lang=RU> устанавливает доступные виды отборов журнала для вызова их в
+интерактивном режиме.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+Модуля формы журнала доку­ментов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВидыОтбора(&quot;Склад, Клиент,
+Автор&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc493032611">ЗакладкиОтбора</a></h4>
+
+<p class=MsoNormal>Установить в форме журнала закладки для
+интерактивного осущест­вления отбора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗакладкиОтбора(&lt;ИмяОтбора&gt;,
+&lt;ФлагОтбораЗначенийВИнтервалеЖурнала&gt;,<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">               &lt;ФлагУстановкиЗначенияОтбора&gt;,
+&lt;3начение0тбора&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>TabCtrlSelection<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=198 valign=top style='width:148.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОтбора&gt;</p>
+  </td>
+  <td width=470 valign=top style='width:352.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя отбора.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=198 valign=top style='width:148.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагОтбораЗначенийВИнтервалеЖурнала<span
+  lang=RU>&gt;<span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></p>
+  </td>
+  <td width=470 valign=top style='width:352.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  1 — текущие значения отбора для закладок вы­бираются только по документам в
+  установленном интервале журнала; 0 — текущие значения отбора для закладок
+  выбираются по всем доку­ментам журнала.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=198 valign=top style='width:148.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагУстановкиЗначенияОтбора&gt;</p>
+  </td>
+  <td width=470 valign=top style='width:352.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  1 — для ото­бражения сразу выбирается отбор по параметру &lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение0тбора&gt;; 0 — текущее
+  значение отображаемой закладки отбора устанавливается на первое существующее
+  значение.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=198 valign=top style='width:148.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение0тбора&gt;</p>
+  </td>
+  <td width=470 valign=top style='width:352.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗакладкиОтбора<span
+lang=RU> устанавливает в форме журнала закладки для ин­терактивного
+осуществления отбора.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+Модуля формы журнала доку­ментов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЗакладкиОтбора(&quot;Склады&quot;, 1,
+1, Константа.ОснСклад);<o:p></o:p></p>
+
+<h4><a name="_Toc493032612">УстановитьОтбор</a></h4>
+
+<p class=MsoNormal>Установить отбор журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьОтбор(&lt;ИмяОтбора&gt;,
+&lt;3начение0тбора&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetSelection<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОтбора&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — имя отбора. Если это значение пустое, то отбор отключается.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начениеОтбора&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьОтбор<span
+lang=RU> принудительно устанавливает отбор для журна­ла.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+Модуля формы журнала доку­ментов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal>Замечание. Во всех журналах, кроме журнала
+подчиненных документов, рабо­тает отбор по виду документа. В этом случае
+синтаксис вызова метода следующий:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьОтбор(&lt;ВедДокумента&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=142 valign=top style='width:106.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВидДокумента&gt;</p>
+  </td>
+  <td width=527 valign=top style='width:395.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — вид документа отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Изм =
+УстановитьОтбор(&quot;Склады&quot;, Склад1);<o:p></o:p></p>
+
+<h4><a name="_Toc493032613">ПолучитьОтбор</a></h4>
+
+<p class=MsoNormal>Возвратить текущее значение отбора журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьОтбор(&lt;ИмяОтбора&gt;,
+&lt;3начение0тбора&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetSelection<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОтбора&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя переменной, куда
+  вернется строковое значе­ние имени отбора.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=151 valign=top style='width:113.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начениеОтбора&gt;</p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя переменной, куда
+  вернется значение отбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Числовое значение: 1 — есть отбор; 0 — если
+нет отбора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьОтбор<span
+lang=RU> возвращает текущее значение отбора журнала. Данный метод доступен
+только в контексте Модуля формы журнала доку­ментов (см. «Виды программных
+модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Изм = ПолучитьОтбор();<o:p></o:p></p>
+
+<h4><a name="_Toc493032614">УстановитьИнтервал</a></h4>
+
+<p class=MsoNormal>Установить интервал журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьИнтервал(&lt;ДатаНач&gt;,
+&lt;ДатаКон&gt;, &lt;ФлагИзменения&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetRange<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНач&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение типа
+  «дата» — начало интервала журнала.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаКон&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение типа
+  «дата» — конец интервала журнала.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагИзменения&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Этим флагом регулирует­ся возможность интерактивного изменения
+  интерва­ла журнала. 1 — пользователь может изменить интер­вал журнала
+  интерактивно, 0 — пользователь не мо­жет интерактивно изменить интервал
+  журнала.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьМнтервал<span
+lang=RU> позволяет установить интервал журнала. Данный метод доступен только в
+контексте Модуля формы журнала доку­ментов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьИнтервал(НИ, КИ);<o:p></o:p></p>
+
+<h4><a name="_Toc493032615">НачалоИнтервала</a></h4>
+
+<p class=MsoNormal>Возвратить дату начала интервала журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НачалоИнтервала()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>BegOfRange<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение даты начала интервала журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НачалоИнтервала<span
+lang=RU> позволяет получить дату начала интервала журнала.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+Модуля формы журнала доку­ментов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НИ = НачалоИнтервала();<o:p></o:p></p>
+
+<h4><a name="_Toc493032616">КонецИнтервала</a></h4>
+
+<p class=MsoNormal>Возвратить дату конца интервала журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецИнтервала()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EndOfRange<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение даты конца интервала журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецИнтервала<span
+lang=RU> позволяет получить дату конца интервала журна­ла.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+Модуля формы журнала доку­ментов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КИ = КонецИнтервала();<o:p></o:p></p>
+
+<h4><a name="_Toc493032617">ПодчинениеДокументу</a></h4>
+
+<p class=MsoNormal>Установить документ-владелец для журнала подчиненных
+документов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПодчинениеДокументу([&lt;Докум&gt;],
+[&lt;ФлагАвтоСменыПодчинен&gt;])<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ParentDoc<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=208 valign=top style='width:155.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Докум&gt;</p>
+  </td>
+  <td width=461 valign=top style='width:345.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Выражение типа «документ» — значение документа, подчиненные
+  документы к которому дол­жен отображать журнал.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=208 valign=top style='width:155.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>флагАвтоСменыПодчинен&gt;</p>
+  </td>
+  <td width=461 valign=top style='width:345.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое вы­ражение: 1 — устанавливает способность автоматически
+  обновлять отображение журнала при смене документа-владельца, если такой режим
+  установлен в параметрах системы («Сервис» - «Один журнал»); 0 — снятие режима
+  автоматического обновле­ния отображения журнала.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее значение документа, которому подчинен
+журнал.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПодчинениеДокументу<span
+lang=RU> позволяет установить документ-владелец для журнала подчиненных
+документов.</p>
+
+<p class=MsoNormal>Данный метод доступен только в контексте
+Модуля формы журнала подчи­ненных документов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПодчинениеДокументу(Док, 1);<o:p></o:p></p>
+
+<h3><a name="_Toc493032618">Предопределенные процедуры Модуля
+формы журнала документов</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе системные
+предопределенные процедуры должны располагаться только в Модулях формы журналов
+документов (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal>В основном данные процедуры предназначены для
+расширения возможно­сти программного управления правами доступа к системе.</p>
+
+<p class=MsoNormal>Предопределенные процедуры не является
+встроенными процедурами язы­ка. Для них зарезервированы только название и
+синтаксис. Тело процедур должно быть написано самим разработчиком в
+соответствующих программных модулях. Вызов предопределенных процедур на исполнение
+производится в системе 1С:Предприятие неявно при возникновении соответствующего
+собы­тия. Описание предопределенных процедур также см. гл. «Системные предо­пределенные
+процедуры».</p>
+
+<h4><a name="_Toc493032619">ПриУстановкеОтбора</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при установке
+отбора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУстановкеОтбора(&lt;ИмяРеквизОтбора&gt;,
+&lt;3начение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnSe<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>t<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>SelectInJournal<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизОтбора&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое значение —
+  название общего рекви­зита документа (как оно задано в конфигураторе), по
+  которому производится отбор (на­пример, &quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Автор<span
+  lang=RU>&quot;).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>3начение&gt;</p>
+  </td>
+  <td width=508 valign=top style='width:380.95pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение реквизита
+  отбора. Допустим, у документов существует общий реквизит &quot;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Автор&quot;, по которому
+  решено про­вести отбор, значит в этом параметре будет передано конкретное
+  значение этого реквизи­та, по которому решено провести отбор (на­пример,
+  &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Сидоров И. А.<span
+  lang=RU>&quot;).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУстановкеОтбора производится
+системой 1С:Предприятие неявно при интерактивной попытке установить от­бор
+документов в журнале. Если в данной предопределенной процедуре устано­вить
+статус возврата — 0 (например, если данному пользователю нельзя уста­навливать
+данное значение отбора документов), установка не будет выполнена.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться в модуле формы журнала и в глобальном программном модуле. Если
+данная процедура присут­ствует в модуле формы соответствующего журнала, то
+будет вызвана она, если нет, то будет вызвана процедура из глобального модуля.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриУстановкеОтбора(ИмяОтбора,
+ЗначОтбора) Если<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если (Имя0тбора = &quot;Автор&quot;) И (ЗначОтбора &lt;&gt;
+ТекущПользователь) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Предупреждение(&quot;У вас нет права просматривать чужие
+документы!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См. также:</b><span
+lang=RU> <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc493032620">ПриУстановкеИнтервала</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при установке
+интервала журнала.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриУстановкеИнтервала(&lt;ДатаНач&gt;,
+&lt;ДатаКон&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnSetRange<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаНач&gt;</p>
+  </td>
+  <td width=574 valign=top style='width:430.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата начала
+  интервала журнала.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=94 valign=top style='width:70.85pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДатаКон&gt;</p>
+  </td>
+  <td width=574 valign=top style='width:430.6pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Дата конца интервала
+  журнала.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриУстановкеИнтервала произво­дится
+системой 1<span style='mso-ansi-language:EN-US'>C:Предприятие
+неявно при интерактивной попытке устано­вить интервал в журнале документов.
+Если в данной предопределенной проце­дуре установить статус возврата — 0
+(например, если данному пользователю нельзя изменять интервал журнала), установка
+не будет выполнена.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриУстановкеИнтервала(ДатаНач, ДатаКон) Если<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;У вас нет права изменять интервал журнала! , 2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

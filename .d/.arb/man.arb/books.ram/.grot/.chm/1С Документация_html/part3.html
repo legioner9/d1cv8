@@ -1,0 +1,165 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part3</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part3.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc493032213">Глава 3<br> Объявление переменных</a></h1>
+
+<p class=MsoNormal>В языке переменные не обязательно объявлять в
+явном виде. Неявным оп­ределением переменной является первое ее появление в
+левой части оператора присваивания. Возможно также явное объявление переменной
+при помощи оператора <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>Перем<span
+lang=RU>. Тип переменной определяется типом присвоенного ей значе­ния. Не
+допускается использование в выражениях переменных с неопределен­ным значением
+(то есть переменных, которым никогда не присваивалось значе­ния).</p>
+
+<p class=MsoNormal>Переменные могут объединяться в массивы. В
+данной реализации програм­мы предусмотрены только одномерные массивы.</p>
+
+<h2><a name="_Toc493032214">Оператор объявления переменной</a></h2>
+
+<h4><a name="_Toc493032215">Перем</a></h4>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'>Объявление
+переменной в явном виде.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Перем &lt;Имя_переменной&gt;
+[[&lt;Размерность&gt;]] [Экспорт];<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Var:<o:p></o:p></p>
+
+<p class=MsoNormal>Параметры</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:19.6pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;Имя_переменной&gt;<o:p></o:p></p>
+  </td>
+  <td width=508 valign=top style='width:380.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя переменной.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>[&lt;Размерность&gt;]<o:p></o:p></p>
+  </td>
+  <td width=508 valign=top style='width:380.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательная
+  числовая константа (записывает­ся в квадратных скобках), указывается только в
+  том случае, если объявляется массив и должна представляться в виде положительного
+  целого числа.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Экспорт<o:p></o:p></p>
+  </td>
+  <td width=508 valign=top style='width:380.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательное
+  ключевое слово <span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Экспорт
+  указы­вает, что данная переменная станет доступна для других модулей.
+  Использование данного ключево­го слова имеет смысл только в <i
+  style='mso-bidi-font-style:normal'>глобальном про­граммном модуле</i>.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Оператор <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Перем<span
+lang=RU> в явном виде объявляет переменную.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Перем Очень_Нужная_Переменная;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Перем Массив_Для_Хранения[10];<o:p></o:p></p>
+
+<h2><a name="_Toc493032216">Область использования переменной</a></h2>
+
+<p class=MsoNormal>Область использования переменных зависит от
+места их определения в конфигурации задачи. Существует три области, в которых
+можно объявить переменные:</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l12 level1 lfo12;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>В разделе определения переменных
+глобального программного модуля. Если переменные определены с ключевым словом <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Экспорт (см. опера­тор <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Перем), то это будут глобальные
+переменные.</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l12 level1 lfo12;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>В разделе определения переменных модуля.
+Это переменные модуля.</p>
+
+<p class=MsoNormal style='margin-left:32.2pt;text-indent:-.25in;mso-list:l12 level1 lfo12;
+tab-stops:list 32.2pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>В процедуре или функции. Это локальные
+переменные.</p>
+
+<p class=MsoBodyTextIndent style='margin-top:12.0pt'><span lang=RU
+style='layout-grid-mode:both'>Глобальные переменные доступны для использования
+в исполняемых опе­раторах, выражениях, в любой процедуре и функции любого
+программного мо­дуля конфигурации задачи.<o:p></o:p></p>
+
+<p class=MsoNormal>Переменные модуля доступны для использования в
+исполняемых операто­рах, выражениях, в любой процедуре и функции того программного
+модуля, в пределах которого они объявлены.</p>
+
+<p class=MsoNormal>Локальные переменные доступны в пределах той
+процедуры или функции, в которой они объявлены.</p>
+
+<p class=MsoNormal>Если переменная определена как глобальная
+переменная, то она видна из всех процедур и функций любого программного модуля
+конфигурации задачи. Если же переменная определена внутри процедуры, то её
+областью видимости является данная процедура или функция. Таким образом, если
+две переменные с одинаковыми именами используются в двух различных процедурах
+модуля, и имя этой переменной не упоминается как глобальная переменная, то это
+две различные переменные, локальные для процедур. Если же переменная опреде­лена
+как глобальная переменная, то любое использование имени этой перемен­ной будет
+приводить к обращению к одной и той же переменной.</p>
+
+<p class=MsoNormal>Единственный способ создать для процедуры
+локальную переменную с именем, совпадающим с именем переменной, определенной
+как глобальная пе­ременная — это объявить ее явно при помощи оператора <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Перем.</p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

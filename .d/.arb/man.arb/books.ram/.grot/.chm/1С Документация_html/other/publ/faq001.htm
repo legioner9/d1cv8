@@ -1,0 +1,237 @@
+
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<title>1С-Предприятие. Документация | FAQ</title>
+<link rel="stylesheet" type="text/css" href="../../1c.css">
+<style type="text/css">
+<!--
+ul {  list-style-image:url('../images/q.gif')}
+-->
+</style>
+</head>
+<body background="../../images/background_main.gif">
+<h5 align="center" class="highlink"><font size="4">&nbsp;Вопросы -
+ответы</font></h5>
+<hr>
+<ul>
+  <li><b><a href="#001">Как установить 1С:Предприятие с эмулятором HASP на Windows2000 
+    ?</a></b></li>
+  <li><b><a href="#002">Можно ли использовать для работы в 1С одновременно NT 
+    4 TSE (W2k) и MS SQL Server ?</a></b></li>
+  <li><b><a href="#003">Как изменить логотип на сплеш-заставке выводимой при запуске 
+    1С:Предприятия ?</a></b></li>
+  <li><b><a href="#004">Как отключить вывод сплеш-заставки при запуске 1С:Предприятия 
+    ?</a></b></li>
+  <li><b><a href="#005">Как снять пароль с конфигурации?</a></b></li>
+  <li><b><a href="#006">Как одолеть 90-дневное ограничение на использование Windows 
+    2000 AS Terminal Service ?</a></b></li>
+</ul>
+<hr>
+<p align="left"><b><a name="001"></a>Как установить 
+  1С:Предприятие c эмулятором HASP на Windows2000 ?</b></p>
+<p align="left">Важная особенность для Windows2000 
+  - все надо делать ПОСЛЕДОВАТЕЛЬНО<font size="2">. В списке девайсов, haspemul 
+  находиться : My computer->hardware manager->show hidden devices.</font></p>
+<ol>
+  <li>Метод от <font size="2"> <i><font size="2"><a href="mailto:mishell.ilchuck@f3.n4621.z2.fidonet.org">© 
+    Mishell Ilchuck</a></font></i></font>: 
+    <ol>
+      <li><font size="2">поставить 1С:Предприятие;</font></li>
+      <li><font size="2"> поставить драйвер HASP;</font></li>
+      <li><font size="2"> перезагрузиться;</font></li>
+      <li><font size="2"> удалить драйвер хаспа;</font></li>
+      <li><font size="2"> перезагрузиться;</font></li>
+      <li><font size="2"> поставить эмулятор;</font></li>
+      <li><font size="2"> поставить вместо auto - boot;</font></li>
+      <li><font size="2"> перезагрузиться. </font></li>
+    </ol>
+    <p><font size="2">Если где-то напутать или пропустить или не перезагрузиться, 
+      то при попытке установить драйвер или эмулятор, Windows ругается на ошибку 
+      записи в реестр.</font></p>
+  </li>
+  <li>Метод от <font size="2"><i><font size="2"> © Skies</font></i></font>: 
+    <ol>
+      <li>поставить 1С:Предприятие. </li>
+      <li>установить <font size="2"> драйвер HASP;</font> </li>
+      <li><font size="2">перезагрузиться;</font> </li>
+      <li>АнИнсталить <font size="2">драйвер HASP;</font> </li>
+      <li>зайти девайс менеджер (не забыть включить "отображать скрытые устройства"), 
+        там удалит вручную HaspNT (это обязательно); </li>
+      <li><font size="2">перезагрузиться;</font> </li>
+      <li>поставить &quot;..старый, добрый, надежный СОБОЛЬ&quot;; </li>
+      <li>сделать полный патч; </li>
+      <li>из каталога где установлен &quot;соболь&quot;, запустить эмуляцию ключа 
+        под НТ. (c:\program files\sable\winnt\instnt.bat) </li>
+      <li><font size="2">перезагрузиться;</font> </li>
+    </ol>
+    <p>Тестировано на разных версиях винды 2000 (Сервер, РабСтанция, Рус., Англ., 
+      и тд. На 12 и 14 релизах предприятия, включая веб компоненту... ) <font size="2"><i><font size="2">. 
+      </font></i></font></p>
+  </li>
+</ol>
+<hr>
+<p align="left"><b><a name="002"></a>Можно ли использовать 
+  для работы в 1С одновременно NT 4 TSE (W2k) и MS SQL Server ?</b></p>
+<p align="left"><i><font size="2">&nbsp;</font></i><font size="2">Да 
+  - без проблем, только крайне рекомендуется разнести это все по двум серверам 
+  один под терминал и 1с, второй под SQL сервер. В таком варианте "убиваются" 
+  все зайцы сразу - терминальный режим дает скорость работы и простоту администрирования, 
+  а SQL - надежность и независимость от размера базы данных ... <i><font size="2">© 
+  ФТП Родионова</font></i></font></p>
+<hr>
+<p align="left"><b><a name="003"></a>Как изменить логотип 
+  на сплеш-заставке выводимой при запуске 1С:Предприятия?</b></p>
+<p align="left">&nbsp;В директории базы находится файл 1cv7splh.dib, 
+  если в него положить логотип, то все отобразится при входе в систему.</p>
+<hr>
+<p align="left"><b><a name="004"></a>Как отключить 
+  вывод сплеш-заставки при запуске 1С:Предприятия?</b></p>
+<p align="left">Любым HEX-редактором найти в запускаемом 
+  *.EXE файле последовательность и заменить на другую:</p>
+<table width="100%" border="1" align="left">
+  <tr> 
+    <th>Тип</th>
+    <th>Имя файла:</th>
+    <th>Найти:</th>
+    <th>Заменить на:</th>
+  </tr>
+  <tr> 
+    <td> 
+      <center>
+        Сетевая версия 
+      </center>
+    </td>
+    <td> 
+      <center>
+        1cv7.exe 
+      </center>
+    </td>
+    <td> 
+      <center>
+        8B 87 54 85 00 00 
+      </center>
+    </td>
+    <td> 
+      <center>
+        31 C0 90 90 90 90 
+      </center>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <center>
+        Локальная 
+      </center>
+    </td>
+    <td> 
+      <center>
+        1cv7l.exe 
+      </center>
+    </td>
+    <td> 
+      <center>
+        8B 8B 54 85 00 00 
+      </center>
+    </td>
+    <td> 
+      <center>
+        31 C9 90 90 90 90 
+      </center>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Приведенные последовательности встречаются в файлах один раз, но для различных 
+  релизов по разным смещениям.</p>
+<hr>
+<p align="left"><b><a name="005"></a>Как снять пароль 
+  с конфигурации?</b></p>
+<p align="left">Необходимо пропатчить SEVEN.DLL:</p>
+<p>
+<table width="100%" border="1">
+  <tr> 
+    <th>Версия,релиз</th>
+    <th>Найти:</th>
+    <th>Заменить на:</th>
+  </tr>
+  <tr> 
+    <td>
+      <center>
+        7.5 все 
+      </center>
+    </td>
+    <td>8B 54 24 08 8B 46 64 52 50 FF 15 -- -- -- -- 83 C4 08 F7 D8 1B C0 F7 D8 
+    </td>
+    <td>-- -- -- -- -- -- -- -- 51 8A 08 88 0A 40 42 84 C9 75 F6 59 5A 33 C0 90 
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <center>
+        7.7.001-008 
+      </center>
+    </td>
+    <td> 
+      <div align="left">8B 47 64 8B 74 24 10 8A 10 8A CA 3A 16 75 1C 84 C9 74 
+        14 8A 50 01 8A CA 3A 56 01 75 0E</div>
+    </td>
+    <td> 
+      <div align="left">-- -- -- -- -- -- -- -- -- -- -- 88 -- 74 -- -- -- -- 
+        -- -- -- -- -- -- 88 -- -- 74 -- </div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <center>
+        7.7.009 и выше 
+      </center>
+    </td>
+    <td> 
+      <center>
+        8A 1C 0E 3A C3 75 E1 
+      </center>
+    </td>
+    <td> 
+      <center>
+        88 04 -- -- -- EB 00 
+      </center>
+    </td>
+  </tr>
+</table>
+
+<p align="left">После этого на запрос конфигуратора о вводе пароля, нажать Enter. 
+  Дальше конфигуратор сделает все сам... <i><font size="2"><a href="mailto:code_digger@mail.ru">© 
+  C/Digger</a></font></i></p>
+<hr>
+<p align="left"><b><a name="006"></a>Как одолеть 90-дневное 
+  ограничение на использование Windows 2000 AS Terminal Service?</b></p>
+<p align="left">&nbsp;Несколько способов:</p>
+<ol>
+  <li>Удалить на КЛИЕНТСКОЙ машине в системном реестре ветку HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSLicensing\Store 
+    и &quot;..насладится чувством самоудовлетворения от осуществленного акта надругательства 
+    над лицензионной политикой MS.&quot; <font size="2"><a href="mailto:alpha@ellink.ru"><i>© 
+    Михаил Образцов</i></a> (к сожалению прийдется повторять каждые 90 дней..)</font></li>
+  <li>При активации выбрать Web-registration (не Internet registration), далее 
+    зайдя на <a href="https://activate.microsoft.com">https://activate.microsoft.com</a>, 
+    ввести номер установленной Windows и получить код. <font size="2"><i>© Жаба</i></font> 
+  </li>
+  <li>Перед инсталяцией, сменить системную дату на несколько лет вперед, а после 
+    - восстановить. <font size="2"><i>© ???</i></font> </li>
+  <li><font size="2"> П</font>рименить к СЕРВЕРУ:<hr>
+  =====8<===W2kTS.Crk from $CRACK$=======<hr>NT 5.02 B-2195 [TerminalServer] (C) 
+    by *HW* <hr>Remove expiration and limit checks! (RA mode) ICAAPI.DLL<hr> 00004B84: 
+    17 00 ; Connections licensed <hr>00004CC7: 7C EB ; Connections allowed <hr>00004DAA: 
+    74 EB ; Expirationless <hr>=====8<===============================<hr>
+    &quot;...после этих манипуляций Windows захочет вернуть все как было (есть 
+    у него полезная во всех кроме этого случая фичь - защита системных файлов) 
+    поэтому dll надо поправить не только в %SystemRoot%\system32\ но и в %SystemRoot%\system32\dllcache 
+    - в противном случае файл будет заменен системой на старый, взятый оттуда... 
+    Ну и на требование засунуть CD'шник с Windows Setup, его, естественно, тоже 
+    нужно послать...:)))..&quot; <i><font size="2"><a href="mailto:code_digger@mail.ru">©
+    C/Digger</a></font></i> </li>
+</ol>
+</body>
+</html>

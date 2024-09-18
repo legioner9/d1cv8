@@ -1,0 +1,804 @@
+
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<title>1С-Предприятие. Документация | Web-расширение. Часть 2</title>
+<link rel="stylesheet" type="text/css" href="../../../1c.css">
+</head>
+<body lang=RU link=#0000FF vlink=#800080 background="../../../images/background_main.gif">
+ 
+  <h1 class="highlink"><font size="4">Web-расширение. 
+    Часть 2.</font></h1>
+  <hr>
+  <p><b><a
+href="#_toc497075716">Установка и запуск</a></b></p>
+<ul>
+  <li> 
+    <a href="#_toc497075717">Microsoft Internet Information 
+      Server</a></li>
+  <li> 
+    <a href="#_toc497075718">Установка IIS</a><ul>
+      <li> 
+        <a href="#_toc497075719">Windows NT 4.0</a></li>
+      <li> 
+        <a href="#_toc497075720">Windows 2000</a></li>
+    </ul>
+  </li>
+  <li> 
+    <a href="#_toc497075721">Web-приложения</a><ul>
+      <li> 
+        <a href="#_toc497075722">Создание приложения</a></li>
+      <li> 
+        <a href="#_toc497075723">Остановка приложения</a></li>
+      <li> 
+        <a href="#_toc497075724">Пользовательский контекст</a></li>
+      <li> 
+        <a href="#_toc497075725">Остановка и перезапуск IIS</a></li>
+      <li> 
+        <a href="#_toc497075726">Управление &quot;устареванием&quot; 
+          страниц</a></li>
+      <li> 
+        <a href="#_toc497075727">Frontpage</a><ul>
+          <ul>
+            <li> 
+              <a href="#_toc497075728">Windows NT 4.0</a></li>
+            <li> 
+              <a href="#_toc497075729">Windows 2000</a></li>
+          </ul>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li> 
+    <a href="#_toc497075730">Web-расширение </a><ul>
+      <li> 
+        <a href="#_toc497075731">1С:Предприятие 7.7</a></li>
+      <li> 
+        <a href="#_toc497075732">Настройка DCOM</a></li>
+    </ul>
+  </li>
+  <li> 
+    <a href="#_toc497075733">Соединение с 1C Предприятием</a><ul>
+      <li> 
+        <a href="#_toc497075734">Настройка DCOM</a></li>
+      <li> 
+        <a href="#_toc497075735">Файл параметров</a></li>
+      <li> 
+        <a href="#_toc497075736">Файл соединения</a></li>
+      <li> 
+        <a href="#_toc497075737">Настройка DCOM</a></li>
+      <li> 
+        <a href="#_toc497075738">Интеграция ASP и 1C:Предприятия 
+          7.</a></li>
+    </ul>
+  </li>
+</ul>
+<b><a href="#_toc497075739">Возможности Web-расширения</a></b>
+<ul>
+  <ul>
+    <li> 
+      <a href="#_toc497075740">Создание ASP-страниц</a></li>
+    <li> 
+      <a href="#_toc497075741">Сессия и модуль сессии</a><ul>
+        <li> 
+          <a href="#_toc497075742">WebНачатьСессию</a></li>
+        <li> 
+          <a href="#_toc497075743">WebЗавершитьСессию</a></li>
+      </ul>
+    </li>
+    <li> 
+      <a href="#_toc497075744">Использование табличных документов 
+        1C:Предприятия 7.7</a></li>
+  </ul>
+</ul>
+
+  <h2><a name="_Toc497075716">Установка и запуск</a></h2>
+
+  <p style='text-align:justify;text-autospace:none'>Эта глава 
+    посвящена установке и настройке используемых при работе с Web-расширением 
+    программных продуктов.</p>
+  <h3><a name="_Toc497074158"></a><a name="_Toc497075717">Microsoft Internet Information 
+    Server</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Microsoft 
+    Internet Information Server (US) -  Web-сервер, позволяющий как программно 
+    расширять возможности сервера CGI-и ISAPI-компонентами, так и использовать 
+    ASP-страницы, содержащие   фрагменты   кода   на  скриптовых  языках   и обрабатываемые 
+    сервером перед отправкой клиенту. Последняя технология и используется для 
+    интеграции IIS и 1С Предприятия 7.7.</p>
+  <h3><a name="_Toc497074159"></a><a name="_Toc497075718">Установка IIS</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Порядок установки 
+    IIS на Windows NT 4.0 отличается от порядка установки на Windows 2000, поэтому 
+    они описаны раздельно.</p>
+  <h4><a name="_Toc497075719">Windows</a> NT 4.0</h4>
+  <p style='text-align:justify;text-autospace:none'>IIS с поддержкой 
+    ASP не входит в поставку Windows NT 4.0, поэтому его необходимо устанавливать 
+    отдельно. В качестве источника рекомендуется использовать NT Option Pack 4.0, 
+    доступный  для  загрузки  с  сайта  Microsoft  по  адресу http://www.microsoft.com/ntserver/nts/downloads/.    
+    В этот пакет входят несколько программных продуктов, образующих комплекс, 
+    необходимый для функционирования Web-сервера. Из списка компонент необходимо 
+    обязательно установить следующие компоненты:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Microsoft Data 
+    Access Components 1.5</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Microsoft Management 
+    Console</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NT Option Pack 
+    Common Files</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internet Information 
+    Server (Personal Web Server при установке на Windows NT Workstation)</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internet Service 
+    Manager о World Wide Web Server</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transaction Server</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transaction Server 
+    Core Components</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Windows Scripting 
+    Host</p>
+  <p style='text-align:justify;text-autospace:none'>Если подкомпоненты 
+    для какого-то из компонентов не указаны, то можно устанавливать компонент, 
+    не изменяя предложенного по умолчанию выбора. Основным инструментом для управления 
+    IIS служит Microsoft Management Console (далее ММС). ММС запускается из меню 
+    Start/Programs/Windows NT 4.0 Option Pack/Microsoft Internet Information Server/Internet 
+    Service Manager для Windows NT 4.0. Все используемые сервисы организованы 
+    в ММС в виде дерева каталогов с корнем Console Root. Управление Web-сервером 
+    находится в подкаталоге дерева с именем Internet Information Server/servername/Default 
+    Web Site.</p>
+  <h4><a name="_Toc497075720">Windows 2000</a></h4>
+  <p style='text-align:justify;text-autospace:none'>В поставку 
+    Windows 2000 уже включен IIS, поэтому для установки IIS достаточно выбрать 
+    соответстующий пункт в процессе установки операционной системы. Как и IIS, 
+    Microsoft Management Console (далее ММС) встроена в Windows 2000. Управление 
+    Web-сервером      запускается      по      пункту      меню Start/Programs/Administrative 
+    Tools/Internet Information Services.</p>
+  <p style='text-align:justify;text-autospace:none'>Никаких специальных 
+    настроек после установки собственно IIS не требует, все необходимые модификации 
+    настроек приложений описаны в соответствующих разделах.</p>
+  <h3><a name="_Toc497074160"></a><a name="_Toc497075721">Web-приложения</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Описание Web-приложения 
+    дано ранее в главе «Глава 3 Технология ASP» в пункте «Приложение» стр. 25, 
+    поэтому здесь рассматриваются только вопросы, связанные с исполнением Web-приложений 
+    на U.S.</p>
+  <h3><a name="_Toc497074161"></a><a name="_Toc497075722">Создание приложения</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Для создания 
+    приложения выберите необходимый подкаталог и, нажав правую кнопку мыши, выберите 
+    пункт Properties. На закладке Directory найдите Application Settings и нажмите 
+    кнопку Create. Созданному приложению можно дать произвольное имя.</p>
+  <p style='text-align:justify;text-autospace:none'>Существует 
+    два варианта (в Windows 2000 - три) запуска Web-приложения: в текущем процессе 
+    самого Web-сервера или в отдельном приложении. Далее эти варианты рассматриваются 
+    отдельно.</p>
+  <p style='text-align:justify;text-autospace:none'>Запуск  приложения  
+    в  процессе  Web-сервера  повышает быстродействие Web-приложения, так как 
+    запросы на обработку страниц не передаются между процессами, однако уменьшает 
+    надежность системы, так как в случае возникновения ошибки в Web-приложении 
+    необходимо перезапустить и Web-сервер. Этот вариант запуска установливается 
+    при создании приложения по умолчанию.</p>
+  <p style='text-align:justify;text-autospace:none'>Запуск приложения 
+    в отдельном процессе позволяет повысить устойчивость WWW-сервера к сбоям в 
+    приложении и дает возможность остановки приложения без остановки всего WWW-сервера, 
+    однако требует дополнительных ресурсов компьютера. Для запуска приложения 
+    в отдельном процессе выберите подкаталог приложения и, нажав правую кнопку 
+    мыши, выберите пункт Properties. На закладке Directory найдите Application 
+    Settings и включите флаг Run in separate memory space (isolated process) -приложение 
+    будет запускаться в отдельном процессе.</p>
+  <p style='text-align:justify;text-autospace:none'>Третий вариант 
+    запуска (pooled) доступен только в Windows 2000. В этом варианте для всех 
+    Web-приложений создается отдельный от Web-сервера процесс, в котором и запускаются 
+    приложения. Таким образом, этот вариант является промежуточным по быстродействию, 
+    устойчивости и требовательности к ресурсам.</p>
+  <h3><a name="_Toc497074162"></a><a name="_Toc497075723">Остановка приложения</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Для остановки 
+    приложения выберите подкаталог приложения и, нажав правую кнопку мыши, выберите 
+    пункт Properties. На закладке Directory найдите Application Settings и нажмите 
+    кнопку Unload -приложение будет выгружено. Такая возможность остановки существует 
+    только при запуске приложения в отдельном процессе -все Web-приложения, запущенные 
+    в процессе US, останавливаются только при остановке самого Web-сервера.</p>
+  <h3><a name="_Toc497074163"></a><a name="_Toc497075724">Пользовательский контекст</a></h3>
+  <p style='text-align:justify;text-autospace:none'>При работе 
+    Web-приложения все вызовы, связанные с объектами операционой системы, исполняются 
+    в некотором пользовательском контексте. Исходя из набора прав этого пользователя 
+    доступ к объектам системы может быть разрешен или запрещен. При установке 
+    IIS на компьютере создается два дополнительных пользователя, локальных для 
+    компьютера - IUSR_servername и IWAM_servername, обладающих очень ограниченным 
+    набором прав.</p>
+  <p style='text-align:justify;text-autospace:none'>IUSR_servername 
+    по умолчанию используется для проверки прав доступа, которыми обладает IIS 
+    при выполнении пользовательских запросов, т.е. все пользовательские запросы 
+    выполняются как исходящие от этого пользователя. Установку этого контекста 
+    можно изменить - на закладке Directory Security свойств приложения нажмите 
+    кнопку Edit, затем нажмите Edit напротив Allow Anonymous Access и выберите 
+    нужного пользователя из списка.</p>
+  <p style='text-align:justify;text-autospace:none'>Следует   
+    различать   пользовательский   контекст   всего Web-приложения    и    контекст    
+    выполнения    отдельных пользовательских запросов, поскольку различные системные 
+    вызовы (в частности, вызовы OLE) могут использовать не только контекст запроса 
+    (например, IUSR_servername), но и контекст приложения. Web-приложения, исполняющиеся 
+    в процессе IIS, используют контект SYSTEM - встроенный системный контекст, 
+    обладающий практически неограниченными правами на локальном компьютере, но 
+    не имеющий доступа к сетевым ресурсам. Web-приложения, запускающиеся в отдельном 
+    процессе, по умолчанию используют контект IWAM_servername.</p>
+  <p style='text-align:justify;text-autospace:none'>Такое различение 
+    пользовательских контекстов необходимо по следующей причине: если 1С:Предприятие 
+    7.7 и Web-приложение выполняются на разных компьютерах, то для корректного 
+    завершения сессии необходимо, чтобы пользователь, в контексте которого исполняется 
+    процесс, обладал правом Act as part of the operating system (Работа в режиме 
+    операционной системы). Пользователь   SYSTEM   имеет   такое   право,    поэтому 
+    Web-приложения, исполняющиеся в процессе Web-сервера, не требуют      дополнительной      
+    настройки.      Пользователь IWAM_servername таким правом не обладает, поэтому 
+    следует либо дать это право IWAM_servername, либо изменить пользовательский 
+    контекст Web-приложения на контекст пользователя, обладающего таким правом. 
+    Для этого в Windows NT 4.0 нужно найти соответствующий пакет (package) в каталоге 
+    ММС Console Root/Microsoft Transaction Server/Packages Installed и на странице 
+    Identity свойств пакета выбрать необходимого пользователя. В Windows 2000 
+    нужно запустить управление Component Services (пункт   меню   Start/Programs/Administrative   
+    Tools/Component Services) и аналогичным образом изменить пользователя для 
+    пакета IIS Out-Of-Process Pooled Applications.</p>
+  <p style='text-align:justify;text-autospace:none'>Следует принимать 
+    во внимание, что указанное право представляет большие полномочия по выполнению 
+    системных вызовов (непосредственно после установки операционной системы право 
+    Act as part of the operating system предоставлено только пользователю SYSTEM), 
+    поэтому предоставление такого права пользователям понижает общий уровень безопасности 
+    Web-сервера. Исходя   из   этого   рекомендуется   использовать   только Web-приложения, 
+    исполняющиеся в процессе IIS.</p>
+  <p style='text-align:justify;text-autospace:none'>Если же Web-приложение 
+    исполняется на одном компьютере с 1 (^Предприятием, то вышеприведенные требования 
+    могут не выполняться.</p>
+  <h3><a name="_Toc497074164"></a><a name="_Toc497075725">Остановка и перезапуск 
+    </a>IIS</h3>
+  <p style='text-align:justify;text-autospace:none'>Для этого 
+    можно использовать как ММС (Microsoft Managment Console), так и командную 
+    строку. В ММС нужно просто выбрать корень сайта (с наименованием по умолчанию 
+    Default Web Site) и нажать соответствующую кнопку на панели инструментов. 
+    Из командной строки это сделать несколько сложнее - нужно ввести следующие 
+    команды:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; для остановки   
+    net stop iisadmin /у</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; для запуска     
+    net start w3svc</p>
+  <h3><a name="_Toc497074165"></a><a name="_Toc497075726">Управление &quot;устареванием&quot; 
+    страниц</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Время &quot;устаревания&quot; 
+    (expiry time) страниц используется для определения временной границы, после 
+    которой браузер при запросе страницы должен заново получив требуемую страницу 
+    с WWW-сервера,   возможно   обновив   сохраненный   на   компьютере пользователя 
+    образ страницы. Для установки времени &quot;устаревания&quot; выберите подкаталог 
+    приложения и, нажав правую кнопку мыши, выберите пункт Properties. На закладке 
+    HTTP Headers включите флаг Enable Content Expiration и выберите необходимое 
+    время &quot;устаревания&quot;. Можно установить один из трех возможных вариантов:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Expire immediately 
+    - страница не кэшируется в браузере</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Expire after 
+    - страница обновляется через некоторое время после загрузки</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Expire on - страница 
+    обновляется после наступления указанной даты.</p>
+  <p style='text-align:justify;text-autospace:none'>Страницы, 
+    содержащие критичные для приложения и часто обновляемые данные, должны иметь 
+    признак Expire immediately -тогда страница будет обновляться при каждом запросе 
+    пользователя. Заметим, что существует также программный аналог данной установки, 
+    использованный в примере «Портал регистратора».</p>
+  <h3><a name="_Toc497074166"></a><a name="_Toc497075727">Frontpage</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Microsoft 
+    Frontpage -  один из популярных программных продуктов для создания Web-сайтов, 
+    обладающий широким набором функций. В состав Frontpage входят редактор Web-сайта, 
+    позволяющий строить структуру сайта, и WYSIWYG-редактор HTML-страниц сайта. 
+    Кроме функций редактирования Frontpage предоставляет сервисные функции проверки 
+    ссылок на сайте, информации о страницах сайта и др. Сам Frontpage поставляется 
+    как в виде отдельного продукта, так и в составе Microsoft Office. В версиях 
+    Frontpage 97 и 98 редакторы сайта и страниц представляют разные приложения, 
+    в Frontpage 2000 приложение одно. Далее все описания ориентируются на Frontpage 
+    2000 из русскоязычного Microsoft Office, различные названия для других версий 
+    и языков могут отличаться от приведенных.</p>
+  <p style='text-align:justify;text-autospace:none'>Установка 
+    Frontpage выполняется с CD-ROM из поставки Microsoft Office и не представляет 
+    сложностей. Однако кроме установки самой программы необходимо установить также 
+    так называемые серверные расширения (server extensions) – компоненты Web-сервера, 
+    необходимые для выполнения различных действий в Frontpage. Эти компоненты 
+    должны быть установлены на компьютер, на котором установлен Web-сервер. После 
+    установки компоненты  необходимо  сконфигурировать  для  работы  с Web-сервером.</p>
+  <h4><a name="_Toc497075728">Windows</a> NT 4.0</h4>
+  <p style='text-align:justify;text-autospace:none'>Для  конфигурирования  
+    расширений  запустите   Microsoft Management Console (MMC) и из меню Console 
+    выберите Add/Remove Snap-In.... На закладке Extensions для snap-in Internet 
+    Information Server включите флаг «Серверные расширения Frontpage». Щелкните 
+    ОК и затем щелкните правой кнопкой мыши в название Web-сервера. Выберите Task-&gt;Conngure 
+    Extensions. Далее следуйте указаниям мастера конфигурирования. После завершения 
+    серверные расширения Frontpage будут установлены.</p>
+  <h4><a name="_Toc497075729">Windows</a> 2000</h4>
+  <p style='text-align:justify;text-autospace:none'>Серверные 
+    расширения Frontpage входят в поставку Windows 2000, поэтому для их установки 
+    достаточно выбрать соответстующий пункт в процессе установки операционной 
+    системы.</p>
+  <p style='text-align:justify;text-autospace:none'>Для работы 
+    с сайтом «Портал реализатора» необходимо проделать следующие действия. Запустите 
+    Frontpage и выберите пункт Open Web... из меню File. В диалоге выбора каталога 
+    найдите каталог, содержащий файлы сайта, и нажмите Open. На вопрос «Add Frontpage 
+    Information to the Folder» нажмите Yes. Frontpage сконвертирует указанный 
+    каталог в сайт, добавив специальную информацию (в том числе создав подкаталоги 
+    в указанном каталоге), и откроет сайт.</p>
+  <p style='text-align:justify;text-autospace:none'>Для того чтобы 
+    содержание сайта было доступно с Web-сервера, сайт необходимо опубликовать 
+    (publish) на сервер. Для этого из меню File выберите пункт Publish Web... 
+    и в поле ввода наберите адрес, на который требуется опубликовать сайт. Имя 
+    Web-сервера обычно совпадает с именем компьютера, на котором сервер установлен. 
+    В качестве имени каталога рекомендуется выбрать Trade - далее описание использует 
+    именно это название каталога. Нажмите Publish - сайт будет опубликован на 
+    сервере. После публикации  можно  проверить  правильность  произведенных действий,        
+    набрав        в        браузере        адрес <u>http://</u><u>servername/</u><u>trade 
+    /</u><u>help.</u><u>htm</u> - эта HTML-страница не требует обработки 1С:Предприятием.</p>
+  <p style='text-align:justify;text-autospace:none'>После публикации 
+    в каталоге сайта необходимо создать приложение, используя MMC (см. выше). 
+    Создание приложения обязательно, так как в противном случае обработчики событий, 
+    находящиеся в файле global.asa, вызываться не будут.</p>
+  <h3><a name="_Toc497074167"></a><a name="_Toc497075730">Web-расширение</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Web-расширение   
+    состоит   из   трех   основных   частей -Web-компоненты 1С:Предприятия, библиотеки 
+    V7 Scripting Engine и примера «Портал реализатора». Все три компоненты можно 
+    установить с CD-ROM, входящего в поставку. Web-расширение обязательно должно 
+    быть установлено в каталог с исполняемыми файлами 1 С: Предприятия 7.7 (например, 
+    C:\Program Files\lCv77). Библиотека  V7  Scripting  Engine  может  располагаться  
+    в произвольном каталоге на компьютере Web-сервера, однако не рекомендуется 
+    иметь более одной установленной библиотеки в связи с тем, что использоваться 
+    будет библиотека, зарегистрированная последней. Для файлов примера местонахождение 
+    произвольно.</p>
+  <p style='text-align:justify;text-autospace:none'>Входящий в 
+    Web-расширение V7 Scripting Engine (V7Script.dll) использует СОМ (Component 
+    Object Model, ранее OLE) для связи с 1 С:Предприятием. Настройка этой связи 
+    довольно сложна (по крайней мере для неподготовленного пользователя), поэтому 
+    рекомендуется внимательно прочитать нижеприведенные описания, так как от этих 
+    настроек зависит работоспособность всего механизма в целом. V7 Scripting Engine 
+    в основном использует подсистему CUM, называемую DCOM (Distributed СОМ, распределенный 
+    СОМ). DCOM используется в тех случаях, когда вызовы СОМ нужно передавать между 
+    процессами (interprocess calls, across process boundaries). Это очень упрощенное 
+    описание предназначения DCOM, однако оно помогает понять суть дела. Очевидно, 
+    на вызовы между процессами накладываются ограничения, порождаемые системой 
+    безопасности, так как потенциально такие вызовы можно использовать для деструктивных 
+    действий (например, скопировав на сервер &quot;нехорошую&quot; программу, 
+    можно удаленно запустить ее, так DCOM не ограничивает область вызовов одним 
+    компьютером). В случае Web-приложения DCOM-вызовы возникают при обработке 
+    ASP-страницы в момент передачи текста скрипта из V7 Scripting Engine в lC-.Предприятие 
+    7.7. Для того чтобы разрешить такие вызовы, необходимо специально настроить 
+    DCOM. Для настройки DCOM в состав операционной системы входит утилита настройки 
+    dcomcnfg-exe, запустить ее можно как из командной строки, так и из меню Start/Run.</p>
+  <h3><a name="_Toc497074168"></a><a name="_Toc497075731">1С:Предприятие 7.7</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Использование 
+    Web-компоненты регулируется специальным правом «Использование Web-расширения». 
+    Это право появляется в наборе доступных прав при установленной Web-компоненте 
+    в</p>
+  <p style='text-autospace:none'>режиме конфигурирования.</p>
+  <p style='text-align:justify;text-autospace:none'>Для запуска 
+    1С:Предприятия 7.7 с использованием Web-расширения необходимо следующее:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; пользователю, 
+    использующему Web-расширение, дать право на использование Web-расширения;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; запустить ЮПредприятие 
+    с ключом /W или ^«имя файла». При использовании ключа /W V7 Scripting Engine 
+    соединяется с ЮПредприятием, не используя дополнительные файлы, поэтому 1С:Предприятие 
+    должно быть запущено на одном компьютере с Web-сервером. Если используется 
+    ключ с указанием файла, то 1С:Предприятие может быть запущено на любом компьютере, 
+    однако на имя файла накладываются следующие требования:</p>
+  <p style='line-height:
+90%;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; путь к файлу 
+    может быть полным или частичным. В последнем   случае  путь  считается  от  
+    каталога, содержащего исполняемые файлы 1С:Предприятия;</p>
+  <p style='text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+     каталог должен существовать и быть доступен из 1С:Предприятия.</p>
+  <p style='text-align:justify;text-autospace:none'>Если файл 
+    с указанным именем не существует, то он будет создан.</p>
+  <h3><a name="_Toc497074169"></a><a name="_Toc497075732">Настройка DCOM</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Для запуска 
+    Web-компоненты эта настройка должна быть проведена обязательно.</p>
+  <p style='text-align:justify;text-autospace:none'>На первой 
+    закладке окна dcomcnfg.exe представлен список всех OLE-серверов, зарегистрированных 
+    на компьютере, и среди них указан сервер V77.GeneralPropPage.</p>
+  <p style='text-align:justify;text-autospace:none'>Для настройки 
+    дважды щелкните по нему мышкой и в появившемся диалоге выберите закладку Identity. 
+    Выберите вариант The interactive user (обычно вместо The launching user). 
+    Дважды нажмите OK для сохранения изменений и выхода из программы. Правильность 
+    совершенных действий можно проконтролировать по содержимому Registry, запустив 
+    утилиту regedit.exe. В Registry должны присутствовать следующие ключи:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HKEY_CLASSES_ROOT\AppID\&lt;GUID&gt; 
+    о RunAs <sup>==</sup> &quot;Interactive User&quot;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HKEY_CLASSES_ROOT\AppID\l 
+    Cv7(l,s).exe</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Appid <sup>=</sup> 
+    &lt;GUID&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>где вместо 
+    &lt;GUID&gt; присутствует реальный GUID (например, {OOOBDD71-D8CE-11DO-910A-004095E1DAEA}), 
+    во обоих случаях одинаковый. Эту проверку следует выполнять обязательно, если 
+    на компьютере запускаются несколько 1С:Предприятий с различными названиями 
+    ЕХЕ-файлов (например, lcv7.exe и lcv7s.exe).</p>
+  <p style='text-align:justify;text-autospace:none'>После указанной 
+    настройки Web-расширение 1 С: Предприятия будет работать в контексте пользователя, 
+    указанного при входе в операционную систему. Для работы Web-расширения необходимо, 
+    что бы этот пользователь обладал правом Log on as a batch job. Для этого из 
+    меню Start/Programs/Adminstrative Tools (Common) запустите User Manager (User 
+    Manager for Domains на NT Server) и из меню Policies выберите пункт User Rights. 
+    Включите флаг Show advanced user rights и из выпадающего списка выберите пункт 
+    Log on as a batch job. Если нужного пользователя в списке Grant To нет, нажмите 
+    кнопку Add и выберите этого пользователя. Дважды нажмите О К для сохранения 
+    результатов выбора.</p>
+  <p style='text-align:justify;text-autospace:none'>Если указание 
+    The interactive user по каким-то причинам нежелательно, то вышеприведенные 
+    действия можно проделать, указав в закладке Identity точное имя пользователя. 
+    Указанный пользователь также должен обладать правом Log on as a batch job.</p>
+  <p style='text-align:justify;text-autospace:none'>Активацию 
+    Web-расширения можно проверить по содержанию диалога «О программе...». Если 
+    в этом диалоге присутствует строка &quot;Web-расширение&quot;, то это означает, 
+    что модуль Web-расширения загружен (т.е. ключ к нему найден). Если появляется 
+    строка &quot;Web-расширение (!)&quot;, то это означает, что модуль Web-расширения 
+    загружен и активен (т.е. ключ к нему найден, и все системные настройки выполнены 
+    правильно). Если же ни той, ни другой строки нет, то это означает, что Web-расширение 
+    не загружено по одной из следующих причин:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; релиз 1 С: Пред 
+    приятия ниже 7.70.011;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v7web.dll отсутствует 
+    в каталоге с исполняемыми файлами 1 (^Предприятия;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ключ для Web-расширения 
+    не найден.</p>
+  <h3><a name="_Toc497074170"></a><a name="_Toc497075733">Соединение с 1</a>C 
+    Предприятием</h3>
+  <p style='text-align:justify;text-autospace:none'>Для установки 
+    соединения V7 Scripting Engine использует два метода: «прямой» метод и с использованием 
+    промежуточного файла. Прямой метод позволяет подключаться только к одному 
+    1 С:Предприятию, запущенному на компьютере с Web-сервером, при этом файл параметров 
+    (см. далее) не используется. Метод, использующий промежуточные файлы, позволяет 
+    распределять нагрузку по нескольким 1С:Предприятиям, запущенным на компьютере 
+    с Web-сервером или на других компьютерах в локальной сети. Более того, используемые 
+    1 (^Предприятия могут работать с различными информационными базами, что дает 
+    возможность на одном Web-сервере запускать несколько различных Web-приложений 
+    для выполнения различных задач.</p>
+  <p style='text-align:justify;text-autospace:none'>Для  работы  
+    V7   Scripting  Engine  необходимо,  чтобы 1 (^Предприятие было запущено заранее. 
+    Если при запуске 1 (^Предприятия было указано соединение через файл, то указанный 
+    файл создается автоматически.</p>
+  <h3><a name="_Toc497074171"></a><a name="_Toc497075734">Настройка </a>DCOM</h3>
+  <p style='text-align:justify;text-autospace:none'>Эта настройка 
+    должна быть проведена для установки соединения между библиотекой V7 Scripting 
+    Engine и 1 (^Предприятием.</p>
+  <p style='text-align:justify;text-autospace:none'>Для настройки 
+    запустите dcomcnfg.exe и в списке OLE-серверов дважды     щелкните     по     
+    вышеупомянутому     серверу V77.GeneralPropPage. В появившемся диалоге выберите 
+    закладку Security. Выберите переключатель Use custom access permissions и 
+    нажмите Edit. В списке пользователей, обладающих правом доступа, могут присутствовать 
+    следующие пользователи:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IUSR_servername 
+    (или пользователь, в контексте которого IIS исполняет запросы). Этот пользователь 
+    должен присутствовать всегда. В случае, если различные Web-приложения используют 
+    разных пользователей, то все эти пользователи должны присутствовать в списке;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IWAM_servername 
+    (или пользователь,  в контексте которого    IIS    исполняет    отдельное    
+    (isolated) Web-приложение).    Этот    пользователь    должен присутствовать, 
+    если Web-приложение запускается как отдельный от сервера процесс;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NETWORK. Этот 
+    пользователь должен присутствовать, если 1С:Предприятие и Web-сервер расположены 
+    на разных компьютерах, и доступ к 1 С: Предприятию идет по сети.</p>
+  <p style='text-align:justify;text-autospace:none'>Если эти пользователи 
+    отсутствуют в списке, то необходимо добавить их, нажав кнопку Add...</p>
+  <p style='text-align:justify;text-autospace:none'>Аналогичные 
+    действия нужно проделать, выбрав переключатель Use custom launch permission.</p>
+  <p style='text-align:justify;text-autospace:none'>Права пользователей 
+    рекомендуется редактировать именно для конкретного сервера V77.GeneralPropPage, 
+    так эти действия влияют на общую безопасность системы.</p>
+  <p style='text-align:justify;text-autospace:none'>Настройка 
+    соединения с использованием промежуточного файла существенно   сложнее   и   
+    использует   специальный   файл конфигурации.</p>
+  <h3><a name="_Toc497074172"></a><a name="_Toc497075735">Файл параметров</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Для указания 
+    запущенных 1С:Предприятий, которые V7 Scripting Engine может использовать 
+    при передаче скрипта на выполнение, используется файл конфигурации V7Script.cfg. 
+    Этот файл имеет обычный текстовый формат INI файла со следующими секциями:</p>
+  <p style='text-align:justify;text-autospace:none'>[Common]</p>
+  <p style='text-align:justify;text-autospace:none'>Version&quot; 
+    1000</p>
+  <p style='text-align:justify;text-autospace:none'>[ Connection 
+    1]</p>
+  <p style='text-align:justify;text-autospace:none'>Сотри1ег=&lt;наименование 
+    компьютера&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>ЕПе=&lt;имя 
+    файла&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>[Connection2]</p>
+  <p style='text-align:justify;text-autospace:none'>[Application 
+    1] Path=&lt;nyTb к приложению на сервере&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>0=&lt;номер 
+    соединения по секции Connection&gt; 1=&lt;номер соединения по секции Connection&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>[Application2]</p>
+  <p style='text-align:justify;text-autospace:none'>В секции Common 
+    указывается единственный параметр Version, который для этой версии Web-расширения 
+    должен содержать 1000.</p>
+  <p style='text-align:justify;text-autospace:none'>Секции   Connection   
+    предназначены   для   определения 1 С:Предприятий, используемых V7 Scripting 
+    Engine. Секции Connection нумеруются по возрастанию, начиная с 1. Параметр 
+    Computer содержит наименование компьютера в сети, на котором запущено 1С:Предприятие. 
+    Если этот параметр в секции Connection отсутствует, то предполагается компьютер, 
+    на котором установлено V7 Scripting Engine. Параметр File содержит имя файла, 
+    который используется для установки соединения.</p>
+  <p style='text-align:justify;text-autospace:none'>Секции Application 
+    предназначены для определения списка 1 С:Предприятий, используемых различными 
+    Web-приложениями. Секции Application нумеруются по возрастанию, начиная с 
+    1. В параметре Path необходимо указать путь от корня Web-сервера к корневому   
+    виртуальному   каталогу   приложения,   включая завершающий символ '/'. В 
+    качестве разделителя каталога также используется символ '/'. Параметры 0, 
+    1 и т.д. используются для указания  списка  номеров соединений.  Номера соединений 
+    соответствуют номерам, указанным в заголовках секций Connection.</p>
+  <p style='text-align:justify;text-autospace:none'>V7 Scripting 
+    Engine использует следующий набор правил при соединении с 1С:Предприятием:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Если секции Connection 
+    отсутствуют, то используется единственное прямое соединение;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Если секции Connection 
+    присутствуют, то используются только указанные соединения с 1 С: Предприятием;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Если секции Application 
+    отсутствуют, то предполагается, что все Web-приложения используют любое из 
+    указанных соединений (или единственное прямое соединение);</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Если секции Application 
+    присутствуют, то для обработки запросов в этих приложениях используются только 
+    перечисленные в них соединения. В этом случае все содинения необходимо указывать 
+    явно в секциях Connection;</p>
+  <p style='text-align:justify;line-height:90%;text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    все остальные запросы ASP-файлов, использующих V7Script, не обрабатываются 
+    нигде.</p>
+  <p style='text-align:justify;text-autospace:none'>Одно соединение 
+    может быть указано в нескольких приложениях, однако рекомендуется для различных 
+    Web-приложений задавать полностью различные либо полностью совпадающие списки 
+    соединений. Если один экземпляр 1 (^Предприятия используется несколькими Web-приложениями, 
+    то эти Web-приложения должны исполняться в процессе IIS.</p>
+  <p style='text-align:justify;text-autospace:none'>Файл параметров 
+    должен иметь имя V7Script.cfg и находится в одном каталоге с файлом V7Script.dll.</p>
+  <p style='text-align:justify;text-autospace:none'>Пример файла 
+    V7Script.cfg:</p>
+  <p style='text-align:justify;text-autospace:none'>[Common]</p>
+  <p style='text-align:justify;text-autospace:none'>Version=1000</p>
+  <p style='text-align:justify;text-autospace:none'>[ Connection 
+    1]</p>
+  <p style='text-align:justify;text-autospace:none'>Compute r=comp</p>
+  <p style='text-align:justify;text-autospace:none'>File=\\comp\connect\web 
+    1 .pt</p>
+  <p style='text-align:justify;text-autospace:none'>[Connection2]</p>
+  <p style='text-align:justify;text-autospace:none'>File=<sup>c</sup>d:\connect\web2.pt</p>
+  <p style='text-align:justify;text-autospace:none'>[Application!]</p>
+  <p style='text-align:justify;text-autospace:none'>Path=webl/</p>
+  <p style='text-align:justify;text-autospace:none'>0-1</p>
+  <p style='text-align:justify;text-autospace:none'>[Application2]</p>
+  <p style='text-align:justify;text-autospace:none'>Path=web2/</p>
+  <p style='text-align:justify;text-autospace:none'>0-2</p>
+  <p style='text-align:justify;text-autospace:none'>Согласно этому 
+    файлу Web-расширение будет передавать страницы из Web-приложения Webl в 1 
+    С:Предприятие, запущенное с параметром /^&lt;локальное имя файла&gt; на компьютере 
+    СОМР1, и страницы из Web-приложения Web2 в 1 С:Предприятие, запущенное на 
+    том же компьютере, где установлен Web-сервер.</p>
+  <h3><a name="_Toc497074173"></a><a name="_Toc497075736">Файл соединения</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Файл соединения 
+    используется только как «точка соединения» при работе Web-сервера и 1 С: Пред 
+    приятия на разных компьютерах, данные через этот файл не передаются. Файл 
+    автоматически создается 1 С: Предприятием при указании имени файла в командной 
+    строке, при этом имя файла произвольно. Для соединения через файл необходимо, 
+    чтобы этот файл:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; был доступен 
+    для пользователя IUSR_servername;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; располагался 
+    на том же компьютере, что и запущенное 1С:Предприятие.</p>
+  <p style='text-align:justify;text-autospace:none'>Нужно учесть, 
+    что имя IUSR_servername является для Web-сервера локальным (напомним, что 
+    этот пользователь был создан при установке IIS), и недоступно с другого компьютера. 
+    Более того, пароль этого пользователя назначается при установке IIS и администратору 
+    сервера неизвестен. Для решения этой проблемы необходимо на сервере запустить 
+    административную утилиту из меню Start/Programs/Administrative Tools (Common)/User 
+    Manager for Domains (User Manager на Windows NT Workstation). В ней откройте 
+    свойства пользователя IUSR_servemame и введите новый пароль в строках Password 
+    и Confirm Password. Нажмите ОК. На компьютере, на котором запускается 1С:Предприятие, 
+    необходимо создать пользователя с такими же именем и паролем, и сделать каталог 
+    с файлом соединения доступным в локальной сети для этого пользователя.</p>
+  <h3><a name="_Toc497074174"></a><a name="_Toc497075737">Настройка </a>DCOM</h3>
+  <p style='text-align:justify;text-autospace:none'>Далее требуется 
+    также настроить DCOM для файла соединения. Для этого запустите 1С:Предприятие 
+    с ключом <i>/</i><i>W'</i><i>uwi</i> файла соединения&quot;, и после этого 
+    запустите утилиту dcomcnfg. Утилита автоматически добавит необходимые данные 
+    в Registry, поэтому сразу после запуска dcomcnfg можно закрыть. Правильность 
+    совершенных действий можно проконтролировать по содержимому Registry, запустив 
+    утилиту regeditexe. В Registry должны присутствовать следующие ключи:</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HKEY_CLASSES_ROOT\AppID\&lt;GUID&gt; 
+    о RunAs = &quot;Interactive User&quot;</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HKEY_CLASSES_ROOT\CLSID\{23A5D4C1-D34E-11D3-8C7B-008048DA120F}</p>
+  <p style='text-align:justify;
+text-autospace:none'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Appid = &lt;GUID&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>где вместо 
+    &lt;GUID&gt; присутствует реальный GUID (например, {OOOBDD71-D8CE-11DO-910A-004095E1DAEA}), 
+    во обоих случаях одинаковый. Этот GUID должен совпадать с использованным при 
+    настройке запуска Web-компоненты 1 С: Предприятия.</p>
+  <p style='text-align:justify;text-autospace:none'>И последнее 
+    - настройка Web-приложения. Для настройки Web-приложения запустите ММС, вызовите 
+    диалог свойств приложения и в закладке Directory Security нажмите кнопку Edit. 
+    Затем нажмите Edit напротив Allow Anonymous Access и отключите флаг Enable 
+    Automatic Password Synchronization. Наберите пароль для пользователя IUSR_servername, 
+    введенный ранее в утилите User Manager, и трижды нажмите кнопку ОК-</p>
+  <h2>&nbsp;</h2>
+  <h2><a name="_Toc497074175"></a><a name="_Toc497075738">Интеграция ASP</a> и 
+    1C:Предприятия 7.7</h2>
+  <p style='text-align:justify;text-autospace:none'>ASP-технология 
+    «в чистом виде» не содержит никаких встроенных средств для выполнения скриптов, 
+    внедренных в ASP-страницы. Для этого в IIS используется технология Active 
+    Scripting,  также  разработанная  Microsoft.   Эта  технология замечательна 
+    своей расширяемостью, т.ак как она основана на открытых интерфейсах, что позволяет 
+    разрабатывать для нее компоненты (так называемые script engines) для произвольных 
+    скриптовых языков. Кроме JavaScript и VB Script, разработанных и поставляемых  
+    Microsoft,  сторонними  фирмами  разработаны компоненты для скриптовых языков 
+    Peri, Python и Haskell. Такое использование модульной технологии работы с 
+    скриптами фактически   порождает   независимость   ASP-технологии   от используемого 
+    скриптового языка. Этот факт и используется при создании ASP-приложений, использующих 
+    встроенный язык 1 С:Предприятия.</p>
+  <h3><a name="_Toc497074176"></a><a name="_Toc497075739">Возможности Web-расширения</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Для интеграции 
+    1 С: Пред приятия и ASP используется библиотека V7 Scripting Engine, построенная 
+    в соответствии со спецификацией Active   Scripting.   Следование  спецификации  
+    позволяет  ей встраиваться в различные системы, требующие обработки скриптов, 
+    и, в частности, в технологию ASP. Реально эта библиотека является лишь стыковкой 
+    между IIS и 1 (^Предприятием 7.7, передавая скрипты для исполнения в 1 С: 
+    Пред приятие и возвращая результат.</p>
+  <p style='text-align:justify;text-autospace:none'>При этом ЮПредприятие 
+    7.7 может быть физически запущено как на том же компьютере, что и Web-сервер, 
+    так и использовать другой компьютер. В последнем случае связь между компьютерами 
+    осуществляется по локальной сети. Следует принимать во внимание один  очень  
+    важный  аспект  реализации,  ограничивающий производительность Web-приложений: 
+    все запросы пользователей, даже приходящие на Web-сервер одновременно, 1С:Предприятие 
+    7.7 обрабатывает последовательно. Для паралельного распределения нагрузки   
+    может   использоваться   несколько   запущенных 1С:Предприятий, как на компьютере 
+    с Web-сервером, так и на других компьютерах.</p>
+  <h3><a name="_Toc497074177"></a><a name="_Toc497075740">Создание ASP-страниц</a></h3>
+  <p style='text-align:justify;text-autospace:none'>При обработке 
+    страницы IIS передает в V7 Scripting Engine уже сформированный скрипт, причем 
+    различные сегменты скрипта складываются в порядке появления их в странице. 
+    Такой сформированный скрипт должен представлять собой модуль для исполнения 
+    в 1С:Предприятии. Кроме текста скрипта IIS передает контекст страницы в виде 
+    набора доступных объектов, которые V7 Scripting Engine также передает в 1С:Предприятие. 
+    Эти объекты доступны в 1 С: Пред приятии через встроенный объект «ASP», кроме 
+    объектов Request, Response, Application, Session, Server - эти объекты доступны 
+    из скрипта напрямую. Через объект ASP можно также вызывать процедуры и функции, 
+    реализованные на других скриптовых языках. Следует учитывать, что каждое обращение 
+    через объекты ASP-страницы требует обмена данными с IIS, поэтому рекомендуется 
+    минимизировать количество таких вызовов и объем передаваемых через них данных.</p>
+  <p style='text-align:justify;text-autospace:none'>Технология 
+    ASP не накладывает никаких дополнительных ограничений на использование конструкций 
+    и встроенных средств языка и работу с объектами 1С:Предприятия, однако, создавая 
+    ASP-страницы, необходимо следовать нескольким правилам, позволяющим сформировать 
+    модуль без ошибок в структуре.</p>
+  <p style='text-align:justify;text-autospace:none'>Все локальные 
+    переменные необходимо объявлять в самом начале страницы до тега &lt;html&gt; 
+    (после директив, если они присутствуют на странице). Далее следует расположить 
+    функции и процедуры, и лишь затем - исполняемый код скрипта, возможно, среди 
+    HTML-текста  страницы.  Такое  расположение  позволит  получить правильный 
+    с точки зрения структуры модуль.</p>
+  <p style='text-align:justify;text-autospace:none'>В начале ASP-файла 
+    рекомендуется писать директиву ASP, определяющую встроенный язык &lt;%@ Language=V7Script 
+    %&gt; и непосредственно за этой директивой - скрипт, описывающий используемые 
+    на этой странице переменные &lt;% Перем п1, п2; %&gt;.</p>
+  <p style='text-align:justify;text-autospace:none'>Контекст ASP-страницы 
+    доступен в модуле страницы через объект «ASP». Через его свойства и методы 
+    доступны, в частности, все глобальные объекты и функции, реализованные на 
+    других языках (например, JavaScript). Это не относится к встроенным объектам 
+    IIS (Response, Request и т.д.) - они доступны напрямую через указание имени 
+    объекта.</p>
+  <p style='text-align:justify;text-autospace:none'>Передать фрагмент 
+    HTML при формировании страницы можно двумя   способами:   Response.Write(CmjK&gt;oKa.HTMZ,)   
+    или   &lt;%= <i>CmpoKaHTML%&gt;</i> (между символами % и = не должно быть 
+    пробелов). Оба способа эквивалентны, однако второй вариант обычно используется 
+    при динамической генерации HTML-строки в окружении статического HTML-кода:</p>
+  <p style='text-align:justify;text-autospace:none'>&lt;%= HTML 
+    строка%&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>а первый - 
+    при генерации HTML в коде скрипта:</p>
+  <p style='text-align:justify;text-autospace:none'>&lt;%Если 
+    а=1 Тогда Response.Writef&quot;HTML&quot;); КонецЕсли;%&gt; </p>
+  <p style='text-align:justify;text-autospace:none'>Ниже приведен 
+    пример правильной ASP-страницы:</p>
+  <p style='text-align:justify;text-autospace:none'>&lt;%@ Language=V7Script%&gt; 
+    &lt;%</p>
+  <p style='text-align:justify;text-autospace:none'>Перем стрСообщение;</p>
+  <p style='text-align:justify;text-autospace:none'>Процедура 
+    ВывестиСообщение() Сообщить(стрСообщение) ;</p>
+  <p style='text-align:justify;text-autospace:none'>КонецПроцедуры 
+    %&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>&lt;html&gt; 
+    &lt;head&gt;</p>
+  <p style='text-align:justify;text-autospace:none'>&lt;title&gt;TecTOBBR 
+    страница&lt;/ЫЫе&gt; &lt;/head&gt; &lt;body&gt; &lt;%</p>
+  <p style='text-align:justify;text-autospace:none'>стрСообщение 
+    = &quot;Web-расширение&quot;</p>
+  <p style='text-align:justify;text-autospace:none'>Response.Write(CTpCoo6meHMe) 
+    ;</p>
+  <p style='text-align:justify;text-autospace:none'>ВывестиСообщение();</p>
+  <p style='text-align:justify;text-autospace:none'>%&gt; &lt;/body&gt;</p>
+  <h3><a name="_Toc497074178"></a><a name="_Toc497075741">Сессия и модуль сессии</a></h3>
+  <p style='text-align:justify;text-autospace:none'>Модуль сессии 
+    предназначен для сохранения контекста работы конкретного пользователя на время 
+    сессии и является для сессии в некоторой степени аналогом глобального модуля. 
+    Как и в глобальном модуле, в модуле сессии не доступен контекст исполняемого 
+    в данный момент модуля страницы. Для работы с объектами страницы следует передавать 
+    необходимые объекты через параметры вызываемой процедуры или функции. Текст 
+    модуля сессии берется из модуля обработки, указываемой в функции \УеЬНачатьСессию. 
+    Эта обработка создается и включается в конфигурацию на этапе конфигурирования 
+    1С:Предприятия.</p>
+  <p style='text-align:justify;text-autospace:none'>Для начала 
+    и завершения сессии используются встроенные процедуры      1 С:Предприятия      
+    WebНачатьСессию      и WebЗавершитьСессию. </p>
+  <h4><a name="_Toc497075742">WebНачатьСессию</a></h4>
+  <p style='text-align:justify;text-autospace:none'>Начинает новую 
+    сессию в 1С:Предприятии.</p>
+  <p style='text-autospace:none'><b>Синтаксис:</b></p>
+  <p style='text-align:justify;text-autospace:none'>WebНачатьСессию 
+    (&lt;Идентификатор сессии&gt; обработки&gt;)</p>
+  <p style='text-autospace:none'><b>Англоязычный синоним:</b></p>
+  <p style='text-align:justify;text-autospace:none'>StartWebSession</p>
+  <p style='text-autospace:none'><b>Параметры:</b></p>
+  <p style='text-align:justify;text-autospace:none'><i>&lt;Идентификатор 
+    </i>&lt;Наименование обработки&gt; <i>сессии&gt;</i></p>
+  <p style='text-align:justify;text-autospace:none'>Наименование 
+    обработки, модуль которой используется в качестве модуля сессии.</p>
+  <p style='text-autospace:none'><b>Описание:</b></p>
+  <p style='text-align:justify;text-autospace:none'>Процедура 
+    WebНачатьСессию начинает новую пользовательскую сессию в 1С: Предприятии с 
+    идентификатором Session.SessionID и модулем сессии обработки с указанным наименованием. 
+    Эту процедуру следует вызывать при вызове предопределенной процедуры Session_OnStart.</p>
+  <p style='text-autospace:none'><b>Пример</b><b>:</b></p>
+  <p style='text-autospace:none'>Процедура Session_OnStart()</p>
+  <p style='text-autospace:none'>WebНачатьСессию(Session.SessionID, 
+    «Сессия») ;</p>
+  <p style='text-autospace:none'>КонецПроцедуры</p>
+  <h4><a name="_Toc497075743">WebЗавершитьСессию</a></h4>
+  <p style='text-align:justify;text-autospace:none'>Завершает 
+    сессию в 1С:Предприятии.</p>
+  <p style='text-autospace:none'><b>Синтаксис:</b></p>
+  <p style='text-align:justify;text-autospace:none'>WebЗавершитьСесию(<i>Идентификатор 
+    сессии&gt;</i>)</p>
+  <p style='text-autospace:none'><b>Англоязычный синоним:</b></p>
+  <p style='text-align:justify;text-autospace:none'>EndWebSession</p>
+  <p style='text-autospace:none'><b>Параметры:</b></p>
+  <p style='text-align:justify;text-autospace:none'><i>Идентификатор</i>     
+    Идентификатор     сессии.     Всегда передается Session.SessionID</p>
+  <p style='text-autospace:none'><b>Описание;</b></p>
+  <p style='text-align:justify;text-autospace:none'>Процедура 
+    WebЗавершитьСессию завершает пользовательскую сессию в 1 (^Предприятии с идентификатором 
+    Session.SessionID. Эту процедуру следует вызывать при вызове предопределенной 
+    процедуры Session_OnEnd.</p>
+  <p style='text-autospace:none'><b>Пример:</b></p>
+  <p style='text-autospace:none'>Процедура Session_OnEnd()</p>
+  <p style='text-autospace:none'>WebЗавершитьСессию(Session.SessionID, 
+    «Сессия») ;</p>
+  <p style='text-autospace:none'>КонецПроцедуры</p>
+  <h3><a name="_Toc497074179"></a><a name="_Toc497075744">Использование табличных 
+    документов 1</a>C:Предприятия 7.7</h3>
+  <p style='text-align:justify;text-autospace:none'>Для создания 
+    HTML-страниц удобно использовать сохранение в HTML-файл готовых таблиц. Для 
+    этого можно использовать таблицы, созданные в той же обработке, модуль которой 
+    используется как модуль сессии. Если же страница исполняется вне сессии, то 
+    необходимо использовать глобальные таблицы. </p>
+  </body>
+</html>

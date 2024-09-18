@@ -1,0 +1,3701 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part30</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part30.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492735124"></a><a name="_Toc494938013"><span style='mso-bookmark: _Toc492735124'>Глава 30<br> Атрибуты и методы контекста Модуля формы</a></h1>
+
+<p class=MsoNormal>Описанные в данной главе атрибуты и методы
+доступны только в контексте Модуля формы (см. «Виды программных модулей»). К
+Модулям форм отно­сятся практически все программные модули (исключение
+составляют Глобаль­ный модуль, Модуль документа, Модуль вида расчета).</p>
+
+<h3><a name="_Toc492735125"></a><a name="_Toc494938014"><span style='mso-bookmark:
+_Toc492735125'>Атрибуты контекста Модуля формы</a></h3>
+
+<h4><a name="_Toc492735126"></a><a name="_Toc494938015"><span style='mso-bookmark:
+_Toc492735126'>СтрокаДействийФормы</a></h4>
+
+<p class=MsoNormal>Содержит командную строку системных действий в
+кнопке формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>СтрокаДействийФормы<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>StringFormActions<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтрокаДействийФормы<span
+lang=RU> предоставляет доступ к значению ко­мандной строки кнопки формы (строка
+системных команд в свойствах кнопки после символа #). Данный атрибут доступен в
+процедуре, вызываемой перед знаком # из строки формулы кнопки (кнопка —
+«Свойства» — «Дополнитель­ные» — «Формула»).</p>
+
+<p class=MsoNormal>Доступ к данному атрибуту возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Допустим, что в некоторой форме в свойствах
+какой-либо кнопки записана следующая формула:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстКоманд() # Записать? Провести?
+Закрыть?<o:p></o:p></p>
+
+<p class=MsoNormal>В программном модуле можно записать процедуру,
+которая будет устанав­ливать значение командной строки действий:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура УстКоманд()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтрокаДействийФормы = &quot;Записать? Закрыть?&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ИначеЕсли НазваниеНабораПрав() = &quot;Менеджер&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтрокаДействийФормы = &quot;Записать? Провести? Закрыть?&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтрокаДействийФормы = &quot;Закрыть?&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735127"></a><a name="_Toc494938016"><span style='mso-bookmark:
+_Toc492735127'>Форма</a></h4>
+
+<p class=MsoNormal>Объект агрегатного типа «Форма».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Form<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Форма<span
+lang=RU> представляет собой ссылку на объект типа «Форма». Атри­буты и методы
+объекта «Форма» позволяют в программном модуле изменять свойства визуального
+отображения диалога в целом (такие как <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Заголовок<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Закладки и
+т. п.), а также свойства визуального отображения отдельных эле­ментов диалога.</p>
+
+<p class=MsoNormal>В тексте программного модуля через точку после
+имени атрибута «Форма» можно записывать идентификаторы элементов диалога, а
+далее через точку можно вызывать методы управления свойствами этих элементов.</p>
+
+<p class=MsoNormal>Доступ к данному атрибуту возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ТолькоПросмотр(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.Prompt.Видимость(0);<o:p></o:p></p>
+
+<h3><a name="_Toc492735128"></a><a name="_Toc494938017"><span style='mso-bookmark:
+_Toc492735128'>Атрибуты объекта Форма</a></h3>
+
+<h4><a name="_Toc492735129"></a><a name="_Toc494938018"><span style='mso-bookmark:
+_Toc492735129'>Закладки</a></h4>
+
+<p class=MsoNormal>Объект типа «СписокЗначений», содержащий
+описания закладок те­кущей формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Закладки<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>TabCtrl<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут объекта «Форма» Закладки представляет
+собой объект типа «Спи­сокЗначений», содержащий описания закладок текущей
+формы. Данный атри­бут предоставляет возможность программно манипулировать
+порядком и на­званиями закладок формы. В тексте программного модуля через точку
+после имени объекта «Форма» можно вызвать атрибут «Закладки», а далее через точ­ку
+можно вызывать методы управления закладками как объектом типа «Спи­сокЗначений».</p>
+
+<p class=MsoNormal>Доступ к данному атрибуту возможен только в
+контексте Модуля формы после применения метода <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьЗакладки<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ОбработкаКлиектов()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ФлагФранчайзи = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если Форма.Закладки.НайтиЗначение(2) = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Форма.Закладки.ДобавитьЗначение(2,
+&quot;Поставщики&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Позиция = Форма.Закладки.НайтиЗначение(2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Если Позиция &gt; 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">         Форма.Закладки.УдалитьЗначение(Позиция);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+форма.Закладки.Сортировать();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьЗакладки<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриВыбореЗакладки<span
+lang=RU>, «Работа со СпискомЗначений»</p>
+
+<h4><a name="_Toc492735130"></a><a name="_Toc494938019"><span style='mso-bookmark:
+_Toc492735130'>&lt;ЭлементДиалога&gt;</a></h4>
+
+<p class=MsoNormal>Объект агрегатного типа «<i>элемент диалога</i>».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal>&lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЭлементДиалога<span
+lang=RU>&gt;</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Значение атрибута объекта «Форма» &lt;<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ЭлементДиалога&gt; представляет
+со­бой ссылку на элемент диалога. Элементы диалога — это объекты специального
+агрегатного типа. Методы элементов диалога позволяют в программном модуле
+изменять их свойства, такие как <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Цвет<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Видимость, <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Доступность.</p>
+
+<p class=MsoNormal>В тексте программного модуля через точку после
+имени объекта «Форма» можно вызвать атрибут &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЭлементДиалога<span
+lang=RU>&gt;, а далее через точку можно вызы­вать методы управления их
+свойствами. В тексте программного модуля в каче­стве названия данного атрибута
+подставляется идентификатор конкретного элемента диалога, существующего в диалоговом
+окне формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// в форме диалога существуют элементы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// НазвФирмы, ИнформПоле, Название<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// Поменяем свойства этих элементов
+диалога<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.НазвФирмы.Доступность(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ИнформПоле.Видимость(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.Название.Цвет(255, 0, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Цвет<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Видимость, <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Доступность</p>
+
+<h4><a name="_Toc492735131"></a><a name="_Toc494938020"><span style='mso-bookmark:
+_Toc492735131'>Параметр</a></h4>
+
+<p class=MsoNormal>Параметр, переданный при программном открытии
+формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Параметр<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Pa<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>rameter<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Параметр<span
+lang=RU> объекта «Форма» представляет собой значение, пере­данное данной форме
+при ее открытии программно с помощью методов <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Открытьформу<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьФормуМодально<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор<span
+lang=RU>. Если форма открыта интерактивно или если параметр при программном
+открытии не передавался, то данный атрибут содержит значение неопределенного
+типа.</p>
+
+<p class=MsoNormal>Доступ к данному атрибуту возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПереданныйПараметр = Форма.Параметр;<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОткрытьФорму<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьФормуМодально<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор</p>
+
+<h3><a name="_Toc492735132"></a><a name="_Toc494938021"><span style='mso-bookmark:
+_Toc492735132'>Методы объекта Форма</a></h3>
+
+<p class=MsoNormal>При помощи объекта «Форма» предоставляется
+возможность управлять ви­зуальным представлением текущей формы, опрашивать текущее
+состояние ре­жима работы формы и т. п.</p>
+
+<h4><a name="_Toc492735133"></a><a name="_Toc494938022"><span style='mso-bookmark:
+_Toc492735133'>ТолькоПросмотр</a></h4>
+
+<p class=MsoNormal>Установка режима редактирования формы, </p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТолькоПросмотр(&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Readonly<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение:</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — разрешено
+  редактирование элементов формы;</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — запрещено
+  редактирование.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее числовое значение режима редактирования
+формы (на момент до исполнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТолькоПросмотр<span
+lang=RU> позволяет установить режим редактирования те­кущей формы.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ТолькоПросмотр(0);<o:p></o:p></p>
+
+<h4><a name="_Toc492735134"></a><a name="_Toc494938023"><span style='mso-bookmark:
+_Toc492735134'>Обновить</a></h4>
+
+<p class=MsoNormal>Обновить форму.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Обновись(&lt;Флаг&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Refresh<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — установить флаг
+  моди­фицированности (признак изменения реквизитов текущей формы справочника
+  или документа);</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — не устанавливать
+  флаг модифицированности.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Обновить<span
+lang=RU> выполняет обновление окна формы. Кроме того, этот ме­тод позволяет
+программно установить флаг модифицированности формы. Дан­ный метод имеет смысл
+вызывать, если через контекст формы (извне, из друго­го программного модуля)
+были произведены изменения реквизитов формы.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.Обновить(1)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОткрытьФорму<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Модифицированность</p>
+
+<h4><a name="_Toc492735135"></a><a name="_Toc494938024"><span style='mso-bookmark:
+_Toc492735135'>ИспользоватьЗакладки</a></h4>
+
+<p class=MsoNormal>Установить режим использования закладок в
+форме.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьЗакладки(&lt;Флаг&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>TabCtrlState<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=80 valign=top style='width:60.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=592 valign=top style='width:443.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение:</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — включить
+  закладки в форме;</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — выключить
+  закладки в форме.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее значение режима использования закладок
+формы (на момент до исполнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьЗакладки<span
+lang=RU> устанавливает режим использования за­кладок в форме.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoBodyTextIndent><span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman";layout-grid-mode:both'>Форма.ИспользоватьЗакладки(1)<o:p></o:p></p>
+
+<p class=MsoNormal><b>См. также:</b> <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Закладки, <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПриВыбореЗакладки<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьСлой</p>
+
+<h4><a name="_Toc492735136"></a><a name="_Toc494938025"><span style='mso-bookmark:
+_Toc492735136'>ИспользоватьСлой</a></h4>
+
+<p class=MsoNormal>Установить режим отображения слоя в форме.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИспользоватьСлой(&lt;ИмяСлоя&gt;,
+&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>UseLayer<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяСлоя&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — название слоя формы как оно задано в конфигураторе. Параметр может быть
+  составным (указывать несколько слоев). В этом случае имена слоев
+  перечисляются через запятую.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение:<span style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>0 — скрыть слой &lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяСлоя&gt; в форме;</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — показать слой
+  &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ИмяСлоя&gt;
+  в форме;</p>
+  <p class=MsoNormal style='text-indent:0in'>2 — показать слой
+  &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>ИмяСлоя&gt;
+  и скрыть все ос­тальные.</p>
+  <p class=MsoNormal style='text-indent:0in'>Значение по
+  умолчанию — 2.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Использовать
+Слой устанавливает режим отображения слоя в фор­ме.
+Доступ к данному методу возможен только в контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ИспользоватьСлой(&quot;Основной,
+КнопкиДиалога, Дополнительный&quot;, 1);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Закладки<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриВыбореЗакладки</p>
+
+<h4><a name="_Toc492735137"></a><a name="_Toc494938026"><span style='mso-bookmark:
+_Toc492735137'>Заголовок</a></h4>
+
+<p class=MsoNormal>Установка заголовка окна формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Заголовок(&lt;Название&gt;,
+&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Caption<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b><b
+style='mso-bidi-font-weight:normal'><span style='mso-ansi-language:EN-US'><o:p></o:p></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Название&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — новый заголовок окна формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  0 — выводит заданный за­головок вместо стандартного заголовка окна; 1 — выводит
+  заданный загловок вместе со стандарт­ным заголовком окна.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущий заголовок окна формы, установленный
+этой функцией.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Заголовок<span
+lang=RU> позволяет установить новый заголовок окна формы. Доступ к данному
+методу возможен только в контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.Заголовок(&quot;Накладная №&quot;
++ Док.НомерДок, 0 );<o:p></o:p></p>
+
+<h4><a name="_Toc492735138"></a><a name="_Toc494938027"><span style='mso-bookmark:
+_Toc492735138'>ПанельИнструментов</a></h4>
+
+<p class=MsoNormal>Управление видимостью панели инструментов окна
+формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПаяельИнструментов(&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ToolBar<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение: 1 — показать панель инструментов; 0 — не показы­вать
+  панель инструментов. Если параметр не за­дан, то метод просто возвращает
+  текущее состоя­ние видимости панели инструментов.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее состояние видимости панели
+инструментов окна формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПанельИнструментов<span
+lang=RU> предоставляет возможность управления ви­димостью панели инструментов
+окна формы.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ПанельИнструментов(0);<o:p></o:p></p>
+
+<h4><a name="_Toc492735139"></a><a name="_Toc494938028"><span style='mso-bookmark:
+_Toc492735139'>КнопкаПоУмолчанию</a></h4>
+
+<p class=MsoNormal>Задает кнопку в форме, которая будет
+«срабатывать» при нажатии комбинации клавиш <span style='mso-ansi-language:
+EN-US'>Ctrl + <span style='mso-ansi-language:EN-US'>Enter<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КнопкаПоУмолчанию(&lt;ИдентификаторКнопки&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>DefButton<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=192 valign=top style='width:2.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИдентификаторКнопки&gt;</p>
+  </td>
+  <td width=480 valign=top style='width:359.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — идентификатор одной из кнопок формы объекта метаданных.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КнопкаПоУмолчанию<span
+lang=RU> позволяет назначить одну из кнопок формы кнопкой «по умолчанию»: в
+этом случае нажатие комбинации клавиш <span style='mso-ansi-language:
+EN-US'>Ctrl+<span style='mso-ansi-language:EN-US'>Enter<span
+lang=RU> приведет к такому же результату, как и нажатие такой кнопки мы­шью.</p>
+
+<p class=MsoNormal>В качестве параметра методу передается
+идентификатор одной из кнопок формы — так, как он указан в палитре свойств
+соответствующего элемента диа­лога типа «Кнопка».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В модуле формы документа
+«ПлатежноеПоручение» кнопкой по умолча­нию назначается кнопка с идентификатором
+&quot; ОК&quot;.<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриОткрытии()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.КнопкаПоУмолчанию(&quot;ОК&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735140"></a><a name="_Toc494938029"><span style='mso-bookmark:
+_Toc492735140'>ОбработкаВыбораСтроки</a></h4>
+
+<p class=MsoNormal>Включает в форме списка обработку выбора
+строки предопределен­ной процедурой <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПриВыбореСтроки<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОбработкаВыбораСтроки(&lt;Флаг&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ProcessSelectLine<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=80 valign=top style='width:60.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=592 valign=top style='width:443.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  1 — включает обработ­ку выбора предопределенной процедурой; 0 — выключает
+  обработку выбора предопреде­ленной процедурой.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОбработкаВыбораСтроки<span
+lang=RU> включает в форме списка (справочника, журнала, счетов, журнала
+операций, журнала проводок) обработку выбора строки предопределенной процедурой
+<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриВыбореСтроки<span
+lang=RU>.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы спи­ска.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ОбработкаВыбораСтроки(1)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПриВыбореСтроки</p>
+
+<h4><a name="_Toc492735141"></a><a name="_Toc494938030"><span style='mso-bookmark:
+_Toc492735141'>ВыполнитьВыбор</a></h4>
+
+<p class=MsoNormal>Осуществляет выбор из формы подбора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыполнитьВыбор(&lt;Знач&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>MakeChoise<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Знач&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение, которое
+  выбирается в форме, от­крытой для подбора или выбора значения.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыполнитьВыбор<span
+lang=RU> осуществляет выбор в форме, открытой для под­бора или выбора значения
+(аналогично интерактивному двойному щелчку в подборе). Метод предназначен,
+прежде всего, для организации подбора из фор­мы отчета.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>// осуществим выбор в форме журнала
+документов<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ВыполнитьВыбор(ТекущийДокумент);<o:p></o:p></p>
+
+<h4><a name="_Toc492735142"></a><a name="_Toc494938031"><span style='mso-bookmark:
+_Toc492735142'>РежимВыбора</a></h4>
+
+<p class=MsoNormal>Возвращает режим работы формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РежимВыбора()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ChoiseMode<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 0 — форма открыта не для выбора; 1 — форма
+открыта для выбора од­ного значения; 2 — форма открыта для выбора нескольких
+значений.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>РежимВыбора<span
+lang=RU> возвращает режим работы формы. Доступ к данному методу возможен только
+в контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РежимРаботыФормы = Форма.РежимВыбора();<o:p></o:p></p>
+
+<h4><a name="_Toc492735143"></a><a name="_Toc494938032"><span style='mso-bookmark:
+_Toc492735143'>МодальныйРежим</a></h4>
+
+<p class=MsoNormal>Возвращает режим работы формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>МодальныйРежим()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ModalMode<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 0 — немодальный режим; 1 — модальный
+режим.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>МодальныйРежим<span
+lang=RU> возвращает режим работы формы. Доступ к данному методу возможен только
+в контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РежимРаботыФормы =
+Форма.МодальныйРежим();<o:p></o:p></p>
+
+<h4><a name="_Toc492735144"></a><a name="_Toc494938033"><span style='mso-bookmark:
+_Toc492735144'>ПолучитьАтрибут</a></h4>
+
+<p class=MsoNormal>Получить значение реквизита по имени
+идентификатора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут(&lt;ИмяРеквизита&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetAttrib<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизита&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя реквизи­та, как оно задано в конфигураторе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение реквизита &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяРеквизита<span
+lang=RU>&gt;.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьАтрибут<span
+lang=RU> позволяет получить значение реквизита по име­ни идентификатора, как
+оно задано в конфигураторе.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ЦенаТов = Форма.ПолучитьАтрибут(&quot;ЦенаРозн&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc492735145"></a><a name="_Toc494938034"><span style='mso-bookmark:
+_Toc492735145'>АктивныйЭлемент</a></h4>
+
+<p class=MsoNormal>Возвращает идентификатор активного элемента
+диалога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>АктивныйЭлемент()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ActiveControl<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение — идентификатор активного
+элемента диалога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>АктивныйЭлемент<span
+lang=RU> возвращает идентификатор активного элемента диалога.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИдАктЭлем = Форма.АктивныйЭлемент();<o:p></o:p></p>
+
+<h4><a name="_Toc494938035">ТекущаяКолонка</a></h4>
+
+<p class=MsoNormal>Возвращает идентификатор текущей колонки
+многострочной части.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><a name="_Toc492735146"><span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТекущаяКолонка()</a><span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>CurrentColumn<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение — идентификатор текущей
+колонки многострочной час­ти.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ТекущаяКолонка<span
+lang=RU> возвращает идентификатор текущей колонки мно­гострочной части.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ИдТекКолонки = Форма.ТекущаяКолонка();<o:p></o:p></p>
+
+<h4><a name="_Toc492735147"></a><a name="_Toc494938036"><span style='mso-bookmark:
+_Toc492735147'>Закрыть</a></h4>
+
+<p class=MsoNormal>Закрыть форму.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Закрыть(&lt;ЗапрСохр&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Close<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗапрСохр&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Число: 0 — закрыть форму без вопросов; 1 — если документ, счет,
+  элемент справоч­ника изменен, то будет запрос о сохранении изменений.
+  Значение по умолчанию — 1.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Закрыть<span
+lang=RU> закрывает форму. Доступ к данному методу возможен только в контексте
+Модуля формы.</p>
+
+<p class=MsoNormal>Замечание. Действие данного метода не
+прерывает выполнения текущей про­цедуры программы, т. е. процедура доработает
+до конца. Данный метод лишь устанавливает признак, который отрабатывает после
+окончания вы­полнения процедуры.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.Закрыть();<o:p></o:p></p>
+
+<h3><a name="_Toc492735148"></a><a name="_Toc494938037"><span style='mso-bookmark:
+_Toc492735148'>Методы элементов диалога</a></h3>
+
+<p class=MsoNormal>При помощи атрибута «<i>Форма</i>» средства
+языка предоставляют возможность программно управлять свойствами элементов
+диалога. В тексте программного модуля формы через точку после имени атрибута «<i>Форма</i>»
+можно записывать идентификаторы элементов диалога, а далее через точку можно
+вызывать мето­ды управления свойствами этих элементов.</p>
+
+<p class=MsoNormal>Доступ к данным методам возможен только в
+контексте Модуля формы.</p>
+
+<h4><a name="_Toc492735149"></a><a name="_Toc494938038"><span style='mso-bookmark:
+_Toc492735149'>Видимость</a></h4>
+
+<p class=MsoNormal>Установка режима отображения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Видимость(&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Visible<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение: 1 — элемент диалога отображается; 0 — элемент
+  диалога скрыт (невидим).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее числовое значение режима видимости
+элемента формы или колон­ки многострочной части (на момент до исполнения
+метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Видимость<span
+lang=RU> позволяет установить режим отображения выбранного элемента формы или
+колонки многострочной части формы.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ИнформПоле.Видимость(0);<o:p></o:p></p>
+
+<h4><a name="_Toc492735150"></a><a name="_Toc494938039"><span style='mso-bookmark:
+_Toc492735150'>Доступность</a></h4>
+
+<p class=MsoNormal>Установка режима редактирования.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Доступность(&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Enable<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение:</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — разрешено
+  редактирование элемента формы;</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — запрещено редактирование.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее числовое значение режима
+редактирования элемента формы (на момент до исполнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Доступность<span
+lang=RU> позволяет установить режим редактирования выбран­ного элемента формы.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.НазвФирмы.Доступность(0);<o:p></o:p></p>
+
+<h4><a name="_Toc492735151"></a><a name="_Toc494938040"><span style='mso-bookmark:
+_Toc492735151'>Редактирование</a></h4>
+
+<p class=MsoNormal>Определяет возможность редактирования значения
+элемента диалога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Редактирование(&lt;Флаг&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>EnableEdit<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=80 valign=top style='width:60.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Флаг&gt;</p>
+  </td>
+  <td width=592 valign=top style='width:443.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Число: 1 — значение
+  элемента редактируется как обычно; 0 — значение не редактируется но может
+  выбираться кнопкой выбора. Отличие от метода <span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Доступность<span
+  lang=RU> в том, что <span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>Доступность<span
+  lang=RU> отключа­ет и кнопку выбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Редактирование<span
+lang=RU> определяет возможность редактирования значения непосредственно в
+элементе диалога для полей ввода типа Число, Строка, Дата, Счет.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.КолонкаЦены.Редактирование(1);<o:p></o:p></p>
+
+<h4><a name="_Toc492735152"></a><a name="_Toc494938041"><span style='mso-bookmark:
+_Toc492735152'>Цвет</a></h4>
+
+<p class=MsoNormal>Установка режима отображения цвета.</p>
+
+<p class=MsoNormal><b>Синтаксис 1:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Цвет(&lt;Цвет&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b>Синтаксис 2:<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Цвет(&lt;<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>R<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&gt;,
+&lt;<span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>G<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>&gt;, &lt;В&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Color<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Цвет&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение, значение которого задает <span
+  style='mso-ansi-language:EN-US'>RGB цвет. Допустимые
+  значения от 0 до 16'777'215. Значение -1 (минус единица) задает цвет, задан­ный
+  для всей формы по умолчанию.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;<span
+  class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>R<span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&gt;<o:p></o:p></p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  значение которого задает красную компоненту цвета. Допустимые значения от 0
+  до 255.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;<span
+  class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>G<span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&gt;<o:p></o:p></p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  значение которого задает зеленую компоненту цвета. Допустимые значения от 0
+  до 255.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'><span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>&lt;В&gt;<o:p></o:p></p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение,
+  значение которого задает синюю ком­поненту цвета. Допустимые значения от 0 до
+  255.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее числовое значение RGB-цвета элемента
+формы (на момент до ис­полнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Цвет<span
+lang=RU> позволяет установить режим отображения цвета выбранного элемента
+формы.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ОбработкаНаименования()<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если (Наименование = &quot;&quot;) Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Форма.Название.Цвет(255, 0, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Форма.Название.Цвет(-1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецЕсли<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735153"></a><a name="_Toc494938042"><span style='mso-bookmark:
+_Toc492735153'>Маска</a></h4>
+
+<p class=MsoNormal>Установить/определить маску интерактивного
+ввода для элементов диалога типа «поле ввода».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Маска(&lt;СтрокаМаски&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Mask<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:102.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>СтрокаМаски&gt;</p>
+  </td>
+  <td width=536 valign=top style='width:401.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Строковое выражение — посимвольная маска интерактивного ввода для
+  стро­ковых реквизитов диалога (аналогично установке в свойствах реквизита
+  диалога в конфигураторе).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение — текущая маска
+интерактивного ввода для строковых реквизитов (на момент до исполнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Маска<span
+lang=RU> позволяет установить посимвольную маску интерактивного ввода для
+элементов диалога типа «поле ввода» (аналогично установке в свой­ствах
+реквизита диалога в конфигураторе).</p>
+
+<p class=MsoNormal>В параметре &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтрокаМаски<span
+lang=RU>&gt; допустимы следующие символы:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l18 level1 lfo49;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>! — введенный символ преобразуется в
+верхний регистр;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l18 level1 lfo49;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>9 — произвольный символ цифры;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l18 level1 lfo49;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]># — произвольный символ цифры или - (знак
+минус) или + (знак плюс) или пробел;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l18 level1 lfo49;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>N — любые алфавитно-цифровые символы
+(буквы или цифры);</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l18 level1 lfo49;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Х (латинского алфавита) — произвольный
+символ;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l18 level1 lfo49;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>@ — любые алфавитно-цифровые символы
+(буквы или цифры) в верх­нем регистре.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>форма.Телефон.Маска(&quot;999-99-99&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc492735154"></a><a name="_Toc494938043"><span style='mso-bookmark:
+_Toc492735154'>ВыборГруппы</a></h4>
+
+<p class=MsoNormal>Установить режим выборки групп для элемента
+диалога типа «спра­вочник».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыборГруппы(&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SelectGroup<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=80 valign=top style='width:60.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=592 valign=top style='width:443.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение: 1 — выбирать группы; 0 — не выбирать группы.
+  Значение по умолчанию — 1.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущее числовое значение режима выборки групп
+для элемента диалога (на момент до исполнения метода).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыборГруппы<span
+lang=RU> устанавливает режим выборки групп для выбранного элемента диалога типа
+«справочник».</p>
+
+<p class=MsoNormal>По умолчанию, выборка элементов справочников
+для реквизитов в формах документов, журналов и справочников установлена без
+выбора групп, а в форме отчета — с выбором групп. Поэтому реально имеет смысл
+применять данный метод только в том случае, если надо изменить режим выборки
+групп.</p>
+
+<p class=MsoNormal>Особенно необходим данный метод в случае,
+когда необходимо установить возможность выбора групп в графе табличной части документа.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Если в табличной части документа существует
+какой-либо реквизит, на­пример, «Статус» и необходимо, чтобы он мог принимать
+значения как элемента, так и группы, то в форме документа этому реквизиту
+следует ус­тановить:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.Статус.ВыборГруппы(1);<o:p></o:p></p>
+
+<h4><a name="_Toc492735155"></a><a name="_Toc494938044"><span style='mso-bookmark:
+_Toc492735155'>ВыполнятьФормулуТолькоПриИзменении</a></h4>
+
+<p class=MsoNormal>Установка режима выполнения формулы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыполнятьФормулуТолькоПриИзменении(&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Pr<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ocessFormulaOnlyWhenChanged<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=88 valign=top style='width:66.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=584 valign=top style='width:437.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение:
+  1 — устанавливает режим, при котором в табличной части документа формула («Свойства»
+  — «Дополнительные» — «Формула») вызывается только при изменении значения
+  поля, а не при переходе между полями; 0 — устанавливает режим, при котором в
+  табличной части документа формула вызывается при изменении значения поля и
+  при переходе между полями.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыполнятьФормулуТолькоПриИзменении<span
+lang=RU> позволяет изменить ре­жим выполнения формулы выбранного поля табличной
+части документа. Доступ к данному методу возможен только в контексте Модуля
+формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.Цена.ВыполнятьФормулуТолькоПриИзменении(1);<o:p></o:p></p>
+
+<h4><a name="_Toc492735156"></a><a name="_Toc494938045"><span style='mso-bookmark:
+_Toc492735156'>Заголовок</a></h4>
+
+<p class=MsoNormal>Устанавливает/выдает заголовок элемента
+диалога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Заголовок(&lt;Название&gt;)<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Caption<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Название&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — новый заголовок колонки многострочной части формы, кнопки, рамки груп­пы,
+  текста, флажка, переключателя.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Текущий заголовок элемента диалога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Заголовок<span
+lang=RU> позволяет установить/прочитать заголовок колонки многострочной части
+формы, копки, рамки группы, текста, флажка, переключа­теля.</p>
+
+<p class=MsoNormal>Доступ к данному методу возможен только в
+контексте Модуля формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.КолонкаЦены.Заголовок(&quot;Цена&quot;);<o:p></o:p></p>
+
+<h4><a name="_Toc492735157"></a><a name="_Toc494938046"><span style='mso-bookmark:
+_Toc492735157'>УстановитьТип</a></h4>
+
+<p class=MsoNormal>Установить тип для элемента диалога
+неопределенного вида.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьТип(&lt;Выражение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AssignType<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Выражение&gt;<span
+  style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение. Тип
+  значения этого выражения будет присвоен элементу диалога.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьТип<span
+lang=RU> позволяет установить тип для элемента диалога, которому в
+конфигураторе назначен тип «Неопределенный».</p>
+
+<p class=MsoNormal>Данный метод доступен в контексте Модуля формы
+(см. «Виды программ­ных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ВыбЗнач.УстановитьТип(Товар);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НазначитьТип<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТипЗначения,
+<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТипЗначенияСтр</p>
+
+<h4><a name="_Toc492735158"></a><a name="_Toc494938047"><span style='mso-bookmark:
+_Toc492735158'>НазначитьТип</a></h4>
+
+<p class=MsoNormal>Назначить тип для элемента диалога
+неопределенного вида.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НазначитьТип(&lt;ИмяТипа&gt;,
+&lt;Длина&gt;, &lt;Точность&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>AssignType<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяТипа&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — название типа данных, ко­торое назначается элементу диалога. Например:<span
+  style="mso-spacerun: yes">  &quot;<span class=a0><span lang=RU
+  style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Строка<span
+  lang=RU>&quot;, &quot;<span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>Число<span
+  lang=RU>&quot;, &quot;<span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>Справочник.Товары<span
+  lang=RU>&quot;, &quot;<span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>Документ.РасходнаяНак­лад­ная<span
+  lang=RU>&quot; и&nbsp;т.&nbsp;п.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Длина&gt;<o:p></o:p></p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение — длина поля представления данных. Имеет смысл
+  только при задании числового или строкового типа.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Точность&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Числовое выражение — число знаков числа после десятичной точки.
+  Имеет смысл только при задании числового типа.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НазначитьТип<span
+lang=RU> позволяет назначить тип для элемента диалога, ко­торому в
+конфигураторе назначен тип «Неопределенный».</p>
+
+<p class=MsoNormal>Данный метод доступен в контексте Модуля формы
+(см. «Виды программ­ных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ВыбКолич.НазначитьТип(&quot;Число&quot;,
+15, 2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ВыбДата.НазначитьТип(&quot;Дата&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ВыбТовар.НазначитьТип(&quot;Справочник.Товары&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ВыбДокум.НазначитьТип(&quot;Документ&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьТип<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТипЗначения,
+<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ТипЗначенияСтр</p>
+
+<h4><a name="_Toc492735159"></a><a name="_Toc494938048"><span style='mso-bookmark:
+_Toc492735159'>НеИзменятьВид</a></h4>
+
+<p class=MsoNormal>Позволяет запретить пользователю при выборе
+значения справочни­ка, документа, счета неопределенного вида изменять вид.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НеИзменятьВид(&lt;Признак&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>FixKind<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Признак&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое выражение —
+  признак запрета изме­нения вида. Может принимать значения:</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — разрешить
+  изменение вида при выборе зна­чения;</p>
+  <p class=MsoNormal style='text-indent:0in'>1 — запретить
+  изменение вида при выборе зна­чения.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число — текущее значение признака.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НеИзменятьВид<span
+lang=RU> применяется для реквизитов диалога формы, имеющих тип справочника,
+документа, счета неопределенного вида. Он позво­ляет запретить при выборе
+значения изменение вида значения.</p>
+
+<p class=MsoNormal>Предположим, в диалоге существует реквизит
+типа справочник неопреде­ленного вида. Вид этого элемента устанавливается при
+помощи встроенного языка процедурой <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НазначитьВид<span
+lang=RU>. Метод <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>НеИзменятьВид(1)<span
+lang=RU> позволяет за­претить пользователю при выборе значения выбрать вид
+справочника.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* Например, в некотором документе, для его
+реквизита «Контрагент» типа справочник неопределенного вида, назначается вид
+«Организации» или «Сотрудники» и запрещается интерактивное изменение вида
+пользовате­лем.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ВводНаОсновании(ДокОсн)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ДокОсн.Вид() = &quot;Счет&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+НазначитьВид(Контрагент, «Организации»);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Иначе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+НазначитьВид(Контрагент, «Сотрудники»);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.Контрагент.НеИзменятьВид(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h3><a name="_Toc492735160"></a><a name="_Toc494938049"><span style='mso-bookmark:
+_Toc492735160'>Методы контекста Модуля формы</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе методы доступны
+только в контексте Модуля формы (см. «Виды программных модулей»). К модулям
+форм относятся прак­тически все программные модули (исключение составляют
+Глобальный модуль, Модуль документа, Модуль вида расчета).</p>
+
+<h4><a name="_Toc492735161"></a><a name="_Toc494938050"><span style='mso-bookmark:
+_Toc492735161'>ОткрытьПодбор</a></h4>
+
+<p class=MsoNormal>Открыть форму для подбора значений.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор(&lt;ИмяОбъекта&gt;,
+&lt;ИмяФормы&gt;, &lt;КонтекстФормы&gt;, &lt;ФлагМножВыбора&gt;,<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes">              &lt;ТекЗнач&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OpenPermanentChoice<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОбъекта&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — имя объекта агрегатного типа, форму списка которого требуется открыть для
+  подбора. Можно указывать справочник, жур­нал, документ (при указании
+  документа открыва­ется форма журнала для указанного документа). Имя объекта
+  задается в следующем виде:</p>
+  <p class=MsoNormal style='margin-left:19.8pt;text-indent:-19.8pt;mso-list:
+  l21 level1 lfo50;tab-stops:list 19.8pt'><![if !supportLists]><span lang=RU
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <![endif]>&quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Справочник.ХХХХХ<span
+  lang=RU>&quot;;<o:p></o:p></p>
+  <p class=MsoNormal style='margin-left:19.8pt;text-indent:-19.8pt;mso-list:
+  l21 level1 lfo50;tab-stops:list 19.8pt'><![if !supportLists]><span lang=RU
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <![endif]>&quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Документ.ХХХХХ<span
+  lang=RU>&quot;;<o:p></o:p></p>
+  <p class=MsoNormal style='margin-left:19.8pt;text-indent:-19.8pt;mso-list:
+  l21 level1 lfo50;tab-stops:list 19.8pt'><![if !supportLists]><span lang=RU
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <![endif]>&quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Отчет.ХХХХХХ<span
+  lang=RU>&quot;;<o:p></o:p></p>
+  <p class=MsoNormal style='margin-left:19.8pt;text-indent:-19.8pt;mso-list:
+  l21 level1 lfo50;tab-stops:list 19.8pt'><![if !supportLists]><span lang=RU
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <![endif]>&quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Обработка.ХХХХХХ<span
+  lang=RU>&quot;;<o:p></o:p></p>
+  <p class=MsoNormal style='margin-left:19.8pt;text-indent:-19.8pt;mso-list:
+  l21 level1 lfo50;tab-stops:list 19.8pt'><![if !supportLists]><span lang=RU
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <![endif]>&quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Журнал.ХХХХХ<span
+  lang=RU>&quot; , где <span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>ХХХХХ<span
+  lang=RU> — имя вида соответствующего объекта, как он задан в конфигураторе,
+  например: &quot;<span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Справочник.Товары<span
+  lang=RU>&quot;;<o:p></o:p></p>
+  <p class=MsoNormal style='margin-left:19.8pt;text-indent:-19.8pt;mso-list:
+  l21 level1 lfo50;tab-stops:list 19.8pt'><![if !supportLists]><span lang=RU
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <![endif]>&quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Журнал.Подчиненные<span
+  lang=RU>&quot;;<o:p></o:p></p>
+  <p class=MsoNormal style='margin-left:19.8pt;text-indent:-19.8pt;mso-list:
+  l21 level1 lfo50;tab-stops:list 19.8pt'><![if !supportLists]><span lang=RU
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <![endif]>&quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЖурналОпераций.ХХХХХ<span
+  lang=RU>&quot;, где <span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>ХХХХХ<span
+  lang=RU> — форма журнала пераций.<o:p></o:p></p>
+  <p class=MsoNormal style='margin-left:19.8pt;text-indent:-19.8pt;mso-list:
+  l21 level1 lfo50;tab-stops:list 19.8pt'><![if !supportLists]><span lang=RU
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <![endif]>&quot;<span class=a0><span
+  lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПланСчетов.ХХХХХ<span
+  lang=RU>&quot;, где <span class=a0><span lang=RU style='font-family:
+  "Courier New";mso-bidi-font-family:"Times New Roman"'>ХХХХХ<span
+  lang=RU> — идентификатор плана счетов, как он за­дан в конфигураторе. Если <span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ХХХХХ не за­дан, то
+  открывается подбор из любого (всех) плана счетов.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяФормы&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение
+  — имя формы подбора, как она задана в конфигураторе. Поскольку и справочники
+  и журналы могут иметь несколько форм представления, то этим параметром можно
+  конкретно указать, какая из форм представления объекта вызывается для подбора
+  значений.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>КонтекстФормы&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Имя переменной, куда можно задать значение любого типа для передачи
+  в открываемую форму. Данное значение будет доступно в открытой форме как
+  атрибут <span class=a0><span lang=RU style='font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Форма.Параметр<span
+  lang=RU>.</p>
+  <p class=MsoNormal style='text-indent:0in'>После исполнения
+  данного метода система вер­нет в данную переменную контекст формы подбо­ра
+  (см. «Передача контекста в качестве парамет­ра»). С помощью значения этого
+  контекста можно затем произвольно манипулировать формой под­бора, пока она
+  открыта. Пока форма открыта, тип значения данного параметра равен 100 (см. <span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТипЗначения), если закрыта —
+  0.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагМножВы6ора&gt;<o:p></o:p></p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Число: 1 — выбор не­скольких значений; 0 — выбор одного значения,
+  после чего окно закрывается. Значение по умол­чанию: 1.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ТекЗнач&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. В случае выбора из списка, здесь можно передать значение, на кото­рое
+  следует изначально установить курсор при открытии формы подбора.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор<span
+lang=RU>, который доступен только в контексте Модуля формы, выполняет открытие
+формы для подбора значений. Используется, на­пример, для подбора значения
+реквизита документа.</p>
+
+<p class=MsoNormal>При открытии подбора по журналу подчиненных
+документов, т. е. когда первый параметр &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяОбъекта<span
+lang=RU>&gt; имеет значение &quot;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Журнал.Подчиненные<span
+lang=RU>&quot;, документ владелец, по которому следует построить журнал
+подчиненных доку­ментов, передается после вызова метода через полученный
+контекст формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Подбор()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ГруппаДляВыбора = ТекущийЭлемент();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ГруппаДляВыбора.ЭтоГруппа() = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ГруппаДляВыбора = ГруппаДляВыбора.Родитель;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ОткрытьПодбор(&quot;Справочник.Товары&quot;, &quot;ДляПодбора&quot;,
+КонтПодб, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// установим в форме подбора реквизит &quot;ГруппаВыбора&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// используя полученный контекст формы подбора<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонтПодб.ГруппаВыбора.ВыборГруппы(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes"> <span style="mso-spacerun: yes">  КонтПодб.ГруппаВыбора =
+ГруппаДляВыбора;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонтПодб.Обновить(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+УстановитьЗначениеВПодборе(&quot;ГруппаВыбора&quot;, ГруппаДляВыбора);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОбработкаПодбора<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьЗначениеВПодборе</p>
+
+<h4><a name="_Toc492735162"></a><a name="_Toc494938051"><span style='mso-bookmark:
+_Toc492735162'>УстановитьЗначениеВПодборе</a></h4>
+
+<p class=MsoNormal>Установить значение некоторого реквизита
+диалога в окне, откры­том для подбора значения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>УстановитьЗначениеВПодборе(&lt;ИмяРеквизита&gt;,
+&lt;Значение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>SetValueInPermanentChoice<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизита&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  содержащее имя реквизита формы подбора значения.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Значение&gt;</p>
+  </td>
+  <td width=528 valign=top style='width:395.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение, значение
+  которого заносится в рекви­зит.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>УстановитьЗначениеВПодборе<span
+lang=RU>, который доступен только в кон­тексте Модуля формы, используется для того,
+чтобы в окне диалога, открытом для подбора значения, установить значение
+некоторого реквизита диалога (он может быть затем использован для отображения
+некоторой информации в ин­формационных элементах диалога подбора значения).</p>
+
+<p class=MsoNormal>Данный метод следует использовать после вызова
+метода <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура Подбор()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ГруппаДляВыбора = ТекуцийЭлемент();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ГруппаДляВыбора.ЭтоГруппа() = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ГруппаДляВыбора = ГруппаДляВыбора.Родитель;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ОткрытьПодбор(&quot;Справочник.Товары&quot;, &quot;ДляПодбора&quot;,
+КонтПодб);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// установим в форме подбора реквизит &quot;ГруппаВыбора&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// используя метод УстановитьЗначениеВПодборе<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+УстановитьЗначениеВПодборе(&quot;ГруппаВыбора&quot;, ГруппаДляВыбора);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОбработкаПодбора</p>
+
+<h4><a name="_Toc492735163"></a><a name="_Toc494938052"><span style='mso-bookmark:
+_Toc492735163'>ПолучитьЗначениеИзПодбора</a></h4>
+
+<p class=MsoNormal>Вычислить выражение в контексте открытой формы
+подбора.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолучитьЗначениеИзПодбора(&lt;Выражение&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GetValueFromPermanentChoice<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=104 valign=top style='width:78.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Выражение&gt;</p>
+  </td>
+  <td width=568 valign=top style='width:425.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое выражение,
+  которое должно содержать запись выражения на встроенном языке. Значение этого
+  выра­жения вычисляется в контексте открытой формы подбо­ра.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Значение вычисленного в контексте формы
+подбора выражения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолучитьЗначениеИзПодбора<span
+lang=RU>, который доступен только в контек­сте Модуля формы, позволяет получить
+результат выражения, выполненного в контексте формы подбора (т. е. получить
+любые данные из той формы, напри­мер выбранный элемент списка справочника
+подбора значения).</p>
+
+<p class=MsoNormal>Данный метод следует использовать только после
+вызова метода <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ОбработкаПодбора(Выб,
+Конформы)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Кол = 0;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ВвестиЧисло(Кол, &quot;Введите количество&quot;, 10, 0) = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+НоваяСтрока();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ТипPaб = Выб;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Количество = Кол;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+АктивизироватьСтроку();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Активизировать(&quot;Стоимость&quot;, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+// тип выполненной работы<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ТР = ПолучитьЗначениеИзПодбора(&quot;Наименование&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОбработкаПодбора</p>
+
+<h4><a name="_Toc492735164"></a><a name="_Toc494938053"><span style='mso-bookmark:
+_Toc492735164'>Активизировать</a></h4>
+
+<p class=MsoNormal>Установить курсор на выбранный элемент
+диалога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Активизировать(&lt;ИмяРеквизита&gt;,
+&lt;Режим&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Activate<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяРеквизита&gt;<o:p></o:p></p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Строковое выражение, содержащее имя элемента диалога, который
+  должен быть активизирован. Пустое имя элемента диалога используется для
+  активизации всей формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Режим&gt;</p>
+  </td>
+  <td width=544 valign=top style='width:407.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный параметр.
+  Имеет смысл только для реквизитов многострочной части формы документа.
+  Числовое выражение: 1 — войти в режим редакти­рования; 0 — не входить в режим
+  редактирования. Значение по умолчанию — 1.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Активизировать<span
+lang=RU>, который доступен только в контексте Модуля формы, устанавливает
+курсор для редактирования нужного элемента диалога. Например, если необходимо
+установить курсор на реквизит многострочной части документа (в форме документа)
+после выхода из предопределенной про­цедуры <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОбработкаПодбора<span
+lang=RU>.</p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Активизировать<span
+lang=RU> может быть вызван из другого (внешнего) моду­ля, если в нем известен
+контекст формы, в которой нужно активизировать эле­мента диалога.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>См. предыдущий пример.</p>
+
+<h4><a name="_Toc492735165"></a><a name="_Toc494938054"><span style='mso-bookmark:
+_Toc492735165'>АктивизироватьОбъект</a></h4>
+
+<p class=MsoNormal>Установить курсор в списке на выбранном объекте.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>АктивизироватьОбъект(&lt;Объект&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ActivateObj<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=80 valign=top style='width:60.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Объект&gt;</p>
+  </td>
+  <td width=592 valign=top style='width:443.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выражение, которое
+  может содержать значение элемента справочника или документ или запись журнала
+  расчетов (в зависимости от типа модуля формы, в котором должен быть
+  активизирован эле­мент диалога).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>АктивизироватьОбъект<span
+lang=RU>, который доступен только в контексте Модуля формы, устанавливает
+курсор на нужной строке списка диалога, на­пример документ в форме журнала или
+элемент в форме списка справочника, или запись расчета в форме журнала
+расчетов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>АктивизироватьОбъект(ВыбДокумент);<o:p></o:p></p>
+
+<h3><a name="_Toc492735166"></a><a name="_Toc494938055"><span style='mso-bookmark:
+_Toc492735166'>Предопределенные процедуры Модуля формы</a></h3>
+
+<p class=MsoNormal>Описанные в данном разделе системные
+предопределенные процедуры должны располагаться только в Модулях форм (см.
+«Виды программных моду­лей»). К Модулям форм относятся практически все
+программные модули (ис­ключение составляют Глобальный модуль, Модуль документа,
+Модуль вида расчета).</p>
+
+<p class=MsoNormal>В основном данные процедуры предназначены для
+расширения возможно­сти программного управления правами доступа к системе.</p>
+
+<p class=MsoNormal>Предопределенные процедуры не является
+встроенными процедурами язы­ка. Для них зарезервированы только название и
+синтаксис. Тело процедур должно быть написано самим разработчиком в
+соответствующих программных модулях. Вызов предопределенных процедур на
+исполнение производится в системе 1С:Предприятие неявно при возникновении
+соответствующего собы­тия. Описание предопределенных процедур также см. гл.
+«Системные предо­пределенные процедуры».</p>
+
+<h4><a name="_Toc492735167"></a><a name="_Toc494938056"><span style='mso-bookmark:
+_Toc492735167'>ПриОткрытии</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при открытии формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриОткрытии()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>OnOpen<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриОткрытии производится самой
+системой 1С:Предприятие неявно при интерактивном открытии формы. Если в данной
+предопределенной процедуре установить статус возврата — 0 (напри­мер, если
+данному пользователю зыпрещено просматривать форму объекта), открытие формы не
+будет выполнено.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в про­граммном модуле формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриОткрытии()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПриЗаписиПерепроводить(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc492735168"></a><a name="_Toc494938057"><span style='mso-bookmark:
+_Toc492735168'>ПриПовторномОткрытии</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при повторном
+открытии формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриПовторномОткрытии()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnReopen<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриПовторномОткрытии производит­ся
+самой системой 1С:Предприятие неявно при открытии формы, в случае, ес­ли
+открывают уже открытую форму — то есть форма просто активизируется.</p>
+
+<p class=MsoNormal>Если в данной предопределенной процедуре
+установить статус возврата — 0 (например, если данному пользователю запрещено
+просматривать форму объ­екта), открытие формы не будет выполнено.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в про­граммном модуле формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриПовторномОткрытии()<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">  <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><span
+style="mso-spacerun: yes"> ПриЗаписиПерепроводить(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc492735169"></a><a name="_Toc494938058"><span style='mso-bookmark:
+_Toc492735169'>ПриЗакрытии</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при закрытии формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриЗакрытии()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnClose<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриЗакрытии производится самой
+системой 1С:Предприятие неявно при интерактивном закрытии формы. Если в данной
+предопределенной процедуре установить статус возврата — 0 (напри­мер, если
+неверно или не полностью заполнены реквизиты объекта), закрытие формы не будет
+выполнено.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в про­граммном модуле формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриЗакрытии()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ПоСчетуФактуре.Выбран() = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;Укажите Счет-Фактуру&quot;, 4);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">      <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc492735170"></a><a name="_Toc494938059"><span style='mso-bookmark:
+_Toc492735170'>ПриВыбореЗакладки</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура смены закладки
+формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриВыбореЗакладки(&lt;НомерЗакладки&gt;,
+&lt;Значение3акладки&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnTabCtrlPosChanged<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>НомерЗакладки&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое значение —
+  номер выбранной за­кладки формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Значение3акладки&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Значение выбранной
+  закладки формы.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриВыбореЗакладки производится в
+системе 1С:Предприятие неявно в момент интерактивного выбора пользовате­лем
+закладки в форме. При вызове процедуры, система подставляет фактиче­ские
+значения параметров, характеризующие выбранную закладку.</p>
+
+<p class=MsoNormal>Параметры &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>НомерЗакладки<span
+lang=RU>&gt; и &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Значение3акладки<span
+lang=RU>&gt; используется в теле процедуры для обработки передаваемого системой
+события смены заклад­ки формы.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в про­граммном модуле формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ЗакладкаОбщиеВидимость(ФлагВидимости)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.Название.Видимость(ФлагВидимости);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.Наименование.Видимость(ФлагВидимости);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.Код.Видимость(ФлагВидимости);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.Статус.Видимость(ФлагВидимости);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.Адрес.Видимость(ФлагВидимости);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.Телефон.Видимость(ФлагВидимости);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Активизировать(&quot;Наименование&quot;,
+0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ЗакладкаЗаметкиВидимость(ФлагВидимости)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Форма.Заметки.Видимость(ФлагВидимости);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Активизировать(&quot;Заметки&quot;,
+0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриВыбореЗакладки(НомерЗакладки, ЗначениеЗакладки)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Значение3акладки = 1 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Закладка.Заметки.Видимость(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Закладка.Общие.Видимость(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ИначеЕсли ЗначениеЗакладки = 2 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Закладка.Общие.Видимость(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Закладка.Заметки.Видимость(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИспользоватьЗакладки<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Закладки, <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>СтатусВозврата</p>
+
+<h4><a name="_Toc492735171"></a><a name="_Toc494938060"><span style='mso-bookmark:
+_Toc492735171'>ПриНачалеВыбораЗначения</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при начале выбора
+значения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриНачалеВыбораЗначения(&lt;ИдентЭлемДиалога&gt;,
+&lt;ФлагСтанд06р&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnStartValueChoice<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИдентЭлемДиалога&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Строковое значение —
+  идентификатор элемен­та диалога формы.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагСтандОбр&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Изначально, при
+  вызове процедуры равен 1, если в теле процедуры значение этого пара­метра
+  поменять на 0, то стандартный процесс выбора значения не будет происходить.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриНачалеВыбораЗначения произ­водится
+в системе 1С:Предприятие неявно в момент, когда в форме пользова­тель
+интерактивно инициировал выбор значения (выбор может быть интерак­тивно
+инициирован в немодальном режиме при помощи элемента диалога с кнопкой выбора
+или клавишей «<span style='mso-ansi-language:EN-US'>F<span
+lang=RU>4»). При вызове процедуры, система под­ставляет фактические значения параметров,
+характеризующие элемент диалога и флаг стандартной обработки.</p>
+
+<p class=a><b>Замечание</b>. В теле этой
+процедуры методы <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьФорму<span
+lang=RU> и <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор<span
+lang=RU> работают для выбора.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в про­граммном модуле формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура
+ПриНачалеВыбораЗначения(Элемент, Флаг)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Перем КонтПодб;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если Элемент = &quot;ИдВыбКлиент&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Флаг = 0;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ОткрытьПодбор(&quot;Справочник.Клиенты&quot;, &quot;ДляПодбора&quot;,
+КонтПодб);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735172"></a><a name="_Toc494938061"><span style='mso-bookmark:
+_Toc492735172'>ОбработкаПодбора</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура обработки подбора
+значения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОбработкаПодбора(&lt;ЗначениеПод6ора&gt;,
+&lt;КонтФормы&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ProcessPermanentChoice<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ЗначениеПодбора&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Элемент справочника
+  или документ, переда­ваемый для обработки.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=160 valign=top style='width:120.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>КонтФормы&gt;</p>
+  </td>
+  <td width=512 valign=top style='width:383.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Контекст той формы,
+  из которой шел подбор.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ОбработкаПодбора производится в
+системе 1С:Предприятие неявно после нажатия кнопки «Выбрать» в форме подбора
+значения (см. метод ОткрытьПодбор). В этот момент система под­ставляет
+фактическое значение параметра &lt;<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗначениеПодбора<span
+lang=RU>&gt;.</p>
+
+<p class=MsoNormal>Формальный параметр &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ЗначениеПодбора<span
+lang=RU>&gt; используется в теле процеду­ры для приема и обработки передаваемого
+системой значения элемента подбо­ра.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в про­граммном модуле формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ОбработкаПодбора(Знач,
+КонтФормы)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+НоваяСтрока();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Товар = Знач;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Знач.ИспользоватьДату(ДатаДок);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Цена = Знач.Цена;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(Знач.Цена);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(Знач.МОЛ.Наименование);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+АктивизироватьСтроку();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ОткрытьПодбор</p>
+
+<h4><a name="_Toc492735173"></a><a name="_Toc494938062"><span style='mso-bookmark:
+_Toc492735173'>ОбработкаВыбораЗначения</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура обработки выбора
+значения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОбработкаВыбораЗначения(&lt;Вы6Знач&gt;,
+&lt;ИдентЭлемДиалога&gt;, &lt;ФлагСтандОбр&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ProcessPermanentChoice<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ВыбЗнач&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Выбранный элемент
+  справочника, документ или иной объект, передаваемый для обработ­ки.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИдентЭлемДиалога&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Идентификатор
+  элемента диалога, которым инициализирован выбор значения.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагСтандОбр&gt;</p>
+  </td>
+  <td width=504 valign=top style='width:377.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Флаг, установка
+  которого в теле процедуры в 0 (ноль) приведет к отмене стандартного при­своения
+  значения.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ОбработкаВыбораЗначения произ­водится
+в системе 1С:Предприятие неявно, после выбора значения в форм<sup>6 </sup>выбора
+(выбор может быть инициирован в немодальном режиме интерактивно, при помощи
+элемента диалога с кнопкой выбора). В момент выбора система автоматически
+подставляет фактическое значение параметра &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Вы6Знач<span
+lang=RU>&gt;.</p>
+
+<p class=MsoNormal>Формальный параметр &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВыбЗнач<span
+lang=RU>&gt; используется в теле процедуры для приема и обработки передаваемого
+системой выбранного значения.</p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться только в про­граммном модуле формы.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ОбработкаВыбораЗначения(Знач,
+Идент, Флаг)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+...<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<h4><a name="_Toc492735174"></a><a name="_Toc494938063"><span style='mso-bookmark:
+_Toc492735174'>ПриВыбореСтроки</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при выборе строки
+списка.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриВыбореСтроки()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>OnSelectLine<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриВыбореСтроки производится в
+системе 1С:Предприятие при интерактивном выборе строки списка в форме списка
+справочника, журнала документов, счетов, журнала операций, журнала проводок.
+Если в данной предопределенной процедуре установить статус воз­врата — 0
+(например, если данному пользователю нельзя вводить новые строки списка
+справочника), то строка списка не будет выбрана.</p>
+
+<p class=a><b>Замечание</b>: Режим обработки
+выбора строки (двойной щелчок мыши или кла­виша <span style='mso-ansi-language:
+EN-US'>Enter) предопределенной процедурой <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриВыбореСтроки включается в
+форме списка справочника, журнала, счетов, журнала операций, журна­ла проводок
+при помощи метода <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Форма.ОбработкаВыбораСтроки(1)<o:p></o:p></p>
+
+<p class=MsoNormal>Данная предопределенная процедура может
+располагаться в Модуле формы списка справочника, журнала, счетов, журнала
+операций, журнала проводок (см. «Виды программных модулей»).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриВыбореСтроки()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если НазваниеНабораПрав() = &quot;Продавец&quot; Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+Предупреждение(&quot;У вас нет права просмотра строки!&quot;, 2);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+СтатусВозврата(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата<span
+lang=RU>, <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ОбработкаВыбораСтроки</p>
+
+<h3><a name="_Toc492735175"></a><a name="_Toc494938064"><span style='mso-bookmark:
+_Toc492735175'>Атрибуты и методы контекста Модуля формы отчета
+(обработки)</a></h3>
+
+<h4><a name="_Toc492735176"></a><a name="_Toc494938065"><span style='mso-bookmark:
+_Toc492735176'>Таблица</a></h4>
+
+<p class=MsoNormal>Объект агрегатного типа «Таблица».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Таблица<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Table<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Таблица<span
+lang=RU> (только для чтения) представляет собой ссылку на объ­ект типа
+«Таблица». Доступ к данному атрибуту возможен только в контексте Модуля формы
+отчета или обработки. При настройке формы отчета (обработ­ки), если табличный
+документ размещен непосредственно в форме (для этого в диалоге, вызываемом
+пунктом «Свойства формы» меню «Действия» в парамет­ре «Использовать таблицу»
+выбирается вариант «Пустую» или «Для ввода данных»), то доступ к такому объекту
+осуществляется через атрибут контекста формы отчета (обработки) <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Таблица.</p>
+
+<p class=MsoNormal>Атрибуты и методы объекта «Таблица» описаны в
+разделе «Работа с табли­цами» и позволяют в программном модуле управлять процессом
+формирования и визуального отображения таблицы в целом, а также изменять
+свойства визу­ального отображения отдельных областей таблицы.</p>
+
+<p class=MsoNormal>В тексте программного модуля через точку после
+имени атрибута «Табли­ца» можно записывать адреса областей таблицы, а далее через
+точку можно вызывать методы управления свойствами этих областей.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Таблица.ИсходнаяТаблица(&quot;price&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Таблица.Вывести();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Таблица.ТолькоПросмотр(0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Таблица.Показать(&quot;Каталог&quot;,
+&quot;Catalog.mxl&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Таблица.ТолькоПросмотр(1);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбОбласть =
+Таблица.Область(&quot;R8C4&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбОбласть.Шрифт(&quot;Arial&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбОбласть.РазмерШрифта(10);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбОбласть.Подчеркнутый(1);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбОбласть.ГоризонтальноеПоложение(3);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбОбласть.Контроль(4);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбОбласть.ЦветФона(34, 126, 211);<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> разд. «Работа с таблицами»</p>
+
+<h4><a name="_Toc492735177"></a><a name="_Toc494938066"><span style='mso-bookmark:
+_Toc492735177'>&lt;ИмяОбласти&gt;</a></h4>
+
+<p class=MsoNormal>Возвращает или задает значение, записанное в
+именованной области таблицы в режиме ввода данных.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=152 valign=top style='width:114.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ИмяОбласти&gt;</p>
+  </td>
+  <td width=520 valign=top style='width:389.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Имя области таблицы,
+  как она задана в табличном документе.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Атрибут &lt;<span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ИмяОбласти<span
+lang=RU>&gt; позволяет обращаться к значениям, записанным в поименованных областях
+таблицы в режиме ввода данных. Для обращения к значению конкретной области
+следует указать имя этой области, заданный в конфигураторе.</p>
+
+<p class=MsoNormal>Данный атрибут существует и доступен в форме,
+если при конфигурирова­нии данной формы в свойствах формы выбраны опция «Использовать
+табли­цу» — «Для ввода данных». Установка данной опции в свойствах формы означа­ет
+наличие у данной формы таблицы в режиме ввода данных. В процессе кон­фигурирования
+в таблице можно задать любое число выделенных и поимено­ванных областей.</p>
+
+<p class=MsoNormal>Доступ к данному атрибуту возможен только в
+контексте Модуля формы отчета или обработки.</p>
+
+<p class=a><b>Замечание</b>: Данный атрибут
+работает на чтение только в том случае, если в качестве области таблицы
+помечена одна единственная ячейка.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>* В диалоге формы есть элемент диалога <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ВыбКод. В форме использована
+таблица в режиме ввода данных. Одна из ячеек таблицы помечена как об­ласть с
+именем «ВыбранныйКлиент». В этом случае в модуле формы мож­но задать значение
+данной области.</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Клн =
+СоздатьОбъект(&quot;Справочник.Клиенты&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Клн.НайтиПоКоду(ВыбКод, 0);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбранныйКлиент = Клн.ТекущийЭлемент();<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> разд. «Работа с таблицами»</p>
+
+<h4><a name="_Toc492735178"></a><a name="_Toc494938067"><span style='mso-bookmark:
+_Toc492735178'>РасположениеФайла</a></h4>
+
+<p class=MsoNormal>Определить, где располагается данный внешний
+отчет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>РасположениеФайла(&lt;Путь&gt;,
+&lt;Имя&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>Fi<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>lePath<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Путь&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Идентификатор
+  переменной, куда метод возвращает путь к файлу, где располагается данный
+  внешний отчет.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=96 valign=top style='width:1.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Имя&gt;</p>
+  </td>
+  <td width=576 valign=top style='width:431.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Идентификатор
+  переменной, куда метод возвращает имя файла, где располагается данный внешний
+  отчет.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение полного имени (вместе с
+путем) файла, где располага­ется данный внешний отчет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>РасположениеФайла<span
+lang=RU> позволяет узнать, где располагается данный внешний отчет.</p>
+
+<p class=MsoNormal>Замечание. Данный метод следует использовать
+только в модуле формы внешнего отчета.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Имя = &quot;&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Путь = &quot;&quot;;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолноеИмя = РасположениеФайла(Путь,
+Имя);<o:p></o:p></p>
+
+<h3><a name="_Toc492735179"></a><a name="_Toc494938068"><span style='mso-bookmark:
+_Toc492735179'>Предопределенные процедуры модуля формы отчета
+(обработки)</a></h3>
+
+<p class=MsoNormal>Предопределенные процедуры не является
+встроенными процедурами язы­ка. Для них зарезервированы только название и
+синтаксис. Тело процедур должно быть написано самим разработчиком в
+соответствующих программных модулях. Вызов предопределенных процедур на
+исполнение производится в системе 1С:Предприятие неявно при возникновении
+соответствующего собы­тия. Описание предопределенных процедур также см. гл.
+«Системные предо­пределенные процедуры».</p>
+
+<h4><a name="_Toc492735180"></a><a name="_Toc494938069"><span style='mso-bookmark:
+_Toc492735180'>ВводНового</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при открытии формы
+отчета (обработ­ки) или при восстановлении сохраненной настройки отчета (обра­ботки).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВводНового()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>InputNew<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>При работе с формой отчета у пользователя
+существует возможность сохра­нять и восстанавливать настройки отчета — содержимое
+реквизитов диалога формы. Предопределенная процедура <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВводНового<span
+lang=RU> вызывается и в вомент от­крытия формы и в момент восстановления
+значений настройки. Это позволяет контролировать содержимое реквизитов диалога
+во всех случаях их изменения системой.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ВводНового()<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style="mso-spacerun: yes">   <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДатаНач
+= РабочаяДата();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+ДатаКон = РабочаяДата();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВоз
+врата</p>
+
+<h4><a name="_Toc492735181"></a><a name="_Toc494938070"><span style='mso-bookmark:
+_Toc492735181'>ПриОткрытии</a></h4>
+
+<p class=MsoNormal>Предопределенная процедура при открытии формы
+отчета (обработ­ки).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПриОткрытии(&lt;ФлагЧтенияНастройки&gt;)<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>OnOpen<span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'><o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=192 valign=top style='width:2.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ФлагЧтенияНастройки&gt;</p>
+  </td>
+  <td width=480 valign=top style='width:359.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Числовое значение —
+  признак считывания сохраненной настройки отчета (обработки). Может принимать
+  значения:<span style='mso-ansi-language:EN-US'><o:p></o:p></p>
+  <p class=MsoNormal style='text-indent:0in'>1 — при открытии
+  формы была восстановле­на последняя сохраненная настройка отчета (обработки);</p>
+  <p class=MsoNormal style='text-indent:0in'>0 — при открытии формы
+  настройка не вос­становлена.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Форма любого отчета или обработки в системе
+1С:Предприятие обязательно содержит экранный диалог. В диалоге могут размещаться
+элементы для зада­ния различных параметров построения отчета или выполнения
+обработки. При Использовании отчета (обработки) набор параметров,
+использованных при формировании отчета или выполнения обработки, можно
+запомнить, а при сле­дующем использовании этого же отчета (обработки) —
+восстановить. Для вы­полнения этих операций существуют команды в меню
+«Действия» системы 1С:Предприятие.</p>
+
+<p class=MsoNormal>Набор параметров формирования отчета или
+выполнения обработки назы­вается настройкой отчета (обработки). Последняя
+сохраненная настройка авто­матически восстанавливается системой 1С:Предприятие,
+при вызове отчета (обработки).</p>
+
+<p class=MsoNormal>Вызов предопределенной процедуры <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>ПриОткрытии производится самой
+системой 1С:Предприятие неявно при интерактивном открытии отчета (обра­ботки).
+Параметр &lt;<span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ФлагЧтенияНастройки<span
+lang=RU>&gt; позволяет определить, была ли при открытии отчета (обработки)
+восстановлена сохраненная настройка.</p>
+
+<p class=MsoNormal>Если в данной предопределенной процедуре
+установить статус возврата 0 (например, если данному пользователю запрещено
+формировать выбранный отчет), открытие формы не будет выполнено.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Процедура ПриОткрытии(ФлагСохрНастр)<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Если ФлагСохрНастр = 0 Тогда<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">     
+ВыбВалюта = Константа.ОснВалюта;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+КонецЕсли;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецПроцедуры<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>См.
+также:</b> <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СтатусВозврата</p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>

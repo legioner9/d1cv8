@@ -1,0 +1,430 @@
+<html>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<head>
+<link rel="stylesheet" type="text/css" href="1c.css">
+<title>Part39</title>
+</head><body><script language="javascript">
+if (window.name != "content")
+    document.write("<center><a href='index.html?page=Part39.html'>show framing</a></center>")
+</script>
+<h1><a name="_Toc492735421"></a><a name="_Toc494938310"><span style='mso-bookmark: _Toc492735421'>Глава 39<br> Работа с Метаданными</a></h1>
+
+<p class=MsoNormal>Глобальный атрибут «Метаданные» является
+вспомогательным объектом системы, предназначенным для доступа к свойствам структуры
+метаданных конфигурации. Возможность доступа к метаданным средствами
+встроенного языка является дополнительной возможностью и применяется в
+специальных случаях, например, для создания универсальных отчетов или
+обработок, кото­рые обращаются к объектам различных видов (документам,
+справочникам и т. п.). В основных алгоритмах конфигурации данная возможность,
+как правило, не используется.</p>
+
+<h2><a name="_Toc492735422"></a><a name="_Toc494938311"><span style='mso-bookmark:
+_Toc492735422'>Контекст работы с метаданными</a></h2>
+
+<p class=MsoNormal>Работа с метаданными выполняется через
+глобальный атрибут «Метадан­ные», имеющий тип «Метаданные». Объект типа «Метаданные»
+нельзя создать, используя метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>СоздатьОбъект<span
+lang=RU>.</p>
+
+<p class=MsoNormal>Объект типа «Метаданные» имеет атрибуты для
+доступа к свойствам объек­та метаданных и методы для доступа к массивам подчиненных
+объектов мета­данных. Глобальный атрибут «Метаданные» предоставляет доступ к
+общим свойствам конфигурации и к основным объектам метаданных (документам,
+справочникам и т. п.). Полученный из глобального атрибута подчиненный объ­ект
+метаданных — документ предоставляет в свою очередь доступ к свойствам документа
+и к объектам метаданных являющихся реквизитами документа.</p>
+
+<p class=MsoNormal>Значения, имеющие тип «Метаданные», можно
+напрямую использовать в качестве параметров в тех методах, где требуется
+строковый идентификатор метаданного, например, в методе справочника: <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Вид(НаименовСправочника).<o:p></o:p></p>
+
+<p class=MsoNormal>Кроме того, объект типа «Метаданные» можно
+использовать в качестве па­раметров, в тех методах, где требуется указать тип
+данных строкой, например в третий параметр метода <span class=a0><span
+lang=RU style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ВвестиЗначение(,
+, , ), но передавать можно только значения
+метаданных, описывающие типизированные объекты, например, <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Метаданные.Справочник(1).Реквизит(1)<span
+lang=RU>, т. к. реквизит справочника — типизированный объект.</p>
+
+<p class=MsoNormal>Англоязычный синоним ключевого слова <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Метаданные — <span
+class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>Metadata.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбМетодУдаления =
+Метаданные.НепосредедственноеУдалениеОбъектов;<o:p></o:p></p>
+
+<h2><a name="_Toc492735423"></a><a name="_Toc494938312"><span style='mso-bookmark:
+_Toc492735423'>Атрибуты и методы объекта «Метаданные»</a></h2>
+
+<p class=MsoNormal>В документации не приводится полный перечень
+возможных значений ат­рибутов. Полный перечень атрибутов метаданных можно получить,
+сформиро­вав в конфигураторе текстовый файл «Описание метаданных».
+Установленные значения атрибутов можно также узнать из текстового описания
+структуры метаданных.</p>
+
+<p class=MsoNormal>Атрибуты, являющиеся по сути признаками с
+двумя возможными значе­ниями имеют числовой тип и принимают значения 0 или 1. Атрибуты,
+которые могут иметь несколько возможных значений, выдают строку, отражающую ус­тановленный
+вариант. Атрибуты, отражающие свойство метаданных, выбирае­мое как ссылка на
+другой объект метаданных (например, журнал документа) имеют тип «Метаданные».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ВыбМетодУдаления=Метаданные.НепосредственноеУдалениеОбъектов;<o:p></o:p></p>
+
+<p class=MsoNormal>У объекта «Метаданные» могут существовать
+методы для доступа к масси­вам подчиненных метаданных. Например, для
+глобального атрибута «Метадан­ные» для обращения к документам используется
+метод «Документ».</p>
+
+<p class=MsoNormal>В качестве параметра методов для доступа к
+массивам подчиненных мета­данных передается:</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l55 level1 lfo59;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>число — выдает объект метаданных по
+указанному номеру;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l55 level1 lfo59;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>строка — выдает объект метаданных по
+указанному идентификатору;</p>
+
+<p class=MsoNormal style='margin-left:34.0pt;text-indent:-19.8pt;mso-list:l55 level1 lfo59;
+tab-stops:list 34.0pt'><![if !supportLists]><span lang=RU style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>параметр не указан — выдает количество
+подчиненных объектов этого типа.</p>
+
+<p class=MsoNormal>Пример получения списка документов
+конфигурации:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По Метаданные.Документ()
+Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(Метаданные.Документ(Инд).Идентификатор);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КснецЦикла;<o:p></o:p></p>
+
+<p class=MsoNormal>У объекта типа «Метаданные» могут существовать
+атрибуты, содержащие массив ссылок на объекты метаданных, к ним применяются
+методы <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Количество()<span
+lang=RU> и <span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Получить(Ном)<span
+lang=RU> для перебора ссылок. Например, для граф отбора таким атрибутом
+является атрибут «Ссылки», позволяющий получить объекты метаданных включенные в
+данную графу отбора (реквизиты докумен­тов и др.).</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 До
+Метаданные.ГрафаОтбора(Идент).Ссылки.Количество() Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(Метаданные.ГрафаОтбора(Идент).<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun:
+yes"> <span style="mso-spacerun: yes">            
+Ссылки.Получить(Инд).ПолныйИдентификатор());<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЦикла;<o:p></o:p></p>
+
+<h3><a name="_Toc492735424"></a><a name="_Toc494938313"><span style='mso-bookmark:
+_Toc492735424'>Методы работы с метаданными</a></h3>
+
+<p class=MsoNormal>Перечень методов метаданных предназначенных
+для доступа к подчинен­ным объектам метаданных можно получить, сформировав в
+конфигураторе текстовый файл «Описание структуры метаданных».</p>
+
+<p class=MsoNormal>Дополнительные методы работы с метаданными
+приведены ниже.</p>
+
+<h4><a name="_Toc492735425"></a><a name="_Toc494938314"><span style='mso-bookmark:
+_Toc492735425'>Выбран</a></h4>
+
+<p class=MsoNormal>Проверяет спозиционирован ли объект типа
+«Метаданные» на кон­кретном объекте метаданных или нет.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Выбран()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Selected<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Число: 1 — если объект соответствует объекту
+метаданных (спозициониро­ван); 0 — если не соответствует.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Выбран<span
+lang=RU> возвращает число со значением 1 — объект соответствует объекту
+метаданных (спозиционирован), 0 — если не соответствует. Например, при
+обращении к массиву подчиненных метаданных по идентификатору, если метаданного
+с таким идентификатором не существует, возвращается не спози­ционированный
+объект типа «Метаданные».</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Если
+Метаданные.Справочник(&quot;Организации&quot;).Выбран() = 1 Тогда<span
+class=a0><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Сообщить(&quot;Есть справочник органиазаций&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>КонецЕсли;<o:p></o:p></p>
+
+<h4><a name="_Toc492735426"></a><a name="_Toc494938315"><span style='mso-bookmark:
+_Toc492735426'>Родитель</a></h4>
+
+<p class=MsoNormal>Возвращает объект метаданных, которому
+подчинен данный объект.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Родитель()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Parent<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Объект метаданных, которому подчинен данный
+объект.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Родитель<span
+lang=RU> возвращает объект метаданных, которому подчинен дан­ный объект.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообцить(&quot;Реквизит принадлежит
+документу&quot; + РеквМД.Родитель().Идентификатор);<o:p></o:p></p>
+
+<h4><a name="_Toc492735427"></a><a name="_Toc494938316"><span style='mso-bookmark:
+_Toc492735427'>ПолныйИдентификатор</a></h4>
+
+<p class=MsoNormal>Возвращает полный идентификатор объекта.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ПолныйИдентификатор()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Full<span class=a0><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>I<span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>dentifier<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Идентификатор объекта с идентификаторами его
+родителей через точку.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ПолныйИдентификатор<span
+lang=RU> возвращает идентификатор объекта с иден­тификаторами его родителей
+через точку, например: <span class=a0><span lang=RU style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>&quot;Документ.Счет.Цена&quot;<span
+lang=RU>.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Сообщить(&quot;Реквизит &quot; +
+РеквМД.ПолныйИдентификатор());<o:p></o:p></p>
+
+<h4><a name="_Toc492735428"></a><a name="_Toc494938317"><span style='mso-bookmark:
+_Toc492735428'>Представление</a></h4>
+
+<p class=MsoNormal>Возвращает представление объекта.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Представление()<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Present<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b></p>
+
+<p class=MsoNormal>Строковое значение представления объекта.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Представление<span
+lang=RU> возвращает синоним объекта, а если он не задан, то идентификатор.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal>Получение списка видов документов:</p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Спис =
+СоздатьОбъект(&quot;СписокЗначений&quot;);<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Для Инд = 1 По Метаданные.Документ()
+Цикл<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Идент = Метаданные.Документ(Инд).Идентификатор;<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Предст = Метаданные.Документ(Инд).Представление();<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Спис.ДобавитьЗначение(Идент, Предст);<o:p></o:p></p>
+
+<p class=MsoNormal>КонецЦикла;</p>
+
+<h4><a name="_Toc492735429"></a><a name="_Toc494938318"><span style='mso-bookmark:
+_Toc492735429'>ДлинаПредставленияЗначения</a></h4>
+
+<p class=MsoNormal>Возвращает длину представления значения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Синтаксис:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ДлинаПредставленияЗначения(&lt;Мин&gt;,
+&lt;Макс&gt;, &lt;ДлПоУмолч&gt;)<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Англоязычный
+синоним:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>ValuePresentLen<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Параметры:</b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:17.4pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Мин&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Метод не будет воз­вращать значение меньше указанной в данном
+  параметре величины.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>Макс&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Метод не будет воз­вращать значение больше указанной в данном
+  параметре величины.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=112 valign=top style='width:84.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>&lt;<span
+  class=a0><span lang=RU style='font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman"'>ДлПоУмолч&gt;</p>
+  </td>
+  <td width=560 valign=top style='width:419.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-indent:0in'>Необязательный
+  параметр. Метод будет возвра­щать данную величину для метаданных, для которых
+  длина представления не определена. Параметр задает длину для типов данных,
+  таких как Справочник неопределенного типа и анало­гичных, у которых не
+  определена длина.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Возвращаемое
+значение:</b> возвращает длину представления значения.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Описание:</b></p>
+
+<p class=MsoNormal>Метод <span class=a0><span lang=RU
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>ДлинаПредставленияЗначения<span
+lang=RU> для типизированных объектов ти­па Реквизит и аналогичных, выдает длину
+представления значения. Данный метод может использоваться, например, для
+определения ширины столбца в универсальных отчетах, выводящих данные объектов
+различных видов.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Пример:</b></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Ширина =<o:p></o:p></p>
+
+<p class=MsoNormal><span class=a0><span lang=RU style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><span style="mso-spacerun: yes">  
+Метаданные.Документ(1).РеквизитШапки(2).ДлинаПредставленияЗначения(5,
+50, 30)<o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-font-kerning:14.0pt;mso-ansi-language:
+RU;mso-fareast-language:RU;mso-bidi-language:AR-SA;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</b>
+
+</body></html>
