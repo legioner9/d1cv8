@@ -1,0 +1,25 @@
+﻿<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK href="v8help://service_book/service_style" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.3492" name=GENERATOR></HEAD>
+<BODY>
+<H1 class="">Обращение к свойствам объектов</H1>
+<P>Помимо основного обращения через точку, в языке 1С:Предприятия предусмотрен механизм обращения к свойствам объектов по строке с именем свойства с помощью оператора [] (квадратные скобки).</P>
+<H4 class="">Синтаксис:</H4>
+<BLOCKQUOTE dir=ltr style="MARGIN-RIGHT: 0px">
+<P><EM>&lt;Объект&gt;[&lt;Имя свойства&gt;]</EM></P></BLOCKQUOTE>
+<H4 class="">Параметры:</H4>
+<P class=""><EM>&lt;Объект&gt;</EM></P>
+<BLOCKQUOTE dir=ltr style="MARGIN-RIGHT: 0px">
+<P>Объект, к свойству которого идет обращение.</P></BLOCKQUOTE>
+<P><EM>&lt;Имя свойства&gt;</EM></P>
+<BLOCKQUOTE dir=ltr style="MARGIN-RIGHT: 0px">
+<P>Тип: <STRONG>Строка</STRONG>. Имя свойства, к которому необходимо обратиться.</P></BLOCKQUOTE>
+<H4 class="">Описание:</H4>
+<BLOCKQUOTE dir=ltr style="MARGIN-RIGHT: 0px">
+<P>Такая конструкция позволяет обращаться к свойствам объектов так же, как это делается через точку с указанием имени свойства.</P></BLOCKQUOTE>
+<H4 class="">Пример:</H4>
+<P class="">
+<TABLE width="100%" bgColor=#f7f7f7>
+<TBODY>
+<TR>
+<TD><FONT color=#ff0000><FONT face="Courier New"><FONT color=#0000ff>Спр&nbsp;</FONT><FONT color=#ff0000>=</FONT><FONT color=#0000ff>&nbsp;Справочники</FONT><FONT color=#ff0000>.</FONT><FONT color=#0000ff>Номенклатура</FONT><FONT color=#ff0000>.</FONT><FONT color=#0000ff>НайтиПоКоду</FONT><FONT color=#ff0000>(</FONT><FONT color=#0000ff>ИскомыйКод</FONT><FONT color=#ff0000>)</FONT><FONT color=#ff0000>;</FONT><BR><BR><FONT color=#008000>//&nbsp;Обращение&nbsp;к&nbsp;наименованию&nbsp;справочника&nbsp;по&nbsp;строке&nbsp;с&nbsp;именем&nbsp;свойства&nbsp;</FONT><BR><FONT color=#0000ff>A&nbsp;</FONT><FONT color=#ff0000>=</FONT><FONT color=#0000ff>&nbsp;Спр</FONT><FONT color=#ff0000>[</FONT><FONT color=#0000ff>“Наименование”</FONT><FONT color=#ff0000>]</FONT><FONT color=#ff0000>;</FONT><BR><BR><FONT color=#008000>//&nbsp;Обращение&nbsp;к&nbsp;наименованию&nbsp;справочника&nbsp;по&nbsp;имени&nbsp;свойства&nbsp;</FONT><BR><FONT color=#0000ff>A&nbsp;</FONT><FONT color=#ff0000>=</FONT><FONT color=#0000ff>&nbsp;Спр</FONT><FONT color=#ff0000>.</FONT><FONT color=#0000ff>Наименование</FONT><FONT color=#ff0000>;</FONT><BR><BR><FONT color=#008000>//&nbsp;Оба&nbsp;эти&nbsp;обращения&nbsp;к&nbsp;свойству&nbsp;абсолютно&nbsp;равнозначны</FONT></FONT></FONT></TD></TR></TBODY></TABLE><FONT face="Courier New"><BR></FONT></P></BODY></HTML>
