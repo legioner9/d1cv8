@@ -1,0 +1,11 @@
+﻿{1,
+{2,
+{"",1,0,"",""},
+{0,
+{"ru",0,0,"","ТипКаноническогоXML.КаноническийXML1_1СКомментариями"}
+},
+{0,
+{"en",0,0,"","XMLCanonicalizationType.XMLCanonicalization1_1WithComments"}
+}
+}
+}

@@ -1,0 +1,11 @@
+﻿{1,
+{2,
+{"",1,0,"",""},
+{0,
+{"ru",0,0,"","СервисВстроенныхПокупок.WindowsInAppPurchase"}
+},
+{0,
+{"en",0,0,"","InAppPurchaseService.WindowsInAppPurchase"}
+}
+}
+}

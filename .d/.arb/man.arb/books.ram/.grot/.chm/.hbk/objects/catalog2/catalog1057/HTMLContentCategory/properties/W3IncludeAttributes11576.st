@@ -1,0 +1,11 @@
+﻿{1,
+{2,
+{"",1,0,"",""},
+{0,
+{"ru",0,0,"","КатегорияСодержимогоHTML.W3IncludeАтрибуты"}
+},
+{0,
+{"en",0,0,"","HTMLContentCategory.W3IncludeAttributes"}
+}
+}
+}
