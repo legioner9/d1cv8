@@ -9,7 +9,8 @@ Start Contents Menu
 <!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
 
 - [start before2far](#start-before2far)
-- [DN](#dn)
+- [D21](#d21)
+  - [D21 - ФДЗ: Реализуйте бизнес-процесс тестирования кандидата при приеме на работ](#d21---фдз-реализуйте-бизнес-процесс-тестирования-кандидата-при-приеме-на-работ)
 - [start review\_this2far](#start-review_this2far)
 
 <!-- /TOC -->
@@ -19,13 +20,13 @@ End Contents Menu
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/readcntx.man
 
-PPWD: /home/st
+PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 1726718728_19092024110528
+DATE: 1726748241_19092024191721
 
-DATX: 1726718728
+DATX: 1726748241
 -->
 
 
@@ -39,11 +40,337 @@ DATX: 1726718728
 [000.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/000.file.dt)
 
 
+[001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+![001.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/001.pic.jpg)
+
+
 [002.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/002.txt.man)
 
 
 
-# DN
+# D21
+
+[000.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/000.file.dt)
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/001.txt.man)
+
+
+
+## D21 - ФДЗ: Реализуйте бизнес-процесс тестирования кандидата при приеме на работ
+
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/002.pic.jpg)
+
+
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/003.pic.jpg)
+
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/004.pic.jpg)
+
+
+[005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+![005.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/005.pic.jpg)
+
+
+[006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+![006.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/006.pic.jpg)
+
+
+[007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+![007.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/007.pic.jpg)
+
+
+[008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+![008.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/008.pic.jpg)
+
+
+[009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/009.pic.jpg)
+
+![009.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/009.pic.jpg)
+
+
+[010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/010.pic.jpg)
+
+![010.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/010.pic.jpg)
+
+
+[011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/011.pic.jpg)
+
+![011.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/011.pic.jpg)
+
+
+[012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/012.pic.jpg)
+
+![012.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/012.pic.jpg)
+
+
+[013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/013.pic.jpg)
+
+![013.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/013.pic.jpg)
+
+
+[014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/014.pic.jpg)
+
+![014.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/014.pic.jpg)
+
+
+[015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/015.pic.jpg)
+
+![015.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/015.pic.jpg)
+
+
+[016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/016.pic.jpg)
+
+![016.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/016.pic.jpg)
+
+
+[017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/017.pic.jpg)
+
+![017.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/017.pic.jpg)
+
+
+[018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/018.pic.jpg)
+
+![018.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/018.pic.jpg)
+
+
+[019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/019.pic.jpg)
+
+![019.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/019.pic.jpg)
+
+
+[020.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/020.code.bsl)
+
+
+```bsl
+
+// V_N ДОК: 
+// содержание :
+// исправлено : 
+// исправить : 
+// ошибки : 
+// примечания : 
+// результат работы : + -
+
+
+// Синиакс помощник
+// Получение карты маршрута у менеджера бизнес-процесса 
+
+КартаМаршрута = БизнесПроцессы.ОформлениеОтпуска.ПолучитьКартуМаршрута();
+ЭлементыФормы.ПолеГрафическойСхемы.УстановитьСхему(КартаМаршрута);
+
+
+
+```
+
+[021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
+
+![021.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/021.pic.jpg)
+
+
+[022.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/022.code.bsl)
+
+
+```bsl
+
+// V_N ДОК: БП ТестированиеКандидата Модуль ФормаБизнесПроцесса
+// содержание :
+// исправлено : 
+// исправить : 
+// ошибки : 
+// примечания : 
+// результат работы : + -
+
+&НаСервере
+Процедура ПриЧтенииНаСервере(ТекущийОбъект)
+	Карта = ТекущийОбъект.ПолучитьКартуМаршрута();
+КонецПроцедуры
+
+
+
+
+```
+
+[023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+![023.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/023.pic.jpg)
+
+
+[024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/024.pic.jpg)
+
+![024.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/024.pic.jpg)
+
+
+[025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
+
+![025.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/025.pic.jpg)
+
+
+[026.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/026.code.bsl)
+
+
+```bsl
+
+// V_N ДОК: БП ТестированиеКандидата Модуль ФормаБизнесПроцесса пункт ТестНаАдминистрирование
+// содержание :
+// исправлено : 
+// исправить : 
+// ошибки : 
+// примечания : 
+// результат работы : + -
+
+Процедура ТестНаАдминистрированиеПроверкаУсловия(ТочкаМаршрутаБизнесПроцесса, Результат)
+	Результат = ПройденТестАдминистрирование;
+КонецПроцедуры
+
+
+```
+
+[027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/027.pic.jpg)
+
+![027.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/027.pic.jpg)
+
+
+[028.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/028.pic.jpg)
+
+![028.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/028.pic.jpg)
+
+
+[029.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/029.code.bsl)
+
+
+```bsl
+
+// V_N ДОК: БП ТестированиеКандидата Модуль ФормаБизнесПроцесса пункт ТестНаАдминистрирование 
+// содержание :
+// исправлено : 
+// исправить : 
+// ошибки : 
+// примечания : 
+// результат работы : + -
+
+// составное имя: имя пункта - ТестНаАдминистрирование имя события - ПроверкаУсловия
+
+Процедура ТестНаАдминистрированиеПроверкаУсловия(ТочкаМаршрутаБизнесПроцесса, Результат)
+	Результат = ПройденТестАдминистрирование;
+КонецПроцедуры
+
+// ТестНаПрограммирование ПроверкаУсловия
+Процедура ТестНаПрограммированиеПроверкаУсловия(ТочкаМаршрутаБизнесПроцесса, Результат)
+	Результат = ПройденТестПрограммирование;
+КонецПроцедуры
+
+
+
+
+```
+
+[030.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/030.pic.jpg)
+
+![030.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/030.pic.jpg)
+
+
+[031.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/031.pic.jpg)
+
+![031.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/031.pic.jpg)
+
+
+[032.code.bsl](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/032.code.bsl)
+
+
+```bsl
+
+// V_N ДОК: БП ТестированиеКандидата Модуль ФормаБизнесПроцесса
+// содержание :
+// исправлено : 
+// исправить : 
+// ошибки : 
+// примечания : 
+// результат работы : + -
+
+// составное имя: имя пункта - ТестНаАдминистрирование имя события - ПроверкаУсловия
+Процедура ТестНаАдминистрированиеПроверкаУсловия(ТочкаМаршрутаБизнесПроцесса, Результат)
+	Результат = ПройденТестАдминистрирование;
+КонецПроцедуры
+
+// ТестНаПрограммирование ПроверкаУсловия
+Процедура ТестНаПрограммированиеПроверкаУсловия(ТочкаМаршрутаБизнесПроцесса, Результат)
+	Результат = ПройденТестПрограммирование;
+КонецПроцедуры
+
+Процедура ОператорПриВыполнении(ТочкаМаршрутаБизнесПроцесса, Задача, Отказ)
+	ПредложеннаяВакансия = Перечисления.Вакансии.Оператор;
+КонецПроцедуры    
+
+// составное имя: имя пункта - ТестНаАдминистрирование имя события - ПриВыполнении
+Процедура АдминистраторПриВыполнении(ТочкаМаршрутаБизнесПроцесса, Задача, Отказ)
+	ПредложеннаяВакансия = Перечисления.Вакансии.Администратор;
+КонецПроцедуры  
+
+Процедура ПрограммистПриВыполнении(ТочкаМаршрутаБизнесПроцесса, Задача, Отказ)
+	ПредложеннаяВакансия = Перечисления.Вакансии.Программист;
+КонецПроцедуры
+
+
+
+
+
+```
+
+[033.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/033.pic.jpg)
+
+![033.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/033.pic.jpg)
+
+
+[034.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/034.pic.jpg)
+
+![034.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/034.pic.jpg)
+
+
+[035.01.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/035.01.pic.jpg)
+
+![035.01.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/035.01.pic.jpg)
+
+
+[035.02.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/035.02.pic.jpg)
+
+![035.02.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/035.02.pic.jpg)
+
+
+[036.01.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/036.01.pic.jpg)
+
+![036.01.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/036.01.pic.jpg)
+
+
+[036.02.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/036.02.pic.jpg)
+
+![036.02.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/036.02.pic.jpg)
+
+
+[037.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/037.pic.jpg)
+
+![037.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/037.pic.jpg)
+
+
+[038.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/038.pic.jpg)
+
+![038.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/038.pic.jpg)
+
+
+[039.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/002.d/003.d/039.file.dt)
+
 
 [review_this2far.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/021_less_d21/001_part/.md/_cntt/099.end.d/review_this2far.txt.man)
 
