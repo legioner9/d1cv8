@@ -1,4 +1,4 @@
 ## Печатная форма (док реализация товаров) - Пример_1
 
-- copy from /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/003_less_d3/001_part/.md/_cntt/002.d/005.d
+- [see](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/003_less_d3/001_part/.md/_cntt/002.d/005.d)
 
