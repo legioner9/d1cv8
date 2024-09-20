@@ -9,4 +9,11 @@ e460a1b5-234a-481e-8385-90b433ad9baa
 {4,"_$Session$_.Start",2},
 {4,"_$InfoBase$_.RestoreStart",3},
 {4,"_$Session$_.Finish",4},
-{4,"_$InfoBase$_.RestoreFinish",5}
+{4,"_$InfoBase$_.RestoreFinish",5},
+{3,"1CV8C",2},
+{3,"BackgroundJob",3},
+{4,"_$InfoBase$_.ConfigUpdate",6},
+{4,"_$InfoBase$_.DBConfigUpdateStart",7},
+{4,"_$InfoBase$_.DBConfigUpdate",8},
+{4,"_$InfoBase$_.DumpStart",9},
+{4,"_$InfoBase$_.DumpFinish",10}

@@ -14,6 +14,7 @@ Start Contents Menu
 	- [Клиентское приложение - Интерфейс](#клиентское-приложение---интерфейс)
 		- [Клиентское приложение - Интерфейс - Настройка](#клиентское-приложение---интерфейс---настройка)
 - [Справочник](#справочник)
+	- [Справочник - Определения](#справочник---определения)
 	- [Справочник - Настройка](#справочник---настройка)
 	- [Cправочник - Описание](#cправочник---описание)
 - [Конфигурация](#конфигурация)
@@ -140,6 +141,8 @@ Start Contents Menu
 	- [Бух учет - счета](#бух-учет---счета)
 		- [Бух учет - счета - по номерам](#бух-учет---счета---по-номерам)
 - [](#)
+- [Перечисление](#перечисление)
+	- [Перечисление - Определение](#перечисление---определение)
 - [Glossary](#glossary)
 	- [Glossary - Проведение условное](#glossary---проведение-условное)
 - [Unsort](#unsort)
@@ -170,6 +173,9 @@ Start Contents Menu
 		- [Unsort - Классификация АБС - пример 1](#unsort---классификация-абс---пример-1)
 	- [Unsort - Создание Бизнес Процесса](#unsort---создание-бизнес-процесса)
 		- [Unsort - Создание Бизнес Процесса - Пример 1](#unsort---создание-бизнес-процесса---пример-1)
+	- [Unsort - Удобные Реквизиты](#unsort---удобные-реквизиты)
+		- [Unsort - Удобные Реквизиты - ОписаниеСущности](#unsort---удобные-реквизиты---описаниесущности)
+		- [Unsort - Удобные Реквизиты - ТипСущности из перечисления Типов](#unsort---удобные-реквизиты---типсущности-из-перечисления-типов)
 - [Standarts](#standarts)
 	- [Standarts - Stack err log](#standarts---stack-err-log)
 - [Example DOC](#example-doc)
@@ -190,9 +196,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 1726748267_19092024191747
+DATE: 1726810247_20092024123047
 
-DATX: 1726748267
+DATX: 1726810247
 -->
 
 
@@ -248,26 +254,40 @@ DATX: 1726748267
 # Справочник
 
 
-[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/001.txt.man)
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.01.d/001.txt.man)
+
+
+
+## Справочник - Определения
+
+- Существительное во множественном числе
+- Классификация - ОбъектКонфигурации
+- Список документоа однородной информации
+- Другие названия
+  - классификаторы
+  - нормативно-справочная информация
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.02.d/001.txt.man)
 
 
 
 ## Справочник - Настройка
 
 
-[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/002.pic.jpg)
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.02.d/002.pic.jpg)
 
-![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/002.pic.jpg)
-
-
-[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/003.pic.jpg)
-
-![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/003.pic.jpg)
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.02.d/002.pic.jpg)
 
 
-[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/004.pic.jpg)
+[003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.02.d/003.pic.jpg)
 
-![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.d/004.pic.jpg)
+![003.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.02.d/003.pic.jpg)
+
+
+[004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.02.d/004.pic.jpg)
+
+![004.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/002.02.d/004.pic.jpg)
 
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/003.d/003.d/001.txt.man)
@@ -4914,6 +4934,24 @@ TAGS:
 	- Прибыли и убытки	Счета бухгалтерского учета с субсчетами и описанием
 
 
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/024.d/001.txt.man)
+
+
+
+# Перечисление
+
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/024.d/002.d/001.txt.man)
+
+
+
+## Перечисление - Определение 
+
+- Элементы перечисления - это объекты Конфигурвции
+- Используются в качестве названия типов данных в реквизитах
+
+
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/907.d/001.txt.man)
 
 
@@ -5824,6 +5862,38 @@ TAGS:
 
 
 [039.file.dt](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/023.d/002.d/039.file.dt)
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/024.d/001.txt.man)
+
+
+
+## Unsort - Удобные Реквизиты
+
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/024.d/002.d/001.txt.man)
+
+
+
+### Unsort - Удобные Реквизиты - ОписаниеСущности
+
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/024.d/002.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/024.d/002.d/002.pic.jpg)
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/024.d/003.d/001.txt.man)
+
+
+
+### Unsort - Удобные Реквизиты - ТипСущности из перечисления Типов
+
+
+[002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/024.d/003.d/002.pic.jpg)
+
+![002.pic.jpg](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/908.d/024.d/003.d/002.pic.jpg)
 
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/909.d/001.txt.man)
