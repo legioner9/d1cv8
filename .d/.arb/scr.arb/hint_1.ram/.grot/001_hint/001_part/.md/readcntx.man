@@ -143,6 +143,8 @@ Start Contents Menu
 - [](#)
 - [Перечисление](#перечисление)
 	- [Перечисление - Определение](#перечисление---определение)
+- [Константа](#константа)
+- [Константа - Определение](#константа---определение)
 - [Glossary](#glossary)
 	- [Glossary - Проведение условное](#glossary---проведение-условное)
 - [Unsort](#unsort)
@@ -196,9 +198,9 @@ PPWD: /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/00
 
 FLOW: /home/st/REPOBARE/_repo/sta/.d/.st_rc_d.data.d/ufl_stl0/.flow.d/004_d2m
 
-DATE: 1726810247_20092024123047
+DATE: 1726811056_20092024124416
 
-DATX: 1726810247
+DATX: 1726811056
 -->
 
 
@@ -4950,6 +4952,26 @@ TAGS:
 
 - Элементы перечисления - это объекты Конфигурвции
 - Используются в качестве названия типов данных в реквизитах
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/025.d/001.txt.man)
+
+
+
+# Константа
+
+
+
+[001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/025.d/002.d/001.txt.man)
+
+
+
+# Константа - Определение
+
+- голбальный Объект ИБ
+- Условно-постоянное единственное значение
+- В Интерфейсе доступ через дефолтную кнопку Сервис
+- Используется в печатных формах
 
 
 [001.txt.man](/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt/907.d/001.txt.man)
