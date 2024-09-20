@@ -16,4 +16,10 @@ e460a1b5-234a-481e-8385-90b433ad9baa
 {4,"_$InfoBase$_.DBConfigUpdateStart",7},
 {4,"_$InfoBase$_.DBConfigUpdate",8},
 {4,"_$InfoBase$_.DumpStart",9},
-{4,"_$InfoBase$_.DumpFinish",10}
+{4,"_$InfoBase$_.DumpFinish",10},
+{4,"_$Transaction$_.Begin",11},
+{4,"_$Data$_.New",12},
+{5,be1508cc-6f2f-45a8-a8be-7a915b39701d,"Документ.РеализацияТоваровИУслуг",1},
+{4,"_$Data$_.Post",13},
+{4,"_$Transaction$_.Commit",14},
+{4,"_$Data$_.Update",15}
