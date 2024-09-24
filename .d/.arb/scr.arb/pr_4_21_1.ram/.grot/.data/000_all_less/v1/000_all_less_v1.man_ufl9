@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo -e "${CYAN}--- 000_all_less_v1_rnd7_8fd8ae8() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/000_all_less/v1/000_all_less_v1.man_ufl9 ---${NORMAL}" #started functions
+echo -e "${CYAN}--- 000_all_less_v1_rnd7_76d13bd() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/000_all_less/v1/000_all_less_v1.man_ufl9 ---${NORMAL}" #started functions
 
-000_all_less_v1_rnd7_8fd8ae8() {
+000_all_less_v1_rnd7_76d13bd() {
 
     # gig from file://${ST_RC_D_PATH}/.d/.arb/stl0.arb/ufl_stl0.ram/.grot/ufl_stl0.sh
 
@@ -66,4 +66,4 @@ ufl_stl0 9 ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/000_all_
 
 }
 
-000_all_less_v1_rnd7_8fd8ae8 "$@"
+000_all_less_v1_rnd7_76d13bd "$@"
