@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo -e "${CYAN}--- 000_all_less_v1_rnd7_de30331() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_5_t_21_1.ram/.grot/.data/000_all_less/v1/000_all_less_v1.man_ufl9 ---${NORMAL}" #started functions
+echo -e "${CYAN}--- 000_all_less_v1_rnd7_a277def() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_5_t_21_1.ram/.grot/.data/000_all_less/v1/000_all_less_v1.man_ufl9 ---${NORMAL}" #started functions
 
-000_all_less_v1_rnd7_de30331() {
+000_all_less_v1_rnd7_a277def() {
 
     # gig from file://${ST_RC_D_PATH}/.d/.arb/stl0.arb/ufl_stl0.ram/.grot/ufl_stl0.sh
 
@@ -57,7 +57,8 @@ ${NORMAL}"
 
     #{{body_fn}}
 
-    ufl_stl0 9 ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_5_t_21_1.ram/.grot/.data/000_all_less/v1/001.lnk.d ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_5_t_21_1.ram/.grot/.data/000_all_less/v1/000_all_less_v1.man 2
+ufl_stl0 9 ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_5_t_21_1.ram/.grot/.data/000_all_less/v1/001.lnk.d ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_5_t_21_1.ram/.grot/.data/000_all_less/v1/000_all_less_v1.man 2
+
 
     #! END BODY FN ---------------------------------------
 
@@ -65,4 +66,4 @@ ${NORMAL}"
 
 }
 
-000_all_less_v1_rnd7_de30331 "$@"
+000_all_less_v1_rnd7_a277def "$@"
