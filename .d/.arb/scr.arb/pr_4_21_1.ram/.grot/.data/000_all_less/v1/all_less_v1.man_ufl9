@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo -e "${CYAN}--- all_less_v1_rnd7_7ddd81d() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/000_all_less/v1/all_less_v1.man_ufl9 ---${NORMAL}" #started functions
+echo -e "${CYAN}--- all_less_v1_rnd7_500ad52() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/000_all_less/v1/all_less_v1.man_ufl9 ---${NORMAL}" #started functions
 
-all_less_v1_rnd7_7ddd81d() {
+all_less_v1_rnd7_500ad52() {
 
     # gig from file://${ST_RC_D_PATH}/.d/.arb/stl0.arb/ufl_stl0.ram/.grot/ufl_stl0.sh
 
@@ -38,6 +38,8 @@ ${NORMAL}"
 
     if [[ "_go" == "$1" ]]; then
         _edit "${path_file}"
+
+        cd $PPWD
         return 0
     fi
 
@@ -61,9 +63,10 @@ ufl_stl0 9 ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/pr_4_21_1.ram/.grot/.data/000_all_
 
 
     #! END BODY FN ---------------------------------------
-
+    
+    cd $PPWD
     return 0
 
 }
 
-all_less_v1_rnd7_7ddd81d "$@"
+all_less_v1_rnd7_500ad52 "$@"

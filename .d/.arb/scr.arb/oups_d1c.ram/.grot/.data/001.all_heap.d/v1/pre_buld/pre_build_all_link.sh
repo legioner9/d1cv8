@@ -55,14 +55,41 @@ ${NORMAL}"
 
     echo "START BODY FN : ${FNN}() $*"
 
-    cat ../001.lnk.d/all_heap.lnk.lst
+    # cat ../001.lnk.d/all_heap.lnk.lst
 
-    for 
+    local item=
+    local item_dir=
+    local n_name=
+    local ufl_9_file=
+
+    cat ../001.anc.d/all_heap.anc.lst
+
+    for item in $(_f2e ../001.anc.d/all_heap.anc.lst); do
+
+        item_dir=$(_prs_f -d $item)
+
+        n_name=$(_prs_f -n $item)
+        echo -e "${GREEN}\$n_name = $n_name${NORMAL}" #print variable
+        n_name=${n_name/000./}
+        echo -e "${GREEN}\$n_name = $n_name${NORMAL}" #print variable
+        n_name=$(_prs_f -n $n_name)
+        echo -e "${GREEN}\$n_name = $n_name${NORMAL}" #print variable
+
+
+        ufl_9_file=${item_dir}/${n_name}.man_ufl9
+        echo -e "${GREEN}\$ufl_9_file = file://$ufl_9_file${NORMAL}" #print variable
+
+        [ -f ${ufl_9_file} ] && {
+            echo -e "${GREEN}\$ufl_9_file = $ufl_9_file${NORMAL}" #print variable
+            . ${ufl_9_file}
+        }
+    done
 
     #{{body_fn}}
 
     #! END BODY FN ---------------------------------------
 
+    cd $PPWD
     return 0
 
 }
