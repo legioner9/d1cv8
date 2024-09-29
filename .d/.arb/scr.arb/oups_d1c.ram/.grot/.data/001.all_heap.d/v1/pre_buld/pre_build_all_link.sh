@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo -e "${CYAN}--- readcntx_rnd7_9844efa() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/readcntx.man_ufl4 ---${NORMAL}" #started functions
+echo -e "${CYAN}--- pre_build_all_link_rnd7_eb272c3() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/oups_d1c.ram/.grot/.data/001.all_heap.d/v1/pre_buld/pre_build_all_link.sh ---${NORMAL}" #started functions
 
-readcntx_rnd7_9844efa() {
+pre_build_all_link_rnd7_eb272c3() {
 
     # gig from file://${ST_RC_D_PATH}/.d/.arb/stl0.arb/ufl_stl0.ram/.grot/ufl_stl0.sh
 
@@ -10,7 +10,7 @@ readcntx_rnd7_9844efa() {
     local ARGS=("$@")
     local NARGS=$#
     local PPWD=$PWD
-    local path_file="${REPO_PATH}/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/readcntx.man_ufl4"
+    local path_file="${REPO_PATH}/d1cv8/.d/.arb/scr.arb/oups_d1c.ram/.grot/.data/001.all_heap.d/v1/pre_buld/pre_build_all_link.sh"
     local path_dir="$(dirname "$path_file")"
 
     # echo -e "${CYAN}--- $FNN() $* in file://${path_file}---${NORMAL}" #started functions
@@ -55,10 +55,11 @@ ${NORMAL}"
 
     echo "START BODY FN : ${FNN}() $*"
 
+    cat ../001.lnk.d/all_heap.lnk.lst
+
+    for 
+
     #{{body_fn}}
-
-ufl_stl0 4 ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/_cntt ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part/.md/readcntx.man
-
 
     #! END BODY FN ---------------------------------------
 
@@ -66,4 +67,4 @@ ufl_stl0 4 ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/hint_1.ram/.grot/001_hint/001_part
 
 }
 
-readcntx_rnd7_9844efa "$@"
+pre_build_all_link_rnd7_eb272c3 "$@"

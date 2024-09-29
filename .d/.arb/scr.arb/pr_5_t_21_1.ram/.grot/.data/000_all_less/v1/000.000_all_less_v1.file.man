@@ -1,20 +1,3 @@
-
-<!-- [[__TOC_]] -->
-
-<a name=top></a>
-<a class=top-link hide href=#top>↑</a>
-
-Start Contents Menu
-
-<!-- TOC tocDepth:1..6 chapterDepth:1..6 -->
-
-- [TD\_2](#td_2)
-- [TD\_3](#td_3)
-
-<!-- /TOC -->
-
-End Contents Menu
-
 <!--
 CMND: ufl_stl0 4 /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_5_t_21_1.ram/.grot/.data/000_all_less/v1/001.lnk.d /home/st/REPOBARE/_repo/d1cv8/.d/.arb/scr.arb/pr_5_t_21_1.ram/.grot/.data/000_all_less/v1/000_all_less_v1.man
 
