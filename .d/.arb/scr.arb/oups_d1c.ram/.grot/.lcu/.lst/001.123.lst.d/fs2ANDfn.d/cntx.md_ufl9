@@ -1,0 +1,72 @@
+#!/bin/bash
+
+echo -e "${CYAN}--- cntx_rnd7_1095eda() $* in file://${REPO_PATH}/d1cv8/.d/.arb/scr.arb/oups_d1c.ram/.grot/.lcu/.lst/001.123.lst.d/fs2ANDfn.d/cntx.md_ufl9 ---${NORMAL}" #started functions
+
+cntx_rnd7_1095eda() {
+
+    # gig from file://${ST_RC_D_PATH}/.d/.arb/stl0.arb/ufl_stl0.ram/.grot/ufl_stl0.sh
+
+    local FNN=${FUNCNAME[0]}
+    local ARGS=("$@")
+    local NARGS=$#
+    local PPWD=$PWD
+    local path_file="${REPO_PATH}/d1cv8/.d/.arb/scr.arb/oups_d1c.ram/.grot/.lcu/.lst/001.123.lst.d/fs2ANDfn.d/cntx.md_ufl9"
+    local path_dir="$(dirname "$path_file")"
+
+    # echo -e "${CYAN}--- $FNN() $* in file://${path_file}---${NORMAL}" #started functions
+
+    cd ${path_dir} || {
+        # hint="\$1: \$2: "
+        _st_exit "in fs= file://$path_file , line=${LINENO}, ${FNN}() : NOT_DIR : 'file://${path_dir}' : ${hint} : return 1"
+        return 1
+    }
+
+    if [ "-h" == "$1" ]; then
+        echo -e "${CYAN} ${FNN}() help: 
+MAIN: 
+TAGS: @
+ARGS: \$1
+EXAM: 
+EXEC: 
+CNTL: 
+    _go  : _edit ${path_file}
+RETURN: ( result>stdout, return 0 | data | change to ptr |  fs_structure | ...)
+ERROR: ( return 1 | ... )
+    ${FNN} 
+${NORMAL}"
+    fi
+
+    if [[ "_go" == "$1" ]]; then
+        _edit "${path_file}"
+
+        cd $PPWD
+        return 0
+    fi
+
+    # hint="\$1: \$2: "
+    # if _isn_from ${NARGS} less more "in fs= file://${path_file} , line=${LINENO}, ${FNN}() : ERR_AMOUNT_ARGS entered :'${NARGS}' args : ${hint} : return 1"; then
+    #     return 1
+    # fi
+
+    # local _ARGS_=("$@")
+    # _parr3e _ARGS_
+
+    #{{ptr_path}}
+
+    #! START BODY FN ---------------------------------------
+
+    echo "START BODY FN : ${FNN}() $*"
+
+    #{{body_fn}}
+
+ufl_stl0 9 ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/oups_d1c.ram/.grot/.lcu/.lst/001.123.lst.d/fs2ANDfn.d/.cntx ${REPO_PATH}/d1cv8/.d/.arb/scr.arb/oups_d1c.ram/.grot/.lcu/.lst/001.123.lst.d/fs2ANDfn.d/cntx.md 2
+
+
+    #! END BODY FN ---------------------------------------
+    
+    cd $PPWD
+    return 0
+
+}
+
+cntx_rnd7_1095eda "$@"
